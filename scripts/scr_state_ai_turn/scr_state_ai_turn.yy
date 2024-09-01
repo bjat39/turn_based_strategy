@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_state_ai_turn",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_state_ai_turn",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
