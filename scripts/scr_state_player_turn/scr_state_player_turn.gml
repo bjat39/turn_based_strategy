@@ -9,6 +9,9 @@ function scr_state_player_turn(){
 			player = instance_nearest(mouse_x,mouse_y,par_player);
 		
 			global.selected = player;
+			
+			orig_node_x = x; //remember original position
+			orig_node_y = y;
 		
 			with (obj_move_square){instance_destroy();}
 			with (obj_attack_square) {instance_destroy();}

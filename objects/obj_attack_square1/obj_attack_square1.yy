@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_attack_square",
-    "path":"sprites/spr_attack_square/spr_attack_square.yy",
+    "name":"spr_attack_square1",
+    "path":"sprites/spr_attack_square1/spr_attack_square1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

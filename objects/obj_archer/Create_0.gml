@@ -8,6 +8,9 @@ orig_pixel_dist = pixel_dist;
 
 pace = 2;//run speed
 
+orig_node_x = x;
+orig_node_y = y;
+
 cur_node_x = x;
 cur_node_y = y;
 
