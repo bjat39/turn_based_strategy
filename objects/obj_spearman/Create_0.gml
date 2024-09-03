@@ -1,9 +1,11 @@
-/// @description Variables
+/// @description Variables, Check parent variable definitions
 type = 1; //1 = melee, 2 = ranged, 3 = magic
 
 attacked = false; //only attack once a turn
 
-attack_pixel_dist = 160; //move range + attack range
+unit_state =  //combine "attacked" into state machine?
+
+attack_pixel_dist = 132; //move range + attack range, total attack range
 
 pixel_dist = 100; //Pixel distance, how far they can move
 orig_pixel_dist = pixel_dist;

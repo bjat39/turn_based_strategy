@@ -30,8 +30,10 @@ function scr_state_player_turn(){
 					}
 				}
 			}
-		
+			
+			scr_place_attack_squares();
 			scr_place_move_squares();
+
 		}
 	}
 	else if (instance_position(mouse_x,mouse_y,par_player) && mouse_check_button_pressed(mb_left))

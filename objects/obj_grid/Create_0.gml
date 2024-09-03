@@ -6,6 +6,14 @@ enum STATES
 	FAIL_STATE
 }
 
+enum UNIT_STATE
+{
+	READY,
+	MOVING,
+	ATTACKING,
+	FINISHED
+}
+
 global.cell_size = 32;
 
 //global.map_grid = mp_grid_create(0,0,room_width / global.cell_size, room_height / global.cell_size,global.cell_size,global.cell_size); //(top left of the grid, amount of cells, size)

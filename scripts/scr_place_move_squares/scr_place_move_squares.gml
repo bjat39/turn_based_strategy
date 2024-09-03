@@ -21,7 +21,7 @@ function scr_place_move_squares(){
 		var i_x; //x position we check to check the move node
 		i_x = 64 + global.cell_size * i;
 
-		if (mp_grid_path(global.map_grid,global.navigate,global.selected.cur_node_x,global.selected.cur_node_y,i_x,row,0))
+		if (mp_grid_path(global.map_grid,global.navigate,global.selected.cur_node_x,global.selected.cur_node_y,i_x,row,0)) //takes into account blockages like enemies
 		{//VERY IMPORTANT
 			if (path_get_length(global.navigate) <= global.selected.pixel_dist) 
 			{
