@@ -8,10 +8,9 @@ enum STATES
 
 enum UNIT_STATE
 {
-	READY,
-	MOVING,
-	ATTACKING,
-	FINISHED
+	READY, //can move and attack / moving
+	MOVED, //can't move, can attack / attacking
+	FINISHED //can't do either
 }
 
 global.cell_size = 32;

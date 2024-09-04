@@ -1,5 +1,12 @@
 function scr_place_attack_squares(){
 	mp_grid_clear_rectangle(global.map_grid,0,0,640,360); 
+	
+	
+	with (obj_move_square) //Move aaround obstacles
+	{
+		instance_destroy()
+	}
+	
 	with (par_player) //Move aaround obstacles
 	{
 		if (self.id != global.selected.id) //{mp_grid_add_cell(global.map_grid, round(x/32)-2,round(y/32)-2);}
@@ -37,7 +44,8 @@ function scr_place_attack_squares(){
 		if (mp_grid_path(global.map_grid,global.navigate,global.selected.cur_node_x,global.selected.cur_node_y,i_x,row,0))
 		{//VERY IMPORTANT
 			var path_length = path_get_length(global.navigate)
-			if (path_length <= global.selected.attack_pixel_dist and !(path_length <= global.selected.pixel_dist)) 
+			var total_dist = global.selected.attack_pixel_dist + global.selected.pixel_dist;
+			if (path_length <= total_dist and !(path_length <= global.selected.pixel_dist)) 
 			{
 				instance_create_layer(i_x,row,"Instances",obj_attack_square1);
 			}

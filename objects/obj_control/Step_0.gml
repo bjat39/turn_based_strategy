@@ -11,6 +11,8 @@ if (keyboard_check_pressed(ord("R")))
 	{
 		pixel_dist = orig_pixel_dist;
 		attacked = false;
+		//unit_state = UNIT_STATE.READY;
+		
 	}
 	global.state = STATES.AI_TURN
 	//if(instance_number(par_enemy > 0)) {global.state = STATES.AI_TURN;} //remove later
