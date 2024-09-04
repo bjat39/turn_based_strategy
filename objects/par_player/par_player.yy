@@ -26,7 +26,7 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"type","filters":[],"listItems":[],"multiselect":false,"name":"type","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":1,},
     {"$GMObjectProperty":"v1","%Name":"attacked","filters":[],"listItems":[],"multiselect":false,"name":"attacked","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
-    {"$GMObjectProperty":"v1","%Name":"attack_pixel_dist","filters":[],"listItems":[],"multiselect":false,"name":"attack_pixel_dist","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"132","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"attack_pixel_dist","filters":[],"listItems":[],"multiselect":false,"name":"attack_pixel_dist","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"32","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"pixel_dist","filters":[],"listItems":[],"multiselect":false,"name":"pixel_dist","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"100","varType":0,},
   ],
   "resourceType":"GMObject",

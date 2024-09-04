@@ -6,6 +6,7 @@ unit_state = UNIT_STATE.READY;
 moved = false;
 attacked = false;
 
+attack_pixel_dist = 96;
 pixel_dist = 100; //Pixel distance, how far they can move
 orig_pixel_dist = pixel_dist;
 

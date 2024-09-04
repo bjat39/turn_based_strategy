@@ -7,20 +7,23 @@ function scr_place_attack_squares(){
 		instance_destroy()
 	}
 	
-	with (par_player) //Move aaround obstacles
+	if (global.selected.type = 1)
 	{
-		if (self.id != global.selected.id) //{mp_grid_add_cell(global.map_grid, round(x/32)-2,round(y/32)-2);}
+		with (par_player) //Move aaround obstacles
 		{
-			mp_grid_add_rectangle(global.map_grid,x,y,x,y) //*replace with an object please
+			if (self.id != global.selected.id) //{mp_grid_add_cell(global.map_grid, round(x/32)-2,round(y/32)-2);}
+			{
+				mp_grid_add_rectangle(global.map_grid,x,y,x,y) //*replace with an object please
+			}
 		}
-	}
 	
-	with (par_enemy) //Move aaround obstacles
-	{
-		//if (self.id != global.selected.id) //{mp_grid_add_cell(global.map_grid, round(x/32)-2,round(y/32)-2);}
-		//{
-		mp_grid_add_rectangle(global.map_grid,x,y,x,y) //*replace with an object please
-		//}
+		with (par_enemy) //Move aaround obstacles
+		{
+			//if (self.id != global.selected.id) //{mp_grid_add_cell(global.map_grid, round(x/32)-2,round(y/32)-2);}
+			//{
+			mp_grid_add_rectangle(global.map_grid,x,y,x,y) //*replace with an object please
+			//}
+		}
 	}
 	
 	//var move_square_id = instance_place_list()
