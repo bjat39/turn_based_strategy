@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_calculate_dist",
   "isCompatibility":false,
   "isDnD":false,

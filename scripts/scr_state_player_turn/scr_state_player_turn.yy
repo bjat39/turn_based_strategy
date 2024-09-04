@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_state_player_turn",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_place_attack_squares",
   "isCompatibility":false,
   "isDnD":false,

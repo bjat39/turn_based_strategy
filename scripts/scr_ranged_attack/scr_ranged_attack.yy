@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_ranged_attack",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_navigation_attack",
   "isCompatibility":false,
   "isDnD":false,

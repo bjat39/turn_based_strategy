@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_place_move_squares_ai",
   "isCompatibility":false,
   "isDnD":false,
