@@ -7,8 +7,7 @@ function scr_place_attack_squares(){
 		instance_destroy()
 	}
 	
-	if (global.selected.type = 1)
-	{
+	
 		with (par_player) //Move aaround obstacles
 		{
 			if (self.id != global.selected.id) //{mp_grid_add_cell(global.map_grid, round(x/32)-2,round(y/32)-2);}
@@ -24,7 +23,6 @@ function scr_place_attack_squares(){
 			mp_grid_add_rectangle(global.map_grid,x,y,x,y) //*replace with an object please
 			//}
 		}
-	}
 	
 	//var move_square_id = instance_place_list()
 	//var move_square_num = instance_number(obj_move_square)
@@ -52,6 +50,15 @@ function scr_place_attack_squares(){
 			{
 				instance_create_layer(i_x,row,"Instances",obj_attack_square1);
 			}
+			
+			//with (par_enemy)
+			//{
+			//	mp_grid_clear_rectangle(global.map_grid,x,y,x,y) //allows pathing to the enemy, unfortunately it repeats every loop, and also might let them path to farther away enemies
+			//}
+			//with (par_player)
+			//{
+			//	mp_grid_clear_rectangle(global.map_grid,x,y,x,y) //allows pathing to the enemy, unfortunately it repeats every loop, and also might let them path to farther away enemies
+			//}
 		}
 		//	else
 		//	{

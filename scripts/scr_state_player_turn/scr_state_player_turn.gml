@@ -15,14 +15,24 @@ function scr_state_player_turn(){
 		
 			with (obj_move_square){instance_destroy();}
 			with (obj_attack_square) {instance_destroy();}
-		
+			with (obj_attack_square1) {instance_destroy();}
+			
+			scr_place_attack_squares();
+			
 			if (player.type = 2)
 			{
 				if (player.attacked == false)
 				{
 					with (par_enemy)
 					{  //130 = five square-ish range
-						if (distance_to_object(global.selected) <= 130){instance_create_layer(x,y,"Instances",obj_attack_square);}
+						//get horizontal and vertical distance of vector
+						x_dist = distance_to_point(global.selected.x,y)
+						y_dist = distance_to_point(x,global.selected.y)
+						total_dist = x_dist + y_dist;
+						if (total_dist <= 196){instance_create_layer(x,y,"Instances",obj_attack_square);}
+						//if (distance_to_object(global.selected) <= 130){instance_create_layer(x,y,"Instances",obj_attack_square);}
+						
+						//if (instance_position(x,y,obj_attack_square1)){instance_create_layer(x,y,"Instances",obj_attack_square);}
 						
 						//path_
 						//scr_navigation(x,y,round(mouse_x / global.cell_size) * global.cell_size,round(mouse_y/global.cell_size)*global.cell_size,pace); //current object's x and y
@@ -31,7 +41,7 @@ function scr_state_player_turn(){
 				}
 			}
 			
-			scr_place_attack_squares();
+			//scr_place_attack_squares();
 			scr_place_move_squares();
 
 		}
@@ -43,6 +53,7 @@ function scr_state_player_turn(){
 			global.selected = noone;
 			with (obj_move_square) {instance_destroy();}
 			with (obj_attack_square) {instance_destroy();}
+			with (obj_attack_square1) {instance_destroy();}
 		}
 	}
 	
@@ -53,6 +64,7 @@ function scr_state_player_turn(){
 			global.moving = true; //Moving
 			with (obj_move_square) {instance_destroy();}
 			with (obj_attack_square) {instance_destroy();}
+			with (obj_attack_square1) {instance_destroy();}
 			with (global.selected)
 			{
 				sprite_index = run_anim;
@@ -88,6 +100,7 @@ function scr_state_player_turn(){
 			}
 			with (obj_move_square) {instance_destroy();}
 			with (obj_attack_square) {instance_destroy();}
+			with (obj_attack_square1) {instance_destroy();}
 		}
 	}
 	
@@ -133,12 +146,14 @@ function scr_state_player_turn(){
 				moved = false;
 				with (obj_move_square) {instance_destroy();}
 				with (obj_attack_square) {instance_destroy();}
+				with (obj_attack_square1) {instance_destroy();}
 			}
 			else if (moved == false and attacked == false)
 			{
 				mp_grid_clear_rectangle(global.map_grid,0,0,640,360); 
 				with (obj_move_square) {instance_destroy();}
 				with (obj_attack_square) {instance_destroy();}
+				with (obj_attack_square1) {instance_destroy();}
 				global.selected = noone;
 			}
 		}
