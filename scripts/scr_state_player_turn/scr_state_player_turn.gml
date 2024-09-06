@@ -29,7 +29,7 @@ function scr_state_player_turn(){
 						x_dist = distance_to_point(global.selected.x,y)
 						y_dist = distance_to_point(x,global.selected.y)
 						total_dist = x_dist + y_dist;
-						if (total_dist <= 196){instance_create_layer(x,y,"Instances",obj_attack_square);}
+						if (total_dist <= 96){instance_create_layer(x,y,"Instances",obj_attack_square);}
 						//if (distance_to_object(global.selected) <= 130){instance_create_layer(x,y,"Instances",obj_attack_square);}
 						
 						//if (instance_position(x,y,obj_attack_square1)){instance_create_layer(x,y,"Instances",obj_attack_square);}
@@ -132,7 +132,7 @@ function scr_state_player_turn(){
 		}
 	}
 	
-	if (keyboard_check_pressed(ord("X") && global.selected != noone))
+	if (keyboard_check_pressed(ord("X")) and global.selected != noone and global.attacking == false and global.moving == false)
 	{
 		with (global.selected)
 		{
