@@ -1,8 +1,6 @@
 /// @description 
 type = 2; //1 = melee, 2 = ranged, 3 = magic
 
-unit_state = UNIT_STATE.READY;
-
 moved = false;
 attacked = false;
 

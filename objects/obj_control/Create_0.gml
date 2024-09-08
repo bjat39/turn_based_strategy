@@ -14,4 +14,4 @@ global.ai_activated = false; //unit able to move
 global.damage_dealt = 0;
 
 //Loops vars - check the entire grid
-row = 128;
+row = 32;//128;

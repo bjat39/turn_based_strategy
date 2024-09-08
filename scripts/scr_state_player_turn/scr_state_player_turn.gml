@@ -150,7 +150,7 @@ function scr_state_player_turn(){
 			}
 			else if (moved == false and attacked == false)
 			{
-				mp_grid_clear_rectangle(global.map_grid,0,0,640,360); 
+				mp_grid_clear_rectangle(global.map_grid,0,0,room_width,room_height); 
 				with (obj_move_square) {instance_destroy();}
 				with (obj_attack_square) {instance_destroy();}
 				with (obj_attack_square1) {instance_destroy();}

@@ -4,7 +4,8 @@ type = 1; //1 = melee, 2 = ranged, 3 = magic
 moved = false;
 attacked = false; //only attack once a turn
 
-unit_state = UNIT_STATE.READY; //combine "attacked" into state machine?
+//x += 16;
+//y += 16;
 
 //attack_pixel_dist = 132; //move range + attack range, total attack range
 attack_pixel_dist = 32;
@@ -26,7 +27,6 @@ run_anim = spr_spearman_run;
 attack_anim = spr_spearman_melee;
 death_anim = spr_spearman_death;
 image_speed = 0.5;
-
 
 //range = 1; //range in spaces
 //Stats

@@ -1,5 +1,5 @@
 function scr_place_attack_squares(){
-	mp_grid_clear_rectangle(global.map_grid,0,0,640,360); 
+	mp_grid_clear_rectangle(global.map_grid,0,0,room_width,room_height); 
 	
 	
 	with (obj_move_square) //Move aaround obstacles
@@ -36,10 +36,10 @@ function scr_place_attack_squares(){
 	//	//pixel_dist -= path_get_length(global.navigate); //Take off distance, might want to remove this
 	//}
 	
-	for (i = 0; i < 18; i++)
+	for (i = 0; i < obj_grid.grid_rows + 1; i++)
 	{
 		var i_x; //x position we check to check the move node
-		i_x = 64 + global.cell_size * i;
+		i_x = 32 + global.cell_size * i;
 		//global.attack_navigate
 		
 		if (mp_grid_path(global.map_grid,global.navigate,global.selected.cur_node_x,global.selected.cur_node_y,i_x,row,0))
@@ -67,16 +67,16 @@ function scr_place_attack_squares(){
 		//}
 		//else {mp_grid_add_rectangle(global.map_grid,i_x,row,i_x,row);} //*WATCH THIS, may remove for an object over the Instance layer
 		
-		if (i_x >= 576) //last row of the grid, then it needs to move down
+		if (i_x >= 576) //last row of the grid, then it needs to move down //used to be 576, for 640 width
 		{
 			i = -1;
 			row += global.cell_size;
 		}
 		
-		if (row > 320) //bottom row
+		if (row > 320) //bottom row //used to be 320 , 360 height
 		{
-			row = 128;
-			i = 20; //stop loop 
+			row = 32;
+			i = 100000;//20; //stop loop 
 		}
 	}
 }
