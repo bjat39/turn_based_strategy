@@ -13,7 +13,7 @@ for (xx = 0; xx < map_width; xx += 1) //does the x column first
 {
 	for (yy = 0; yy < map_height; yy += 1)
 	{
-		map[xx,yy] = instance_create_layer(xx * GRID_SIZE, yy * GRID_SIZE, "Instances", obj_node);
+		map[xx,yy] = instance_create_layer(xx * GRID_SIZE, yy * GRID_SIZE, "Nodes", obj_node);
 	}
 }
 
@@ -36,18 +36,22 @@ for (xx = 0; xx < map_width; xx += 1) //does the x column first
 	}
 }
 
-with (instance_create_layer(5*GRID_SIZE,5*GRID_SIZE,"Instances",obj_hero))
-{
-	gridX = 5;
-	gridY = 5;
-	name = "Neft";
-	map[gridX,gridY].occupant = id;
-}
+instance_create_layer(mouse_x,mouse_y,"Instances", obj_cursor);
+
+
 
 with (instance_create_layer(5*GRID_SIZE,5*GRID_SIZE,"Instances",obj_hero))
 {
 	gridX = 5;
+	gridY = 5;
+	actor_name = "Neft";
+	map[gridX,gridY].occupant = id;
+}
+
+with (instance_create_layer(5*GRID_SIZE,8*GRID_SIZE,"Instances",obj_hero))
+{
+	gridX = 5;
 	gridY = 8;
-	name = "Oriel";
+	actor_name = "Oriel";
 	map[gridX,gridY].occupant = id;
 }
