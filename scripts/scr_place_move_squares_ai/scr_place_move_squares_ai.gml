@@ -1,5 +1,5 @@
 function scr_place_move_squares_ai(){
-	mp_grid_clear_rectangle(global.map_grid,0,0,640,360); 
+	mp_grid_clear_rectangle(global.map_grid,0,0,room_width,room_height); 
 	with (par_enemy) //Move around enemies
 	{
 		if (self.id != global.ai_selected.id) //{mp_grid_add_cell(global.map_grid, round(x/32)-2,round(y/32)-2);}
@@ -16,10 +16,10 @@ function scr_place_move_squares_ai(){
 		//}
 	}
 	
-	for (i = 0; i < 18; i++)
+	for (i = 0; i < obj_grid.grid_rows + 1; i++)
 	{
 		var i_x; //x position we check to check the move node
-		i_x = 64 + global.cell_size * i;
+		i_x = 32 + global.cell_size * i;
 
 		if (mp_grid_path(global.map_grid,global.navigate,global.ai_selected.cur_node_x,global.ai_selected.cur_node_y,i_x,row,0))
 		{
@@ -42,8 +42,8 @@ function scr_place_move_squares_ai(){
 		
 		if (row > 320) //bottom row
 		{
-			row = 128;
-			i = 20; //stop loop 
+			row = 32;//128;
+			i = 100000;//20; //stop loop 
 		}
 	}
 }
