@@ -24,6 +24,19 @@ if (hoverNode != noone)
 	
 	draw_set_color(c_white);
 	draw_text(0,0,tempText);
+	
+	tempText = hoverNode.terrain_type;
+	
+	if (hoverNode.passable)
+	{
+		tempText += "passable = true " + "cost = " + string(hoverNode.cost);
+	}
+	
+	draw_set_color(c_black);
+	draw_rectangle(0,20,string_width(tempText),20+string_height(tempText),false);
+	
+	draw_set_color(c_white);
+	draw_text(0,20,tempText);
 }
 
 if (selected_actor != noone)

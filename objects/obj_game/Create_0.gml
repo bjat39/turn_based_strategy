@@ -1,6 +1,7 @@
 /// @description 
 #macro GRID_SIZE 32
 
+state = "initialising";
 
 globalvar map; //array, hold onto all nodes in map, holds onto their ids in the order of game grid
 
@@ -14,6 +15,8 @@ for (xx = 0; xx < map_width; xx += 1) //does the x column first
 	for (yy = 0; yy < map_height; yy += 1)
 	{
 		map[xx,yy] = instance_create_layer(xx * GRID_SIZE, yy * GRID_SIZE, "Nodes", obj_node);
+		map[xx,yy].gridX = xx;
+		map[xx,yy].gridY = yy;
 	}
 }
 
@@ -36,22 +39,22 @@ for (xx = 0; xx < map_width; xx += 1) //does the x column first
 	}
 }
 
-instance_create_layer(mouse_x,mouse_y,"Instances", obj_cursor);
+//instance_create_layer(mouse_x,mouse_y,"Instances", obj_cursor);
 
 
 
-with (instance_create_layer(5*GRID_SIZE,5*GRID_SIZE,"Instances",obj_hero))
-{
-	gridX = 5;
-	gridY = 5;
-	actor_name = "Neft";
-	map[gridX,gridY].occupant = id;
-}
+//with (instance_create_layer(5*GRID_SIZE,5*GRID_SIZE,"Instances",obj_hero))
+//{
+//	gridX = 5;
+//	gridY = 5;
+//	actor_name = "Neft";
+//	map[gridX,gridY].occupant = id;
+//}
 
-with (instance_create_layer(5*GRID_SIZE,8*GRID_SIZE,"Instances",obj_hero))
-{
-	gridX = 5;
-	gridY = 8;
-	actor_name = "Oriel";
-	map[gridX,gridY].occupant = id;
-}
+//with (instance_create_layer(5*GRID_SIZE,8*GRID_SIZE,"Instances",obj_hero))
+//{
+//	gridX = 5;
+//	gridY = 8;
+//	actor_name = "Oriel";
+//	map[gridX,gridY].occupant = id;
+//}

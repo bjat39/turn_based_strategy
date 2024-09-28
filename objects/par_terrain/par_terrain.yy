@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_hero",
+  "%Name":"par_terrain",
   "eventList":[],
   "managed":true,
-  "name":"obj_hero",
+  "name":"par_terrain",
   "overriddenProperties":[],
   "parent":{
     "name":"ds_grid",
     "path":"folders/Objects/ds_grid.yy",
   },
-  "parentObjectId":{
-    "name":"par_actor",
-    "path":"objects/par_actor/par_actor.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_hero",
-    "path":"sprites/spr_hero/spr_hero.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
