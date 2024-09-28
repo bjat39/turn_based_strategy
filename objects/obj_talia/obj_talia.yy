@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_soldier",
+  "%Name":"obj_talia",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_soldier",
+  "name":"obj_talia",
   "overriddenProperties":[],
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Objects/ds_grid.yy",
+    "name":"actors",
+    "path":"folders/Objects/ds_grid/actors.yy",
   },
   "parentObjectId":{
-    "name":"par_actor",
-    "path":"objects/par_actor/par_actor.yy",
+    "name":"par_player1",
+    "path":"objects/par_player1/par_player1.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

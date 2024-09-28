@@ -4,11 +4,11 @@ switch(state)
 {
 	
 	case "initialising":
-		with (obj_node)
+		with (obj_node) //every node
 		{
-			if (instance_position(x+16,y+16,par_terrain))
+			if (instance_position(x+GRID_SIZE/2,y+GRID_SIZE/2,par_terrain))
 			{
-				tempTerrain = instance_position(x+16,y+16,par_terrain);
+				tempTerrain = instance_position(x+GRID_SIZE/2,y+GRID_SIZE/2,par_terrain);
 	
 				switch(tempTerrain.terrain_type)
 				{
@@ -32,9 +32,9 @@ switch(state)
 				}
 			}
 			
-			if (instance_position(x+16,y+16,par_actor)) //if we detect an actor at that position
+			if (instance_position(x+GRID_SIZE/2,y+GRID_SIZE/2,par_actor)) //if we detect an actor at that position
 			{
-				occupant = instance_position(x+16,y+16,par_actor); //store them in occupant
+				occupant = instance_position(x+GRID_SIZE/2,y+GRID_SIZE/2,par_actor); //store instance in occupant
 				occupant.gridX = gridX; 
 				occupant.gridY = gridY;
 			}

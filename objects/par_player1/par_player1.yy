@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_hero",
+  "%Name":"par_player1",
   "eventList":[],
   "managed":true,
-  "name":"obj_hero",
+  "name":"par_player1",
   "overriddenProperties":[],
   "parent":{
     "name":"actors",
     "path":"folders/Objects/ds_grid/actors.yy",
   },
   "parentObjectId":{
-    "name":"par_player1",
-    "path":"objects/par_player1/par_player1.yy",
+    "name":"par_actor",
+    "path":"objects/par_actor/par_actor.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_hero",
-    "path":"sprites/spr_hero/spr_hero.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

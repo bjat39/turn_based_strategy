@@ -8,8 +8,8 @@
   "name":"par_actor",
   "overriddenProperties":[],
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Objects/ds_grid.yy",
+    "name":"actors",
+    "path":"folders/Objects/ds_grid/actors.yy",
   },
   "parentObjectId":null,
   "persistent":false,
