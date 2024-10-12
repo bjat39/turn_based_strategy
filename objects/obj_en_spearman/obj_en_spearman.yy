@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"enemy",
-    "path":"folders/Objects/enemy.yy",
+    "path":"folders/Objects/mp_grid/enemy.yy",
   },
   "parentObjectId":{
     "name":"par_enemy",

@@ -6,8 +6,8 @@
   "name":"par_player",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"mp_grid",
+    "path":"folders/Objects/mp_grid.yy",
   },
   "parentObjectId":null,
   "persistent":false,

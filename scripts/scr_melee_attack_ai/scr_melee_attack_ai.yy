@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_melee_attack_ai",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"mp_grid",
+    "path":"folders/Scripts/mp_grid.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

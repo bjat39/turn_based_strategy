@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_navigation",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"mp_grid",
+    "path":"folders/Scripts/mp_grid.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
