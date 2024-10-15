@@ -6,7 +6,7 @@ function scr_wipe_nodes(){
 	{
 		move_node = false;
 		G = 0;
-		parent = noone;
+		parent_node = noone;
 		colour = c_white;
 	}
 }

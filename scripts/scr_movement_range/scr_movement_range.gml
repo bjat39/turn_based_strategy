@@ -4,7 +4,7 @@ function scr_movement_range(origin_node,move_range,remaining_actions){ //pathfin
 	//Reset all node data
 	scr_wipe_nodes();
 	
-	var open, closed; //node lists
+	var open, closed; //node lists,
 	var start_node, current_node, curr_neighbour; //holds instance ids, start_node node, current node
 	var temp_G, range, cost_mod;
 	
@@ -98,6 +98,7 @@ function scr_movement_range(origin_node,move_range,remaining_actions){ //pathfin
 		
 		scr_colour_move_node(current_node,move_range,remaining_actions);
 	}
+	
 	
 	//DESTROY closed list!!!!!
 	ds_list_destroy(closed);
