@@ -1,7 +1,28 @@
 /// @description 
 #macro GRID_SIZE 32
 
-state = "initialising";
+game_state = "initialising"; //initialising, player, ai1,ai2 //turn state machine
+
+randomize();
+
+turn_order = ds_list_create(); //player phase, enemy phase
+
+if (object_exists(par_neft_faction))
+{
+	ds_list_add(turn_order,"neft_faction_turn"); //usually 0 on turn_counter
+}
+if (object_exists(par_aleneti_faction))
+{
+	ds_list_add(turn_order,"aleneti_faction_turn");
+}
+
+turn_counter = 0; //keeps track of if it's player phase, enemy phase
+
+round_counter = 0; //after player phase and enemy phase, this is incremented by 1
+
+//turn_max = 0; ds_list_size()
+
+current_actor = noone;
 
 globalvar map; //array, hold onto all nodes in map, holds onto their ids in the order of game grid
 

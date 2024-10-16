@@ -5,6 +5,7 @@ y = mouse_y;
 gridX = floor(x/GRID_SIZE);
 gridY = floor(y/GRID_SIZE);
 
+//Outside bounds
 if (gridX < 0 or gridY < 0 or gridX >= room_width/GRID_SIZE or gridY >= room_height/GRID_SIZE) //outside bounds
 {
 	hoverNode = noone;
@@ -15,21 +16,21 @@ else
 }
 
 
-if (mouse_check_button_pressed(mb_left)) //switch with z
-{
-	if (hoverNode.occupant != noone)
-	{
-		selected_actor = hoverNode.occupant;
-		selected_actor.actions = 2;
-		scr_movement_range(hoverNode,
-			selected_actor.move,selected_actor.actions); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
-	}
-	else
-	{
-		selected_actor = noone;
-		scr_wipe_nodes();
-	}
-}
+//if (mouse_check_button_pressed(mb_left)) //switch with z
+//{
+//	if (hoverNode.occupant != noone)
+//	{
+//		selected_actor = hoverNode.occupant;
+//		selected_actor.actions = 2;
+//		scr_movement_range(hoverNode,
+//			selected_actor.move,selected_actor.actions); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
+//	}
+//	else
+//	{
+//		selected_actor = noone;
+//		scr_wipe_nodes();
+//	}
+//}
 
 if (mouse_check_button_pressed(mb_right))
 {
@@ -92,9 +93,9 @@ if (mouse_check_button_pressed(mb_right))
 		
 		selected_actor = noone;
 	}
-	else //click on invalid node
-	{
-		selected_actor = noone;
-		scr_wipe_nodes();
-	}
+	//else //click on invalid node
+	//{
+	//	selected_actor = noone;
+	//	scr_wipe_nodes();
+	//}
 }

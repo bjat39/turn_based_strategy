@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"par_player1",
-  "eventList":[],
+  "%Name":"par_neft_faction",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"par_player1",
+  "name":"par_neft_faction",
   "overriddenProperties":[],
   "parent":{
     "name":"actors",

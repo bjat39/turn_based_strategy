@@ -12,8 +12,8 @@
     "path":"folders/Objects/ds_grid/actors.yy",
   },
   "parentObjectId":{
-    "name":"par_player1",
-    "path":"objects/par_player1/par_player1.yy",
+    "name":"par_neft_faction",
+    "path":"objects/par_neft_faction/par_neft_faction.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

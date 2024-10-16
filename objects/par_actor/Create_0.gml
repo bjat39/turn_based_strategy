@@ -10,7 +10,11 @@ actor_name = "error";
 
 move = 5;
 
-actions = 2; //get rid of this eventually?
+actions = 2; //get rid of this eventually? slowly phase out
+
+//proper action variables
+moved = false;
+attacked = false; //only attack once a turn
 
 //variables related to pathing
 //create path data structure

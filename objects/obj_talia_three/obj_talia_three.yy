@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_hero",
-  "eventList":[],
+  "%Name":"obj_talia_three",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_hero",
+  "name":"obj_talia_three",
   "overriddenProperties":[],
   "parent":{
     "name":"actors",

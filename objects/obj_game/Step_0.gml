@@ -1,8 +1,7 @@
 /// @description 
 
-switch(state)
+switch(game_state)
 {
-	
 	case "initialising":
 		with (obj_node) //every node
 		{
@@ -39,7 +38,24 @@ switch(state)
 				occupant.gridY = gridY;
 			}
 		}
-	state = "ready";
+	game_state = ds_list_find_value(turn_order,0); //"player";
 	instance_create_layer(mouse_x,mouse_y,"Instances", obj_cursor);
 	break;
+	
+
+	case "neft_faction_turn": scr_state_player_turn1(); break;
+	case "aleneti_faction_turn": break;//scr_state_ai_turn(); break;
+}
+
+if (keyboard_check_pressed(ord("R")))
+{
+	with (par_neft_faction)
+	{
+		pixel_dist = orig_pixel_dist;
+		attacked = false;
+		//unit_state = UNIT_STATE.READY;
+		
+	}
+	//global.state = STATES.AI_TURN
+	//if(instance_number(par_enemy > 0)) {global.state = STATES.AI_TURN;} //remove later
 }
