@@ -15,11 +15,15 @@ switch(state)
 			
 			state = "idle";
 			
-			//if (actions > 0) ///////////////////////
-			//{
-			//	obj_cursor.selected_actor = id;
-			//	scr_movement_range(map[gridX,gridY],move,actions);
-			//}
+			if (actions > 0) ///////////////////////
+			{
+				obj_game.selected_actor = id;
+				scr_movement_range(map[gridX,gridY],move,actions);
+			}
+			else
+			{
+				moved = true;
+			}
 		}
 		break;
 }

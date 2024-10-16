@@ -60,6 +60,20 @@ for (xx = 0; xx < map_width; xx += 1) //does the x column first
 	}
 }
 
+//gridX = obj_cursor.x; //where cursor is in relation to grid
+//gridY = obj_cursor.y;
+//gridX = floor(obj_cursor.x/GRID_SIZE);
+//gridY = floor(obj_cursor.y/GRID_SIZE);
+
+//obj_cursor variables (obj_cursor.gridX)
+hoverNode = noone; //whichever node the cursor is positioned over
+
+selected_actor = noone;
+
+tempText = noone;
+
+
+draw_set_font(fnt_courier);
 //instance_create_layer(mouse_x,mouse_y,"Instances", obj_cursor);
 
 

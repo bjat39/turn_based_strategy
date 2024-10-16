@@ -1,24 +1,126 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_state_player_turn1(){
-	if (current_actor == noone)
+	//if (current_actor == noone)
+	//{
+	//Outside bounds
+	obj_cursor.x = mouse_x;
+	obj_cursor.y = mouse_y;
+
+	gridX = floor(obj_cursor.x/GRID_SIZE);
+	gridY = floor(obj_cursor.y/GRID_SIZE);
+	
+	if (gridX < 0 or gridY < 0 or gridX >= room_width/GRID_SIZE or gridY >= room_height/GRID_SIZE) //outside bounds
 	{
-		if (mouse_check_button_pressed(mb_left)) //switch with z
+		hoverNode = noone;
+	}
+	else
+	{
+		hoverNode = map[gridX,gridY];
+	}
+
+
+	if (mouse_check_button_pressed(mb_left)) //switch with z
+	{
+		if (hoverNode.occupant != noone)
 		{
-			if (obj_cursor.hoverNode.occupant != noone)
+			selected_actor = hoverNode.occupant;
+			selected_actor.actions = 2;
+			scr_movement_range(hoverNode,
+				selected_actor.move,selected_actor.actions); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
+		}
+		else
+		{
+			selected_actor = noone;
+			scr_wipe_nodes();
+		}
+	}
+
+	if (mouse_check_button_pressed(mb_right))
+	{
+		if (selected_actor != noone and hoverNode.move_node)//hoverNode.occupant == noone and hoverNode.passable)
+		{
+			current_node = hoverNode; //new variable
+		
+			//create priority queue
+			path = ds_priority_create();
+		
+			//add current node to queue
+			ds_priority_add(path,current_node,current_node.G);
+		
+			//step through each node, parent to parent, until done
+			while(current_node.parent_node != noone)
 			{
-				selected_actor = obj_cursor.hoverNode.occupant;
-				selected_actor.actions = 2;
-				scr_movement_range(hoverNode,
-					selected_actor.move,selected_actor.actions); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
+				//add parent node to queue. priority equal to parent's g score
+				ds_priority_add(path, current_node.parent_node,current_node.parent_node.G);
+			
+				//set current_node to equal to current node's parent, ready to go again!
+				current_node = current_node.parent_node;
 			}
-			else
+			do
 			{
-				selected_actor = noone;
+				//delete lowest priority node (closest to actors) store id in actors
+				current_node = ds_priority_delete_min(path);
+			
+				//add current node's sprite coordinates to selected actor's path
+				path_add_point(selected_actor.movement_path,current_node.x,current_node.y,100); //100% of movement cost
+			
+			}until(ds_priority_empty(path))
+		
+			//clean up queue
+			ds_priority_destroy(path);
+		
+			//first clear node of selected actor
+			map[selected_actor.gridX,selected_actor.gridY].occupant = noone;
+		
+			//update selected actor's appropriate grid coords
+			selected_actor.gridX = gridX;
+			selected_actor.gridY = gridY;
+		
+			//update selected actor's future node
+			hoverNode.occupant = selected_actor;
+		
+			//send selected actor on its way
+			selected_actor.state =	"begin_path";
+		
+			//reduce selected actor's actions and wipe nodes
+			if (hoverNode.G > selected_actor.move)
+			{
+				selected_actor.actions -= 2;
 				scr_wipe_nodes();
 			}
-		}
+			else //less than a double move, change this
+			{
+				selected_actor.actions -= 1;//-= 1;
+				scr_wipe_nodes();
+			}
 		
-		//turn_counter ++;
+			selected_actor = noone;
+		}
+		//else //click on invalid node
+		//{
+		//	selected_actor = noone;
+		//	scr_wipe_nodes();
+		//}
 	}
+	if (mouse_check_button_pressed(mb_left)) //switch with z
+	{
+		if (hoverNode.occupant != noone)
+		{
+			selected_actor = hoverNode.occupant;
+			selected_actor.actions = 2;
+			scr_movement_range(hoverNode,
+				selected_actor.move,selected_actor.actions); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
+		}
+		else
+		{
+			selected_actor = noone;
+			scr_wipe_nodes();
+		}
+	}
+	
+	
+	
+	//turn_counter ++;
+	//}
 }

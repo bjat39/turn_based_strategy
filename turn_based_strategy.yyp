@@ -54,6 +54,7 @@
   "name":"turn_based_strategy",
   "resources":[
     {"id":{"name":"fnt_arial","path":"fonts/fnt_arial/fnt_arial.yy",},},
+    {"id":{"name":"fnt_courier","path":"fonts/fnt_courier/fnt_courier.yy",},},
     {"id":{"name":"obj_archer","path":"objects/obj_archer/obj_archer.yy",},},
     {"id":{"name":"obj_arrow","path":"objects/obj_arrow/obj_arrow.yy",},},
     {"id":{"name":"obj_attack_square_ai","path":"objects/obj_attack_square_ai/obj_attack_square_ai.yy",},},
@@ -178,6 +179,7 @@
     {"id":{"name":"scr_ranged_attack_ai","path":"scripts/scr_ranged_attack_ai/scr_ranged_attack_ai.yy",},},
     {"id":{"name":"scr_ranged_attack","path":"scripts/scr_ranged_attack/scr_ranged_attack.yy",},},
     {"id":{"name":"scr_state_ai_turn","path":"scripts/scr_state_ai_turn/scr_state_ai_turn.yy",},},
+    {"id":{"name":"scr_state_initialize_grid","path":"scripts/scr_state_initialize_grid/scr_state_initialize_grid.yy",},},
     {"id":{"name":"scr_state_player_turn","path":"scripts/scr_state_player_turn/scr_state_player_turn.yy",},},
     {"id":{"name":"scr_state_player_turn1","path":"scripts/scr_state_player_turn1/scr_state_player_turn1.yy",},},
     {"id":{"name":"scr_wipe_nodes","path":"scripts/scr_wipe_nodes/scr_wipe_nodes.yy",},},
