@@ -37,11 +37,15 @@ if (hoverNode != noone)
 	
 	draw_set_color(c_white);
 	draw_text(0,20,tempText);
+	
+	//tempText = "Avo: " + hoverNode.terrain_avoid + ", " + "Def: " + hoverNode.terrain_defense;
 }
 
 if (selected_actor != noone)
 {
 	tempText = selected_actor.actor_name;
+	
+	temp_hit_points = "HP: " + string(selected_actor.current_hit_points) + " / " + string(selected_actor.max_hit_points);
 	
 	draw_set_color(c_black);
 	draw_rectangle(0,room_height,string_width(tempText),room_height-string_height(tempText),false)

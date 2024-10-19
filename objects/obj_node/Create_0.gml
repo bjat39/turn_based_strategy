@@ -24,3 +24,7 @@ G = 0; //distance between current node and start node, how far away this node is
 move_node = false; //check if valid node for movement
 
 cost = 1;
+
+//Terrain statistics
+terrain_avoid = 0;
+terrain_defense = 0;

@@ -19,6 +19,8 @@ function scr_state_initialize_grid(){
 					terrain_type = "tree";
 					sprite_index = spr_tree;
 					cost = 2;
+					terrain_avoid = 40; //trees work more like ranged cover than in fire emblem
+					terrain_defense = 2;
 			
 					break;
 			}
