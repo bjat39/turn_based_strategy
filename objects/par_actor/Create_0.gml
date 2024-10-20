@@ -27,12 +27,14 @@ current_node = obj_game.hoverNode;
 ai_type = "player";
 
 faction = "neft";//"player"; //what side they are affliliated with, affects turn order
-class = "Healer Woman"
+class = "Healer Woman";
+description = "Fuggedaboutit";
 
 //Base stats
 move = 5;
 
 level = 1;
+experience_points = 0;
 
 max_hit_points = 1;
 current_hit_points = max_hit_points;

@@ -1,11 +1,9 @@
 /// @description 
 event_inherited(); //do the parent's inherited create event, then our create event
 
-actor_name = "Talia Two";
+actor_name = "Cunt";
 
-faction = "neft";//"player"; //what side they are affliliated with, affects turn order
-class = "Healer Woman";
-description = "That's me.";//\nA distant young girl."
+class = "Infantryman";
 
 //Base stats
 move = 5;

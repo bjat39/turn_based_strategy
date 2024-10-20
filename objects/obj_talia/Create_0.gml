@@ -5,6 +5,7 @@ actor_name = "Talia";
 
 faction = "neft";//"player"; //what side they are affliliated with, affects turn order
 class = "Healer Woman";
+description = "A spirited Alenetian woman.\nA bit of a doormat.";
 
 //Base stats
 move = 5;
