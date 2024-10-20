@@ -25,9 +25,9 @@ function scr_state_player_turn1(){
 		if (hoverNode.occupant != noone)
 		{
 			selected_actor = hoverNode.occupant;
-			selected_actor.actions = 2;
+			//selected_actor.actions = 2;
 			scr_movement_range(hoverNode,
-				selected_actor.move,selected_actor.actions); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
+				selected_actor.move); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
 		}
 		else
 		{
@@ -86,22 +86,22 @@ function scr_state_player_turn1(){
 				selected_actor.state =	"begin_path";
 		
 				//reduce selected actor's actions and wipe nodes
-				if (hoverNode.G > selected_actor.move)
-				{
-					selected_actor.actions -= 2;
-					scr_wipe_nodes();
-				}
-				else //less than a double move, change this
-				{
-					selected_actor.actions -= 1;//-= 1;
-					scr_wipe_nodes();
-				}
+				//if (hoverNode.G > selected_actor.move)
+				//{
+				//	selected_actor.actions -= 2;
+				//	scr_wipe_nodes();
+				//}
+				//else //less than a double move, change this
+				//{
+				//	selected_actor.actions -= 1;//-= 1;
+				scr_wipe_nodes();
+				//}
 		
 				selected_actor = noone;
 			}
 			else
 			{
-				selected_actor.actions = 2;
+				//selected_actor.actions = 2;
 				selected_actor = noone;
 				scr_wipe_nodes();
 			}

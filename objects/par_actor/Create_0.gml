@@ -6,7 +6,7 @@ gridY = 0;
 
 actor_name = "error";
 
-actions = 2; //get rid of this eventually? slowly phase out
+//actions = 2; //get rid of this eventually? slowly phase out
 
 //proper action variables
 moved = false;
@@ -41,18 +41,20 @@ current_hit_points = max_hit_points;
 
 strength_stat = 0;
 magic_stat = 0; //only for mages, instead of strength
-range_stat = 0; //affects hit rate, useless for melee (used to be skill) (range? how much range until it falls off.) 
+marksman_stat = 0; //affects hit rate, useless for melee (used to be skill) (range? how much range until it falls off.) 
 //(+3 points = 1 tile can be hit for sure? but i kind of want accuracy to fall off slowly tho) (total range stat to make it easy to see? make it hard to get one tile of guarantee) (so +4 to get one tile?)
 speed_stat = 0; //affects evasion, if unit has +5 more speed than enemy, double attack
 defence_stat = 0;
 resistance_stat = 0; //magic defense
 luck_stat = 0; //affect hit and evasion (+1 to percentages)
 
+attack_range = marksman_stat / 4;
+
 //Growth rate percentage chance (%) per level up
 max_hit_points_growth = 100;
 strength_growth = 100;
 magic_growth = 0;
-range_growth = 0;
+marksman_growth = 0;
 speed_growth = 50;
 defence_growth = 85;
 resistance_growth = 0; //magic defense

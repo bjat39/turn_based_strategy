@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_movement_range(origin_node,move_range,remaining_actions){ //pathfinding, get nodes for movements
+function scr_movement_range(origin_node,move_range){ //pathfinding, get nodes for movements
 	//Reset all node data
 	scr_wipe_nodes();
 	
@@ -10,7 +10,7 @@ function scr_movement_range(origin_node,move_range,remaining_actions){ //pathfin
 	
 	//Declare relevant variables from arguments
 	start_node = origin_node;
-	range = move_range * remaining_actions; //current number of nodes out we're going for
+	range = move_range; //current number of nodes out we're going for
 	
 	//Create data structures
 	open = ds_priority_create(); //list with a numerical priority attatched to each item, instance ids of nodes
@@ -96,7 +96,7 @@ function scr_movement_range(origin_node,move_range,remaining_actions){ //pathfin
 		current_node = ds_list_find_value(closed, ii);
 		current_node.move_node = true;
 		
-		scr_colour_move_node(current_node,move_range,remaining_actions);
+		scr_colour_move_node(current_node,move_range);
 	}
 	
 	

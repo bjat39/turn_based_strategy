@@ -2,24 +2,24 @@
   "$GMSprite":"",
   "%Name":"spr_beta_talia",
   "bboxMode":0,
-  "bbox_bottom":26,
-  "bbox_left":5,
-  "bbox_right":26,
-  "bbox_top":1,
+  "bbox_bottom":31,
+  "bbox_left":0,
+  "bbox_right":31,
+  "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9e846618-429e-4370-828d-2974da1de851","name":"9e846618-429e-4370-828d-2974da1de851","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"85354b6d-ff4e-4b1d-9e99-4af4e9531ec5","name":"85354b6d-ff4e-4b1d-9e99-4af4e9531ec5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"7448b603-a775-45f0-8ed7-05a5e2bea17c","blendMode":0,"displayName":"default","isLocked":false,"name":"7448b603-a775-45f0-8ed7-05a5e2bea17c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"26e2ff6b-3517-4065-ad69-87d0d528516d","blendMode":0,"displayName":"default","isLocked":false,"name":"26e2ff6b-3517-4065-ad69-87d0d528516d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_beta_talia",
   "nineSlice":{
@@ -88,8 +88,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9e846618-429e-4370-828d-2974da1de851","path":"sprites/spr_beta_talia/spr_beta_talia.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4b5ee56f-027e-4f6f-8dc6-bb1a99582a55","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"85354b6d-ff4e-4b1d-9e99-4af4e9531ec5","path":"sprites/spr_beta_talia/spr_beta_talia.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f0ec07a3-389f-4813-b1eb-0f70317ed950","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
