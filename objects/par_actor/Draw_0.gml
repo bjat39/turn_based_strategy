@@ -1,6 +1,6 @@
 /// @description
-if (obj_game.selected_actor == id) //only the actor who's turn it is will draw a line
-{
+if (obj_game.selected_actor == id and obj_game.selected_actor.ai_type == "player") //only the actor who's turn it is will draw a line
+{ //
 	//if cursor is hovering over a different node other than actors
 	if (obj_game.hoverNode != noone and obj_game.hoverNode != map[gridX,gridY])
 	{

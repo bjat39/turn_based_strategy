@@ -3,9 +3,8 @@ event_inherited(); //do the parent's inherited create event, then our create eve
 
 actor_name = "Talia";
 
-faction = "neft";//"player"; //what side they are affliliated with, affects turn order
 class = "Healer Woman";
-description = "A spirited Alenetian woman.\nA bit of a doormat.";
+description = "A spirited Alenetian woman.\nSomehow, a bit of a doormat.";
 
 //Base stats
 move = 5;
