@@ -20,3 +20,12 @@ function scr_attack_range(current_actor){ //pass id of selected actor
 		}
 	}
 }
+
+//need to get all move nodes
+
+			var path_length = path_get_length(global.navigate)
+			var total_dist = global.selected.attack_pixel_dist + global.selected.pixel_dist;
+			if (path_length <= total_dist and !(path_length <= global.selected.pixel_dist)) 
+			{
+				instance_create_layer(i_x,row,"Instances",obj_attack_square1);
+			}

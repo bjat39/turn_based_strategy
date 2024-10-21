@@ -1,9 +1,9 @@
 /// @description 
 event_inherited(); //do the parent's inherited create event, then our create event
 
-actor_name = "Talia Two";
+actor_name = "Neft";
 
-class = "Healer Woman";
+class = "Mage";
 description = "That's me.";//\nA distant young girl."
 
 //Base stats
@@ -12,7 +12,7 @@ move = 5;
 attack_range = 0; //placeholder set later in create
 attack_target = noone;
 attack_timer = 0;
-damage_type = "bow" //Weapon triangle
+damage_type = "magic" //Weapon triangle
 
 level = 1;
 

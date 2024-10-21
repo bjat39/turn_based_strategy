@@ -11,7 +11,7 @@ if (keyboard_check_pressed(ord("R")))
 {
 	with (par_neft_faction)
 	{
-		pixel_dist = orig_pixel_dist;
+		moved = false; //neccessary?
 		attacked = false;
 		//unit_state = UNIT_STATE.READY;
 		

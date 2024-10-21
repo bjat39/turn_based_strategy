@@ -16,6 +16,10 @@ switch(state)
 			state = "idle";
 			
 			moved = true;
+			if (!attacked)
+			{
+				scr_attack_range(id);
+			}
 			//obj_game.selected_actor = id;
 			//scr_movement_range(map[gridX,gridY],move,actions);
 		}
