@@ -35,7 +35,7 @@ for (xx = 0; xx < map_width; xx += 1) //does the x column first
 {
 	for (yy = 0; yy < map_height; yy += 1)
 	{
-		map[xx,yy] = instance_create_layer(xx * GRID_SIZE, yy * GRID_SIZE, "Nodes", obj_node);
+		map[xx,yy] = instance_create_layer(xx * GRID_SIZE, yy * GRID_SIZE, "Nodes", par_node);
 		map[xx,yy].gridX = xx; //lets the nodes know where they are in the grid
 		map[xx,yy].gridY = yy;
 	}

@@ -9,6 +9,11 @@ description = "A spirited Alenetian woman.\nA bit of a doormat, somehow.";
 //Base stats
 move = 5;
 
+attack_range = 0; //placeholder set later in create
+attack_target = noone;
+attack_timer = 0;
+damage_type = "melee" //Weapon triangle
+
 level = 1;
 
 max_hit_points = 20;
@@ -22,7 +27,7 @@ defence_stat = 7;
 resistance_stat = 1; //magic defense
 luck_stat = 0; //affect hit and evasion (+1 to percentages)
 
-attack_range = 4//marksman_stat / 4;
+attack_range = 1 * GRID_SIZE;//marksman_stat / 4;
 
 //Growth rate percentage chance (%) per level up
 max_hit_points_growth = 85;

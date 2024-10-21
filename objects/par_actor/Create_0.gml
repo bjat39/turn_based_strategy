@@ -33,6 +33,11 @@ description = "Fuggedaboutit";
 //Base stats
 move = 5;
 
+attack_range = 0 * GRID_SIZE; //placeholder set later in create. in pixels
+attack_target = noone;
+attack_timer = 0;
+damage_type = "melee" //Weapon triangle
+
 level = 1;
 experience_points = 0;
 
@@ -48,7 +53,7 @@ defence_stat = 0;
 resistance_stat = 0; //magic defense
 luck_stat = 0; //affect hit and evasion (+1 to percentages)
 
-attack_range = marksman_stat / 4;
+attack_range = 2 * GRID_SIZE;//marksman_stat / 4;
 
 //Growth rate percentage chance (%) per level up
 max_hit_points_growth = 100;

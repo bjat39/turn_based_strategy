@@ -22,7 +22,7 @@ defence_stat = 7;
 resistance_stat = 1; //magic defense
 luck_stat = 0; //affect hit and evasion (+1 to percentages)
 
-attack_range = 1//marksman_stat / 4;
+attack_range = 8;//marksman_stat / 4;
 
 //Growth rate percentage chance (%) per level up
 max_hit_points_growth = 85;

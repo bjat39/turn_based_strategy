@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_state_initialize_grid(){
-	with (obj_node) //every node
+	with (par_node) //every node
 	{
 		if (instance_position(x+GRID_SIZE/2,y+GRID_SIZE/2,par_terrain))
 		{
@@ -10,12 +10,14 @@ function scr_state_initialize_grid(){
 			switch(tempTerrain.terrain_type)
 			{
 				case "wall":
+					instance_change(obj_wall1,true); //change to tree, retains information from previous
 					terrain_type = "wall";
 					sprite_index = spr_wall;
 					passable = false;
 			
 					break;
 				case "tree":
+					instance_change(obj_tree,true); //change to tree, retains information from previous
 					terrain_type = "tree";
 					sprite_index = spr_tree;
 					cost = 2;

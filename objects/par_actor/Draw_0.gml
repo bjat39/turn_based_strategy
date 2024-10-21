@@ -9,7 +9,7 @@ if (obj_game.selected_actor == id and obj_game.selected_actor.ai_type == "player
 		//step through every node, parent to parent, until we reach the actor's node
 		while(current_node.parent_node != noone)
 		{
-			draw_line_width_colour(current_node.x + (GRID_SIZE / 2),current_node.y + (GRID_SIZE / 2),current_node.parent_node.x + (GRID_SIZE / 2),current_node.parent_node.y + (GRID_SIZE / 2),4,c_lime,c_lime);
+			draw_line_width_colour(current_node.x + (GRID_SIZE / 2),current_node.y + (GRID_SIZE / 2),current_node.parent_node.x + (GRID_SIZE / 2),current_node.parent_node.y + (GRID_SIZE / 2),4,c_purple,c_purple);
 		
 			current_node = current_node.parent_node;
 		}

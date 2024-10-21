@@ -9,7 +9,10 @@
     "name":"ds_grid",
     "path":"folders/Objects/ds_grid.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"par_node",
+    "path":"objects/par_node/par_node.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -22,6 +22,7 @@ G = 0; //distance between current node and start node, how far away this node is
 //for a star, h would be the estimated distance from current node to end node, and f is the total cost for the node (f = g + h)
 
 move_node = false; //check if valid node for movement
+attack_node = false;
 
 cost = 1;
 

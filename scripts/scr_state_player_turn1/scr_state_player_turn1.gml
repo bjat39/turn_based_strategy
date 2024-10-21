@@ -19,7 +19,7 @@ function scr_state_player_turn1(){
 		hoverNode = map[gridX,gridY];
 	}
 
-
+	//Select unit
 	if (mouse_check_button_pressed(mb_left)) //switch with z
 	{
 		if (hoverNode.occupant != noone)
@@ -28,6 +28,7 @@ function scr_state_player_turn1(){
 			//selected_actor.actions = 2;
 			scr_movement_range(hoverNode,
 				selected_actor.move); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
+			scr_attack_range(selected_actor);
 		}
 		else
 		{
