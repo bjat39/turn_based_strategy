@@ -1,7 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_movement_range(origin_node,move_range,attack_range,selected_actor){ //pathfinding, get nodes for movements
-	//selected_actor has been added later for scr_attack_range
+function scr_attack_range1(origin_node,move_range,attack_range){ //pathfinding, get nodes for movements
 	//Reset all node data
 	//scr_wipe_nodes();
 	
@@ -42,7 +41,7 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 			//neighbour isn't already on the closed list (culls many nodes)
 			
 			 //if neighbour isn't on closed list, return -1
-			if (ds_list_find_index(closed, curr_neighbour) < 0 and curr_neighbour.passable and 
+			if (ds_list_find_index(closed, curr_neighbour) < 0 and 
 			curr_neighbour.occupant == noone and curr_neighbour.cost + current_node.G <= range)
 			{//only calculate new G for neighbour if it hasn't already been calculaated
 				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
@@ -91,25 +90,15 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 	//Destroy open list
 	ds_priority_destroy(open); //destroy so it doesn't create a new open list each time, memory leak. handle data structures properly
 	
-	//scr_attack_range1();
-	
 	//Colour move nodes, then destroy the closed list as well
 	for(ii = 0; ii < ds_list_size(closed);ii++)
 	{
 		current_node = ds_list_find_value(closed, ii);
 		current_node.move_node = true;
-		//current_node.attack_node = true;
 		
 		scr_colour_move_node(current_node,move_range);
-		
-		
-		//attack shit
-		//x_dist = distance_to_point(temp_actor.x,y) //would have measuring to the center but it dont
-		//y_dist = distance_to_point(x,temp_actor.y)
-		//total_dist = x_dist + y_dist;
-		//if (total_dist <= temp_actor.attack_range + temp_actor){}
 	}
-	scr_attack_range2(closed,selected_actor);
+	
 	
 	//DESTROY closed list!!!!!
 	ds_list_destroy(closed);

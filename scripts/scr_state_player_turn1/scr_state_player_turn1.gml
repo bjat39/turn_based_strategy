@@ -27,8 +27,8 @@ function scr_state_player_turn1(){
 			selected_actor = hoverNode.occupant;
 			//selected_actor.actions = 2;
 			scr_movement_range(hoverNode,
-				selected_actor.move); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
-			scr_attack_range(selected_actor);
+				selected_actor.move,selected_actor.attack_range,selected_actor); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
+			//scr_attack_range(selected_actor);
 		}
 		else
 		{

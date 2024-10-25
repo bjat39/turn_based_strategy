@@ -23,6 +23,7 @@ G = 0; //distance between current node and start node, how far away this node is
 
 move_node = false; //check if valid node for movement
 attack_node = false;
+faux_attack_node = false; //colour in nodes in attack range
 
 cost = 1;
 

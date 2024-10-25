@@ -8,8 +8,10 @@ function scr_attack_range(current_actor){ //pass id of selected actor
 		if (faction != temp_actor.faction)
 		{
 			//cardinal direction vector
-			x_dist = distance_to_point(temp_actor.x,y) //would have measuring to the center but it dont
-			y_dist = distance_to_point(x,temp_actor.y)
+			//x_dist = distance_to_point(temp_actor.x,y) //would have measuring to the center but it dont
+			//y_dist = distance_to_point(x,temp_actor.y)
+			x_dist = point_distance(x, y,temp_actor.x, y) //would have measuring to the center but it dont
+			y_dist = point_distance(x, y, x,temp_actor.y)
 			total_dist = x_dist + y_dist;
 			if (total_dist <= temp_actor.attack_range)
 			{
@@ -22,10 +24,10 @@ function scr_attack_range(current_actor){ //pass id of selected actor
 }
 
 //need to get all move nodes
-
-			var path_length = path_get_length(global.navigate)
-			var total_dist = global.selected.attack_pixel_dist + global.selected.pixel_dist;
-			if (path_length <= total_dist and !(path_length <= global.selected.pixel_dist)) 
-			{
-				instance_create_layer(i_x,row,"Instances",obj_attack_square1);
-			}
+//looop through move nodes and colour attack nodes in range
+			//var path_length = path_get_length(global.navigate)
+			//var total_dist = global.selected.attack_pixel_dist + global.selected.pixel_dist;
+			//if (path_length <= total_dist and !(path_length <= global.selected.pixel_dist)) 
+			//{
+			//	instance_create_layer(i_x,row,"Instances",obj_attack_square1);
+			//}
