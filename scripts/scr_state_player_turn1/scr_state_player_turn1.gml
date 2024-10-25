@@ -24,6 +24,7 @@ function scr_state_player_turn1(){
 	{
 		if (hoverNode.occupant != noone)
 		{
+			scr_wipe_nodes();
 			selected_actor = hoverNode.occupant;
 			//selected_actor.actions = 2;
 			scr_movement_range(hoverNode,

@@ -28,13 +28,43 @@ function scr_attack_range2(closed, selected_actor){
 			curr_node = ds_list_find_value(closed,ii);
 			x_dist = point_distance(id.x, id.y, curr_node.x, id.y); //would have measuring to the center but it dont
 			y_dist = point_distance(id.x, id.y, id.x,curr_node.y);
-			total_dist = x_dist + y_dist;
-			if (total_dist <= selected_actor.attack_range)//temp_actor.attack_range)
+			total_dist = x_dist + y_dist; //
+			if (occupant != noone and total_dist <= selected_actor.attack_range)//temp_actor.attack_range)
 			{
-				selected_actor.faux_attack_node = true;
+				if (occupant.faction != selected_actor.faction)
+				{
+					map[gridX,gridY].attack_node = true;
+					//selected_actor.attack_node = true;
+					scr_colour_attack_node(id);
+					break;
+				}
+			}
+			else if (move_node == false and total_dist <= selected_actor.attack_range){
 				scr_colour_attack_node(id);
 				break;
 			}
 		}
 	}
 }
+
+//function scr_attack_range(current_actor){ //pass id of selected actor
+//	with(par_actor)
+//	{
+//		temp_actor = current_actor;
+		
+//		if (faction != temp_actor.faction)
+//		{
+//			//cardinal direction vector
+//			//x_dist = distance_to_point(temp_actor.x,y) //would have measuring to the center but it dont
+//			//y_dist = distance_to_point(x,temp_actor.y)
+//			x_dist = point_distance(x, y,temp_actor.x, y) //would have measuring to the center but it dont
+//			y_dist = point_distance(x, y, x,temp_actor.y)
+//			total_dist = x_dist + y_dist;
+//			if (total_dist <= temp_actor.attack_range)
+//			{
+//				map[gridX,gridY].attack_node = true;
+//				map[gridX,gridY].colour = c_red;
+//				//instance_create_layer(x,y,"Instances",obj_attack_square);
+//			}
+//		}
+//	}
