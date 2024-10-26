@@ -36,7 +36,7 @@ move = 5;
 attack_range = 0 * GRID_SIZE; //placeholder set later in create. in pixels
 attack_target = noone;
 attack_timer = 0;
-damage_type = "melee" //Weapon triangle
+damage_type = "melee"; //Weapon triangle
 
 level = 1;
 experience_points = 0;

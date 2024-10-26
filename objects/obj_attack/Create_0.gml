@@ -1,4 +1,4 @@
-/// @description  Rework into a script
+// @description  Rework into a script
 //miss hit //or crit or kill?
 status = "miss";
 

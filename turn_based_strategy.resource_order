@@ -37,6 +37,7 @@
   "ResourceOrderSettings":[
     {"name":"fnt_courier","order":1,"path":"fonts/fnt_courier/fnt_courier.yy",},
     {"name":"obj_arrow","order":2,"path":"objects/obj_arrow/obj_arrow.yy",},
+    {"name":"obj_arrow1","order":12,"path":"objects/obj_arrow1/obj_arrow1.yy",},
     {"name":"obj_attack_square_ai","order":4,"path":"objects/obj_attack_square_ai/obj_attack_square_ai.yy",},
     {"name":"obj_attack_square","order":3,"path":"objects/obj_attack_square/obj_attack_square.yy",},
     {"name":"obj_attack_square1","order":5,"path":"objects/obj_attack_square1/obj_attack_square1.yy",},
@@ -165,6 +166,7 @@
     {"name":"spr_archer_death_strip16","order":3,"path":"sprites/spr_archer_death_strip16/spr_archer_death_strip16.yy",},
     {"name":"spr_archer_run_strip11","order":2,"path":"sprites/spr_archer_run_strip11/spr_archer_run_strip11.yy",},
     {"name":"spr_arrow_0","order":4,"path":"sprites/spr_arrow_0/spr_arrow_0.yy",},
+    {"name":"spr_arrow","order":21,"path":"sprites/spr_arrow/spr_arrow.yy",},
     {"name":"spr_attack_square","order":6,"path":"sprites/spr_attack_square/spr_attack_square.yy",},
     {"name":"spr_attack_square1","order":11,"path":"sprites/spr_attack_square1/spr_attack_square1.yy",},
     {"name":"spr_beta_talia_1","order":19,"path":"sprites/spr_beta_talia_1/spr_beta_talia_1.yy",},

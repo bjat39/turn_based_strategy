@@ -108,11 +108,22 @@ function scr_state_player_turn1(){
 				scr_wipe_nodes();
 			}
 		}
-		//else //click on invalid node
-		//{
-		//	selected_actor = noone;
-		//	scr_wipe_nodes();
-		//}
+		else if(selected_actor != noone and hoverNode.attack_node)
+		{
+			selected_actor.moved = true;
+			selected_actor.attack_target = hoverNode.occupant;
+			selected_actor.state = "begin attack";
+			selected_actor.attack_timer = 10;
+			selected_actor = noone;
+		
+			scr_wipe_nodes();
+		}
+		else //click on invalid node
+		{
+			selected_actor = noone;
+			scr_wipe_nodes();
+		}
+		
 	}
 	
 	//turn_counter ++;

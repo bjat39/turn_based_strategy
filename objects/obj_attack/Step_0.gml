@@ -3,7 +3,7 @@ if (path_index = -1) //path ended
 {
 	if (status != "miss")
 	{
-		target.hit_points -= damage;
+		target.current_hit_points -= damage;
 		
 		for(ii = 0; ii < 6; ii ++)
 		{
@@ -21,15 +21,25 @@ if (path_index = -1) //path ended
 				//}
 			}
 		}
-	}
 	
-	with(instance_create_depth(target.x + 28,target.y + 2,"Instances",obj_damage_text))
+		with(instance_create_layer(target.x + 28,target.y + 2,"Instances",obj_damage_text))
+		{
+			text = string(other.damage);
+			ground = y;
+		}
+	
+		//Screenshake
+		target.shake = 8;
+		target.shake_mag = 8;
+	}
+	else
 	{
-		text = string(other.damage);
-		ground = y;
+		with(instance_create_layer(target.x + 28,target.y +2,"Instances",obj_damage_text))
+		{
+			text = "miss";
+			
+			ground = y;
+		}
 	}
-	
-	//Screenshake
-	target.shake = 8;
-	target.shake_mag = 8;
+	instance_destroy();
 }

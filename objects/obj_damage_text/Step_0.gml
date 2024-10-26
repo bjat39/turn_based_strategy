@@ -10,7 +10,7 @@ if (y >= 0){
 }
 
 if(fade){
-	alpha -= .1;
+	alpha -= .01;
 }
 
 if(alpha <= 0){
