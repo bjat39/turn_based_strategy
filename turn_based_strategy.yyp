@@ -199,6 +199,7 @@
     {"id":{"name":"scr_state_player_turn1","path":"scripts/scr_state_player_turn1/scr_state_player_turn1.yy",},},
     {"id":{"name":"scr_wipe_nodes","path":"scripts/scr_wipe_nodes/scr_wipe_nodes.yy",},},
     {"id":{"name":"scr_wrap","path":"scripts/scr_wrap/scr_wrap.yy",},},
+    {"id":{"name":"sha_grayscale","path":"shaders/sha_grayscale/sha_grayscale.yy",},},
     {"id":{"name":"sfx_bow_impact3","path":"sounds/sfx_bow_impact3/sfx_bow_impact3.yy",},},
     {"id":{"name":"bgr_wasteland","path":"sprites/bgr_wasteland/bgr_wasteland.yy",},},
     {"id":{"name":"spr_archer_attack_strip16","path":"sprites/spr_archer_attack_strip16/spr_archer_attack_strip16.yy",},},

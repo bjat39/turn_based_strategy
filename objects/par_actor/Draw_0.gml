@@ -17,4 +17,14 @@ if (obj_game.selected_actor == id and obj_game.selected_actor.ai_type == "player
 	}
 }
 
-draw_self();
+if (attacked == true)
+{
+	shader_set(sha_grayscale)
+	draw_self()
+	shader_reset()
+}
+else
+{
+	draw_self();
+}
+
