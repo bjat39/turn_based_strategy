@@ -15,7 +15,7 @@ function scr_attack_range(current_actor){ //pass id of selected actor
 			total_dist = x_dist + y_dist;
 			if (total_dist <= temp_actor.attack_range)
 			{
-				map[gridX,gridY].attack_node = true;
+				//map[gridX,gridY].attack_node = true;
 				map[gridX,gridY].colour = c_red;
 				//instance_create_layer(x,y,"Instances",obj_attack_square);
 			}
