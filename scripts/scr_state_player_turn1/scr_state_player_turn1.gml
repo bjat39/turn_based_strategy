@@ -4,9 +4,10 @@ function scr_state_player_turn1(){
 	//if (current_actor == noone)
 	//{
 	//Outside bounds
-	obj_cursor.x = mouse_x;
-	obj_cursor.y = mouse_y;
-
+	//obj_cursor.x = mouse_x;
+	//obj_cursor.y = mouse_y;
+	scr_cursor_control();
+	
 	gridX = floor(obj_cursor.x/GRID_SIZE);
 	gridY = floor(obj_cursor.y/GRID_SIZE);
 	
@@ -24,12 +25,15 @@ function scr_state_player_turn1(){
 	{
 		if (hoverNode.occupant != noone)
 		{
-			scr_wipe_nodes();
-			selected_actor = hoverNode.occupant;
-			//selected_actor.actions = 2;
-			scr_movement_range(hoverNode,
-				selected_actor.move,selected_actor.attack_range,selected_actor); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
-			//scr_attack_range(selected_actor);
+			if (hoverNode.occupant.moved == false)
+			{
+				scr_wipe_nodes();
+				selected_actor = hoverNode.occupant;
+				//selected_actor.actions = 2;
+				scr_movement_range(hoverNode,
+					selected_actor.move,selected_actor.attack_range,selected_actor); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
+				//scr_attack_range(selected_actor);
+			}
 		}
 		else
 		{
@@ -99,7 +103,7 @@ function scr_state_player_turn1(){
 				scr_wipe_nodes();
 				//}
 		
-				selected_actor = noone;
+				//selected_actor = noone;
 			}
 			else
 			{
@@ -118,11 +122,11 @@ function scr_state_player_turn1(){
 		
 			scr_wipe_nodes();
 		}
-		else //click on invalid node
-		{
-			selected_actor = noone;
-			scr_wipe_nodes();
-		}
+		//else //click on invalid node
+		//{
+		//	selected_actor = noone;
+		//	scr_wipe_nodes();
+		//}
 		
 	}
 	

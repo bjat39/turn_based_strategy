@@ -76,7 +76,7 @@ tempText = noone;
 draw_set_font(fnt_courier);
 //instance_create_layer(mouse_x,mouse_y,"Instances", obj_cursor);
 
-
+cursor_move_delay = 0;
 
 //with (instance_create_layer(5*GRID_SIZE,5*GRID_SIZE,"Instances",obj_hero))
 //{

@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_attack_range2(closed, selected_actor){
+	//Preliminary attack range, while moving
+	
 	//for (xx = 0; xx < map_width; xx += 1) //does the x column first
 	//{
 	//	for (yy = 0; yy < map_height; yy += 1)
@@ -29,17 +31,7 @@ function scr_attack_range2(closed, selected_actor){
 			x_dist = point_distance(id.x, id.y, curr_node.x, id.y); //would have measuring to the center but it dont
 			y_dist = point_distance(id.x, id.y, id.x,curr_node.y);
 			total_dist = x_dist + y_dist; //
-			if (occupant != noone and total_dist <= selected_actor.attack_range)//temp_actor.attack_range)
-			{
-				if (occupant.faction != selected_actor.faction)
-				{
-					map[gridX,gridY].attack_node = true;
-					//selected_actor.attack_node = true;
-					scr_colour_attack_node(id);
-					break;
-				}
-			}
-			else if (move_node == false and total_dist <= selected_actor.attack_range){
+			if (move_node == false and total_dist <= selected_actor.attack_range){
 				scr_colour_attack_node(id);
 				break;
 			}
