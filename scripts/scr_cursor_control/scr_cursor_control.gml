@@ -4,6 +4,7 @@ function scr_cursor_control(){
 	cursor_move_delay --;
 	//redo how it does characters, and the default thing.
 	//no slow move when attacking?
+	//delay resets when new direction?
 	var left_boundary = obj_cursor.x - GRID_SIZE > 0; //check if move would go outside the boundary
 	var top_boundary = obj_cursor.y - GRID_SIZE > 0;
 	var right_boundary = obj_cursor.x + GRID_SIZE < room_width;
@@ -23,7 +24,7 @@ function scr_cursor_control(){
 	
 	if ((cursor_move_slow_initial < 3) and (left_key or up_key or right_key or down_key))
 	{
-		cursor_move_delay_default = 12;
+		cursor_move_delay_default = 16;
 		cursor_move_slow_initial ++;
 	}
 	else if (cursor_move_occupant == true)
@@ -33,7 +34,7 @@ function scr_cursor_control(){
 	}
 	else
 	{
-		cursor_move_delay_default = 3.5;
+		cursor_move_delay_default = 4;
 	}
 	
 	//Diagon(al) Alley

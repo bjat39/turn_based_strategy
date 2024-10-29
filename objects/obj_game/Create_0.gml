@@ -86,7 +86,7 @@ else
 }
 
 cursor_move_delay = 0;
-cursor_move_delay_default = 2.5;
+cursor_move_delay_default = 4;
 cursor_move_occupant = false; //keep track if hovering over unit, slow down cursor if so
 cursor_move_slow_initial = 0; //first two cursor moves are slow to increase control, reset upon key release
 cursor_move_delay_mod = 12;

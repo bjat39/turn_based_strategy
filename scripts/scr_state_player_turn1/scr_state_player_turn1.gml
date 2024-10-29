@@ -27,27 +27,7 @@ function scr_state_player_turn1(){
 	//Select unit
 	if (keyboard_check_pressed(ord("Z")))//(mouse_check_button_pressed(mb_left)) //switch with z
 	{
-		if (hoverNode.occupant != noone)
-		{
-			if (hoverNode.occupant.moved == false)
-			{
-				scr_wipe_nodes();
-				selected_actor = hoverNode.occupant;
-				//selected_actor.actions = 2;
-				scr_movement_range(hoverNode,
-					selected_actor.move,selected_actor.attack_range,selected_actor); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
-				//scr_attack_range(selected_actor);
-			}
-		}
-		else
-		{
-			selected_actor = noone;
-			scr_wipe_nodes();
-		}
-	}
-
-	if (keyboard_check_pressed(ord("X"))) //mouse_check_button_pressed(mb_right))
-	{
+		//confirm move
 		if (selected_actor != noone and hoverNode.move_node)//hoverNode.occupant == noone and hoverNode.passable)
 		{
 			if (selected_actor.ai_type == "player")//hoverNode.occupant == noone and hoverNode.passable)
@@ -126,6 +106,26 @@ function scr_state_player_turn1(){
 		
 			scr_wipe_nodes();
 		}
+		//turn_counter ++;
+		//}
+		else if (hoverNode.occupant != noone)//select unit
+		{
+			if (hoverNode.occupant.moved == false)
+			{
+				scr_wipe_nodes();
+				selected_actor = hoverNode.occupant;
+				//selected_actor.actions = 2;
+				scr_movement_range(hoverNode,
+					selected_actor.move,selected_actor.attack_range,selected_actor); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
+				//scr_attack_range(selected_actor);
+			}
+		}
+		else
+		{
+			selected_actor = noone;
+			scr_wipe_nodes();
+		}
+		
 		//else //click on invalid node
 		//{
 		//	selected_actor = noone;
@@ -133,7 +133,10 @@ function scr_state_player_turn1(){
 		//}
 		
 	}
-	
-	//turn_counter ++;
-	//}
+
+
+	if (keyboard_check_pressed(ord("X"))) //mouse_check_button_pressed(mb_right))
+	{
+		
+	}
 }
