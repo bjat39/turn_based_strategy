@@ -43,14 +43,7 @@ function scr_state_initialize_grid(){
 	game_state = ds_list_find_value(turn_order,0); //"player";
 	
 	//instance_create_layer(mouse_x,mouse_y,"Instances", obj_cursor);
-	if (instance_exists(obj_neft))
-	{
-		instance_create_layer(obj_neft.x + (GRID_SIZE / 2),obj_neft.y + (GRID_SIZE / 2),"Instances", obj_cursor);
-	}
-	else
-	{
-		instance_create_layer(GRID_SIZE / 2, GRID_SIZE / 2,"Instances", obj_cursor);
-	}
+
 	gridX = floor(obj_cursor.x/GRID_SIZE); //where cursor is in relation to grid
 	gridY = floor(obj_cursor.y/GRID_SIZE);
 }

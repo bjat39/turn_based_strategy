@@ -36,4 +36,4 @@ var window_height = RES_H * RES_SCALE;
 
 window_set_position(display_width/2 - window_width/2, display_height/2 - window_height/2);
 
-camera_set_view_pos(camera,obj_neft.x,obj_neft.y)
+camera_set_view_pos(camera,obj_cursor.x,obj_cursor.y)

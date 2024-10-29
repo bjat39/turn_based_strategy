@@ -18,10 +18,14 @@ function scr_state_player_turn1(){
 	else
 	{
 		hoverNode = map[gridX,gridY];
+		if (hoverNode.occupant != noone and cursor_move_occupant == false)
+		{
+			cursor_move_occupant = true;
+		}
 	}
 
 	//Select unit
-	if (mouse_check_button_pressed(mb_left)) //switch with z
+	if (keyboard_check_pressed(ord("Z")))//(mouse_check_button_pressed(mb_left)) //switch with z
 	{
 		if (hoverNode.occupant != noone)
 		{
@@ -42,7 +46,7 @@ function scr_state_player_turn1(){
 		}
 	}
 
-	if (mouse_check_button_pressed(mb_right))
+	if (keyboard_check_pressed(ord("X"))) //mouse_check_button_pressed(mb_right))
 	{
 		if (selected_actor != noone and hoverNode.move_node)//hoverNode.occupant == noone and hoverNode.passable)
 		{

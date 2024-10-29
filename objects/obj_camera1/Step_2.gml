@@ -6,24 +6,24 @@ camW = camera_get_view_width(camera);
 camH = camera_get_view_height(camera);
 
 //Set target camera position
-var targetX = obj_neft.x - camW/2;
-var targetY = obj_neft.y - camH/2;
+var targetX = obj_cursor.x - camW/2;
+var targetY = obj_cursor.y - camH/2;
 
 //Clamp the target to room bounds
 targetX = clamp(targetX,0,room_width - camW);
 targetY = clamp(targetY, 0, room_height - camH);
 
 //Smoothly move the camera to the target position
-camX = lerp(camX, targetX, CAM_SMOOTH);
-camY = lerp(camY,targetY, CAM_SMOOTH);
+camX = lerp(camX, targetX, CAM_SMOOTH *3);
+camY = lerp(camY,targetY, CAM_SMOOTH *3);
 
 //Scroll zoom
 //var wheel = mouse_wheel_down() - mouse_wheel_up();
 //if (wheel != 0) {
 //	wheel *= 0.1;//0.01;
 	
-	camW = lerp(camW, RES_W * size, CAM_SMOOTH / 6);
-	camH = lerp(camH,RES_H * size, CAM_SMOOTH / 6);
+	camW = lerp(camW, RES_W * size, CAM_SMOOTH / 6);//6);
+	camH = lerp(camH,RES_H * size, CAM_SMOOTH / 6);//6);
 	
 	//Add to size
 	//if (addH >=)

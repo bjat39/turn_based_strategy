@@ -76,7 +76,21 @@ tempText = noone;
 draw_set_font(fnt_courier);
 //instance_create_layer(mouse_x,mouse_y,"Instances", obj_cursor);
 
+if (instance_exists(obj_neft))
+{
+	instance_create_layer(obj_neft.x + (GRID_SIZE / 2),obj_neft.y + (GRID_SIZE / 2),"Instances", obj_cursor);
+}
+else
+{
+	instance_create_layer(GRID_SIZE / 2, GRID_SIZE / 2,"Instances", obj_cursor);
+}
+
 cursor_move_delay = 0;
+cursor_move_delay_default = 2.5;
+cursor_move_occupant = false; //keep track if hovering over unit, slow down cursor if so
+cursor_move_slow_initial = 0; //first two cursor moves are slow to increase control, reset upon key release
+cursor_move_delay_mod = 12;
+
 
 //with (instance_create_layer(5*GRID_SIZE,5*GRID_SIZE,"Instances",obj_hero))
 //{
