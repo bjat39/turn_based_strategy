@@ -33,6 +33,8 @@ description = "Fuggedaboutit";
 command_list = ds_list_create(); //after move, unit commands
 hover_command = 0;
 
+attack_list = ds_list_create(); //list of viable attack nodes to attack
+
 //Base stats
 move = 5;
 

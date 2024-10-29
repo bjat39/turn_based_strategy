@@ -17,6 +17,11 @@ if (obj_game.selected_actor == id and obj_game.selected_actor.ai_type == "player
 	}
 }
 
+if (hover_command != noone)
+{
+	draw_text(x+ 32,y + 16, hover_command);
+}
+
 if (attacked == true)
 {
 	shader_set(sha_grayscale)

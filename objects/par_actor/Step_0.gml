@@ -14,7 +14,7 @@ switch(state)
 			//clear path
 			path_clear_points(movement_path);
 			
-			state = "command select";
+			state = "command_select";
 			var new_closed = ds_list_create();
 			ds_list_add(new_closed,current_node);
 			
@@ -25,12 +25,12 @@ switch(state)
 			//scr_movement_range(map[gridX,gridY],move,actions);
 		}
 		break;
-	case "command select":
+	case "command_select":
 	{
 		break;
 		
 	}
-	case "begin attack":
+	case "begin_attack":
 		//before attack animation
 		attack_timer -= 1;
 		if (attack_timer <= 0)
@@ -44,7 +44,7 @@ switch(state)
 			break;
 		//}
 		//break;
-	case "end attack"://let scr attack handle this
+	case "end_attack"://let scr attack handle this
 		attack_timer -= 1;
 		
 		if(attack_timer <= 0)

@@ -9,9 +9,9 @@ function scr_state_player_turn1(){
 	
 	if(selected_actor != noone)
 	{
-		if (selected_actor.state == "command select")
+		if (selected_actor.state == "command_select")
 		{
-			player_state = "action command";
+			player_state = "action_command";
 		}
 	}
 	else
