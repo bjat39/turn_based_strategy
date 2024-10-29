@@ -2,6 +2,8 @@
 #macro GRID_SIZE 32
 
 game_state = "initialising"; //initialising, player, ai1,ai2 //turn state machine
+player_state = "select"; //select, action command, stat screen, game command (clik on empty space)
+
 
 randomize();
 

@@ -14,19 +14,22 @@ switch(state)
 			//clear path
 			path_clear_points(movement_path);
 			
-			state = "idle";
+			state = "command select";
 			var new_closed = ds_list_create();
 			ds_list_add(new_closed,current_node);
 			
-			moved = true;
-			if (!attacked)
-			{
-				scr_attack_range3(id,id.current_node);
-			}
+			scr_action_command_init();
+			
+			//instance_create_layer(selected_actor.x + GRID_SIZE,selected_actor.y + (GRID_SIZE/2),"Instances",obj_action_command);
 			//obj_game.selected_actor = id;
 			//scr_movement_range(map[gridX,gridY],move,actions);
 		}
 		break;
+	case "command select":
+	{
+		break;
+		
+	}
 	case "begin attack":
 		//before attack animation
 		attack_timer -= 1;
@@ -41,7 +44,7 @@ switch(state)
 			break;
 		//}
 		//break;
-	case "end attack":
+	case "end attack"://let scr attack handle this
 		attack_timer -= 1;
 		
 		if(attack_timer <= 0)

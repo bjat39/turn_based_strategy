@@ -30,6 +30,9 @@ faction = "neft";//"player"; //what side they are affliliated with, affects turn
 class = "Healer Woman";
 description = "Fuggedaboutit";
 
+command_list = ds_list_create(); //after move, unit commands
+hover_command = 0;
+
 //Base stats
 move = 5;
 
