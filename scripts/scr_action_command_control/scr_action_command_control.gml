@@ -14,7 +14,31 @@ function scr_action_command_control(){
 				selected_actor.finish = true;
 				break;
 			case "Attack":
-				selected_actor.finish = true;
+				hover_attack = 0;
+				//for(ii = 1;ii < ds_list_size(selected_actor.attack_list);ii++)
+				//{
+					
+					obj_cursor.x = ds_list_find_value(attack_list,hover_attack)
+				//}
+	
+			
+				//scr_attack_range3(id,id.current_node);
+				
+				//if(hoverNode.attack_node)
+				//{
+				//	selected_actor.moved = true;
+				//	selected_actor.attack_target = hoverNode.occupant;
+				//	selected_actor.state = "begin attack";
+				//	selected_actor.attack_timer = 10;
+				//	selected_actor = noone;
+		
+				//	scr_wipe_nodes();
+				//}
+				//moved = true; //clickkk
+				//attacked = true;
+		
+				//
+				//selected_actor.finish = true;
 				break;
 		}
 		
@@ -26,13 +50,13 @@ function scr_action_command_control(){
 		selected_actor.hover_command --;
 		if(selected_actor.hover_command < 0)
 		{
-			selected_actor.hover_command = size;
+			selected_actor.hover_command = size - 1;
 		}
 	}
 	else if (keyboard_check_pressed(vk_down) and size > 1)
 	{
 		selected_actor.hover_command ++;
-		if(selected_actor.hover_command > size)
+		if(selected_actor.hover_command > size - 1)
 		{
 			selected_actor.hover_command = 0;
 		}
@@ -43,28 +67,14 @@ function scr_action_command_control(){
 		
 	//}
 	
-	
-	//else if(selected_actor != noone and hoverNode.attack_node)
-	//	{
-	//		selected_actor.moved = true;
-	//		selected_actor.attack_target = hoverNode.occupant;
-	//		selected_actor.state = "begin attack";
-	//		selected_actor.attack_timer = 10;
-	//		selected_actor = noone;
-		
-	//		scr_wipe_nodes();
-	//	}
-	//	moved = true; //clickkk
-	//	attacked = true;
-		
-	//	scr_attack_range3(id,id.current_node);
-	
 	if (selected_actor.finish == true)
 	{
 		//RESET EVERYTHINGGGG
 		selected_actor.moved = true;
 		selected_actor.attacked = true;
 		selected_actor.state = "idle";
+		hover_command = noone;
+		hover_attack = noone;
 		player_state = "select";
 		ds_list_clear(selected_actor.command_list);
 		ds_list_clear(selected_actor.attack_list);

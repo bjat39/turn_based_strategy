@@ -4,6 +4,7 @@ function scr_action_command_init(){
 	//figure out how many availalbe actions there are
 	//called by par_actor
 	//var selected_actor = selected_actor;
+	hover_command = 0;
 	
 	with(par_actor)
 	{
@@ -18,9 +19,10 @@ function scr_action_command_init(){
 				//if (ds_list_find_index(other.command_list,"Attack") == noone)
 				//{
 					ds_list_add(other.command_list, "Attack");
+					ds_list_add(other.attack_list,map[gridX,gridY]);
 				//}
 				//selected_actor.attack_node = true;
-				//scr_colour_attack_node(id);
+				scr_colour_attack_node(id);
 			}
 		}
 	}
