@@ -4,7 +4,7 @@ function scr_action_command_control(){
 	var size = ds_list_size(selected_actor.command_list);
 	//var curr_command = selected_actor.hover_command
 	var selected_option = ds_list_find_value(selected_actor.command_list, selected_actor.hover_command);
-	
+	//move this crap into create event of obj_action_command, don't have obj game do fucking everything, thats not oop
 	
 	if (keyboard_check_pressed(ord("Z")))
 	{

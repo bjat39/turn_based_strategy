@@ -1,6 +1,6 @@
 /// @description 
-#macro RES_W 640//320
-#macro RES_H 360//180
+#macro RES_W 768//640//320
+#macro RES_H 432//360//180
 #macro RES_SCALE 1.5//4.5//3
 
 #macro CAM_SMOOTH 0.1
@@ -37,3 +37,5 @@ var window_height = RES_H * RES_SCALE;
 window_set_position(display_width/2 - window_width/2, display_height/2 - window_height/2);
 
 camera_set_view_pos(camera,obj_cursor.x,obj_cursor.y)
+
+//window_set_fullscreen(true);

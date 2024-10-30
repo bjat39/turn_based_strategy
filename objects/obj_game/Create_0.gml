@@ -3,7 +3,7 @@
 
 game_state = "initialising"; //initialising, player, ai1,ai2 //turn state machine
 player_state = "select"; //select, action_command, stat_screen, game_command (clik on empty space)
-
+//select = obj_cursor exists, action_command = obj_cursor does not exist
 
 randomize();
 
