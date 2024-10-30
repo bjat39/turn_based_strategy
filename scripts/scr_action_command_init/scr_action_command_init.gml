@@ -10,15 +10,15 @@ function scr_action_command_init(){
 		x_dist = point_distance(x, y, other.x, y); //would have measuring to the center but it dont
 		y_dist = point_distance(x, y, x, other.y);
 		total_dist = x_dist + y_dist; //
-		if (occupant != noone and total_dist <= other.attack_range)//temp_actor.attack_range)
+		if (total_dist <= other.attack_range)//temp_actor.attack_range)
 		{
-			if (occupant.faction != other.faction)
+			if (other.faction != faction)
 			{
 				map[gridX,gridY].attack_node = true;
-				if (ds_list_find_index(other.command_list,"Attack") != -1)
-				{
-					ds_list_add(other.command_list, "Wait");
-				}
+				//if (ds_list_find_index(other.command_list,"Attack") == noone)
+				//{
+					ds_list_add(other.command_list, "Attack");
+				//}
 				//selected_actor.attack_node = true;
 				//scr_colour_attack_node(id);
 			}

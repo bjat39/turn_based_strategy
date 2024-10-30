@@ -11,10 +11,10 @@ function scr_action_command_control(){
 		switch(selected_option)
 		{
 			case "Wait":
-				finished = true;
+				selected_actor.finish = true;
 				break;
 			case "Attack":
-				finished = true;
+				selected_actor.finish = true;
 				break;
 		}
 		
@@ -23,24 +23,18 @@ function scr_action_command_control(){
 	
 	if (keyboard_check_pressed(vk_up) and size > 1)
 	{
-		if(selected_actor.hover_command < 1)
+		selected_actor.hover_command --;
+		if(selected_actor.hover_command < 0)
 		{
 			selected_actor.hover_command = size;
-		}
-		else
-		{
-			selected_actor.hover_command --;
 		}
 	}
 	else if (keyboard_check_pressed(vk_down) and size > 1)
 	{
+		selected_actor.hover_command ++;
 		if(selected_actor.hover_command > size)
 		{
 			selected_actor.hover_command = 0;
-		}
-		else
-		{
-			selected_actor.hover_command ++;
 		}
 	}	
 	
@@ -65,7 +59,7 @@ function scr_action_command_control(){
 		
 	//	scr_attack_range3(id,id.current_node);
 	
-	if (finished == true)
+	if (selected_actor.finish == true)
 	{
 		//RESET EVERYTHINGGGG
 		selected_actor.moved = true;
