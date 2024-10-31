@@ -28,7 +28,7 @@ function scr_action_command_control(){
 				//{
 				//	selected_actor.moved = true;
 				//	selected_actor.attack_target = hoverNode.occupant;
-				//	selected_actor.state = "begin attack";
+				//	selected_actor.unit_state = "begin attack";
 				//	selected_actor.attack_timer = 10;
 				//	selected_actor = noone;
 		
@@ -72,7 +72,7 @@ function scr_action_command_control(){
 		//RESET EVERYTHINGGGG
 		selected_actor.moved = true;
 		selected_actor.attacked = true;
-		selected_actor.state = "idle";
+		selected_actor.unit_state = "idle";
 		hover_command = noone;
 		hover_attack = noone;
 		player_state = "select";

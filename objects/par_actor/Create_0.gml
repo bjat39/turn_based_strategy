@@ -1,5 +1,5 @@
 /// @description Edit par_actor so it's more generic, can have enemies use it
-state = "idle";
+unit_state = "idle";
 
 gridX = 0;
 gridY = 0;

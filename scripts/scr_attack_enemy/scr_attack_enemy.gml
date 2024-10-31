@@ -45,7 +45,7 @@ function scr_attack_enemy(){
 		path_start(movement_path,speed,path_action_stop,true);
 	}
 				
-	state = "end_attack";
+	unit_state = "end_attack";
 				
 	attack_timer = 30;
 }

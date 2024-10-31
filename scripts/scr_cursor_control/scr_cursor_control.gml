@@ -68,7 +68,7 @@ function scr_cursor_control(){
 				hoverNode.occupant = selected_actor;
 		
 				//send selected actor on its way
-				selected_actor.state =	"begin_path";
+				selected_actor.unit_state =	"begin_path";
 		
 				scr_wipe_nodes();
 				//reduce selected actor's actions and wipe nodes
