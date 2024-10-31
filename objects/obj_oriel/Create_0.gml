@@ -7,7 +7,7 @@ faction = "neft";//"player"; //what side they are affliliated with, affects turn
 description = "An antisocial Alenetian old man.\nHas a nasty disease.";
 
 //Base stats
-move = 6;
+move = 8//6;
 
 attack_range = 0; //placeholder set later in create
 attack_target = noone;
