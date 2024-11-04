@@ -22,7 +22,7 @@ function scr_cursor_move(){
 		cursor_move_slow_initial = 0;
 	}
 	
-	if ((cursor_move_slow_initial < 40) and (left_key or up_key or right_key or down_key))
+	if ((cursor_move_slow_initial < 3) and (left_key or up_key or right_key or down_key))
 	{
 		cursor_move_delay_default = 12;
 		cursor_move_slow_initial ++;

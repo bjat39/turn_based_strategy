@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_beta_talia",
-    "path":"sprites/spr_beta_talia/spr_beta_talia.yy",
+    "name":"spr_oriel",
+    "path":"sprites/spr_oriel/spr_oriel.yy",
   },
   "spriteMaskId":null,
   "visible":true,

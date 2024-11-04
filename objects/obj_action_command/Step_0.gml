@@ -59,6 +59,41 @@ if (accept_key)
 		break;
 	}
 	
+	//switch(menu_level)
+	//{
+	//	//pause menu
+	//	case(0):
+	//	switch(pos)
+	//	{
+	//		//start game
+	//		case(0): break;
+		
+	//		//settings
+	//		case(1): menu_level ++; break;
+		
+	//		//quit game
+	//		case(2): break;
+		
+		
+	//	}
+	//	break;
+	//	case(1):
+	//	switch(pos)
+	//	{
+	//		//window size
+	//		case(0): break;
+		
+	//		//brighhtness
+	//		case(1): break;
+		
+	//		//controls
+	//		case(2): break;
+		
+		
+	//	}
+	//	break;
+	//}
+	
 	//set position back
 	if (start_menu_level != menu_level){pos = 0;} //menu level has changed
 	

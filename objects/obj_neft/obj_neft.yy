@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_beta_talia",
-    "path":"sprites/spr_beta_talia/spr_beta_talia.yy",
+    "name":"spr_neft",
+    "path":"sprites/spr_neft/spr_neft.yy",
   },
   "spriteMaskId":null,
   "visible":true,

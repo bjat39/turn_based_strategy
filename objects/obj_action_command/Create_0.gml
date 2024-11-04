@@ -6,44 +6,71 @@ op_border = 16; //border between text and edge
 op_space = 16; //y distance between options
 
 pos = 0; //select option
+command_list = ds_list_create(); //after move, unit commands
 
-//with(par_actor)
-//{
-//	x_dist = point_distance(x, y, other.x, y); //would have measuring to the center but it dont
-//	y_dist = point_distance(x, y, x, other.y);
-//	total_dist = x_dist + y_dist; //
-//	if (total_dist <= other.attack_range)//temp_actor.attack_range)
-//	{
-//		if (other.faction != faction)
-//		{
-//			map[gridX,gridY].attack_node = true;
-//			//if (ds_list_find_index(other.command_list,"Attack") == noone)
-//			//{
-//				ds_list_add(other.command_list, "Attack");
-//				ds_list_add(other.attack_list,map[gridX,gridY]);
-//			//}
-//			//selected_actor.attack_node = true;
-//			scr_colour_attack_node(id);
-//		}
-//	}
-//}
+curr_actor = obj_game.selected_actor.x;
+
+
+hover_command = noone;
+
+attack_list = ds_list_create(); //list of viable attack nodes to attack
+
+with(par_actor)
+{
+	x_dist = point_distance(x, y, curr_actor.x, y); //would have measuring to the center but it dont
+	y_dist = point_distance(x, y, x, curr_actor.y);
+	total_dist = x_dist + y_dist; //
+	if (total_dist <= curr_actor.attack_range)//temp_actor.attack_range)
+	{
+		if (curr_actor.faction != faction)
+		{
+			//map[gridX,gridY].attack_node = true;
+			//if (ds_list_find_index(other.command_list,"Attack") == noone)
+			//{
+				ds_list_add(other.command_list, "Attack");
+				ds_list_add(other.attack_list,map[gridX,gridY]);
+			//}
+			//selected_actor.attack_node = true;
+			scr_colour_attack_node(id);
+		}
+	}
+}
 	
-////obj_game.selected_actor
+//obj_game.selected_actor
 
-//ds_list_add(other.command_list, "Wait");
+ds_list_add(other.command_list, "Wait");
 
 
 
 //two dimensional array for sub menus, which set of options
 //Pause menu
-option[0, 0] = "Start Game";
-option[0, 1] = "Settings";
-option[0, 2] = "Quit Game";
+for(ii = 0; ii < ds_list_size(command_list);ii++)
+{
+	switch(ds_list_find_value(command_list,ii))
+	{
+		case("Attack"):
+		option[0, ii] = "Attack";
+		for(jj = 0; jj < ds_list_size(attack_list);jj++)
+		{
+			option[1, jj] = ds_list_find_value(attack_list,jj);
+		}
+		
+		break;
+		case("Wait"):
+		option[0, ii] = "Wait";
+		break;
+	}
+}
 
-//settings menu, sub menu
-option[1, 0] = "Window Size";
-option[1, 1] = "Brightness";
-option[1, 2] = "Controls";
 
-op_length = 0;
-menu_level = 0;
+//option[0, 0] = "Start Game";
+//option[0, 1] = "Settings";
+//option[0, 2] = "Quit Game";
+
+////settings menu, sub menu
+//option[1, 0] = "Window Size";
+//option[1, 1] = "Brightness";
+//option[1, 2] = "Controls";
+
+op_length = 0; //option length
+menu_level = 0; //how deep we are in sub menus

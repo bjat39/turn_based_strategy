@@ -31,11 +31,11 @@ faction = "neft";//"player"; //what side they are affliliated with, affects turn
 class = "Healer Woman";
 description = "Fuggedaboutit";
 
-command_list = ds_list_create(); //after move, unit commands
-hover_command = noone;
+//command_list = ds_list_create(); //after move, unit commands
+//hover_command = noone;
 
-attack_list = ds_list_create(); //list of viable attack nodes to attack
-hover_attack = noone;
+//attack_list = ds_list_create(); //list of viable attack nodes to attack
+//hover_attack = noone;
 
 //Base stats
 move = 5;
