@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_neft",
-    "path":"sprites/spr_neft/spr_neft.yy",
+    "name":"spr_neft_4",
+    "path":"sprites/spr_neft_4/spr_neft_4.yy",
   },
   "spriteMaskId":null,
   "visible":true,

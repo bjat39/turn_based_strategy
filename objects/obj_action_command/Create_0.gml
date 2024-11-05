@@ -8,21 +8,22 @@ op_space = 16; //y distance between options
 pos = 0; //select option
 command_list = ds_list_create(); //after move, unit commands
 
-curr_actor = obj_game.selected_actor.x;
+curr_actor = obj_game.selected_actor;
 
-
-hover_command = noone;
+hover_command = ds_list_find_value(command_list,pos);
 
 attack_list = ds_list_create(); //list of viable attack nodes to attack
 
+attack_pos = 0;
+
 with(par_actor)
 {
-	x_dist = point_distance(x, y, curr_actor.x, y); //would have measuring to the center but it dont
-	y_dist = point_distance(x, y, x, curr_actor.y);
+	x_dist = point_distance(x, y, other.curr_actor.x, y); //would have measuring to the center but it dont
+	y_dist = point_distance(x, y, x, other.curr_actor.y);
 	total_dist = x_dist + y_dist; //
-	if (total_dist <= curr_actor.attack_range)//temp_actor.attack_range)
+	if (total_dist <= other.curr_actor.attack_range)//temp_actor.attack_range)
 	{
-		if (curr_actor.faction != faction)
+		if (other.curr_actor.faction != faction)
 		{
 			//map[gridX,gridY].attack_node = true;
 			//if (ds_list_find_index(other.command_list,"Attack") == noone)

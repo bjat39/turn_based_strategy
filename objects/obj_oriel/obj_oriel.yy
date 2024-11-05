@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_oriel",
-    "path":"sprites/spr_oriel/spr_oriel.yy",
+    "name":"spr_oriel_1",
+    "path":"sprites/spr_oriel_1/spr_oriel_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,
