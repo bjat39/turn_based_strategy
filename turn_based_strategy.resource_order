@@ -201,6 +201,7 @@
     {"name":"spr_spearman_idle","order":2,"path":"sprites/spr_spearman_idle/spr_spearman_idle.yy",},
     {"name":"spr_spearman_melee","order":3,"path":"sprites/spr_spearman_melee/spr_spearman_melee.yy",},
     {"name":"spr_spearman_run","order":4,"path":"sprites/spr_spearman_run/spr_spearman_run.yy",},
+    {"name":"spr_tile_dungeon","order":32,"path":"sprites/spr_tile_dungeon/spr_tile_dungeon.yy",},
     {"name":"spr_tree","order":16,"path":"sprites/spr_tree/spr_tree.yy",},
     {"name":"spr_wall","order":10,"path":"sprites/spr_wall/spr_wall.yy",},
   ],

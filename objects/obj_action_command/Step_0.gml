@@ -33,13 +33,10 @@ if (accept_key)
 		case(0):
 		switch(hover_command)
 		{
-			//start game
 			case("Attack"): var prev_pos = pos; menu_level = 1;  break;
 		
-			//settings
 			case(1): break;
 		
-			//quit game
 			case("Wait"): curr_actor.finish = true; break;
 		
 		
@@ -92,4 +89,19 @@ if (accept_key)
 	
 	//correct option length
 	op_length = array_length(option[menu_level]);
+	
+	if (curr_actor.finish == true)
+	{
+		//RESET EVERYTHINGGGG
+		curr_actor.moved = true;
+		curr_actor.attacked = true;
+		curr_actor.unit_state = "idle";
+		obj_game.player_state = "select";
+		instance_destroy();
+		//hover_command = noone;
+		//hover_attack = noone;
+		//ds_list_clear(selected_actor.command_list);
+		//ds_list_clear(selected_actor.attack_list);
+		//finished = false;
+	}
 }

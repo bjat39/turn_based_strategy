@@ -1,4 +1,4 @@
-/// @description Edit par_actor so it's more generic, can have enemies use it
+/// @description
 unit_state = "idle";
 
 gridX = 0;
