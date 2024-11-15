@@ -41,7 +41,7 @@
   "origin":4,
   "parent":{
     "name":"spearman",
-    "path":"folders/Sprites/spearman.yy",
+    "path":"folders/Sprites/crap/spearman.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

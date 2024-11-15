@@ -41,7 +41,7 @@
   "origin":4,
   "parent":{
     "name":"archer",
-    "path":"folders/Sprites/archer.yy",
+    "path":"folders/Sprites/crap/archer.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
