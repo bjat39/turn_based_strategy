@@ -20,7 +20,9 @@ function scr_cursor_move(){
 	
 	//check each actor to see if we would need to slow down for them
 	var left_collision = instance_position(obj_cursor.x - GRID_SIZE,obj_cursor.y,par_actor);
-	var left_up_collision = instance_position(obj_cursor.x - GRID_SIZE,obj_cursor.y - GRID_SIZE,par_actor);
+	var up_collision = instance_position(obj_cursor.x,obj_cursor.y - GRID_SIZE,par_actor);
+	var right_collision = instance_position(obj_cursor.x + GRID_SIZE,obj_cursor.y - GRID_SIZE,par_actor);
+	
 	
 	if (hoverNode != noone)
 	{
@@ -42,11 +44,11 @@ function scr_cursor_move(){
 		cursor_move_delay_default = 12;
 		cursor_move_slow_initial ++;
 	}
-	else if (cursor_move_occupant == true)
-	{
-		cursor_move_delay_default = 20;
-		cursor_move_occupant = false;
-	}
+	//else if (cursor_move_occupant == true)
+	//{
+	//	cursor_move_delay_default = 20;
+	//	cursor_move_occupant = false;
+	//}
 	else
 	{
 		cursor_move_delay_default = 2;
@@ -58,6 +60,8 @@ function scr_cursor_move(){
 		 and top_boundary and cursor_move_delay < 0) //up left
 	{
 		//audio_play_sound(sfx_click1,4,0);
+		if (instance_position(obj_cursor.x - GRID_SIZE,obj_cursor.y - GRID_SIZE,par_actor))
+			cursor_move_delay_default = cursor_move_slow_actor_default;
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x -= GRID_SIZE;
@@ -67,6 +71,8 @@ function scr_cursor_move(){
 		and top_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
+		if (instance_position(obj_cursor.x + GRID_SIZE,obj_cursor.y - GRID_SIZE,par_actor))
+			{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x += GRID_SIZE;
@@ -76,6 +82,8 @@ function scr_cursor_move(){
 		and right_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
+		if (instance_position(obj_cursor.x + GRID_SIZE,obj_cursor.y + GRID_SIZE,par_actor))
+			{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x += GRID_SIZE;
@@ -85,6 +93,8 @@ function scr_cursor_move(){
 		and left_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
+		if (instance_position(obj_cursor.x + GRID_SIZE,obj_cursor.y - GRID_SIZE,par_actor))
+			{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x -= GRID_SIZE;
 		obj_cursor.y += GRID_SIZE;
@@ -95,6 +105,8 @@ function scr_cursor_move(){
 	else if(hori_input == -1 and left_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
+		if (instance_position(obj_cursor.x - GRID_SIZE,obj_cursor.y,par_actor))
+			{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x -= GRID_SIZE;
@@ -102,6 +114,8 @@ function scr_cursor_move(){
 	else if(hori_input == 1 and right_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
+		if (instance_position(obj_cursor.x + GRID_SIZE,obj_cursor.y,par_actor))
+			{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x += GRID_SIZE;
@@ -109,13 +123,17 @@ function scr_cursor_move(){
 	else if(vert_input == 1 and bottom_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
+		if (instance_position(obj_cursor.x,obj_cursor.y + GRID_SIZE,par_actor))
+			{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.y += GRID_SIZE;
-	}
+	}//upp
 	else if(vert_input == -1 and top_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
+		if (instance_position(obj_cursor.x,obj_cursor.y - GRID_SIZE,par_actor))
+			{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.y -= GRID_SIZE;
