@@ -19,9 +19,15 @@ function scr_cursor_move(){
 	var down_key = keyboard_check(vk_down);
 	
 	//check each actor to see if we would need to slow down for them
-	with (par_actor)
+	var left_collision = instance_position(obj_cursor.x - GRID_SIZE,obj_cursor.y,par_actor);
+	var left_up_collision = instance_position(obj_cursor.x - GRID_SIZE,obj_cursor.y - GRID_SIZE,par_actor);
+	
+	if (hoverNode != noone)
 	{
-		var left_collision = ;
+		if (hoverNode.occupant != noone and cursor_move_occupant == false)
+		{
+			cursor_move_occupant = true;
+		}
 	}
 	
 	//if (keyboard_check_released(vk_left) or keyboard_check_released(vk_right)

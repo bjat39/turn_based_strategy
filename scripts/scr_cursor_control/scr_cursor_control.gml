@@ -13,10 +13,6 @@ function scr_cursor_control(){
 	else
 	{
 		hoverNode = map[gridX,gridY];
-		if (hoverNode.occupant != noone and cursor_move_occupant == false)
-		{
-			cursor_move_occupant = true;
-		}
 	}
 
 	//Select unit
