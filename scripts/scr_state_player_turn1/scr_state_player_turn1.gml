@@ -10,10 +10,12 @@ function scr_state_player_turn1(){
 	neft_input = keyboard_check_pressed(vk_lcontrol);
 	
 	//Cursor state
-	switch(player_state)
-	{
-		case "select": scr_cursor_control(); break;
-		case "no_select": break;
-		//case "action_command": scr_action_command_control(); break;
-	}
+	//switch(player_state) //change for player state, not cursor state
+	//{
+	//	case "select": scr_cursor_control(); break;
+	//	case "no_select": break;
+	//	//case "action_command": scr_action_command_control(); break;
+	//}
+	if (player_state == "cursor_explore" or player_state == "cursor_move") 
+	{scr_cursor_control();}
 }

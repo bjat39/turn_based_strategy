@@ -2,7 +2,7 @@
 #macro GRID_SIZE 32
 
 game_state = "initialising"; //initialising, player, ai1,ai2 //turn state machine
-player_state = "select"; //select, not_select// action_command, stat_screen, game_command (clik on empty space)
+player_state = "cursor_explore"; //cursor_explore, cursor_move, menu (explore = cursor freely move, move = cursor move within range, menu cursor can't move (still recieving inputs))
 //select = obj_cursor exists, action_command = obj_cursor does not exist
 
 vert_input = scr_vert_input();

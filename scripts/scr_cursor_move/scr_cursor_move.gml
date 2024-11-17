@@ -1,6 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_cursor_move(){
+	//explore = slow down if unit in front, slow delay on start
+	//move = stop if enemy/attack square/wall, no slow delay on start
+	
 	cursor_move_delay --;
 	//redo how it does characters, and the default thing.
 	//no slow move when attacking?
@@ -15,14 +18,20 @@ function scr_cursor_move(){
 	var right_key = keyboard_check(vk_right);
 	var down_key = keyboard_check(vk_down);
 	
+	//check each actor to see if we would need to slow down for them
+	with (par_actor)
+	{
+		var left_collision = ;
+	}
+	
 	//if (keyboard_check_released(vk_left) or keyboard_check_released(vk_right)
 	//	or keyboard_check_released(vk_up) or keyboard_check_released(vk_down))
-	if (!left_key and !right_key and !up_key and !down_key)
+	if (vert_input == 0 and hori_input == 0)
 	{
 		cursor_move_slow_initial = 0;
 	}
 	
-	if ((cursor_move_slow_initial < 3) and (left_key or up_key or right_key or down_key))
+	if ((cursor_move_slow_initial < 3) and (vert_input != 0 or hori_input != 0))
 	{
 		cursor_move_delay_default = 12;
 		cursor_move_slow_initial ++;
@@ -38,7 +47,8 @@ function scr_cursor_move(){
 	}
 	
 	//Diagon(al) Alley
-	if(left_key and up_key and left_boundary
+	//up left
+	if(vert_input == -1 and hori_input == -1 and left_boundary
 		 and top_boundary and cursor_move_delay < 0) //up left
 	{
 		//audio_play_sound(sfx_click1,4,0);
@@ -46,8 +56,8 @@ function scr_cursor_move(){
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x -= GRID_SIZE;
 		obj_cursor.y -= GRID_SIZE;
-	}
-	else if(right_key and up_key and right_boundary
+	}//up right
+	else if(vert_input == -1 and hori_input == 1 and right_boundary
 		and top_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
@@ -55,8 +65,8 @@ function scr_cursor_move(){
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x += GRID_SIZE;
 		obj_cursor.y -= GRID_SIZE;
-	}
-	else if(down_key and right_key and bottom_boundary
+	}//down right
+	else if(vert_input == 1 and hori_input == 1 and bottom_boundary
 		and right_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
@@ -64,8 +74,8 @@ function scr_cursor_move(){
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x += GRID_SIZE;
 		obj_cursor.y += GRID_SIZE;
-	}
-	else if(down_key and left_key and bottom_boundary
+	}//down left
+	else if(vert_input == 1 and hori_input == -1 and bottom_boundary
 		and left_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
@@ -75,28 +85,29 @@ function scr_cursor_move(){
 	}
 	
 	//Cardinal directions
-	else if(left_key and (obj_cursor.x - GRID_SIZE > 0) and cursor_move_delay < 0)
+	//left
+	else if(hori_input == -1 and left_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x -= GRID_SIZE;
-	}
-	else if(right_key and (obj_cursor.x + GRID_SIZE < room_width) and cursor_move_delay < 0)
+	}//right
+	else if(hori_input == 1 and right_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x += GRID_SIZE;
-	}
-	else if(down_key and (obj_cursor.y + GRID_SIZE < room_height) and cursor_move_delay < 0)
+	}//down
+	else if(vert_input == 1 and bottom_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.y += GRID_SIZE;
 	}
-	else if(up_key and (obj_cursor.y - GRID_SIZE > 0) and cursor_move_delay < 0)
+	else if(vert_input == -1 and top_boundary and cursor_move_delay < 0)
 	{
 		//audio_play_sound(sfx_click1,4,0);
 		cursor_move_slow_initial ++;
