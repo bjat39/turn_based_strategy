@@ -1,24 +1,15 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_state_player_turn1(){
-	//if (current_actor == noone)
-	//{
-	//Outside bounds
-	//obj_cursor.x = mouse_x;
-	//obj_cursor.y = mouse_y;
+	//Get inputs
+	vert_input = scr_vert_input();
+	hori_input = scr_hori_input();
+	accept_input = keyboard_check_pressed(ord("Z"));
+	return_input = keyboard_check_pressed(ord("X"));
+	stat_input = keyboard_check_pressed(ord("C"));
+	neft_input = keyboard_check_pressed(vk_lcontrol);
 	
-	//if(selected_actor != noone)
-	//{
-	//	if (selected_actor.unit_state == "command_select")
-	//	{
-	//		player_state = "no_select";
-	//	}
-	//}
-	//else
-	//{
-	//	player_state = "select";
-	//}
-	
+	//Cursor state
 	switch(player_state)
 	{
 		case "select": scr_cursor_control(); break;

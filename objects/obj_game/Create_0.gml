@@ -5,6 +5,13 @@ game_state = "initialising"; //initialising, player, ai1,ai2 //turn state machin
 player_state = "select"; //select, not_select// action_command, stat_screen, game_command (clik on empty space)
 //select = obj_cursor exists, action_command = obj_cursor does not exist
 
+vert_input = scr_vert_input();
+hori_input = scr_hori_input();
+accept_input = keyboard_check_pressed(ord("Z"));
+return_input = keyboard_check_pressed(ord("X"));
+stat_input = keyboard_check_pressed(ord("C"));
+neft_input = keyboard_check_pressed(vk_lcontrol);
+
 randomize();
 
 turn_order = ds_list_create(); //player phase, enemy phase

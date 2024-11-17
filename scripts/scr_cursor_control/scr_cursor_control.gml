@@ -20,7 +20,7 @@ function scr_cursor_control(){
 	}
 
 	//Select unit
-	if (keyboard_check_pressed(ord("Z")))//(mouse_check_button_pressed(mb_left)) //switch with z
+	if (obj_game.accept_input)//(mouse_check_button_pressed(mb_left)) //switch with z
 	{
 		//confirm move
 		if (selected_actor != noone and hoverNode.move_node)//hoverNode.occupant == noone and hoverNode.passable)
@@ -71,18 +71,6 @@ function scr_cursor_control(){
 				selected_actor.unit_state =	"begin_path";
 		
 				scr_wipe_nodes();
-				//reduce selected actor's actions and wipe nodes
-				//if (hoverNode.G > selected_actor.move)
-				//{
-				//	selected_actor.actions -= 2;
-				//	scr_wipe_nodes();
-				//}
-				//else //less than a double move, change this
-				//{
-				//	selected_actor.actions -= 1;//-= 1;
-				//}
-		
-				//selected_actor = noone;
 			}
 			else //click anywhere else
 			{
@@ -120,8 +108,18 @@ function scr_cursor_control(){
 	}
 
 
-	if (keyboard_check_pressed(ord("X"))) //mouse_check_button_pressed(mb_right))
+	if (obj_game.return_input) //mouse_check_button_pressed(mb_right))
 	{
 		
+	}
+	
+	if (obj_game.neft_input) //return to neft, mc
+	{
+		audio_play_sound(sfx_click1,3,0);
+		if (instance_exists(obj_neft))
+		{
+			obj_cursor.x = obj_neft.x;
+			obj_cursor.y = obj_neft.y
+		}
 	}
 }

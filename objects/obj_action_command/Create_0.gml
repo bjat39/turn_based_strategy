@@ -15,6 +15,7 @@ hover_command = ds_list_find_value(command_list,pos);
 attack_list = ds_list_create(); //list of viable attack nodes to attack
 
 attack_pos = 0;
+attack_command = false;
 
 with(par_actor)
 {
@@ -28,7 +29,11 @@ with(par_actor)
 			//map[gridX,gridY].attack_node = true;
 			//if (ds_list_find_index(other.command_list,"Attack") == noone)
 			//{
+			if (other.attack_command == false)
+			{
 				ds_list_add(other.command_list, "Attack");
+				other.attack_command = true;
+			}
 				ds_list_add(other.attack_list,map[gridX,gridY]);
 			//}
 			//selected_actor.attack_node = true;

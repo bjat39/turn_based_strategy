@@ -10,4 +10,7 @@ function scr_wipe_nodes(){
 		colour = c_white;
 		attack_node = false;
 	}
+	instance_destroy(obj_ds_move_square);
+	instance_destroy(obj_ds_attack_square);
+	instance_destroy(obj_ds_heal_square);
 }

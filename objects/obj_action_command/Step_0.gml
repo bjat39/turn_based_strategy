@@ -1,27 +1,27 @@
 /// @description 
-var up_key = keyboard_check_pressed(vk_up);
-var down_key = keyboard_check_pressed(vk_down);
-var accept_key = keyboard_check_pressed(ord("Z"));
-var return_key = keyboard_check_pressed(ord("X"));
+//var up_key = keyboard_check_pressed(vk_up);
+//var down_key = keyboard_check_pressed(vk_down);
+//var accept_key = keyboard_check_pressed(ord("Z"));
+//var return_key = keyboard_check_pressed(ord("X"));
 
 //store number of options in current menu
 op_length = array_length(option[menu_level]);
 
 //move thru the menu
-pos += down_key - up_key;
+pos += obj_game.vert_input;//down_key - up_key;
 
 hover_command = ds_list_find_value(command_list,pos);
 
 if (pos >= op_length){pos = 0;}
 if (pos < 0){pos = op_length-1;}
 
-if (return_key and menu_level > 0)
+if (obj_game.return_input and menu_level > 0)
 {
 	menu_level = 0;
 }
 
 //using the options
-if (accept_key)
+if (obj_game.accept_input)
 {
 	
 	//var start_menu_level = menu_level;
