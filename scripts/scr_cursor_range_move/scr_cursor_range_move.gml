@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_cursor_range_move(){
+function scr_cursor_move(){
 	//explore = slow down if unit in front, slow delay on start
 	//move = stop if enemy/attack square/wall, no slow delay on start
 	
@@ -17,13 +17,12 @@ function scr_cursor_range_move(){
 	
 	//if (keyboard_check_released(vk_left) or keyboard_check_released(vk_right)
 	//	or keyboard_check_released(vk_up) or keyboard_check_released(vk_down))
-	if (vert_input == 0 and hori_input == 0) //and player_state == "cursor_explore")
+	if (vert_input == 0 and hori_input == 0)
 	{
 		cursor_move_slow_initial = 0;
 	}
 	
 	if ((cursor_move_slow_initial < 3) and (vert_input != 0 or hori_input != 0))
-		//and player_state == "cursor_explore")
 	{
 		cursor_move_delay_default = 12;
 		cursor_move_slow_initial ++;

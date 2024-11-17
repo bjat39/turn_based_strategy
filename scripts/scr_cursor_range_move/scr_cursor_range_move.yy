@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_cursor_range_move",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_cursor_range_move",
+  "parent":{
+    "name":"ds_grid",
+    "path":"folders/Scripts/ds_grid.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

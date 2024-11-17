@@ -96,7 +96,7 @@ if (obj_game.accept_input)
 		curr_actor.moved = true;
 		curr_actor.attacked = true;
 		curr_actor.unit_state = "idle";
-		obj_game.player_state = "select";
+		obj_game.player_state = "cursor_explore";
 		instance_destroy();
 		//hover_command = noone;
 		//hover_attack = noone;

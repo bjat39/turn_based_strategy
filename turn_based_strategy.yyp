@@ -193,6 +193,7 @@
     {"id":{"name":"scr_colour_move_node","path":"scripts/scr_colour_move_node/scr_colour_move_node.yy",},},
     {"id":{"name":"scr_cursor_control","path":"scripts/scr_cursor_control/scr_cursor_control.yy",},},
     {"id":{"name":"scr_cursor_move","path":"scripts/scr_cursor_move/scr_cursor_move.yy",},},
+    {"id":{"name":"scr_cursor_range_move","path":"scripts/scr_cursor_range_move/scr_cursor_range_move.yy",},},
     {"id":{"name":"scr_draw_rectangle_center","path":"scripts/scr_draw_rectangle_center/scr_draw_rectangle_center.yy",},},
     {"id":{"name":"scr_hori_input","path":"scripts/scr_hori_input/scr_hori_input.yy",},},
     {"id":{"name":"scr_melee_attack_ai","path":"scripts/scr_melee_attack_ai/scr_melee_attack_ai.yy",},},
