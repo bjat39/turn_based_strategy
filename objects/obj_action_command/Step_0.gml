@@ -15,9 +15,17 @@ hover_command = ds_list_find_value(command_list,pos);
 if (pos >= op_length){pos = 0;}
 if (pos < 0){pos = op_length-1;}
 
+if (menu_level == 1)
+{
+	obj_cursor.x = ds_list_find_value(attack_list,pos).x + GRID_SIZE / 2;
+	obj_cursor.y = ds_list_find_value(attack_list,pos).y + GRID_SIZE / 2;
+}
+
+
 if (obj_game.return_input and menu_level > 0)
 {
 	menu_level = 0;
+	//pos = prev_pos;
 }
 
 //using the options
@@ -43,9 +51,7 @@ if (obj_game.accept_input)
 		}
 		break;
 		case(1): //attack list
-
-			obj_cursor.x = ds_list_find_value(attack_list,pos).x;
-			obj_cursor.y = ds_list_find_value(attack_list,pos).y;
+			
 		break;
 	}
 	
