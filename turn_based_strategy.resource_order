@@ -45,6 +45,7 @@
     {"name":"obj_attack_square","order":3,"path":"objects/obj_attack_square/obj_attack_square.yy",},
     {"name":"obj_attack_square1","order":5,"path":"objects/obj_attack_square1/obj_attack_square1.yy",},
     {"name":"obj_attack","order":10,"path":"objects/obj_attack/obj_attack.yy",},
+    {"name":"obj_battle_manager","order":16,"path":"objects/obj_battle_manager/obj_battle_manager.yy",},
     {"name":"obj_biff","order":9,"path":"objects/obj_biff/obj_biff.yy",},
     {"name":"obj_camera","order":7,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"obj_camera1","order":11,"path":"objects/obj_camera1/obj_camera1.yy",},

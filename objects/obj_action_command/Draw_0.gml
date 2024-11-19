@@ -17,9 +17,21 @@ draw_sprite_ext(sprite_index,image_index,x,y,width/sprite_width,height/sprite_he
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 
-for (var i = 0; i < op_length;i++)
+if (menu_level == 0)
 {
-	var col = c_white;
-	if (pos == i){col = c_yellow;}
-	draw_text_colour(x+op_border,y+op_border + op_space * i,option[menu_level,i], col, col, col, col, 1);
+	for (var i = 0; i < op_length;i++)
+	{
+		var col = c_white;
+		if (pos == i){col = c_yellow;}
+		draw_text_colour(x+op_border,y+op_border + op_space * i,option[menu_level,i], col, col, col, col, 1);
+	}
+}
+else if (menu_level == 1)
+{
+	for (var i = 0; i < op_length;i++)
+	{
+		var col = c_white;
+		if (pos == i){col = c_yellow;}
+		draw_text_colour(x+op_border,y+op_border + op_space * i,option[1,i], col, col, col, col, 1);
+	}
 }

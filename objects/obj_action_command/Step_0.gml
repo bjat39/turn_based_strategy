@@ -1,6 +1,6 @@
 /// @description 
-//var up_key = keyboard_check_pressed(vk_up);
-//var down_key = keyboard_check_pressed(vk_down);
+var up_key = keyboard_check_pressed(vk_up);
+var down_key = keyboard_check_pressed(vk_down);
 //var accept_key = keyboard_check_pressed(ord("Z"));
 //var return_key = keyboard_check_pressed(ord("X"));
 
@@ -8,7 +8,7 @@
 op_length = array_length(option[menu_level]);
 
 //move thru the menu
-pos += obj_game.vert_input;//down_key - up_key;
+pos += down_key - up_key;
 
 hover_command = ds_list_find_value(command_list,pos);
 
@@ -51,7 +51,11 @@ if (obj_game.accept_input)
 		}
 		break;
 		case(1): //attack list
-			
+			with instance_create_layer(x,y,"Instances",obj_battle_manager)
+			{
+				initiator = curr_actor;
+				reciever = option[1,pos]
+			}
 		break;
 	}
 	

@@ -33,3 +33,8 @@ else
 	draw_self();
 }
 
+//draw health
+if (current_hit_points > 0)
+{
+	draw_healthbar(x,y+GRID_SIZE);
+}
