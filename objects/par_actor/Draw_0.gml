@@ -22,7 +22,7 @@ if (obj_game.selected_actor == id and obj_game.selected_actor.ai_type == "player
 //	draw_text(x+ 32,y + 16, ds_list_find_value(command_list,hover_command));
 //}
 
-if (finish == true)
+if (unit_state == "finish")
 {
 	shader_set(sha_grayscale)
 	draw_self()

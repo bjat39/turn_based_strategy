@@ -11,7 +11,6 @@ actor_name = "error";
 //proper action variables
 moved = false;
 attacked = false; //only attack once a turn
-finish = false; //moved and attacked
 
 //variables related to pathing
 //create path data structure

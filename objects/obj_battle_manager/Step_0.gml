@@ -31,8 +31,7 @@ case "initiator_end_attack"://let scr attack handle this
 case "finish_battle":
 	with (initiator)
 	{
-		unit_state = "idle";
-		finish = true;
+		unit_state = "finish";
 	}
 	instance_destroy();
 	break;

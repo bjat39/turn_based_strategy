@@ -13,7 +13,7 @@ if (keyboard_check_pressed(ord("R")))
 	{
 		moved = false; //neccessary?
 		attacked = false;
-		finish = false;
+		unit_state = "idle";
 		//unit_state = UNIT_STATE.READY;
 		
 	}
