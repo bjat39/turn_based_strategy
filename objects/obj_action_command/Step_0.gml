@@ -53,9 +53,9 @@ if (obj_game.accept_input)
 		case(1): //attack list
 			with instance_create_layer(x,y,"Instances",obj_battle_manager)
 			{
-				initiator = curr_actor;
-				reciever = option[1,pos]
-			}
+				initiator = other.curr_actor;
+				reciever = other.option[1,other.pos]
+			}  
 		break;
 	}
 	
@@ -100,18 +100,5 @@ if (obj_game.accept_input)
 	//correct option length
 	op_length = array_length(option[menu_level]);
 	
-	if (curr_actor.finish == true)
-	{
-		//RESET EVERYTHINGGGG
-		curr_actor.moved = true;
-		curr_actor.attacked = true;
-		curr_actor.unit_state = "idle";
-		obj_game.player_state = "cursor_explore";
-		instance_destroy();
-		//hover_command = noone;
-		//hover_attack = noone;
-		//ds_list_clear(selected_actor.command_list);
-		//ds_list_clear(selected_actor.attack_list);
-		//finished = false;
-	}
+
 }

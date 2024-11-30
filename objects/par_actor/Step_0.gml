@@ -15,7 +15,7 @@ switch(unit_state)
 			path_clear_points(movement_path);
 			
 			unit_state = "idle";
-			obj_game.player_state = "no_select";
+			obj_game.player_state = "cursor_menu";
 			
 			var new_closed = ds_list_create();
 			ds_list_add(new_closed,current_node);
@@ -32,5 +32,21 @@ switch(unit_state)
 	case ("battle"):
 	
 		break;
+		
 	
+}
+
+if (finish == true)
+{
+	//RESET EVERYTHINGGGG
+	curr_actor.moved = true;
+	curr_actor.attacked = true;
+	curr_actor.unit_state = "idle";
+	obj_game.player_state = "cursor_explore";
+	instance_destroy(obj_action_command);
+	//hover_command = noone;
+	//hover_attack = noone;
+	//ds_list_clear(selected_actor.command_list);
+	//ds_list_clear(selected_actor.attack_list);
+	//finished = false;
 }

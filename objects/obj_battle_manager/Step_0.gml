@@ -1,24 +1,38 @@
 /// @description 
-case "begin_attack":
+switch(state)
+{
+case "initiator_begin_attack":
 	//before attack animation
 	attack_timer -= 1;
 	if (attack_timer <= 0)
 	{
-		unit_state = "attack";
+		state = "attack";
 	}
 		
 	break;
-case "attack":
+case "initiator_attack":
 		scr_attack_enemy();
 		break;
 	//}
 	//break;
-case "end_attack"://let scr attack handle this
+case "initiator_end_attack"://let scr attack handle this
 	attack_timer -= 1;
 		
 	if(attack_timer <= 0)
 	{
-		attacked = true;
+		state = "finish_battle";
+		
+	}
+	
+
+	break;
+case "finish_battle":
+	with (initiator)
+	{
 		unit_state = "idle";
+		finish = true;
 	}
 	break;
+}
+
+
