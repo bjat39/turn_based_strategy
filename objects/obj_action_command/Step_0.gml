@@ -45,16 +45,19 @@ if (obj_game.accept_input)
 		
 			case(1): break;
 		
-			case("Wait"): curr_actor.finish = true; break;
+			case("Wait"): curr_actor.finish = true; delete_box = true; break;
 		
 		
 		}
 		break;
 		case(1): //attack list
+			curr_actor.unit_state = "battle";
+			delete_box = true;
 			with instance_create_layer(x,y,"Instances",obj_battle_manager)
 			{
 				initiator = other.curr_actor;
-				reciever = other.option[1,other.pos]
+				var node = other.option[1,other.pos];
+				reciever = node.occupant;
 			}  
 		break;
 	}
@@ -100,5 +103,12 @@ if (obj_game.accept_input)
 	//correct option length
 	op_length = array_length(option[menu_level]);
 	
+	if (delete_box == true)
+	{
+		with (obj_action_command)
+		{
+			instance_destroy();
+		}
+	}
 
 }

@@ -14,20 +14,21 @@ function scr_attack_enemy(){
 				
 	if (attack_status != "miss")
 	{
-			temp_damage = strength_stat - attack_target.defence_stat;
+			temp_damage = initiator.strength_stat - reciever.defence_stat;
+			if (temp_damage < 0){temp_damage = 0}
 	}
 				
-	attack_dir = point_direction(x + 16, y + 16, attack_target.x + 16, attack_target.y + 16);
+	attack_dir = point_direction(x + 16, y + 16, reciever.x + 16, reciever.y + 16);
 				
 	begin_x = x + 16 + lengthdir_x(30, attack_dir); //starts 30 px in front
 	begin_y = y + 16 + lengthdir_y(30, attack_dir);
 				
-	with(instance_create_layer(begin_x,begin_y,"Instances",obj_arrow1))//begin_x,begin_y,"Instances",obj_arrow))
+	with(instance_create_layer(begin_x,begin_y,"Menu",obj_arrow1))//begin_x,begin_y,"Instances",obj_arrow))
 	{
-		target = other.attack_target;
+		target = other.reciever;
 		status = other.attack_status;
 		damage = other.temp_damage;
-		damage_type = other.damage_type;
+		damage_type = other.initiator.damage_type;
 					
 		speed = 24;
 					
@@ -44,8 +45,4 @@ function scr_attack_enemy(){
 					
 		path_start(movement_path,speed,path_action_stop,true);
 	}
-				
-	unit_state = "end_attack";
-				
-	attack_timer = 30;
 }

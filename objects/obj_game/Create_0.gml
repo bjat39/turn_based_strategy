@@ -38,6 +38,8 @@ globalvar map; //array, hold onto all nodes in map, holds onto their ids in the 
 map_width = room_width / GRID_SIZE;
 map_height = room_height / GRID_SIZE;
 
+spinny_neft_rotation = 0;
+
 //create nodes, create grid
 
 for (xx = 0; xx < map_width; xx += 1) //does the x column first
@@ -87,11 +89,11 @@ draw_set_font(fnt_courier);
 
 if (instance_exists(obj_neft))
 {
-	instance_create_layer(obj_neft.x + (GRID_SIZE / 2),obj_neft.y + (GRID_SIZE / 2),"Instances", obj_cursor);
+	instance_create_layer(obj_neft.x + (GRID_SIZE / 2),obj_neft.y + (GRID_SIZE / 2),"Menu", obj_cursor);
 }
 else
 {
-	instance_create_layer(GRID_SIZE / 2, GRID_SIZE / 2,"Instances", obj_cursor);
+	instance_create_layer(GRID_SIZE / 2, GRID_SIZE / 2,"Menu", obj_cursor);
 }
 
 cursor_move_delay = 0;
