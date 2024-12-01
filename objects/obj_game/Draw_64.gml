@@ -17,9 +17,15 @@ if (hoverNode != noone)
 		draw_set_color(c_white);
 		draw_text(0,60,hoverNode.G);
 	}
+	
+	//debug
+	draw_set_color(c_red);
+	draw_text(0,220,"player_state: " + player_state);
+	
 }
 
 draw_self();
+
 
 if (selected_actor == noone)
 {
@@ -40,8 +46,8 @@ if (selected_actor == noone)
 			draw_text(0,20,tempText);
 			draw_text(0,20 + string_height(tempText),temp_hit_points);
 			//draw_rectangle(0,room_height,string_width(tempText),room_height-string_height(tempText),false)
-	
-			//draw_set_color(c_white);
+			
+			
 			//draw_text(0,room_height - string_height(tempText),tempText);
 		}
 		//else
@@ -72,3 +78,20 @@ if (selected_actor == noone)
 		//tempText = "Avo: " + hoverNode.terrain_avoid + ", " + "Def: " + hoverNode.terrain_defense;
 	}
 }
+
+if (hoverNode != noone)
+	{	
+		if (hoverNode.occupant != noone)
+		{
+			draw_set_color(c_red);
+			//debug info
+			draw_text(0,100,"unit_state: " + hoverNode.occupant.unit_state);
+			draw_text(0,120,"moved: " + string(hoverNode.occupant.moved));
+			draw_text(0,140,"gridX: " + string(hoverNode.occupant.gridX));
+			draw_text(0,160,"gridY: " + string(hoverNode.occupant.gridY));
+			draw_text(0,180,"current_node: " + string(hoverNode.occupant.current_node));
+			draw_text(0,200,"orig_node: " + string(hoverNode.occupant.orig_node));
+			
+			draw_set_color(c_white);
+		}
+	}

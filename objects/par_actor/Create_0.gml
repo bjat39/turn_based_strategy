@@ -1,8 +1,8 @@
 /// @description
 unit_state = "idle";
 
-gridX = 0;
-gridY = 0;
+gridX = x / GRID_SIZE;//0; used to work out current node, so i'm setting it here, although it gets set automatically elsewhere
+gridY = y / GRID_SIZE;
 
 actor_name = "error";
 
@@ -20,7 +20,8 @@ path_set_closed(movement_path,false); //determines whether a path is open/closed
 
 move_speed = 8; //how fast unit moves between squares
 
-current_node = obj_game.hoverNode;
+//current_node = obj_game.hoverNode; //used to draw line when moving
+current_node = map[gridX,gridY]; //used to draw line when moving
 orig_node = current_node; //node saved if the player cancels after moving
 
 //character statistics

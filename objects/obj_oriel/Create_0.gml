@@ -20,7 +20,7 @@ level = 1;
 max_hit_points = 20;
 current_hit_points = max_hit_points;
 
-strength_stat = 7;
+strength_stat = 30;
 magic_stat = noone; //only for mages, instead of strength
 marksman_stat = noone; //affects hit rate, useless for melee
 speed_stat = 8; //affects evasion, if unit has +5 more speed than enemy, double attack

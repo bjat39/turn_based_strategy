@@ -37,15 +37,18 @@ switch(unit_state)
 		break;
 	case ("finish"):
 		//RESET EVERYTHINGGGG
+		
 		moved = true;
 		attacked = true;
 		//instance_destroy(obj_action_command);
-	
+		
 		//hover_command = noone;
 		//hover_attack = noone;
 		//ds_list_clear(selected_actor.command_list);
 		//ds_list_clear(selected_actor.attack_list);
 		//finished = false;
 		break;
+	case ("dying"):
 	
+		break;
 }

@@ -23,7 +23,7 @@ strength_stat = 7;
 magic_stat = noone; //only for mages, instead of strength
 marksman_stat = noone; //affects hit rate, useless for melee
 speed_stat = 8; //affects evasion, if unit has +5 more speed than enemy, double attack
-defence_stat = 7;
+defence_stat = 0;
 resistance_stat = 1; //magic defense
 luck_stat = 0; //affect hit and evasion (+1 to percentages)
 

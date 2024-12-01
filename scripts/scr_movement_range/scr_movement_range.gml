@@ -5,7 +5,7 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 	//Reset all node data
 	//scr_wipe_nodes();
 	
-	var open, closed; //node lists,
+	var open//, closed; //node lists,
 	var start_node, current_node, curr_neighbour; //holds instance ids, start_node node, current node
 	var temp_G, range, cost_mod;
 	

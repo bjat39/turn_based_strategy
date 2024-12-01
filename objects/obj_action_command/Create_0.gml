@@ -11,6 +11,7 @@ command_list = ds_list_create(); //after move, unit commands
 
 curr_actor = obj_game.selected_actor;
 delete_box = false;
+soft_reset = false; //if player cancels, still can move unit
 
 hover_command = ds_list_find_value(command_list,pos);
 
