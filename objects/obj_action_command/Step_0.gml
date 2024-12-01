@@ -27,6 +27,18 @@ if (obj_game.return_input and menu_level > 0)
 	menu_level = 0;
 	//pos = prev_pos;
 }
+else if (obj_game.return_input and menu_level == 0) //return to original position
+{
+	curr_actor.current_node = curr_actor.orig_node;
+	curr_actor.gridX = curr_actor.current_node.gridX;
+	curr_actor.gridY = curr_actor.current_node.gridY;
+	curr_actor.x = curr_actor.current_node.x;
+	curr_actor.y = curr_actor.current_node.y;
+	curr_actor.moved = false; //change moved to unit state
+	
+	obj_game.player_state = "cursor_explore"; //unit state moved?
+	instance_destroy();
+}
 
 //using the options
 if (obj_game.accept_input)
@@ -103,8 +115,11 @@ if (obj_game.accept_input)
 	//correct option length
 	op_length = array_length(option[menu_level]);
 	
+	
 	if (delete_box == true)
 	{
+		curr_actor.orig_node = curr_actor.current_node;
+		obj_game.player_state = "cursor_explore";
 		with (obj_action_command)
 		{
 			instance_destroy();

@@ -6,6 +6,8 @@ switch(unit_state)
 		//begin moving along path
 		path_start(movement_path,move_speed,0,true);
 		
+		orig_node = current_node;
+		
 		unit_state = "moving";
 		break;
 	case "moving":
@@ -37,7 +39,6 @@ switch(unit_state)
 		//RESET EVERYTHINGGGG
 		moved = true;
 		attacked = true;
-		obj_game.player_state = "cursor_explore";
 		//instance_destroy(obj_action_command);
 	
 		//hover_command = noone;

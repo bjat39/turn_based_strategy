@@ -21,6 +21,7 @@ path_set_closed(movement_path,false); //determines whether a path is open/closed
 move_speed = 8; //how fast unit moves between squares
 
 current_node = obj_game.hoverNode;
+orig_node = current_node; //node saved if the player cancels after moving
 
 //character statistics
 

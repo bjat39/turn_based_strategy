@@ -4,7 +4,8 @@ event_inherited(); //do the parent's inherited create event, then our create eve
 actor_name = "Oriel";
 
 faction = "neft";//"player"; //what side they are affliliated with, affects turn order
-description = "An antisocial Alenetian old man.\nHas a nasty disease.";
+class = "Crossbowman";
+description = "An asocial Alenetian old man.\nHas a nasty disease.";
 
 //Base stats
 move = 8//6;
