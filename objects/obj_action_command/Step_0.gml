@@ -93,13 +93,13 @@ if (obj_game.accept_input)
 		break;
 		case(1): //attack list
 			curr_actor.unit_state = "battle";
-			delete_box = true;
 			with instance_create_layer(x,y,"Instances",obj_battle_manager)
 			{
 				initiator = other.curr_actor;
 				var node = other.option[1,other.pos];
 				reciever = node.occupant;
 			}  
+			instance_destroy();
 		break;
 	}
 	
@@ -149,6 +149,7 @@ if (obj_game.accept_input)
 	{
 		curr_actor.orig_node = curr_actor.current_node;
 		obj_game.selected_actor = noone;
+		obj_game.player_state = "cursor_explore";
 		with (obj_action_command)
 		{
 			instance_destroy();

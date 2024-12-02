@@ -41,7 +41,7 @@ description = "Fuggedaboutit";
 //Base stats
 move = 5;
 
-attack_range = 0 * GRID_SIZE; //placeholder set later in create. in pixels
+attack_range = 1 * GRID_SIZE; //placeholder set later in create. in pixels
 attack_target = noone;
 attack_timer = 0;
 damage_type = "melee"; //Weapon triangle
@@ -54,7 +54,7 @@ current_hit_points = max_hit_points;
 
 strength_stat = 0;
 magic_stat = 0; //only for mages, instead of strength
-marksman_stat = 0; //affects hit rate, useless for melee (used to be skill) (range? how much range until it falls off.) 
+marksman_stat = 0; //affects hit rate, affects sight range in fog of war, useless for melee (used to be skill) (range? how much range until it falls off.) 
 //(+3 points = 1 tile can be hit for sure? but i kind of want accuracy to fall off slowly tho) (total range stat to make it easy to see? make it hard to get one tile of guarantee) (so +4 to get one tile?)
 speed_stat = 0; //affects evasion, if unit has +5 more speed than enemy, double attack
 defence_stat = 0;

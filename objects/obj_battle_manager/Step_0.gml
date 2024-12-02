@@ -32,9 +32,10 @@ case "finish_battle":
 	obj_cursor.x = initiator.x + GRID_SIZE/2;
 	obj_cursor.y = initiator.y + GRID_SIZE/2;
 	obj_game.player_state = "cursor_explore";
-	with (initiator)
+	obj_game.selected_actor = noone;
+	if (initiator.unit_state != "dying")
 	{
-		unit_state = "finish";
+		initiator.unit_state = "finish";
 	}
 	instance_destroy();
 	break;

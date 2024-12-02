@@ -1,6 +1,6 @@
 /// @description 
-#macro RES_W 768//1024//768//640//320
-#macro RES_H 432//576//432//360//180
+#macro RES_W 800//1024//768//640//320
+#macro RES_H 450//576//432//360//180
 #macro RES_SCALE 1.5//1//1.5//4.5//3
 
 #macro CAM_SMOOTH 0.1
