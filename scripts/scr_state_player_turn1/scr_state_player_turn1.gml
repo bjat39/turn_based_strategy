@@ -16,6 +16,6 @@ function scr_state_player_turn1(){
 	//	case "no_select": break;
 	//	//case "action_command": scr_action_command_control(); break;
 	//}
-	if (player_state == "cursor_explore" or player_state == "cursor_move") 
-	{scr_cursor_control();}
+	//if (player_state == "cursor_explore" or player_state == "cursor_move") 
+	scr_cursor_control();
 }

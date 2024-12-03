@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
-  "%Name":"bgr_wasteland",
+  "%Name":"bgr_dark_wasteland",
   "bboxMode":0,
-  "bbox_bottom":255,
+  "bbox_bottom":267,
   "bbox_left":0,
-  "bbox_right":479,
+  "bbox_right":399,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"fc6cb5a4-dab2-4043-acaf-528ed8364b64","name":"fc6cb5a4-dab2-4043-acaf-528ed8364b64","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5416bff0-b340-4e66-821e-fbc216b04874","name":"5416bff0-b340-4e66-821e-fbc216b04874","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":256,
+  "height":268,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"a2f771ca-1482-4def-a24d-9d6c5ccb7f23","blendMode":0,"displayName":"default","isLocked":false,"name":"a2f771ca-1482-4def-a24d-9d6c5ccb7f23","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"e83b16de-c576-41bd-b7cd-ee9a95928f7e","blendMode":0,"displayName":"default","isLocked":false,"name":"e83b16de-c576-41bd-b7cd-ee9a95928f7e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"bgr_wasteland",
+  "name":"bgr_dark_wasteland",
   "nineSlice":null,
   "origin":4,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"bgr_wasteland",
+    "%Name":"bgr_dark_wasteland",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"bgr_wasteland",
+    "name":"bgr_dark_wasteland",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,14 +69,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fc6cb5a4-dab2-4043-acaf-528ed8364b64","path":"sprites/bgr_wasteland/bgr_wasteland.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"517b270b-e991-472e-bd68-0f26a1e05491","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5416bff0-b340-4e66-821e-fbc216b04874","path":"sprites/bgr_dark_wasteland/bgr_dark_wasteland.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"09f7968a-3547-4c67-9096-f752a43940f8","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":240,
-    "yorigin":128,
+    "xorigin":200,
+    "yorigin":134,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":480,
+  "width":400,
 }

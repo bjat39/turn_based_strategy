@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_cursor_move",
+  "%Name":"scr_cursor_move_explore",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_cursor_move",
+  "name":"scr_cursor_move_explore",
   "parent":{
     "name":"ds_grid",
     "path":"folders/Scripts/ds_grid.yy",

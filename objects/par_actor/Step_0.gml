@@ -2,6 +2,12 @@
 switch(unit_state)
 {
 	case "idle": break;
+	case "selected": 
+		if(ai_type == "player")
+		{
+			obj_game.player_state = "cursor_selected";
+		}
+		break;
 	case "begin_path":
 		//begin moving along path
 		path_start(movement_path,move_speed,0,true);
@@ -9,6 +15,7 @@ switch(unit_state)
 		orig_node = current_node;
 		
 		unit_state = "moving";
+		obj_game.player_state = "cursor_menu";
 		break;
 	case "moving":
 		if (path_index = -1) //path ended
@@ -18,7 +25,6 @@ switch(unit_state)
 			
 			unit_state = "idle";
 			moved = true;
-			obj_game.player_state = "cursor_menu";
 			
 			var new_closed = ds_list_create();
 			ds_list_add(new_closed,current_node);

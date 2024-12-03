@@ -1,7 +1,18 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_cursor_control(){
-	scr_cursor_move();
+	if (player_state == "cursor_explore")//exploring map
+	{  
+		scr_cursor_move_explore();
+	}
+	else if (player_state == "cursor_selected") //selected character
+	{
+		scr_cursor_move_selected()
+	}
+	else if (player_state == "cursor_menu")
+	{
+		return;
+	}
 	
 	gridX = floor(obj_cursor.x/GRID_SIZE);
 	gridY = floor(obj_cursor.y/GRID_SIZE);
@@ -18,11 +29,12 @@ function scr_cursor_control(){
 	//Select unit
 	if (obj_game.accept_input)//(mouse_check_button_pressed(mb_left)) //switch with z
 	{
-		//confirm move
+		//confirm moving unit
 		if (selected_actor != noone and hoverNode.move_node)//hoverNode.occupant == noone and hoverNode.passable)
 		{
 			if (selected_actor.ai_type == "player")//hoverNode.occupant == noone and hoverNode.passable)
 			{
+				
 				current_node = hoverNode; //new variable
 		
 				//create priority queue
@@ -83,6 +95,7 @@ function scr_cursor_control(){
 			{
 				scr_wipe_nodes();
 				selected_actor = hoverNode.occupant;
+				selected_actor.unit_state =	"selected";
 				//selected_actor.actions = 2;
 				scr_movement_range(hoverNode,
 					selected_actor.move,selected_actor.attack_range,selected_actor); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
