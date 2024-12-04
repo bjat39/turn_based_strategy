@@ -8,8 +8,16 @@ camW = camera_get_view_width(camera);
 camH = camera_get_view_height(camera);
 
 //Set target camera position
-var targetX = obj_cursor.x - camW/2;
-var targetY = obj_cursor.y - camH/2;
+if (instance_exists(obj_cursor))
+{
+	var targetX = obj_cursor.x - camW/2;
+	var targetY = obj_cursor.y - camH/2
+}
+else
+{
+	var targetX = 0;
+	var targetY = 0;
+}
 
 //Clamp the target to room bounds
 targetX = clamp(targetX,0,room_width - camW);

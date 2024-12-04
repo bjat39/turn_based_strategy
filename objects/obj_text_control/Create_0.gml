@@ -2,8 +2,8 @@
 //window_set_fullscreen(true);
 //if (room_get_name(room) == "room_1start")
 //{
-	ChatterboxLoadFromFile("opening_scene.yarn"); //Load file
-	ChatterboxLoadFromFile("road_scene.yarn");
+	//ChatterboxLoadFromFile("opening_scene.yarn"); //Load file
+	ChatterboxLoadFromFile("beginning.yarn");
 //}
 
 chatterbox = ChatterboxCreate(); //Create a chatterbox
@@ -20,7 +20,7 @@ chatterbox = ChatterboxCreate(); //Create a chatterbox
 	ChatterboxAddFunction("room_goto",scr_room_goto);
 	ChatterboxAddFunction("char_vis",scr_set_vis_char);
 	ChatterboxAddFunction("background_vis",scr_set_vis_background);
-	ChatterboxJump(chatterbox,"car_decision");//ChatterboxJump(chatterbox,"First_Start"); //Go to "Start" node
+	ChatterboxJump(chatterbox,"beginning");//ChatterboxJump(chatterbox,"First_Start"); //Go to "Start" node
 
 	option_index = 0; //Initialise option index
 	scr_chatterbox_update() //Get current node and current node text

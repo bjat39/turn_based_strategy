@@ -1,0 +1,515 @@
+#__PrivCrochet_version:1
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 443,78
+__PrivCrochet_tags: 
+title: road_start
+---
+<<black_screen()>>
+<<bg(1)>>
+<<set $car_x to 245>>
+<<set $car_y to 81>>
+<<move("obj_car",$car_x,$car_y)>>
+<<stop_sfx("mus_censored")>>
+<<background_vis()>
+<<char_vis("obj_doggy")>>
+<<char_vis("obj_floor_guy")>>
+<<char_vis("obj_mc")>>
+<<char_vis("obj_tall")>>
+<<char_vis("obj_triangle")>>
+<<set $music_loops to 1>>
+<<set $road_counter to 0>>
+<<set $progress_flag to 0>>
+<<set $wallet_check_counter to 0>>
+<<set $current_x to 7>>
+<<set $current_y to 7>>
+<<set $direction to "west">>
+<<sfx("mus_walking_in_the_rain",$music_loops)>>
+<<hud_off(40)>>
+<<black_screen()>>
+Me: Guess I'm driving now. Wayyyy out in the boonies.
+Triangleface: Huh? Whatcha say?
+Me: (Oops, I thought out loud.)
+Me: (But really, I drove outta the parking lot into a very verdant area.)
+Me: (So, the sitch now is...)
+Me: (Triangleface to my left, riding shotgun.)
+Tall guy: ...
+Me: (Tall boy in the back, with puppy.)
+Doggy: Zzz...
+Me: (And of course, me in the driver's seat.)
+Me: (The only problem is, I have no clue where I'm going.)
+Me: (It would be helpful if I had a Sat Nav, but for now...)
+Me: (I'll keep track of where I'm going with my Mental Map.)
+Me: (Otherwise, I should probably massage some answers out of my fellow passengers.)
+Me: (I've got a couple escape ideas in my head, but...)
+Me: (I should get all the info I can from these guys before I dip.)
+Me: (What should I say?)
+<<jump question_time_1>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 662,-45
+__PrivCrochet_tags: 
+title: question_time_1
+---
+.
+->'Lovely weather we're having, huh?' <<if visited("weather") == 0>>
+    <<jump weather>>
+->Examine Triangleface
+    put your seatbelt on nah
+->'Hey guys, where the hell are we going?' <<if visited("guys_wth_are_we_going") == 0>>
+    <<jump guys_wth_are_we_going>>
+->'Hey guys, what day is it again?' <<if visited("what_day") == 0>>
+    <<jump what_day>>
+->Think deeply about the current situation,\n and how you got here <<if visited("big_think") == 0>>
+    <<jump big_think>>
+->Just drive
+    <<jump drive_event>>
+
+
+->Angry triangleface, only option, put it to rest
+
+Triangleface intterupts your questions after a few of them to ask to bum a fag
+Sponge you want one? no
+Possan you want one? 
+i think he wants one. tall guy no
+
+-> what's up with the names not actually named sponge
+
+->hey what's in the sports bag?
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 912,-223
+__PrivCrochet_tags: 
+title: weather
+---
+You're met with an empty silence.
+How rude! Your hyperbolic statement of the 'lovely weather' was an absolute masterclass of ironic comedy.
+Truly, these simpletons simply cannot be roused with your sterling commentary.
+Even the least efficacious and loquacious dimwits of society could find some merit in this simple line.
+Me: Bleurgh, I think I have a frog in my throat...
+<<jump drive_event>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 906,69
+__PrivCrochet_tags: 
+title: guys_wth_are_we_going
+---
+Triangleface: ...You don't know where we're going.
+Me: (Shoot, was that a faux pas...?)
+->'Haha, of course I know!\nJust testing you~'
+    Triangleface: ...Right.
+    Tall guy: It's not like you know, either.
+    fine uhg ill turn on sat nav
+->'No, seriously. I have no clue.'
+Fuck you mean, also where are you going. You should know where we’re going! (before this we were the most enthusiastic about this job, we planned it?)Going for pizza
+
+
+fine, here's the sat nav. go ahead and put it in
+shiiitttt. i have no idea what to put into that thing. maybe i could spin it around onto one of the other guys
+->'I'm driving right now, can't you put it in?'
+->'You know what, nevermind.'
+
+<<jump drive_event>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1198,-150
+__PrivCrochet_tags: 
+title: what_day
+---
+Triangleface: You seriously don't know what day it is?
+Triangleface: Seriously?
+->Yea
+->Na
+Triangleface: It's...uhh...
+Triangleface: Sponge, what day is it?
+Tall guy: Monday.
+Tall guy: Bank holiday Monday, actually.
+->'No, I meant the date.'
+    Triangleface: It's...umm...
+    Triangle scrunches his face up, deep in thought.
+    Tall guy: ...
+    Triangleface: ...
+    Tall guy: It's the 25th of August.
+    Triangleface: Holy fuck, where has the year gone?
+    Triangleface: Mentally, I'm still in 2020.
+    Me: (Mentally, I was born 30 minutes ago.)
+    Me: (I guess I should be glad I wasn't born yesterday, though.)
+->'Bank holiday?'
+    Triangleface: Good 'ol John Lubbock snuck the Bank Holidays act through Parliment...
+    Triangleface: Now we got bank holidays.
+    Triangleface: Basically everyone gets a day off work.
+    ->'Wouldn't there be more people\n around on a bank holiday?'
+        Triangleface: No, it's more like, there's less people working, you see.
+        Triangleface: Wait, why the fuck am I even explaining this shit to you?
+    ->'Except us.'
+        Triangle: Yeah.
+->'Alright, cool thanks.'
+Me: (Bank holidays sound kinda familiar...I wonder what country we're in?
+Me: (Also, he called that tall guy 'Sponge'...I wonder if that's his name?)
+<<jump drive_event>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1783,-115
+__PrivCrochet_tags: 
+title: question_time_2
+---
+Me: (Thought of a couple new questions...)
+
+->Bum a fag
+    <<jump bum_a_fag>>
+->Sports bag
+    <<jump sports_bag>>
+
+->
+    <<jump talk_jake>>
+->Search your pockets <<if visited("pockets") == 0>>
+    <<jump check_pockets>>
+
+
+
+
+What division you from (we’re allocated to teams)
+
+Things to discover
+That guy creeps me tf out (tall guy) (he doesn’t even speak the same language to me, i think he’s pretending not to speak English to avoid speaking with me.)
+He likes you, he’s talked to you before. What did he say? Why don’t you ask him? Or yourself for that matter.
+He hasn’t even said a word to me
+
+Triangle. You seemed kinda distant before all this, kinda cold. This is a change
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1498,-114
+__PrivCrochet_tags: andrandomideas_alsoaddnames
+andrandomideas_alsoaddnames:
+title: intermediary_convo
+---
+>What the hell’s up with the names? He’s not seriously named Sponge, is he?
+(I tried to word it carefully not to draw attention to my own name)
+Triangle guy, a small swell of pride in him. “That was my idea, you remember. I guess you were pretty zoned out or something. Code names! We gotta have code names, according to the higher ups.””Is there any meaning to ‘em?” “I guess I never told you the meaning behind them, you never seemed very interested. We’re all named after children’s cartoon show characters. ‘Cept you, Possan, we could never rename you. ““Ruff!””You can probably figure out where they’re from, I don’t wanna get copped by copyright.” >“Children’s cartoon show characters…? Seriously?”I grimace He laughs, ”Don’t look at me like that! I just thought, everyone’s seen those shows, so the names would be harder to track…Or something.”
+>No, explain them to me. I’m very interested in children’s cartoon show characters. 
+“Seriously? I didn’t take you for that kind of guy…You’re fucking with me, aren’t you?” >No, seriously. I’m interested. >You don’t look a day over eight to be honest, I’m not surprised >Yep, I’m fucking with you
+>No seriously I’m interested. Was that a smile on his face…? “Well, I’m Bingo from Bluey, there’s Sponge from Spongebob, you’re Darwin from The Amazing World Of Gumball, and Jake…”
+There’s a pause.
+“Nevermind, it doesn’t seem right…”
+“Anyway, that’s all of em. I tried to take a bunch of different names from different franchises, to diversify I guess. It doesn’t matter that much to be honest. But that’s it.”
+
+(Well, one mystery solved. Trying to find my own identity using the name “Darwin” seems pretty useless now.)
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1811,-402
+__PrivCrochet_tags: 
+title: amnesia_reveal
+---
+If you reveal you have no memory
+Tall guy is like hey short guy can you take the wheel for a second? Sure? >Let him. >Don’t let him. You hear an unzipping sound. A tiny sound of clicking. Then your head explodes. You don’t even hear the bullet that killed you. Your body switches off, instantaneously. (Then he shoots you)
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 747,313
+__PrivCrochet_tags: 
+title: big_think
+---
+So...how on earth did I get into this ridiculous situation?
+Who even am I?
+Judging by my clothes, it looks like I'm part of this group.
+Am I an undercover cop or something? Or am I actually a part of this gang...thing?
+Maybe I’m one of those undercover sleeper agents?
+But, usually, you remember things when you’re activated as a sleeper agent, you don’t forget things.
+To be honest, I feel like this situation would stress out another person to the verge of heart palpitations.
+On the contrary, I seem almost deathly relaxed.
+Like, on the verge of not giving a shit.
+It's not that these guys aren't dangerous. It's just, I seem almost unnaturally calm.
+Maybe these guys really are my friends? Can I trust them?
+Maybe I'm used to these kinda situations?
+Or do I just have some kind of death wish?
+Triangleface: ...
+Maybe Triangle is all bark and no bite?
+Tall guy: ...
+I don't really know anything about that tall guy, which makes him suspicious.
+Doggy: ...
+Maybe the dog has rabies?
+Lying and bluffing to these guys almost comes too easily to me.
+Honestly, I'm just suspicious of everything at this point. Where even are we right now?
+Can't trust anyone.
+Can I even trust myself? My past self, that got me into this situation?
+I need to find out as much as possible. Information is power.
+Triangleface: Eyes on the road, chief.
+<<jump drive_event>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1028,613
+__PrivCrochet_tags: 
+title: dropped_a_bridget_on_them
+---
+You rifle around in your pockets.
+Me: (Looks like I've got a lighter in my trouser pocket? That’s it.)
+<<if $got_wallet>>
+    Me: (No phone, wallet, nothing. Wait, I actually do have a wallet.)
+    <<hop check_wallet>>
+<<else>>
+    No phone, wallet, nothing. Just a crappy cheap lighter.
+<<endif>>
+Me: (Maybe there's other things hiding on my person?)
+You try to covertly pat up your clothes, looking for some secret pockets.
+Me: (Seems like I'm wearing something under my hoodie.)
+Me: (A t-shirt, and...a...binder?)
+Me: (A chest binder, huh.)
+Me: (...hmmmmmmm...)
+Me: (Damn, I got boba!)
+Not the nice kind of boba like boba tea, no.
+This is the less nice boba, the one that’s currently constricting bloodflow to your brain and is making it hard to breathe and think right now.
+If only you could remove your binder right now and let them fly free in the wind, as God intended. 
+I guess that explains the lump on your chest. Guess you're a girl, then.
+Triangleface: ...
+Me: (But, those guys have been calling me stuff like 'man' or 'dude'...)
+Me: (Maybe, I'm not a girl.)
+Me: (Maybe, these guys are just really respectful of my personal choices?)
+Triangleface: ...
+Tall guy: ...
+Me: ...
+Me: (Yeah, nah. Guess I’m a girl. And probably keeping it a secret from them, too.)
+Me: (That explains the oversized hoodie and baggy trousers.)
+Me: (And, also why I seem to be subconsciously putting on a deeper voice.)
+Me: (My larynx is kinda tired from all the work, to be honest.)
+Me: (They haven’t seemed to notice, though. Am I really that masculine?)
+Triangleface: ...What're you looking at?
+Me: ...
+->'Hey guess what, I got boobs'
+    Triangleface: ...huh? What did you say?
+    ->'Hey guess what, I got boobs'
+        Triangleface: ...Run that by me once more.
+        ->'Boobs.'
+        ->'Bob's.'
+            Triangleface: Okay, very funny mate. Talking bollocks, huh.
+            Me: No, seriously! I do!
+            Trrrrriangle gives you a look. Confused apathy?
+            ->'Fine, whatever. I don't care.'
+            ->Flip up your shirt
+                Triangleface: WOAH
+                Tall guy: ..!
+                Triangleface: I have seen the light! Okay, okay, put it down again!
+                He's looking away and covering his face with his arms, as if he's been blinded by a flashbang. Nice.
+                Me: You saw it, right?
+                Triangleface: Yes goddamit!
+                In your peripherals, you can see his face is almost as red as his uniform. 
+                You let the fabric drop back into place.
+                Triangleface: What the hell, man. Wo...man?
+                ->'Can I stop doing this\nstupid deep voice now?'
+                ->'You believe me now?'
+                Triangle huffs a sigh.
+                Triangleface: Yes, godammit.
+                Triangle looks you up and down, head to toe. He almost can't belive it.
+                Triangleface: What the hell, man? They only let guys into our organisation...
+                Triangleface: Seriously, what the fuck...
+                You look for a reaction from tall boy in the rear view mirror.
+                ->'You're staying pretty quiet in the back.'
+                Tall boy: ...Just try not to crash.
+                Me: The hell's that supposed to mean?! Dick.
+                You can hear Triangleface chuckling.
+                Triangleface: But seriously, man. You're gonna get it from upper management, you know?
+                Triangleface: Seriously, you do NOT want to cross those assholes.
+                Triangleface: I'm telling you this for your own good.
+                Triangleface: You might want to bounce after this job...
+                ->'Upper management?'
+                    Triangleface: You don’t know about the leader of our organisation? They’re one cold motherfucker.
+                    Triangleface: Ices anyone who sees 'em so they don’t rat on him.
+                    Triangleface: Nobody knows anything about them, really.
+                    Triangleface: I didn't tell you this, you understand.
+                    Triangleface: Right, Sponge?
+                    Tall guy: Mhm.
+                ->'I'll keep that in mind, thanks.'
+                Triangleface: No worries, bro. This doesn't change anything.
+    ->'Hey guess what, I DON'T have Bob's'
+        Triangleface: ...what? Bob? Who? What?
+->'Hey guess what, I DON'T have Bob's'
+    Triangleface: ...what? Bob? Who? What?
+Well, that was a fun sidequest.
+There's also something else in your hoodie...but, you think it's best to leave it for now.
+
+<<jump drive_event>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1295,606
+__PrivCrochet_tags: 
+title: check_wallet
+---
+<<if $wallet_check_counter < 3>>
+Me: (Looks like the wallet has a few credit cards, some condoms and a driver's license.)
+->Inspect the credit cards <<if visited("credit_cards") == 0>>
+    <<jump credit_cards>>
+->Inspect the driver's license <<if visited("drivers_license") == 0>>
+    <<jump drivers_license>>
+->Inspect the condoms <<if visited("condoms") == 0>>
+    <<jump condoms>>
+<<endif>>
+Me: (Think that's everything.)
+Me: (Thanks, Joe Wanga.)
+Triangleface: Please god, keep your eyes on the road...
+<<hopback>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 986,305
+__PrivCrochet_tags: 
+title: check_pockets
+---
+You rifle around in your pockets, and try to covertly pat up your clothes.
+Me: (Looks like I've got a lighter in my trouser pocket? That’s it.)
+<<jump dropped_a_bridget_on_them>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1274,849
+__PrivCrochet_tags: 
+title: credit_cards
+---
+Me:(Nothing out of the ordinary. Just a few ordinary contactless credit cards.)
+<<set $wallet_check_counter += 1>>
+<<jump check_wallet>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1526,848
+__PrivCrochet_tags: 
+title: drivers_license
+---
+Me: (Looks like my name's Joe Wanga, and I was born in the 13th of March, 1986.)
+Me: (No, wait, this is the wallet that I stole from that guy, isn't it?)
+Me: (So his name would be Joe Wanga, then.)
+Me: (It also seems like it's a United Kingdom driver's license.)
+Me: (So, it would seem I'm most likely in the United Kingdom.)
+<<set $wallet_check_counter += 1>>
+<<jump check_wallet>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1743,855
+__PrivCrochet_tags: 
+title: condoms
+---
+Me: (Oooh. Lubricated, raspberry flavoured condoms.)
+Me: (These are clearly useless for carrying water in a survival situation.)
+<<set $wallet_check_counter +=1>>
+<<jump check_wallet>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1416,156
+__PrivCrochet_tags: 
+title: drive_event
+---
+<<if $current_x == 7 and $current_y == 7>>
+    You drive onwards.
+    ->Go straight
+        <<set $current_x = 6>>
+        <<set $direction = "west">>
+        <<jump drive_event_cont>>
+<<endif>>
+<<if $current_x == 6 and $current_y == 7>>
+    You drive onwards.
+    ->Go straight
+        <<set $current_x = 5>>
+        <<set $direction = "west">>
+        <<jump drive_event_cont>>
+<<endif>>
+<<if $current_x == 5 and $current_y == 7>>
+    You drive onwards.
+    ->Go straight
+        <<set $current_x = 4>>
+        <<set $direction = "west">>
+        <<jump drive_event_cont>>
+<<endif>>
+<<if $current_x == 4 and $current_y == 7>>
+    You drive onwards.
+    ->Turn right
+        <<set $current_y = 6>>
+        <<set $direction = "north">>
+        <<jump drive_event_cont>>
+<<endif>>
+<<if $current_x == 4 and $current_y == 6>>
+    You drive onwards.
+    ->Turn left
+        <<set $current_x = 3>>
+        <<set $direction = "west">>
+        <<jump drive_event_cont>>
+    ->Turn right
+        <<set $current_x = 5>>
+        <<set $direction = "east">>
+        <<jump drive_event_cont>>
+<<endif>>
+<<if $current_x == 1 and $current_y == 4>>
+    <<if $direction == "north">>
+        You drive onwards.
+        ->Turn right
+            <<set $current_x = 2>>
+            <<set $direction = "east">>
+            <<jump drive_event_cont>>
+    <<endif>>
+    <<if $direction == "west">>
+        You drive onwards.
+        ->Turn left
+            <<set $current_y = 5>>
+            <<set $direction = "south">>
+            <<jump drive_event_cont>>
+    <<endif>>
+<<endif>>
+<<if $current_x == 1 and $current_y == 5>>
+    <<if $direction == "north">>
+        You drive onwards.
+        ->Turn right
+            <<set $current_x = 2>>
+            <<jump drive_event_cont>>
+    <<endif>>
+    <<if $direction == "west">>
+        You drive onwards.
+        ->Turn right
+            <<set $current_x = 2>>
+            <<jump drive_event_cont>>
+    <<endif>>
+<<endif>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1741,159
+__PrivCrochet_tags: 
+title: drive_event_cont
+---
+<<set $road_counter += 1>>
+<<if $progress_flag == 0>>
+    <<jump question_time_1>>
+<<endif>>
+<<if $progress_flag == 1>>
+    <<jump question_time_2>>
+<<endif>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2049,114
+__PrivCrochet_tags: 
+title: bum_a_fag
+---
+Triangle says hey can I bum a fag, guess I'm in the UK huh. Triangle says I gave you my fags and lighter to hold onto, oh yeah I feel them in my pocket. You know for a fact, in your heart you're not a smoker. Mainly because you don't stink like shit, but you still know you haven't smoked in your life before. Why on earth are we holding onto a lighter? (really we wanted the lighter for the gasoline) 
+You pass the cigarettes
+>Gimme one too
+>fiddle with the lighter
+>No smoking in the car, bitch (“fuckin stiff”)
+After many tries he looks at you strangely and snatches the lighter. “This is how you get a light”, scratching it on instantaneously with a small smirk of satisfaction. The air fills with the thrilling smell of chemicals, it takes all your strength not to immediately hack out your lungs. Triangle notices and smirks at you. (You get embarrassed, small conversation from that?) You see tall boy moving doggy further away from the front seat
+
+Oy gimme a light
+You’ve never smoked before. This you know for sure. You see a lighter in the cup holder.
+>I’m driving
+>(Attempt to light his cigarette)
+>Bum me a fag too, then I’ll give you a light
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2231,-106
+__PrivCrochet_tags: 
+title: sports_bag
+---
+Empty Text
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2167,-343
+__PrivCrochet_tags: 
+title: talk_jake
+---
+Revealed tall guy had other gang member friend (call him Jake/Finn) that he talked with, only person he seemed happy with, talked with him in an eastern european language
+Shorty mad at you because you were the one who suggested they brought blanks, reason you couldn’t fight back against the police when they raided. Possibly you’re the reason Jake died
+Tall guy says “It’s fine, there was no way he could’ve known we were going to be raided. Isn’t there, Darwin? (mc)” (I should answer this very carefully…) >”Right…” >“Nope, I’m an undercover agent and I told the police where we were.” Dead silence. You can hear your blood pumping. (Stop the car.)(no more talking for rest of drive)
+Shorty whispers to you “I’m mad at you, but I’m pretty sure tall boy must be livid at you. I’d advise not saying anything that might disrespect Jake’s memory.”
+(Even that guy laid it out in plain terms for me… Am I really that unempathetic?)
+
+(One of these questions seem kinda dangerous...)
+'Hey guys, guess what?! I have amnesia!\nCan't remember a single thing!'
+===
