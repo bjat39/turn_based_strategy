@@ -3,6 +3,7 @@ event_inherited(); //do the parent's inherited create event, then our create eve
 
 actor_name = "Neft";
 
+faction = "neft";
 class = "Mage";
 description = "That's me.";//\nA distant young girl."
 

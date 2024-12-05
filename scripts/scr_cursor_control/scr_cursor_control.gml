@@ -104,8 +104,9 @@ function scr_cursor_control(){
 		}
 		else
 		{
-			selected_actor = noone;
-			scr_wipe_nodes();
+			//selected_actor = noone;
+			//scr_wipe_nodes();
+			instance_create_layer(60,60,"Menu",obj_pause_menu);
 		}
 		
 		//else //click on invalid node
