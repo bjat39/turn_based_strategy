@@ -47,12 +47,12 @@ switch(unit_state)
 		attacked = true;
 		switch(faction)
 		{
-			case"neft":	ds_list_add(finished_neft_list,id);break;
-			case"ally":	ds_list_add(finished_ally_list,id);break;
-			case"aleneti":	ds_list_add(finished_aleneti_list,id);break;
-			case"strucia":	ds_list_add(finished_strucia_list,id);break;
+			case"neft":	ds_list_add(obj_game.finished_neft_list,id);break;
+			case"ally":	ds_list_add(obj_game.finished_ally_list,id);break;
+			case"aleneti":	ds_list_add(obj_game.finished_aleneti_list,id);break;
+			case"strucia":	ds_list_add(obj_game.finished_strucia_list,id);break;
 		}
-		
+		unit_state = "finish";
 		//instance_destroy(obj_action_command);
 		
 		//hover_command = noone;
