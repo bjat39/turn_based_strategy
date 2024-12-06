@@ -1,19 +1,19 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_end_turn(faction){
-	var finish_list;
+	var finish_list, faction_parent;
 	switch(faction)
 		{
-			case"neft":	ds_list_add(finished_neft_list,id);break;
-			case"ally":	ds_list_add(finished_ally_list,id);break;
-			case"aleneti":	ds_list_add(finished_aleneti_list,id);break;
-			case"strucia":	ds_list_add(finished_strucia_list,id);break;
+			case"neft":	finish_list = obj_game.finished_neft_list; faction_parent = par_neft_faction;break;
+			case"ally":	finish_list = obj_game.finished_ally_list; faction_parent = par_ally_faction;break;
+			case"aleneti":	finish_list = obj_game.finished_aleneti_list; faction_parent = par_aleneti_faction;break;
+			case"strucia":	finish_list = obj_game.finished_strucia_list; faction_parent = par_strucia_faction;break;
 		}
-	with(par_aleneti_faction)
+	with(faction_parent)
 	{
 		unit_state = "finish";
 		
-		ds_list_add(obj_game.finished_aleneti_list,id)
+		ds_list_add(finish_list,id)
 		
 		with(obj_game)
 		{
