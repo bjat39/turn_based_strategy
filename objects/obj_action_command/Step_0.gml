@@ -86,7 +86,7 @@ if (obj_game.accept_input)
 		
 			case(1): break;
 		
-			case("Wait"): curr_actor.unit_state = "finish"; delete_box = true; break;
+			case("Wait"): curr_actor.unit_state = "finishing"; delete_box = true; break;
 		
 		
 		}

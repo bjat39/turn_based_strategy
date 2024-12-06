@@ -23,6 +23,7 @@ ally_list = ds_list_create();
 aleneti_list = ds_list_create(); //determines the order enemies move in their phase
 strucian_list = ds_list_create();
 
+finished_neft_list = ds_list_create();
 finished_ally_list = ds_list_create();
 finished_aleneti_list = ds_list_create(); //keeps track of alenetians that have finished moving on their round
 finished_strucian_list = ds_list_create();
@@ -30,7 +31,7 @@ finished_strucian_list = ds_list_create();
 //ds_list_add(round_order,"checking");
 
 if (instance_exists(par_neft_faction)) //doesn't fucking work yet because obj_neft doesn't exist or some shit so we repeat this code later
-{
+{//commented code is in scr_initialise_grid now
 	ds_list_add(round_order,"neft_faction_turn"); //usually 0 on turn_counter
 	//with(par_neft_faction)
 	//{

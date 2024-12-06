@@ -41,11 +41,18 @@ switch(unit_state)
 	case ("battle"):
 	
 		break;
-	case ("finish"):
+	case ("finishing"):
 		//RESET EVERYTHINGGGG
-		
 		moved = true;
 		attacked = true;
+		switch(faction)
+		{
+			case"neft":	ds_list_add(finished_neft_list,id);break;
+			case"ally":	ds_list_add(finished_ally_list,id);break;
+			case"aleneti":	ds_list_add(finished_aleneti_list,id);break;
+			case"strucia":	ds_list_add(finished_strucia_list,id);break;
+		}
+		
 		//instance_destroy(obj_action_command);
 		
 		//hover_command = noone;
@@ -53,6 +60,9 @@ switch(unit_state)
 		//ds_list_clear(selected_actor.command_list);
 		//ds_list_clear(selected_actor.attack_list);
 		//finished = false;
+		break;
+	case ("finish"):
+
 		break;
 	case ("dying"):
 	

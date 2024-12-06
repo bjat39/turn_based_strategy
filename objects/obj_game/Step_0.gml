@@ -11,6 +11,8 @@ switch(game_state)
 
 if (keyboard_check_pressed(ord("R")))
 {
+	//ADD END TURN HERE
+	
 	round_counter ++;
 	game_state = ds_list_find_value(round_order,round_counter);
 	//with (par_neft_faction)

@@ -49,7 +49,7 @@ if (accept_key)
 			{
 				if (faction == "neft")
 				{
-					unit_state = "finish";
+					unit_state = "finishing";
 				}
 			}
 			instance_destroy();

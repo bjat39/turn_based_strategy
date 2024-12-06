@@ -35,7 +35,7 @@ case "finish_battle":
 	obj_game.selected_actor = noone;
 	if (initiator.unit_state != "dying")
 	{
-		initiator.unit_state = "finish";
+		initiator.unit_state = "finishing";
 	}
 	instance_destroy();
 	break;

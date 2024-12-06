@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_state_aleneti_turn(){
+function scr_end_turn(faction){
 	with(par_aleneti_faction)
 	{
 		unit_state = "finish";
@@ -28,4 +28,5 @@ function scr_state_aleneti_turn(){
 			}
 		}
 	}
+	
 }
