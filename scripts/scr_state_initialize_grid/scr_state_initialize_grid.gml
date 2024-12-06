@@ -40,6 +40,22 @@ function scr_state_initialize_grid(){
 			occupant.gridY = gridY;
 		}
 	}
+	
+	if (instance_exists(par_neft_faction)) //doesn't fucking work yet because obj_neft doesn't exist or some shit so we repeat this code later
+	{
+		with(par_neft_faction)
+		{
+			ds_list_add(other.neft_list,id)
+		}
+	}
+	if (instance_exists(par_aleneti_faction))
+	{
+		with(par_aleneti_faction)
+		{
+			ds_list_add(other.aleneti_list,id)
+		}
+	}
+	
 	game_state = ds_list_find_value(round_order,0); //"player";
 	
 	//instance_create_layer(mouse_x,mouse_y,"Instances", obj_cursor);

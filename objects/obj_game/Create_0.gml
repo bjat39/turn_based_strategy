@@ -27,22 +27,24 @@ finished_ally_list = ds_list_create();
 finished_aleneti_list = ds_list_create(); //keeps track of alenetians that have finished moving on their round
 finished_strucian_list = ds_list_create();
 
-if (instance_exists(par_neft_faction))
+//ds_list_add(round_order,"checking");
+
+if (instance_exists(par_neft_faction)) //doesn't fucking work yet because obj_neft doesn't exist or some shit so we repeat this code later
 {
 	ds_list_add(round_order,"neft_faction_turn"); //usually 0 on turn_counter
-	with(par_neft_faction)
-	{
-		ds_list_add(other.neft_list,id)
-	}
+	//with(par_neft_faction)
+	//{
+	//	ds_list_add(other.neft_list,id)
+	//}
 }
 if (instance_exists(par_aleneti_faction))
 {
 	ds_list_add(round_order,"aleneti_faction_turn");
 	
-	with(par_aleneti_faction)
-	{
-		ds_list_add(other.aleneti_list,id)
-	}
+	//with(par_aleneti_faction)
+	//{
+	//	ds_list_add(other.aleneti_list,id)
+	//}
 }
 
 //turn_max = 0; ds_list_size()

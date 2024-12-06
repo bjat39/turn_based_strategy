@@ -11,14 +11,16 @@ switch(game_state)
 
 if (keyboard_check_pressed(ord("R")))
 {
-	with (par_neft_faction)
-	{
-		moved = false; //neccessary?
-		attacked = false;
-		unit_state = "idle";
-		//unit_state = UNIT_STATE.READY;
+	round_counter ++;
+	game_state = ds_list_find_value(round_order,round_counter);
+	//with (par_neft_faction)
+	//{
+	//	moved = false; //neccessary?
+	//	attacked = false;
+	//	unit_state = "idle";
+	//	//unit_state = UNIT_STATE.READY;
 		
-	}
+	//}
 	//global.state = STATES.AI_TURN
 	//if(instance_number(par_enemy > 0)) {global.state = STATES.AI_TURN;} //remove later
 }
