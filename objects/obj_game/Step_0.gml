@@ -4,7 +4,9 @@ switch(game_state)
 {
 	case "initialising": scr_state_initialize_grid(); break;
 	case "neft_faction_turn": scr_state_player_turn1(); break;
-	case "aleneti_faction_turn": break;//scr_state_ai_turn(); break;
+	case "ally_faction_turn": break;
+	case "aleneti_faction_turn": scr_state_aleneti_turn() break;//scr_state_ai_turn(); break;
+	case "strucian_faction_turn": break;
 }
 
 if (keyboard_check_pressed(ord("R")))

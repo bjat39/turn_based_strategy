@@ -14,20 +14,36 @@ neft_input = keyboard_check_pressed(vk_lcontrol);
 
 randomize();
 
-turn_order = ds_list_create(); //player phase, enemy phase
+round_order = ds_list_create();
+round_counter = 0; //keeps track of if it's player phase, enemy phase
+turn_counter = 0; //after player phase and enemy phase, this is incremented by 1
 
-if (object_exists(par_neft_faction))
+neft_list = ds_list_create(); //list of neft actors,player phase, enemy phase
+ally_list = ds_list_create();
+aleneti_list = ds_list_create(); //determines the order enemies move in their phase
+strucian_list = ds_list_create();
+
+finished_ally_list = ds_list_create();
+finished_aleneti_list = ds_list_create(); //keeps track of alenetians that have finished moving on their round
+finished_strucian_list = ds_list_create();
+
+if (instance_exists(par_neft_faction))
 {
-	ds_list_add(turn_order,"neft_faction_turn"); //usually 0 on turn_counter
+	ds_list_add(round_order,"neft_faction_turn"); //usually 0 on turn_counter
+	with(par_neft_faction)
+	{
+		ds_list_add(other.neft_list,id)
+	}
 }
-if (object_exists(par_aleneti_faction))
+if (instance_exists(par_aleneti_faction))
 {
-	ds_list_add(turn_order,"aleneti_faction_turn");
+	ds_list_add(round_order,"aleneti_faction_turn");
+	
+	with(par_aleneti_faction)
+	{
+		ds_list_add(other.aleneti_list,id)
+	}
 }
-
-turn_counter = 0; //keeps track of if it's player phase, enemy phase
-
-round_counter = 0; //after player phase and enemy phase, this is incremented by 1
 
 //turn_max = 0; ds_list_size()
 

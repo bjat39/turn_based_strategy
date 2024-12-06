@@ -40,7 +40,7 @@ function scr_state_initialize_grid(){
 			occupant.gridY = gridY;
 		}
 	}
-	game_state = ds_list_find_value(turn_order,0); //"player";
+	game_state = ds_list_find_value(round_order,0); //"player";
 	
 	//instance_create_layer(mouse_x,mouse_y,"Instances", obj_cursor);
 
