@@ -128,8 +128,8 @@ function scr_cursor_control(){
 		audio_play_sound(sfx_click1,3,0);
 		if (instance_exists(obj_neft))
 		{
-			obj_cursor.x = obj_neft.x;
-			obj_cursor.y = obj_neft.y
+			obj_cursor.x = obj_neft.x + GRID_SIZE/2;
+			obj_cursor.y = obj_neft.y + GRID_SIZE/2;
 		}
 	}
 }

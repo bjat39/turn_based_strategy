@@ -19,8 +19,8 @@ if (hoverNode != noone)
 	}
 	
 	//debug
-	draw_set_color(c_red);
-	draw_text(0,220,"player_state: " + player_state);
+	//draw_set_color(c_red);
+	//draw_text(0,220,"player_state: " + player_state);
 	
 }
 
@@ -83,15 +83,15 @@ if (hoverNode != noone)
 	{	
 		if (hoverNode.occupant != noone)
 		{
-			draw_set_color(c_red);
-			//debug info
-			draw_text(0,100,"unit_state: " + hoverNode.occupant.unit_state);
-			draw_text(0,120,"moved: " + string(hoverNode.occupant.moved));
-			draw_text(0,140,"gridX: " + string(hoverNode.occupant.gridX));
-			draw_text(0,160,"gridY: " + string(hoverNode.occupant.gridY));
-			draw_text(0,180,"current_node: " + string(hoverNode.occupant.current_node));
-			draw_text(0,200,"orig_node: " + string(hoverNode.occupant.orig_node));
+			//draw_set_color(c_red);
+			////debug info
+			//draw_text(0,100,"unit_state: " + hoverNode.occupant.unit_state);
+			//draw_text(0,120,"moved: " + string(hoverNode.occupant.moved));
+			//draw_text(0,140,"gridX: " + string(hoverNode.occupant.gridX));
+			//draw_text(0,160,"gridY: " + string(hoverNode.occupant.gridY));
+			//draw_text(0,180,"current_node: " + string(hoverNode.occupant.current_node));
+			//draw_text(0,200,"orig_node: " + string(hoverNode.occupant.orig_node));
 			
-			draw_set_color(c_white);
+			//draw_set_color(c_white);
 		}
 	}
