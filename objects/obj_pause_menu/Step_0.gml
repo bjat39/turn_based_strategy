@@ -40,8 +40,8 @@ if (accept_key)
 			//settings
 			case(1): menu_level ++; break;
 		
-			//end turn
-			case(2):
+			//suspend game
+			case(2): game_end();
 
 			break;
 			case(3):

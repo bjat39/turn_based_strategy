@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_action_command_init",
+  "%Name":"scr_play_sound",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_action_command_init",
+  "name":"scr_play_sound",
   "parent":{
     "name":"ds_grid",
     "path":"folders/Scripts/ds_grid.yy",

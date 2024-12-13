@@ -8,8 +8,8 @@
   "name":"obj_wall1",
   "overriddenProperties":[],
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Objects/ds_grid.yy",
+    "name":"nodes",
+    "path":"folders/Objects/ds_grid/nodes.yy",
   },
   "parentObjectId":{
     "name":"par_terrain",

@@ -9,8 +9,8 @@
   "name":"par_node",
   "overriddenProperties":[],
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Objects/ds_grid.yy",
+    "name":"nodes",
+    "path":"folders/Objects/ds_grid/nodes.yy",
   },
   "parentObjectId":null,
   "persistent":false,

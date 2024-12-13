@@ -45,4 +45,4 @@ else
 	camera_set_view_pos(camera,0,0);
 }
 
-window_set_fullscreen(true);
+//window_set_fullscreen(true);

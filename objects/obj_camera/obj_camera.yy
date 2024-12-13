@@ -14,8 +14,8 @@
   "name":"obj_camera",
   "overriddenProperties":[],
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Objects/ds_grid.yy",
+    "name":"game",
+    "path":"folders/Objects/ds_grid/game.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -5,6 +5,8 @@ game_state = "initialising"; //initialising, player, ai1,ai2 //turn state machin
 player_state = "cursor_explore"; //cursor_explore, cursor_selected, cursor_menu (explore = cursor freely move, selected = cursor move within range, menu cursor can't move (still recieving inputs)(attack anims))
 //select = obj_cursor exists, action_command = obj_cursor does not exist
 
+sfx_gain = 1;
+
 vert_input = scr_vert_input();
 hori_input = scr_hori_input();
 accept_input = keyboard_check_pressed(ord("Z"));

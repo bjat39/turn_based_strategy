@@ -10,6 +10,7 @@ switch(unit_state)
 		break;
 	case "begin_path":
 		//begin moving along path
+		scr_play_sound(sfx_step_rock,3,1,obj_game.sfx_gain);
 		path_start(movement_path,move_speed,0,true);
 		
 		orig_node = current_node;
@@ -21,6 +22,7 @@ switch(unit_state)
 		if (path_index = -1) //path ended
 		{
 			//clear path
+			audio_stop_sound(sfx_step_rock);
 			path_clear_points(movement_path);
 			
 			unit_state = "idle";

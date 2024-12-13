@@ -3,6 +3,7 @@ if (path_index = -1) //path ended
 {
 	if (status != "miss")
 	{
+		scr_play_sound(sfx_impact_flesh,3,0,obj_game.sfx_gain);
 		target.current_hit_points -= damage;
 		
 		for(ii = 0; ii < 6; ii ++)

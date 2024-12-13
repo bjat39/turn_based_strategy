@@ -10,8 +10,8 @@
   "name":"par_menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Objects/ds_grid.yy",
+    "name":"menus",
+    "path":"folders/Objects/ds_grid/menus.yy",
   },
   "parentObjectId":null,
   "persistent":false,

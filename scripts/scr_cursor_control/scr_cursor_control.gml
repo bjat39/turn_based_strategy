@@ -125,7 +125,7 @@ function scr_cursor_control(){
 	
 	if (obj_game.neft_input) //return to neft, mc
 	{
-		audio_play_sound(sfx_click1,3,0);
+		scr_play_sound(sfx_click1,3,0,obj_game.sfx_gain);
 		if (instance_exists(obj_neft))
 		{
 			obj_cursor.x = obj_neft.x + GRID_SIZE/2;
