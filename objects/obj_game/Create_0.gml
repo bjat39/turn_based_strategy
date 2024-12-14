@@ -7,8 +7,15 @@ player_state = "cursor_explore"; //cursor_explore, cursor_selected, cursor_menu 
 
 sfx_gain = 1;
 
-vert_input = scr_vert_input();
+up_key = vk_up;
+down_key = vk_down;
+
+up_input = keyboard_check_pressed(up_key); //for menus
+down_input = keyboard_check_pressed(down_key);
+
+vert_input = scr_vert_input(); //for cursor explore
 hori_input = scr_hori_input();
+
 accept_input = keyboard_check_pressed(ord("Z"));
 return_input = keyboard_check_pressed(ord("X"));
 stat_input = keyboard_check_pressed(ord("C"));

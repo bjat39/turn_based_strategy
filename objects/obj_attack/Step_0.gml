@@ -23,7 +23,7 @@ if (path_index = -1) //path ended
 			}
 		}
 	
-		with(instance_create_layer(target.x + 28,target.y + 2,"Instances",obj_damage_text))
+		with(instance_create_layer(target.x + GRID_SIZE + 6,target.y + 2,"Instances",obj_damage_text))
 		{
 			text = string(other.damage);
 			ground = y;

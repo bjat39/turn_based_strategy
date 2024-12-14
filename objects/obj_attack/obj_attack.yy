@@ -9,8 +9,8 @@
   "name":"obj_attack",
   "overriddenProperties":[],
   "parent":{
-    "name":"game",
-    "path":"folders/Objects/ds_grid/game.yy",
+    "name":"ds_grid",
+    "path":"folders/Objects/ds_grid.yy",
   },
   "parentObjectId":null,
   "persistent":false,

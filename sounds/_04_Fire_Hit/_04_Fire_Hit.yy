@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"_04_Fire_Hit",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.02127,
+  "name":"_04_Fire_Hit",
+  "parent":{
+    "name":"fire",
+    "path":"folders/Sounds/fire.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"_04_Fire_Hit.wav",
+  "type":0,
+  "volume":1.0,
+}

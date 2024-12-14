@@ -46,6 +46,7 @@ function scr_cursor_move_explore(){
 		//audio_play_sound(sfx_click1,4,0);
 		//if (instance_position(obj_cursor.x - GRID_SIZE,obj_cursor.y - GRID_SIZE,par_actor))
 		//	{cursor_move_delay_default = cursor_move_slow_actor_default;}
+		scr_play_sound(_047_Pick_item_02,3,0,obj_game.sfx_gain);
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x -= GRID_SIZE;

@@ -12,6 +12,7 @@ command_list = ds_list_create(); //after move, unit commands
 curr_actor = obj_game.selected_actor;
 delete_box = false;
 soft_reset = false; //if player cancels, still can move unit
+attack_square_spawn = false;
 
 hover_command = ds_list_find_value(command_list,pos);
 
@@ -20,27 +21,57 @@ attack_list = ds_list_create(); //list of viable attack nodes to attack
 attack_pos = 0;
 attack_command = false;
 
-with(par_actor)
+if(curr_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 {
-	x_dist = point_distance(x, y, other.curr_actor.x, y); //would have measuring to the center but it dont
-	y_dist = point_distance(x, y, x, other.curr_actor.y);
-	total_dist = x_dist + y_dist; //
-	if (total_dist <= other.curr_actor.attack_range)//temp_actor.attack_range)
+	with(par_actor)
 	{
-		if (other.curr_actor.faction != faction)
+		x_dist = point_distance(x, y, other.curr_actor.x, y); //would have measuring to the center but it dont
+		y_dist = point_distance(x, y, x, other.curr_actor.y);
+		total_dist = x_dist + y_dist; //
+		if (total_dist <= other.curr_actor.attack_range and total_dist > 2 * GRID_SIZE)//temp_actor.attack_range)
 		{
-			//map[gridX,gridY].attack_node = true;
-			//if (ds_list_find_index(other.command_list,"Attack") == noone)
-			//{
-			if (other.attack_command == false)
+			if (other.curr_actor.faction != faction)
 			{
-				ds_list_add(other.command_list, "Attack");
-				other.attack_command = true;
+				//map[gridX,gridY].attack_node = true;
+				//if (ds_list_find_index(other.command_list,"Attack") == noone)
+				//{
+				if (other.attack_command == false)
+				{
+					ds_list_add(other.command_list, "Attack");
+					other.attack_command = true;
+				}
+					ds_list_add(other.attack_list,map[gridX,gridY]);
+				//}
+				//selected_actor.attack_node = true;
+				scr_colour_attack_node(id);
 			}
-				ds_list_add(other.attack_list,map[gridX,gridY]);
-			//}
-			//selected_actor.attack_node = true;
-			scr_colour_attack_node(id);
+		}
+	}
+}
+else
+{
+	with(par_actor)
+	{
+		x_dist = point_distance(x, y, other.curr_actor.x, y); //would have measuring to the center but it dont
+		y_dist = point_distance(x, y, x, other.curr_actor.y);
+		total_dist = x_dist + y_dist; //
+		if (total_dist <= other.curr_actor.attack_range)//temp_actor.attack_range)
+		{
+			if (other.curr_actor.faction != faction)
+			{
+				//map[gridX,gridY].attack_node = true;
+				//if (ds_list_find_index(other.command_list,"Attack") == noone)
+				//{
+				if (other.attack_command == false)
+				{
+					ds_list_add(other.command_list, "Attack");
+					other.attack_command = true;
+				}
+					ds_list_add(other.attack_list,map[gridX,gridY]);
+				//}
+				//selected_actor.attack_node = true;
+				scr_colour_attack_node(id);
+			}
 		}
 	}
 }

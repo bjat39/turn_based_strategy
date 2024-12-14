@@ -34,7 +34,7 @@ function scr_cursor_control(){
 		{
 			if (selected_actor.ai_type == "player")//hoverNode.occupant == noone and hoverNode.passable)
 			{
-				
+				scr_play_sound(_066_Equip_06,3,0,obj_game.sfx_gain);
 				current_node = hoverNode; //new variable
 		
 				//create priority queue
@@ -93,6 +93,7 @@ function scr_cursor_control(){
 		{
 			if (hoverNode.occupant.moved == false)
 			{
+				scr_play_sound(_066_Equip_06,3,0,obj_game.sfx_gain);
 				scr_wipe_nodes();
 				selected_actor = hoverNode.occupant;
 				selected_actor.unit_state =	"selected";
@@ -125,7 +126,7 @@ function scr_cursor_control(){
 	
 	if (obj_game.neft_input) //return to neft, mc
 	{
-		scr_play_sound(sfx_click1,3,0,obj_game.sfx_gain);
+		scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
 		if (instance_exists(obj_neft))
 		{
 			obj_cursor.x = obj_neft.x + GRID_SIZE/2;

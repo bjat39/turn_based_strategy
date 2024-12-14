@@ -19,26 +19,56 @@ function scr_attack_range3(selected_actor,curr_node){
 	//		map[xx,yy].gridY = yy;
 	//	}
 	//}
-	with(par_node)
+	if(selected_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 	{
-		//if (id.move_node == true)
-		//{
-		//	faux_attack_node = true;
-		//}
-		x_dist = point_distance(x, y, selected_actor.x, y); //would have measuring to the center but it dont
-		y_dist = point_distance(x, y, x, selected_actor.y);
-		total_dist = x_dist + y_dist; //
-		if (occupant != noone and total_dist <= selected_actor.attack_range)//temp_actor.attack_range)
+		with(par_node)
 		{
-			if (occupant.faction != selected_actor.faction)
+			//if (id.move_node == true)
+			//{
+			//	faux_attack_node = true;
+			//}
+		
+			x_dist = point_distance(x, y, selected_actor.x, y); //would have measuring to the center but it dont
+			y_dist = point_distance(x, y, x, selected_actor.y);
+			total_dist = x_dist + y_dist; //
+			if (occupant != noone and total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE)//temp_actor.attack_range)
 			{
-				map[gridX,gridY].attack_node = true;
-				//selected_actor.attack_node = true;
+				if (occupant.faction != selected_actor.faction)
+				{
+					map[gridX,gridY].attack_node = true;
+					//selected_actor.attack_node = true;
+					scr_colour_attack_node(id);
+				}
+			}
+			else if (total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE){
 				scr_colour_attack_node(id);
 			}
 		}
-		else if (total_dist <= selected_actor.attack_range){
-			scr_colour_attack_node(id);
+	}
+	else
+	{
+		with(par_node)
+		{
+			//if (id.move_node == true)
+			//{
+			//	faux_attack_node = true;
+			//}
+		
+			x_dist = point_distance(x, y, selected_actor.x, y); //would have measuring to the center but it dont
+			y_dist = point_distance(x, y, x, selected_actor.y);
+			total_dist = x_dist + y_dist; //
+			if (occupant != noone and total_dist <= selected_actor.attack_range)//temp_actor.attack_range)
+			{
+				if (occupant.faction != selected_actor.faction)
+				{
+					map[gridX,gridY].attack_node = true;
+					//selected_actor.attack_node = true;
+					scr_colour_attack_node(id);
+				}
+			}
+			else if (total_dist <= selected_actor.attack_range){
+				scr_colour_attack_node(id);
+			}
 		}
 	}
 }
