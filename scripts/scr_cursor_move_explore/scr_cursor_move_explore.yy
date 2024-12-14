@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_cursor_move_explore",
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Scripts/ds_grid.yy",
+    "name":"cursor",
+    "path":"folders/Scripts/ds_grid/cursor.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

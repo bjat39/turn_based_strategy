@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_colour_attack_node",
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Scripts/ds_grid.yy",
+    "name":"ranges",
+    "path":"folders/Scripts/ds_grid/ranges.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

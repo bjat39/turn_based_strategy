@@ -1,0 +1,41 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"til_mini_dungeon2",
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[17,83,80,50,75,32,79,54,73,76,59,56,74,49,51,29,],},
+    {"$GMAutoTileSet":"","%Name":"autotile_2","closed_edge":false,"name":"autotile_2","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[18,83,80,74,75,32,79,0,73,76,59,56,81,0,0,0,],},
+  ],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"til_mini_dungeon2",
+  "out_columns":11,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Tile Sets",
+    "path":"folders/Tile Sets.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"atlas_walls_high_16x32_newx2",
+    "path":"sprites/atlas_walls_high_16x32_newx2/atlas_walls_high_16x32_newx2.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":42,
+  "tilehsep":0,
+  "tilevsep":22,
+  "tileWidth":32,
+  "tilexoff":0,
+  "tileyoff":22,
+  "tile_count":96,
+}

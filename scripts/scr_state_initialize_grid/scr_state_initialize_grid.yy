@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_state_initialize_grid",
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Scripts/ds_grid.yy",
+    "name":"states",
+    "path":"folders/Scripts/ds_grid/states.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
