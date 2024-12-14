@@ -38,6 +38,11 @@ description = "Fuggedaboutit";
 //attack_list = ds_list_create(); //list of viable attack nodes to attack
 //hover_attack = noone;
 
+//spell variables ? keep?
+spell_hit_bonus = 0;//for neft maybe
+targeting_type = "error";
+action_range = 0; //no goddamn idea what this does
+
 //Base stats
 move = 5;
 
