@@ -2,8 +2,12 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_state_player_turn1(){
 	//Get inputs
-	vert_input = scr_vert_input();
+	up_input = keyboard_check_pressed(up_key); //for menus
+	down_input = keyboard_check_pressed(down_key);
+	
+	vert_input = scr_vert_input();//for cursor explore
 	hori_input = scr_hori_input();
+	
 	accept_input = keyboard_check_pressed(ord("Z"));
 	return_input = keyboard_check_pressed(ord("X"));
 	stat_input = keyboard_check_pressed(ord("C"));

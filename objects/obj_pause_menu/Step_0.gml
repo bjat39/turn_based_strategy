@@ -1,8 +1,7 @@
 /// @description 
 var up_key = keyboard_check_pressed(vk_up);
 var down_key = keyboard_check_pressed(vk_down);
-var accept_key = obj_game.accept_input;
-var return_key = obj_game.return_input;
+
 
 //store number of options in current menu
 op_length = array_length(option[menu_level]);
@@ -13,17 +12,17 @@ pos += down_key - up_key;
 if (pos >= op_length){pos = 0;}
 if (pos < 0){pos = op_length-1;}
 
-if (return_key and menu_level > 0)
+if (obj_game.return_input and menu_level > 0)
 {
 	menu_level --;
 }
-else if(return_key and menu_level <= 0)
+else if(obj_game.return_input and menu_level <= 0)
 {
 	instance_destroy();
 }
 
 //using the options
-if (accept_key)
+if (obj_game.accept_input)
 {
 	
 	var start_menu_level = menu_level;

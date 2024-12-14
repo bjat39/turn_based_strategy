@@ -1,4 +1,5 @@
 /// @description 
+depth = -y;
 switch(unit_state)
 {
 	case "idle": break;

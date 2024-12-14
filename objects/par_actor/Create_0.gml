@@ -1,4 +1,5 @@
 /// @description
+depth = -y;
 unit_state = "idle";
 
 gridX = x / GRID_SIZE;//0; used to work out current node, so i'm setting it here, although it gets set automatically elsewhere
