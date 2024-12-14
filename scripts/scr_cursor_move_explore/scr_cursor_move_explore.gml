@@ -43,10 +43,9 @@ function scr_cursor_move_explore(){
 	if(vert_input == -1 and hori_input == -1 and left_boundary
 		 and top_boundary and cursor_move_delay < 0) //up left
 	{
-		//audio_play_sound(sfx_click1,4,0);
 		//if (instance_position(obj_cursor.x - GRID_SIZE,obj_cursor.y - GRID_SIZE,par_actor))
 		//	{cursor_move_delay_default = cursor_move_slow_actor_default;}
-		scr_play_sound(_047_Pick_item_02,3,0,obj_game.sfx_gain);
+		scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 		cursor_move_slow_initial ++;
 		cursor_move_delay = cursor_move_delay_default;
 		obj_cursor.x -= GRID_SIZE;
@@ -55,7 +54,7 @@ function scr_cursor_move_explore(){
 	else if(vert_input == -1 and hori_input == 1 and right_boundary
 		and top_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
+		scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 		//if (instance_position(obj_cursor.x + GRID_SIZE,obj_cursor.y - GRID_SIZE,par_actor))
 		//	{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
@@ -66,7 +65,7 @@ function scr_cursor_move_explore(){
 	else if(vert_input == 1 and hori_input == 1 and bottom_boundary
 		and right_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
+		scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 		//if (instance_position(obj_cursor.x + GRID_SIZE,obj_cursor.y + GRID_SIZE,par_actor))
 		//	{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
@@ -77,7 +76,7 @@ function scr_cursor_move_explore(){
 	else if(vert_input == 1 and hori_input == -1 and bottom_boundary
 		and left_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
+		scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 		//if (instance_position(obj_cursor.x + GRID_SIZE,obj_cursor.y - GRID_SIZE,par_actor))
 		//	{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
@@ -90,7 +89,7 @@ function scr_cursor_move_explore(){
 	//left
 	else if(hori_input == -1 and left_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
+		scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 		//if (instance_position(obj_cursor.x - GRID_SIZE,obj_cursor.y,par_actor))
 		//	{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
@@ -99,7 +98,7 @@ function scr_cursor_move_explore(){
 	}//right
 	else if(hori_input == 1 and right_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
+		scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 		//if (instance_position(obj_cursor.x + GRID_SIZE,obj_cursor.y,par_actor))
 		//	{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
@@ -108,7 +107,7 @@ function scr_cursor_move_explore(){
 	}//down
 	else if(vert_input == 1 and bottom_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
+		scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 		//if (instance_position(obj_cursor.x,obj_cursor.y + GRID_SIZE,par_actor))
 		//	{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;
@@ -117,7 +116,7 @@ function scr_cursor_move_explore(){
 	}//upp
 	else if(vert_input == -1 and top_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
+		scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 		//if (instance_position(obj_cursor.x,obj_cursor.y - GRID_SIZE,par_actor))
 		//	{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		cursor_move_slow_initial ++;

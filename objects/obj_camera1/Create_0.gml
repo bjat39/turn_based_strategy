@@ -45,4 +45,5 @@ else
 	camera_set_view_pos(camera,0,0);
 }
 
+//HELLO INTERNET WELCOME TO GAME THEO
 //window_set_fullscreen(true);

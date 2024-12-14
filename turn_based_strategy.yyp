@@ -266,6 +266,7 @@
     {"id":{"name":"_047_Pick_item_02","path":"sounds/_047_Pick_item_02/_047_Pick_item_02.yy",},},
     {"id":{"name":"_048_Pick_item_03","path":"sounds/_048_Pick_item_03/_048_Pick_item_03.yy",},},
     {"id":{"name":"_05_Fire_Explosion","path":"sounds/_05_Fire_Explosion/_05_Fire_Explosion.yy",},},
+    {"id":{"name":"_05_hover","path":"sounds/_05_hover/_05_hover.yy",},},
     {"id":{"name":"_06_Fire_Shield","path":"sounds/_06_Fire_Shield/_06_Fire_Shield.yy",},},
     {"id":{"name":"_066_Equip_06","path":"sounds/_066_Equip_06/_066_Equip_06.yy",},},
     {"id":{"name":"Rogue_Run_Loop","path":"sounds/Rogue_Run_Loop/Rogue_Run_Loop.yy",},},

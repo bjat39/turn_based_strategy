@@ -6,6 +6,16 @@ if down_key or up_key
 	scr_play_sound(sfx_confirm_book1,3,0,obj_game.sfx_gain);
 }
 
+if obj_game.return_input
+{
+	scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
+}
+
+if obj_game.accept_input
+{
+	scr_play_sound(_066_Equip_06,3,0,obj_game.sfx_gain);
+}
+
 //store number of options in current menu
 op_length = array_length(option[menu_level]);
 

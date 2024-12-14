@@ -214,6 +214,7 @@
     {"name":"_046_Pick_item_01","order":2,"path":"sounds/_046_Pick_item_01/_046_Pick_item_01.yy",},
     {"name":"_048_Pick_item_03","order":1,"path":"sounds/_048_Pick_item_03/_048_Pick_item_03.yy",},
     {"name":"_05_Fire_Explosion","order":1,"path":"sounds/_05_Fire_Explosion/_05_Fire_Explosion.yy",},
+    {"name":"_05_hover","order":12,"path":"sounds/_05_hover/_05_hover.yy",},
     {"name":"_06_Fire_Shield","order":2,"path":"sounds/_06_Fire_Shield/_06_Fire_Shield.yy",},
     {"name":"_066_Equip_06","order":10,"path":"sounds/_066_Equip_06/_066_Equip_06.yy",},
     {"name":"Rogue_Run_Loop","order":11,"path":"sounds/Rogue_Run_Loop/Rogue_Run_Loop.yy",},
