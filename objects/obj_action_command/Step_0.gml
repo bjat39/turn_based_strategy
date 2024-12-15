@@ -24,9 +24,9 @@ else if ((hover_command != "Attack" and menu_level != 1) and attack_square_spawn
 
 if (obj_game.return_input)
 {
-	if (menu_level > 0)
+	if (menu_level == 1)
 	{
-		scr_wipe_nodes();
+		//scr_wipe_nodes();
 		menu_level = 0;
 		pos = prev_pos;
 	}

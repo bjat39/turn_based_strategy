@@ -1,25 +1,31 @@
 /// @description 
-var up_key = keyboard_check_pressed(vk_up);
-var down_key = keyboard_check_pressed(vk_down);
+event_inherited();
+//var up_key = keyboard_check_pressed(vk_up);
+//var down_key = keyboard_check_pressed(vk_down);
 
 
-//store number of options in current menu
-op_length = array_length(option[menu_level]);
+////store number of options in current menu
+//op_length = array_length(option[menu_level]);
 
-//move thru the menu
-pos += down_key - up_key;
+////move thru the menu
+//pos += down_key - up_key;
 
-if (pos >= op_length){pos = 0;}
-if (pos < 0){pos = op_length-1;}
+//if (pos >= op_length){pos = 0;}
+//if (pos < 0){pos = op_length-1;}
 
-if (obj_game.return_input and menu_level > 0)
+if (obj_game.return_input )
 {
-	menu_level --;
-}
-else if(obj_game.return_input and menu_level <= 0)
-{
+	if (menu_level == 1)
+	{
+		menu_level = 0;
+		pos = prev_pos;
+	}
+	else if(menu_level == 0)
+	{
 	instance_destroy();
+	}
 }
+
 
 //using the options
 if (obj_game.accept_input)
@@ -37,7 +43,7 @@ if (obj_game.accept_input)
 			case(0): break;
 		
 			//settings
-			case(1): menu_level ++; break;
+			case(1): prev_pos = pos; menu_level = 1; break;
 		
 			//suspend game
 			case(2): game_end();

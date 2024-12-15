@@ -7,6 +7,7 @@ op_border = 16; //border between text and edge
 op_space = 16; //y distance between options
 
 pos = 0; //select option
+prev_pos = pos;
 	
 //two dimensional array for sub menus, which set of options
 //Pause menu

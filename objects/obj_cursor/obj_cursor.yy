@@ -1,7 +1,10 @@
 {
   "$GMObject":"",
   "%Name":"obj_cursor",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":73,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_cursor",
   "overriddenProperties":[],
@@ -28,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cursor",
-    "path":"sprites/spr_cursor/spr_cursor.yy",
+    "name":"spr_cursor_4",
+    "path":"sprites/spr_cursor_4/spr_cursor_4.yy",
   },
   "spriteMaskId":null,
   "visible":true,

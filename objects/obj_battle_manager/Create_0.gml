@@ -1,4 +1,5 @@
 /// @description 
+obj_game.player_state = "cursor_menu";
 initiator = noone;
 reciever = noone;
 

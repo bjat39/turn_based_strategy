@@ -121,7 +121,17 @@ function scr_cursor_control(){
 
 	if (obj_game.return_input) //mouse_check_button_pressed(mb_right))
 	{
-		
+		if (selected_actor != noone)
+		{
+			scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
+			selected_actor.unit_state =	"idle";
+			obj_cursor.x = selected_actor.x + GRID_SIZE/2;
+			obj_cursor.y = selected_actor.y + GRID_SIZE/2;
+			selected_actor = noone;
+			
+			player_state = "cursor_explore"; //unit state moved?
+			scr_wipe_nodes();
+		}
 	}
 	
 	if (obj_game.neft_input) //return to neft, mc

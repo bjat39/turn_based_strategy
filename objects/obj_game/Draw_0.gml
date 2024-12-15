@@ -1,7 +1,7 @@
 /// @description 
 if (hoverNode != noone)
 {	
-	draw_sprite(spr_selected,0,gridX*GRID_SIZE,gridY*GRID_SIZE);
+	draw_sprite(spr_selected_1,0,gridX*GRID_SIZE,gridY*GRID_SIZE);
 }
 
 spinny_neft_rotation += 8;
