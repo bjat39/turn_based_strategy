@@ -64,10 +64,21 @@ switch(unit_state)
 		//ds_list_clear(selected_actor.attack_list);
 		//finished = false;
 		break;
-	case ("finish"):
-
-		break;
-	case ("dying"):
+	case ("finish"): break;
+	case ("pre_dying_talk"): //player characters talk before dying
+		unit_state = "initiate_dying";//speech bubbles probably will just interrupt everything before they're all been gotten through so probably won't need this
 	
+		break;
+	case ("initiate_dying"): scr_play_sound(_69_Enemy_death_01,2,0,obj_game.sfx_gain); unit_state = "dying"; break;
+	case ("dying"):
+		alpha -= 0.01;
+		if(alpha < -0.3)//die
+		{
+			map[gridX,gridY].occupant = noone;
+			//initiate exp gain and level up for unit, if there is an opponent
+			instance_destroy();
+			
+		}
+		
 		break;
 }

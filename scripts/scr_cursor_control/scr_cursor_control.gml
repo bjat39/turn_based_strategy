@@ -107,6 +107,7 @@ function scr_cursor_control(){
 		{
 			//selected_actor = noone;
 			//scr_wipe_nodes();
+			scr_play_sound(_066_Equip_06,3,0,obj_game.sfx_gain);
 			instance_create_layer(60,60,"Menu",obj_pause_menu);
 		}
 		

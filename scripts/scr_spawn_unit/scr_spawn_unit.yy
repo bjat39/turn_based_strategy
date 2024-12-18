@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_spawn_unit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_spawn_unit",
+  "parent":{
+    "name":"ds_grid",
+    "path":"folders/Scripts/ds_grid.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

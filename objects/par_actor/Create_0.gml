@@ -1,5 +1,6 @@
 /// @description
 depth = -y;
+alpha = 1;
 unit_state = "idle";
 
 gridX = x / GRID_SIZE;//0; used to work out current node, so i'm setting it here, although it gets set automatically elsewhere
@@ -43,6 +44,14 @@ description = "Fuggedaboutit";
 spell_hit_bonus = 0;//for neft maybe
 targeting_type = "error";
 action_range = 0; //no goddamn idea what this does
+
+
+//Abilities, player characters have abilities
+ability_list = ds_list_create();
+first_ability_uses = 3; //how many times per map
+max_first_ability_uses = first_ability_uses;
+second_ability_uses = 3; //how many times per map
+max_second_ability_uses = second_ability_uses;
 
 //Base stats
 move = 5;

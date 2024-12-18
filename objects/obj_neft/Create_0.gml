@@ -13,7 +13,9 @@ move = 5;
 attack_range = 3 * GRID_SIZE; //placeholder set later in create
 attack_target = noone;
 attack_timer = 0;
-damage_type = "magic" //Weapon triangle
+damage_type = "magic"; //Weapon triangle
+
+ds_list_add(ability_list,"Overcharge");//+1 range,+6damage,+20%hitrate
 
 level = 1;
 
