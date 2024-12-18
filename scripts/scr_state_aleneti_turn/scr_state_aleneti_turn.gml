@@ -1,6 +1,33 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_state_aleneti_turn(){
+	
+	switch(ai_state)
+	{
+		case ("not_turn"): break; //shouldn't happen but just for posterity
+		case ("initialise"):
+		//go thru all alenetians, see their ai type, actually just have everybody attack sraight on for now
+		with (par_aleneti_faction)
+		{
+			ai_type = "seek_and_destroy"
+		}
+		//organise priorities of units
+		//aleneti_state = "not_turn"; //not_turn, initialise (sort units? do this after every move?), move units
+		//aleneti_list
+		//finished_aleneti_list
+		
+		break;
+		//case("find_target"):
+		case ("check_priorities"): //AAAAAAAAAAAAAAAAAAAAAAAAAA ok im fine
+		
+		break;
+		case ("move_unit"): //move unit(s?)
+		
+		break;
+		
+	}
+	scr_ai();
+	
 	scr_end_turn("aleneti");
 	//with(par_aleneti_faction)
 	//{

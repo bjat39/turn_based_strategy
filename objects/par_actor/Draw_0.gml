@@ -1,5 +1,4 @@
 /// @description
-draw_set_alpha(alpha);
 if (obj_game.selected_actor == id and obj_game.selected_actor.ai_type == "player") //only the actor who's turn it is will draw a line
 { //
 	//if cursor is hovering over a different node other than actors
@@ -39,4 +38,3 @@ if (unit_state != "dying")//current_hit_points > 0)
 {
 	draw_healthbar(x,y+GRID_SIZE-1,x+GRID_SIZE,y+GRID_SIZE,current_hit_points/max_hit_points * 100,c_black,c_red,c_yellow,0,true,true);
 }
-draw_set_alpha(1);

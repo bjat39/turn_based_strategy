@@ -26,13 +26,28 @@ switch(unit_state)
 			audio_stop_sound(Rogue_Run_Loop);
 			path_clear_points(movement_path);
 			
-			unit_state = "idle";
-			moved = true;
+			if (faction == "neft")
+			{
+				unit_state = "idle";
+				moved = true;
 			
-			var new_closed = ds_list_create();
-			ds_list_add(new_closed,current_node);
-			
-			instance_create_layer(x + GRID_SIZE,y,"Menu",obj_action_command);
+				var new_closed = ds_list_create();
+				ds_list_add(new_closed,current_node);
+
+				instance_create_layer(x + GRID_SIZE,y,"Menu",obj_action_command);
+			}
+			else
+			{
+				if (attack_target != noone)
+				{
+					unit_state = "battle";
+					with instance_create_layer(x,y,"Instances",obj_battle_manager)
+					{
+						initiator = other;
+						reciever = attack_target;
+					} 
+				}
+			}
 			
 			//scr_action_command_init();
 			
@@ -71,14 +86,19 @@ switch(unit_state)
 		break;
 	case ("initiate_dying"): scr_play_sound(_69_Enemy_death_01,2,0,obj_game.sfx_gain); unit_state = "dying"; break;
 	case ("dying"):
-		alpha -= 0.01;
-		if(alpha < -0.3)//die
+		image_alpha = lerp(image_alpha, 0, 0.05);
+		if image_alpha <= 0 
 		{
 			map[gridX,gridY].occupant = noone;
 			//initiate exp gain and level up for unit, if there is an opponent
 			instance_destroy();
-			
 		}
 		
 		break;
+	//ai states
+	case ("find_target"):
+		scr_ai();
+		
+		break;
+	
 }

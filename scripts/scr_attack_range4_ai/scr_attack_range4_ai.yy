@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_attack_range4_ai",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_attack_range4_ai",
+  "parent":{
+    "name":"ranges",
+    "path":"folders/Scripts/ds_grid/ranges.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

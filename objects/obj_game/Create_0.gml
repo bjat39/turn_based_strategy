@@ -3,6 +3,11 @@
 
 game_state = "initialising"; //initialising, player, ai1,ai2 //turn state machine
 player_state = "cursor_explore"; //cursor_explore, cursor_selected, cursor_menu (explore = cursor freely move, selected = cursor move within range, menu cursor can't move (still recieving inputs)(attack anims))
+
+ai_state = "not_turn";
+//aleneti_state = "not_turn"; //not_turn, initialise (sort units? do this after every move?), move units
+//ally_state = "not_turn";
+//strucia_state = "not_turn";
 //select = obj_cursor exists, action_command = obj_cursor does not exist
 
 sfx_gain = 1;

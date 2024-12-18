@@ -1,6 +1,5 @@
 /// @description
 depth = -y;
-alpha = 1;
 unit_state = "idle";
 
 gridX = x / GRID_SIZE;//0; used to work out current node, so i'm setting it here, although it gets set automatically elsewhere
@@ -28,7 +27,7 @@ orig_node = current_node; //node saved if the player cancels after moving
 
 //character statistics
 
-ai_type = "player";
+ai_type = "player"; //player, path (go to point while attacking on the way), seek_and_destroy, reaction
 
 faction = "neft";//"player"; //what side they are affliliated with, affects turn order
 class = "Healer Woman";

@@ -25,16 +25,33 @@ function scr_attack_range2(closed, selected_actor){
 		//{
 		//	faux_attack_node = true;
 		//}
-		for(ii = 0; ii < ds_list_size(closed);ii++)
+		if(selected_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 		{
-			curr_node = ds_list_find_value(closed,ii);
-			x_dist = point_distance(id.x, id.y, curr_node.x, id.y); //would have measuring to the center but it dont
-			y_dist = point_distance(id.x, id.y, id.x,curr_node.y);
-			total_dist = x_dist + y_dist; //
-			if (move_node == false and total_dist <= selected_actor.attack_range){
-				scr_colour_attack_node(id);
-				break;
+			for(ii = 0; ii < ds_list_size(closed);ii++)
+			{
+				curr_node = ds_list_find_value(closed,ii);
+				x_dist = point_distance(id.x, id.y, curr_node.x, id.y); //would have measuring to the center but it dont
+				y_dist = point_distance(id.x, id.y, id.x,curr_node.y);
+				total_dist = x_dist + y_dist; //
+				if (move_node == false and total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE){
+					scr_colour_attack_node(id);
+					break;
+				}
 			}
+		}
+		else
+		{
+			for(ii = 0; ii < ds_list_size(closed);ii++)
+			{
+				curr_node = ds_list_find_value(closed,ii);
+				x_dist = point_distance(id.x, id.y, curr_node.x, id.y); //would have measuring to the center but it dont
+				y_dist = point_distance(id.x, id.y, id.x,curr_node.y);
+				total_dist = x_dist + y_dist; //
+				if (move_node == false and total_dist <= selected_actor.attack_range){
+					scr_colour_attack_node(id);
+					break;
+				}
+			}			
 		}
 	}
 }
