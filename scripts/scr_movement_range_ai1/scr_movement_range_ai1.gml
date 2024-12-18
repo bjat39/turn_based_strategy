@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_movement_range_ai(origin_node,move_range,attack_range,selected_actor,goal){ //pathfinding, get nodes for movements
+function scr_movement_range_ai1(origin_node,move_range,attack_range,selected_actor){ //pathfinding, get nodes for movements
+	///uses less efficient dijkstras :(
 	//selected_actor has been added later for scr_attack_range
 	//Reset all node data
 	//scr_wipe_nodes();
@@ -19,12 +20,11 @@ function scr_movement_range_ai(origin_node,move_range,attack_range,selected_acto
 	closed = ds_list_create();
 	
 	//add starting node to open list
-	ds_priority_add(open,start_node,start_node.F); //lowest score, since it's origin
+	ds_priority_add(open,start_node,start_node.G); //lowest score, since it's origin
 	
 	//while open queue is not empty, repeat the following until all nodes have been looked at
 	while(ds_priority_size(open) > 0){
 		//remove node with lowest g score from open
-		//q
 		current_node = ds_priority_delete_min(open); //remove from open, put in current
 		
 		//add node to closed list so we don't look at it again
@@ -36,14 +36,6 @@ function scr_movement_range_ai(origin_node,move_range,attack_range,selected_acto
 			//store current neighbour in neighbour variable
 			curr_neighbour = ds_list_find_value(current_node.neighbours, ii)
 			
-			if (curr_neighbour == goal)
-			{
-				return closed;
-			}
-			
-			
-			
-			//curr_neighbour
 			//add neighbour to open list if qualifies:
 			//neighbour is passable
 			//neighbour has no occupant
@@ -118,8 +110,6 @@ function scr_movement_range_ai(origin_node,move_range,attack_range,selected_acto
 		//total_dist = x_dist + y_dist;
 		//if (total_dist <= temp_actor.attack_range + temp_actor){}
 	}
-	scr_attack_range4_ai(closed,selected_actor);
-	
 	
 	return closed;
 	//DESTROY closed list!!!!!

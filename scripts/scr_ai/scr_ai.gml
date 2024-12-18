@@ -8,6 +8,10 @@ function scr_ai(){
 		attack_target = noone;
 		node = map[gridX,gridY];
 		
+		var move_nodes = scr_movement_range_ai1(node,
+					move,attack_range,id);
+		scr_attack_range4_ai(move_nodes,id);
+		
 		for(ii = 0; ii < ds_list_size(node.neighbours);ii ++)
 		{
 			neighbour = ds_list_find_value(node.neighbours,ii);

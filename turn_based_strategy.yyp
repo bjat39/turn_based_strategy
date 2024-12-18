@@ -237,6 +237,7 @@
     {"id":{"name":"scr_melee_attack","path":"scripts/scr_melee_attack/scr_melee_attack.yy",},},
     {"id":{"name":"scr_move_obj_to_point","path":"scripts/scr_move_obj_to_point/scr_move_obj_to_point.yy",},},
     {"id":{"name":"scr_movement_range_ai","path":"scripts/scr_movement_range_ai/scr_movement_range_ai.yy",},},
+    {"id":{"name":"scr_movement_range_ai1","path":"scripts/scr_movement_range_ai1/scr_movement_range_ai1.yy",},},
     {"id":{"name":"scr_movement_range","path":"scripts/scr_movement_range/scr_movement_range.yy",},},
     {"id":{"name":"scr_navigation_attack","path":"scripts/scr_navigation_attack/scr_navigation_attack.yy",},},
     {"id":{"name":"scr_navigation","path":"scripts/scr_navigation/scr_navigation.yy",},},

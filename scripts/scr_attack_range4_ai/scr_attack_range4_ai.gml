@@ -19,77 +19,76 @@ function scr_attack_range4_ai(closed, selected_actor){ //selected actor is initi
 	//		map[xx,yy].gridY = yy;
 	//	}
 	//}
-	with(par_actor)
+	with(par_actor) //reciever
 	{
-		//if (id.move_node == true)
-		//{
-		//	faux_attack_node = true;
-		//}
-		for(ii = 0; ii < ds_list_size(closed);ii++) //list of movement squares
+		if (faction != other.faction)
 		{
-			curr_node = ds_list_find_value(closed,ii);
-			x_dist = point_distance(id.x, id.y, curr_node.x, id.y); //would have measuring to the center but it dont
-			y_dist = point_distance(id.x, id.y, id.x,curr_node.y);
-			total_dist = x_dist + y_dist; //
-			if (move_node == false and total_dist <= selected_actor.attack_range){
-				scr_colour_attack_node(id);
-				break;
+			for(ii = 0; ii < ds_list_size(closed);ii++) //list of movement squares
+			{
+				curr_node = ds_list_find_value(closed,ii);
+				x_dist = point_distance(x, y, curr_node.x, y); //would have measuring to the center but it dont
+				y_dist = point_distance(x, y, x,curr_node.y);
+				total_dist = x_dist + y_dist; //
+				if (move_node == false and total_dist <= selected_actor.attack_range){
+					ds_priority_add(enemy_list,curr_node,0);
+					break;
+				}
 			}
 		}
 	}
 	
-	if(selected_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
-	{
-		with(par_node)
-		{
-			//if (id.move_node == true)
-			//{
-			//	faux_attack_node = true;
-			//}
-			curr_node = ds_list_find_value(closed,ii);
-			x_dist = point_distance(x, y, selected_actor.x, y); //would have measuring to the center but it dont
-			y_dist = point_distance(x, y, x, selected_actor.y);
-			total_dist = x_dist + y_dist; //
-			if (occupant != noone and total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE)//temp_actor.attack_range)
-			{
-				if (occupant.faction != selected_actor.faction)
-				{
-					map[gridX,gridY].attack_node = true;
-					//selected_actor.attack_node = true;
-					scr_colour_attack_node(id);
-				}
-			}
-			else if (total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE){
-				scr_colour_attack_node(id);
-			}
-		}
-	}
-	else
-	{
-		with(par_node)
-		{
-			//if (id.move_node == true)
-			//{
-			//	faux_attack_node = true;
-			//}
+	//if(selected_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
+	//{
+	//	with(par_node)
+	//	{
+	//		//if (id.move_node == true)
+	//		//{
+	//		//	faux_attack_node = true;
+	//		//}
+	//		curr_node = ds_list_find_value(closed,ii);
+	//		x_dist = point_distance(x, y, selected_actor.x, y); //would have measuring to the center but it dont
+	//		y_dist = point_distance(x, y, x, selected_actor.y);
+	//		total_dist = x_dist + y_dist; //
+	//		if (occupant != noone and total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE)//temp_actor.attack_range)
+	//		{
+	//			if (occupant.faction != selected_actor.faction)
+	//			{
+	//				map[gridX,gridY].attack_node = true;
+	//				//selected_actor.attack_node = true;
+	//				scr_colour_attack_node(id);
+	//			}
+	//		}
+	//		else if (total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE){
+	//			scr_colour_attack_node(id);
+	//		}
+	//	}
+	//}
+	//else
+	//{
+	//	with(par_node)
+	//	{
+	//		//if (id.move_node == true)
+	//		//{
+	//		//	faux_attack_node = true;
+	//		//}
 		
-			x_dist = point_distance(x, y, selected_actor.x, y); //would have measuring to the center but it dont
-			y_dist = point_distance(x, y, x, selected_actor.y);
-			total_dist = x_dist + y_dist; //
-			if (occupant != noone and total_dist <= selected_actor.attack_range)//temp_actor.attack_range)
-			{
-				if (occupant.faction != selected_actor.faction)
-				{
-					map[gridX,gridY].attack_node = true;
-					//selected_actor.attack_node = true;
-					scr_colour_attack_node(id);
-				}
-			}
-			else if (total_dist <= selected_actor.attack_range){
-				scr_colour_attack_node(id);
-			}
-		}
-	}
+	//		x_dist = point_distance(x, y, selected_actor.x, y); //would have measuring to the center but it dont
+	//		y_dist = point_distance(x, y, x, selected_actor.y);
+	//		total_dist = x_dist + y_dist; //
+	//		if (occupant != noone and total_dist <= selected_actor.attack_range)//temp_actor.attack_range)
+	//		{
+	//			if (occupant.faction != selected_actor.faction)
+	//			{
+	//				map[gridX,gridY].attack_node = true;
+	//				//selected_actor.attack_node = true;
+	//				scr_colour_attack_node(id);
+	//			}
+	//		}
+	//		else if (total_dist <= selected_actor.attack_range){
+	//			scr_colour_attack_node(id);
+	//		}
+	//	}
+	//}
 }
 
 //function scr_attack_range(current_actor){ //pass id of selected actor
