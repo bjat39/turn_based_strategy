@@ -58,6 +58,9 @@ move = 5;
 attack_range = 1 * GRID_SIZE; //placeholder set later in create. in pixels
 attack_target = noone;
 attack_timer = 0;
+
+point_list = ds_list_create(); //list of viable attacks, or points to go to
+
 damage_type = "melee"; //Weapon triangle
 
 level = 1;

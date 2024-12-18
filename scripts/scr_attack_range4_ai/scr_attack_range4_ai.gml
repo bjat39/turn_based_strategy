@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_attack_range4_ai(closed, selected_actor){
+function scr_attack_range4_ai(closed, selected_actor){ //selected actor is initiator
 	//Preliminary attack range, while moving
 	
 	//for (xx = 0; xx < map_width; xx += 1) //does the x column first

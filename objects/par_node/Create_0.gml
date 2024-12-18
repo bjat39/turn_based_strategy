@@ -19,6 +19,8 @@ terrain_type = "noone"
 parent_node = noone; //hold onto id of node that scores it, used to make a path to follow, get the parent of the parent etc etc until we reach the source node. used to be called just "parent"
 
 G = 0; //distance between current node and start node, how far away this node is from the source node
+H = 0; //estimated movement cost, used for ai moving
+F = 0;
 //for a star, h would be the estimated distance from current node to end node, and f is the total cost for the node (f = g + h)
 
 move_node = false; //check if valid node for movement
