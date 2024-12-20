@@ -19,9 +19,9 @@ if (hoverNode != noone)
 	}
 	
 	//debug
-	//draw_set_color(c_red);
+	draw_set_color(c_red);
 	//draw_text(0,220,"player_state: " + player_state);
-	
+	draw_text(0,100,game_state);
 }
 
 draw_self();
@@ -91,7 +91,6 @@ if (hoverNode != noone)
 			//draw_text(0,160,"gridY: " + string(hoverNode.occupant.gridY));
 			//draw_text(0,180,"current_node: " + string(hoverNode.occupant.current_node));
 			//draw_text(0,200,"orig_node: " + string(hoverNode.occupant.orig_node));
-			
 			//draw_set_color(c_white);
 		}
 	}

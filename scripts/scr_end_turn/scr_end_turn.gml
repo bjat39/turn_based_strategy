@@ -27,7 +27,21 @@ function scr_end_turn(faction){ //end the turn of all units of a respective fact
 			{
 				round_counter = 0;
 			}
-				
+			
+			if (round_counter == 0)
+			{
+				if (instance_exists(obj_neft))
+				{
+					obj_cursor.x = obj_neft.x + GRID_SIZE/2;
+					obj_cursor.y = obj_neft.y + GRID_SIZE/2;
+				}
+				else
+				{
+					obj_cursor.x = GRID_SIZE/2;
+					obj_cursor.y = GRID_SIZE/2;
+				}
+			}
+			
 			with (faction_parent)
 			{
 				unit_state = "idle";

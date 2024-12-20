@@ -212,6 +212,7 @@
     {"id":{"name":"ChatterboxVariablesResetAll","path":"scripts/ChatterboxVariablesResetAll/ChatterboxVariablesResetAll.yy",},},
     {"id":{"name":"ChatterboxWait","path":"scripts/ChatterboxWait/ChatterboxWait.yy",},},
     {"id":{"name":"IsChatterbox","path":"scripts/IsChatterbox/IsChatterbox.yy",},},
+    {"id":{"name":"scr_ai_find_move_node","path":"scripts/scr_ai_find_move_node/scr_ai_find_move_node.yy",},},
     {"id":{"name":"scr_ai","path":"scripts/scr_ai/scr_ai.yy",},},
     {"id":{"name":"scr_attack_enemy","path":"scripts/scr_attack_enemy/scr_attack_enemy.yy",},},
     {"id":{"name":"scr_attack_range","path":"scripts/scr_attack_range/scr_attack_range.yy",},},

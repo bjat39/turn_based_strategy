@@ -50,13 +50,14 @@ if (obj_game.accept_input)
 
 			break;
 			case(3):
-			with (par_actor)
-			{
-				if (faction == "neft")
-				{
-					unit_state = "finishing";
-				}
-			}
+			//with (par_actor)
+			//{
+			//	if (faction == "neft")
+			//	{
+			//		unit_state = "finishing";
+			//	}
+			//}
+			scr_end_turn("neft");
 			instance_destroy();
 			break;
 		

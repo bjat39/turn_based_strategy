@@ -1,7 +1,7 @@
 /// @description 
 
 switch(game_state)
-{
+{//would be funny if turns went strucia, aleneti, neft, ally :D
 	case "initialising": scr_state_initialize_grid(); break;
 	case "neft_faction_turn": scr_state_player_turn1(); break;
 	case "ally_faction_turn": break;

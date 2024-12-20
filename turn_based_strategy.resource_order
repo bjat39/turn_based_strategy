@@ -169,6 +169,7 @@
     {"name":"ChatterboxVariablesResetAll","order":10,"path":"scripts/ChatterboxVariablesResetAll/ChatterboxVariablesResetAll.yy",},
     {"name":"ChatterboxWait","order":9,"path":"scripts/ChatterboxWait/ChatterboxWait.yy",},
     {"name":"IsChatterbox","order":5,"path":"scripts/IsChatterbox/IsChatterbox.yy",},
+    {"name":"scr_ai_find_move_node","order":27,"path":"scripts/scr_ai_find_move_node/scr_ai_find_move_node.yy",},
     {"name":"scr_ai","order":26,"path":"scripts/scr_ai/scr_ai.yy",},
     {"name":"scr_attack_range","order":1,"path":"scripts/scr_attack_range/scr_attack_range.yy",},
     {"name":"scr_attack_range1","order":2,"path":"scripts/scr_attack_range1/scr_attack_range1.yy",},

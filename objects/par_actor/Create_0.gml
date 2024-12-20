@@ -56,10 +56,10 @@ max_second_ability_uses = second_ability_uses;
 move = 5;
 
 attack_range = 1 * GRID_SIZE; //placeholder set later in create. in pixels
-attack_target = noone;
+attack_target = noone; //ai
 attack_timer = 0;
 
-enemy_list = ds_priority_create(); //list of viable attacks, or points to go to
+//enemy_list = ds_priority_create(); //list of enemies on map, ai
 
 damage_type = "melee"; //Weapon triangle
 

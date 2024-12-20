@@ -100,5 +100,8 @@ switch(unit_state)
 		scr_ai();
 		
 		break;
+	case ("find_move_node"):
+		scr_ai_find_move_node();
+		break;
 	
 }
