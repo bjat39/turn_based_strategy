@@ -1,6 +1,9 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_create_path(){
+function scr_create_path(selected_actor, current_node){
+	//arg0 = the actor we're creating the path for
+	//arg1 = the destination node we want to end up at
+	
 	//create priority queue
 	path = ds_priority_create();
 		

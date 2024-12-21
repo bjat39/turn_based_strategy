@@ -35,9 +35,9 @@ function scr_cursor_control(){
 			if (selected_actor.ai_type == "player")//hoverNode.occupant == noone and hoverNode.passable)
 			{
 				scr_play_sound(_066_Equip_06,3,0,obj_game.sfx_gain);
-				current_node = hoverNode; //new variable
+				current_node = hoverNode; //node we want to end up at
 		
-				scr_create_path()
+				scr_create_path(selected_actor,current_node);
 				
 				//first clear node of selected actor
 				map[selected_actor.gridX,selected_actor.gridY].occupant = noone;
@@ -51,6 +51,7 @@ function scr_cursor_control(){
 		
 				//send selected actor on its way
 				selected_actor.unit_state =	"begin_path";
+				//selected_actor.end_path = "ready"; //if u wanna attack or smth
 		
 				scr_wipe_nodes();
 			}

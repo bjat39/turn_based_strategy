@@ -17,7 +17,8 @@ switch(unit_state)
 		orig_node = current_node;
 		
 		unit_state = "moving";
-		obj_game.player_state = "cursor_menu";
+		if (faction == "neft"){
+			obj_game.player_state = "cursor_menu";}
 		break;
 	case "moving":
 		if (path_index = -1) //path ended
@@ -36,17 +37,19 @@ switch(unit_state)
 
 				instance_create_layer(x + GRID_SIZE,y,"Menu",obj_action_command);
 			}
-			else
+			else //////////////////////////////move to start, need to figure out at beginning of turn if
 			{
-				if (attack_target != noone)
-				{
-					unit_state = "battle";
-					with instance_create_layer(x,y,"Instances",obj_battle_manager)
-					{
-						initiator = other;
-						reciever = attack_target;
-					} 
-				}
+				unit_state = "find_move_node"//"find_target";
+				//if (attack_target != noone)
+				//{
+				//	unit_state = "battle";
+				//	with instance_create_layer(x,y,"Instances",obj_battle_manager)
+				//	{
+				//		initiator = other;
+				//		reciever = attack_target;
+				//	} 
+				//}
+				//obj_game.current_actor = noone;//remove?
 			}
 			
 			//scr_action_command_init();
@@ -102,6 +105,7 @@ switch(unit_state)
 		break;
 	case ("find_move_node"):
 		scr_ai_find_move_node();
+		scr_wipe_nodes(); //just in case lol
 		break;
 	
 }

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_attack_range4_ai",
   "parent":{
-    "name":"ranges",
-    "path":"folders/Scripts/ds_grid/ranges.yy",
+    "name":"attack_range",
+    "path":"folders/Scripts/ds_grid/ranges/attack_range.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

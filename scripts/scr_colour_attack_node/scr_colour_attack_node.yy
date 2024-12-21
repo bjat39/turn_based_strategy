@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_colour_attack_node",
   "parent":{
-    "name":"ranges",
-    "path":"folders/Scripts/ds_grid/ranges.yy",
+    "name":"colour and wipe nodes",
+    "path":"folders/Scripts/ds_grid/colour and wipe nodes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

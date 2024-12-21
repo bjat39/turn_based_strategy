@@ -5,7 +5,7 @@ function scr_ai_find_move_node(){ //basic a* algorithm
 	
 	with(par_actor)
 	{
-		if (faction != other.faction)
+		if (faction != other.faction) //getting heuristic to sort priority list... or are we? don't we need abs()?
 		{
 			
 			x_dist = point_distance(x, y, other.x, y); //would have measuring to the center but it dont
@@ -26,7 +26,7 @@ function scr_ai_find_move_node(){ //basic a* algorithm
 		for (ii = 0; ii < ds_list_size(target_node.neighbours); ii ++)
 		{
 			current_node = ds_list_find_value(target_node.neighbours,ii);
-			if (current_node.occupant == noone and current_node == passable){
+			if (current_node.occupant == noone and current_node.passable){
 				closest_node = current_node;
 			}
 		}
@@ -41,7 +41,7 @@ function scr_ai_find_move_node(){ //basic a* algorithm
 	
 	ds_priority_destroy(enemy_list_move);
 	
-	if (target_unit != noone)
+	if (target_unit != noone) //move as close as possible to targeet
 	{
 		target_node = closest_node;
 		
@@ -52,8 +52,24 @@ function scr_ai_find_move_node(){ //basic a* algorithm
 			closest_node = closest_node.parent_node;
 		}
 		
-		movement_path = path_add(); //FUCK YES I REALISE I CAN REUSE SOME mp_grid CODEEEEEE
-		path_set_kind(movement_path,2); //type 2 is straight line path, type 1 is curved lines
-		path_set_closed(movement_path,false);
+		scr_create_path(id,closest_node);
+		
+		map[gridX,gridY].occupant = noone; //nobody there anymore
+		
+		gridX = closest_node.gridX;
+		gridY = closest_node.gridY;
+		
+		closest_node.occupant = id;
+		
+		unit_state = "begin_path";
+		
+		//if (closest_node.G > move)
+		//{
+		//	actions -= 2
+		//}
+		//else
+		//{
+			
+		//}
 	}
 }

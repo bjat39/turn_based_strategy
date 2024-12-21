@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_attack_enemy",
   "parent":{
-    "name":"ranges",
-    "path":"folders/Scripts/ds_grid/ranges.yy",
+    "name":"ds_grid",
+    "path":"folders/Scripts/ds_grid.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
