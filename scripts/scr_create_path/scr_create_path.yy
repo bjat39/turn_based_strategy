@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_create_path",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_create_path",
+  "parent":{
+    "name":"ranges",
+    "path":"folders/Scripts/ds_grid/ranges.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

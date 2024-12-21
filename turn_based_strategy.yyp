@@ -226,6 +226,7 @@
     {"id":{"name":"scr_chatterbox_update","path":"scripts/scr_chatterbox_update/scr_chatterbox_update.yy",},},
     {"id":{"name":"scr_colour_attack_node","path":"scripts/scr_colour_attack_node/scr_colour_attack_node.yy",},},
     {"id":{"name":"scr_colour_move_node","path":"scripts/scr_colour_move_node/scr_colour_move_node.yy",},},
+    {"id":{"name":"scr_create_path","path":"scripts/scr_create_path/scr_create_path.yy",},},
     {"id":{"name":"scr_cursor_control","path":"scripts/scr_cursor_control/scr_cursor_control.yy",},},
     {"id":{"name":"scr_cursor_move_explore","path":"scripts/scr_cursor_move_explore/scr_cursor_move_explore.yy",},},
     {"id":{"name":"scr_cursor_move_selected","path":"scripts/scr_cursor_move_selected/scr_cursor_move_selected.yy",},},

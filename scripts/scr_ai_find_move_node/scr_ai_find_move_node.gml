@@ -10,7 +10,7 @@ function scr_ai_find_move_node(){ //basic a* algorithm
 			
 			x_dist = point_distance(x, y, other.x, y); //would have measuring to the center but it dont
 			y_dist = point_distance(x, y, x,other.y);
-			total_dist = x_dist + y_dist; //heuristic
+			total_dist = x_dist + y_dist; //get heuristic
 			ds_priority_add(other.enemy_list_move,id,total_dist);
 		}
 	}
@@ -18,12 +18,12 @@ function scr_ai_find_move_node(){ //basic a* algorithm
 	closest_node = noone;
 	
 	while (closest_node == noone){
-		target_unit = ds_priority_delete_min(enemy_list_move);
+		target_unit = ds_priority_delete_min(enemy_list_move); // target enemy
 		
-		target_node = map[target_unit.gridX,target_unit.gridY];
+		target_node = map[target_unit.gridX,target_unit.gridY]; //V IMPORTANT!
 		
 		//look for a free node, somewhere we can stand around the enemy
-		for (ii = 0; ii < ds_list_size(target_node.neighbours); ii ++))
+		for (ii = 0; ii < ds_list_size(target_node.neighbours); ii ++)
 		{
 			current_node = ds_list_find_value(target_node.neighbours,ii);
 			if (current_node.occupant == noone and current_node == passable){
@@ -31,9 +31,29 @@ function scr_ai_find_move_node(){ //basic a* algorithm
 			}
 		}
 		
-		if (ds_priority_size(enemy_list_move) <= 0)
+		if (ds_priority_size(enemy_list_move) <= 0) //if all enemy units surrounded
 		{
-			
+			target_unit = noone;
+			unit_state = "idle";
+			break;
 		}
+	}
+	
+	ds_priority_destroy(enemy_list_move);
+	
+	if (target_unit != noone)
+	{
+		target_node = closest_node;
+		
+		//scr_ai_movement(map[gridX,gridY],closest_node); //similar to movement range, bastardised a*
+	
+		while(closest_node.G > move) //need to move as far as possible, within move range
+		{
+			closest_node = closest_node.parent_node;
+		}
+		
+		movement_path = path_add(); //FUCK YES I REALISE I CAN REUSE SOME mp_grid CODEEEEEE
+		path_set_kind(movement_path,2); //type 2 is straight line path, type 1 is curved lines
+		path_set_closed(movement_path,false);
 	}
 }
