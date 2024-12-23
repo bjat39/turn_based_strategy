@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_ai(){
+function scr_ai_find_target(){
 	//find target
 	
 	//take the current node the target is standing on, go through the neighbour list to check every node adjacent
@@ -16,7 +16,7 @@ function scr_ai(){
 		//			move,attack_range,id);
 		//scr_attack_range4_ai(move_nodes,id);
 		
-		for(ii = 0; ii < ds_list_size(node.neighbours);ii ++)
+		for(ii = 0; ii < ds_list_size(node.neighbours);ii ++) //only checking neighbours
 		{
 			neighbour = ds_list_find_value(node.neighbours,ii);
 			
@@ -55,8 +55,9 @@ function scr_ai(){
 		}
 		else //if attack_target == noone
 		{
+			//unit_state = "finishing";
 			//unit_state = "idle";
-			unit_state = "find_move_node"
+			unit_state = "find_move_node";
 		}
 		ds_list_destroy(enemy_list);
 	}

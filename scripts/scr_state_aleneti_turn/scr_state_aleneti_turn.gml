@@ -9,7 +9,7 @@ function scr_state_aleneti_turn(){
 		//go thru all alenetians, see their ai type, actually just have everybody attack sraight on for now
 		with (par_aleneti_faction)
 		{
-			unit_state = "find_target";
+			unit_state = "find_move_node";//"find_target";
 			//ai_type = "seek_and_destroy"
 		}
 		//organise priorities of units
@@ -31,7 +31,7 @@ function scr_state_aleneti_turn(){
 		break;
 		
 	}
-	scr_ai();
+	scr_ai_find_target();
 	
 	
 	//with(par_aleneti_faction)

@@ -39,7 +39,16 @@ switch(unit_state)
 			}
 			else //////////////////////////////move to start, need to figure out at beginning of turn if
 			{
-				unit_state = "find_target"; //"find_move_node"
+				if (attack_target != noone)
+				{
+					unit_state = "find_target";
+				}
+				else
+				{
+					unit_state = "finishing";
+				}
+				//unit_state = "find_target"; //"find_move_node"
+				
 				//if (attack_target != noone)
 				//{
 				//	unit_state = "battle";
@@ -100,7 +109,7 @@ switch(unit_state)
 		break;
 	//ai states
 	case ("find_target"):
-		scr_ai();
+		scr_ai_find_target();
 		
 		break;
 	case ("find_move_node"):
