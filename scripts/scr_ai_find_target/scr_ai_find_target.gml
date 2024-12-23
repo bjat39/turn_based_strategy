@@ -16,6 +16,7 @@ function scr_ai_find_target(){
 		//			move,attack_range,id);
 		//scr_attack_range4_ai(move_nodes,id);
 		
+		//just checking immediate surroundings
 		for(ii = 0; ii < ds_list_size(node.neighbours);ii ++) //only checking neighbours
 		{
 			neighbour = ds_list_find_value(node.neighbours,ii);
@@ -30,6 +31,7 @@ function scr_ai_find_target(){
 			}
 		}
 		
+		
 		if (ds_list_size(enemy_list) > 0)
 		{
 			attack_target = ds_list_find_value(enemy_list, 0);
@@ -43,21 +45,26 @@ function scr_ai_find_target(){
 			}
 		}
 	
-		if (attack_target != noone)
-		{
-			unit_state = "battle";
-			with instance_create_layer(x,y,"Instances",obj_battle_manager)
-			{
-				initiator = other;
-				reciever = other.attack_target;
-			}  
-			//unit_state = "begin_path";
-		}
-		else //if attack_target == noone
+		//if (attack_target != noone)
+		//{
+		//	unit_state = "battle";
+		//	with instance_create_layer(x,y,"Instances",obj_battle_manager)
+		//	{
+		//		initiator = other;
+		//		reciever = other.attack_target;
+		//	}  
+		//	//unit_state = "begin_path";
+		//}
+		//else //if attack_target == noone
+		if (attack_target == noone)
 		{
 			//unit_state = "finishing";
 			//unit_state = "idle";
 			unit_state = "find_move_node";
+		}
+		else
+		{
+			end_path = "attack";
 		}
 		ds_list_destroy(enemy_list);
 	}

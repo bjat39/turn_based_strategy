@@ -29,7 +29,8 @@ orig_node = current_node; //node saved if the player cancels after moving
 
 //character statistics
 
-ai_type = "player"; //player, path (go to point while attacking on the way), seek_and_destroy, reaction
+player_controlled = false;
+ai_type = "none"; //player, path (go to point while attacking on the way), seek_and_destroy, reaction
 
 faction = "neft";//"player"; //what side they are affliliated with, affects turn order
 class = "Healer Woman";

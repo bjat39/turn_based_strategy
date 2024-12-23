@@ -75,14 +75,40 @@ switch(unit_state)
 		//RESET EVERYTHINGGGG
 		moved = true;
 		attacked = true;
-		switch(faction)
-		{
-			case"neft":	ds_list_add(obj_game.finished_neft_list,id);break;
-			case"ally":	ds_list_add(obj_game.finished_ally_list,id);break;
-			case"aleneti":	ds_list_add(obj_game.finished_aleneti_list,id);break;
-			case"strucia":	ds_list_add(obj_game.finished_strucia_list,id);break;
-		}
 		unit_state = "finish";
+		switch(faction)
+		{//check if finished list == size of faction, then end turn
+			case"neft":	ds_list_add(obj_game.finished_neft_list,id);
+			if (ds_list_size(obj_game.finished_neft_list) >= instance_number(par_neft_faction))
+			{
+				obj_game.ai_state = "initialise";
+				scr_end_turn("neft")
+			}
+			break;
+			case"ally":	ds_list_add(obj_game.finished_ally_list,id);
+			if (ds_list_size(obj_game.finished_ally_list) >= instance_number(par_ally_faction))
+			{
+				obj_game.ai_state = "initialise";
+				scr_end_turn("ally")
+			}
+			break;
+			case"aleneti":	ds_list_add(obj_game.finished_aleneti_list,id);
+			if (ds_list_size(obj_game.finished_aleneti_list) >= instance_number(par_aleneti_faction))
+			{
+				obj_game.ai_state = "initialise";
+				scr_end_turn("aleneti");
+			}			
+			break;
+			case"strucia":	ds_list_add(obj_game.finished_strucia_list,id);
+			if (ds_list_size(obj_game.finished_strucia_list) >= instance_number(par_strucia_faction))
+			{
+				obj_game.ai_state = "initialise";
+				scr_end_turn("strucia")
+			}			
+			break;
+		}
+		
+		
 		//instance_destroy(obj_action_command);
 		
 		//hover_command = noone;

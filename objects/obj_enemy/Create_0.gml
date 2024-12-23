@@ -6,7 +6,7 @@ actor_name = "Funt";
 class = "Infantryman";
 
 //Base stats
-move = 5;
+move = 2;
 
 level = 1;
 
