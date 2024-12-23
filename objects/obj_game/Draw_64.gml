@@ -8,15 +8,15 @@ if (hoverNode != noone)
 	draw_set_color(c_white);
 	draw_text(0,0,tempCoords);
 	
-	if (hoverNode.G != noone)
-	{
-		tempG = string_width(hoverNode.G);
-		draw_set_color(c_black);
-		draw_rectangle(0,60,string_width(tempG),60+ string_height(tempG),false);
+	//if (hoverNode.G != noone)
+	//{
+	//	tempG = string_width(hoverNode.G);
+	//	draw_set_color(c_black);
+	//	draw_rectangle(0,60,string_width(tempG),60+ string_height(tempG),false);
 	
-		draw_set_color(c_white);
-		draw_text(0,60,hoverNode.G);
-	}
+	//	draw_set_color(c_white);
+	//	draw_text(0,60,hoverNode.G);
+	//}
 	
 	//debug
 	draw_set_color(c_red);

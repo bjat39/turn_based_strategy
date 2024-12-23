@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_ai(){
+	//find target
+	
 	//take the current node the target is standing on, go through the neighbour list to check every node adjacent
 	//if there is anybody not our faction, that's our target, we'll move on to attacking
 	with (obj_enemy) //finding enemy is handled by each enemy at a time, not obj_game, randomized list

@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_ai_find_move_node(){ //basic a* algorithm
+	//find move node
 	enemy_list_move = ds_priority_create(); //priority of how far they are away from us, first choose the closest (use damage for attacking enemy, second max movement to a seperate point for no enemies)
 	
 	with(par_actor)
@@ -45,7 +46,7 @@ function scr_ai_find_move_node(){ //basic a* algorithm
 	{
 		target_node = closest_node;
 		
-		//scr_ai_movement(map[gridX,gridY],closest_node); //similar to movement range, bastardised a*
+		scr_ai_movement(map[gridX,gridY],closest_node); //similar to movement range, bastardised a*
 	
 		while(closest_node.G > move) //need to move as far as possible, within move range
 		{

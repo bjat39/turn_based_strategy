@@ -25,9 +25,9 @@ function scr_ai_movement(start_node,goal_node){
 		
 		if (current_node == goal_node){break;}
 		
-		for (ii = 0; ii < ds_list_size(current_node.neighbours);i++)//go through all neighbours
+		for (ii = 0; ii < ds_list_size(current_node.neighbours);ii++)//go through all neighbours
 		{
-			neighbour = ds_list_find_value(current.neighbours,ii);
+			neighbour = ds_list_find_value(current_node.neighbours,ii);
 			
 			if (neighbour.occupant == noone and neighbour.passable)
 			{
@@ -41,7 +41,7 @@ function scr_ai_movement(start_node,goal_node){
 				if (ds_list_find_index(closed,neighbour) < 0 || temp_cost < neighbour.G){
 					neighbour.G = temp_cost; //additive G score
 					//predict that shit
-					priority = temp_cost + scr_heuristic(goal,neighbour); //f score
+					priority = temp_cost + scr_heuristic(goal_node,neighbour); //f score
 					
 					ds_priority_add(open,neighbour,priority); //explore in that direction
 					
@@ -56,13 +56,13 @@ function scr_ai_movement(start_node,goal_node){
 	{//giving everything a once over, no longer expanding open list
 		current_node = ds_priority_delete_min(open);
 		
-		for(ii = 0;ii < ds_list_size(current.neighbours);ii++)
+		for(ii = 0;ii < ds_list_size(current_node.neighbours);ii++)
 		{
-			neighbour = ds_list_find_value(current.neighbours,ii);
+			neighbour = ds_list_find_value(current_node.neighbours,ii);
 			
 			if (neighbour.occupant == noone and neighbour.passable){
 				temp_cost = neighbour.cost; // * cost_mod;
-				temp_cost  += current.G;
+				temp_cost  += current_node.G;
 				
 				if(ds_list_find_index(closed,neighbour) < 0 || temp_cost < neighbour.G) //returns -1 if it can't find neighbour on list
 				{
