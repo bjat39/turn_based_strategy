@@ -35,7 +35,7 @@ if (path_index = -1) //path ended
 		
 		if (target.current_hit_points <= 0 and damage != 0) //kill
 		{
-			if (target.faction == "neft"){target.unit_state = "pre_dying_talk";}
+			if (target.faction == "neft"){target.unit_state = "pre_dying_talk";} //replace with specific instances, no pre_dying_Talk as well
 			else{target.unit_state = "initiate_dying";}
 			//return "interrupt attack" or whatever, exit/return
 		}

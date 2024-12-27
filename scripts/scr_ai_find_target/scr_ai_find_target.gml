@@ -61,6 +61,7 @@ function scr_ai_find_target(){
 			//unit_state = "finishing";
 			//unit_state = "idle";
 			unit_state = "find_move_node";
+			end_path = "nothing";
 		}
 		else
 		{

@@ -17,7 +17,7 @@ switch(unit_state)
 		orig_node = current_node;
 		
 		unit_state = "moving";
-		if (faction == "neft"){
+		if (player_controlled){
 			obj_game.player_state = "cursor_menu";}
 		break;
 	case "moving":
@@ -27,7 +27,7 @@ switch(unit_state)
 			audio_stop_sound(Rogue_Run_Loop);
 			path_clear_points(movement_path);
 			
-			if (faction == "neft")
+			if (player_controlled)
 			{
 				unit_state = "idle";
 				moved = true;

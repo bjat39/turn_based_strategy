@@ -8,11 +8,14 @@ function scr_ai_find_move_node(){ //basic a* algorithm
 	{
 		if (faction != other.faction) //getting heuristic to sort priority list... or are we? don't we need abs()?
 		{
-			
 			x_dist = point_distance(x, y, other.x, y); //would have measuring to the center but it dont
 			y_dist = point_distance(x, y, x,other.y);
 			total_dist = x_dist + y_dist; //get heuristic
 			ds_priority_add(other.enemy_list_move,id,total_dist);
+			//x_dist = point_distance(x, y, other.x, y); //would have measuring to the center but it dont
+			//y_dist = point_distance(x, y, x,other.y);
+			//total_dist = x_dist + y_dist; //get heuristic
+			//ds_priority_add(other.enemy_list_move,id,total_dist);
 		}
 	}
 	
