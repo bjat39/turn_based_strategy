@@ -19,7 +19,7 @@ movement_path = path_add(); //FUCK YES I REALISE I CAN REUSE SOME mp_grid CODEEE
 path_set_kind(movement_path,2); //type 2 is straight line path, type 1 is curved lines
 path_set_closed(movement_path,false); //determines whether a path is open/closed, closed would go to each point and return to beginning, good for patrols but we don't want that
 
-end_path = "idle";//"nothing"; //what to do at end of path
+end_path = noone;//"idle";//"nothing"; //what to do at end of path, for now only nothing or attack
 
 move_speed = 6;//8; //how fast unit moves between squares
 

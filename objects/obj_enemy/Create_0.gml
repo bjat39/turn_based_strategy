@@ -10,7 +10,7 @@ move = 2;
 
 level = 1;
 
-attack_range = 1 * GRID_SIZE;//marksman_stat / 4;
+attack_range = 5 * GRID_SIZE;//1 * GRID_SIZE;//marksman_stat / 4;
 attack_target = noone;
 attack_timer = 0;
 damage_type = "melee" //Weapon triangle

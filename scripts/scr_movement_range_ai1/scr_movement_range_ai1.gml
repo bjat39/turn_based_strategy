@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_movement_range_ai1(origin_node,move_range,attack_range,selected_actor){ //pathfinding, get nodes for movements
+function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfinding, get nodes for movements
 	//called by ai actor?
 	///uses less efficient dijkstras :(
 	//selected_actor has been added later for scr_attack_range
@@ -21,7 +21,7 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range,selected_act
 	closed = ds_list_create();
 	
 	//closest target used for if out of range of any enemies, pick closest
-	closest_target = noone;
+	//closest_target = noone;
 	attack_target = noone; //update move if searching and found a person lower g score, attack target at end, look at find_target (move target and attack target)
 	//move_and_attack_list = ds_list_create();
 	
@@ -88,9 +88,15 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range,selected_act
 			}
 			else if(curr_neighbour.occupant != noone)
 			{ //if there is enemy, we need to know, in order to find the closest enemy to move to
-				if (curr_neighbour.G < attack_target.G or attack_target == noone)
+				if (attack_target == noone)
 				{
-					attack_target = curr_neighbour;
+					attack_target = curr_neighbour.occupant;
+					end_path = noone;
+				}
+				else if (curr_neighbour.G < map[attack_target.gridX,attack_target.gridY].G )
+				{
+					attack_target = curr_neighbour.occupant;
+					end_path = noone;
 					//closest_target = curr_neighbour;
 				}
 			}
@@ -129,6 +135,7 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range,selected_act
 					if (defence_stat < other.attack_target.defence_stat)//current_node.occupant.defence_stat < attack_target.defence_stat)
 					{
 						other.attack_target = id;//irandom_range(0,ds_list_size(enemy_list) - 1));
+						other.end_path = id;
 					}
 				}
 			}

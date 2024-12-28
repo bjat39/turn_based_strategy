@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_ai_find_move_node(){ //basic a* algorithm
 	//find move node
+	//look for a free space to attack
 	enemy_list_move = ds_priority_create(); //priority of how far they are away from us, first choose the closest (use damage for attacking enemy, second max movement to a seperate point for no enemies)
 	
 	with(par_actor)

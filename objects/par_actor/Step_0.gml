@@ -41,11 +41,18 @@ switch(unit_state)
 			{
 				if (attack_target != noone)
 				{
-					unit_state = "find_target";
+					unit_state = "battle";
+					with instance_create_layer(x,y,"Instances",obj_battle_manager)
+					{
+						initiator = other;
+						reciever = other.attack_target;
+					} 
+					//obj_game.current_actor = noone;//remove?
 				}
 				else
 				{
-					unit_state = "finishing";
+					moved = true;
+					unit_state = "idle";
 				}
 				//unit_state = "find_target"; //"find_move_node"
 				
@@ -135,7 +142,9 @@ switch(unit_state)
 		break;
 	//ai states
 	case ("find_target"):
-		scr_ai_find_target();
+		scr_movement_range_ai1(map[gridX,gridY],move,attack_range);
+		unit_state = "find_move_node";
+		//scr_ai_find_target();
 		
 		break;
 	case ("find_move_node"):
