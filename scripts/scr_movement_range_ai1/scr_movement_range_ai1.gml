@@ -22,7 +22,9 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 	
 	//closest target used for if out of range of any enemies, pick closest
 	//closest_target = noone;
+	move_target = noone;
 	attack_target = noone; //update move if searching and found a person lower g score, attack target at end, look at find_target (move target and attack target)
+	end_path = noone;
 	//move_and_attack_list = ds_list_create();
 	
 	//add starting node to open list
@@ -87,13 +89,14 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 				}
 			}
 			else if(curr_neighbour.occupant != noone)
-			{ //if there is enemy, we need to know, in order to find the closest enemy to move to
+			{ //if there is any enemy on the map, we need to know, in order to find the closest enemy to move to
 				if (attack_target == noone)
 				{
 					attack_target = curr_neighbour.occupant;
+					//move_target = curr_neighbour;
 					end_path = noone;
 				}
-				else if (curr_neighbour.G < map[attack_target.gridX,attack_target.gridY].G )
+				else if (curr_neighbour.G < map[attack_target.gridX,attack_target.gridY].G) //if closer
 				{
 					attack_target = curr_neighbour.occupant;
 					end_path = noone;
@@ -136,6 +139,7 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 					{
 						other.attack_target = id;//irandom_range(0,ds_list_size(enemy_list) - 1));
 						other.end_path = id;
+						other.move_target = current_node;
 					}
 				}
 			}

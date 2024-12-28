@@ -62,6 +62,8 @@ attack_range = 1 * GRID_SIZE; //placeholder set later in create. in pixels
 attack_target = noone; //ai
 attack_timer = 0;
 
+move_target = noone; //ai what node to move to when attack
+
 //enemy_list = ds_priority_create(); //list of enemies on map, ai
 
 damage_type = "melee"; //Weapon triangle
