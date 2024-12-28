@@ -88,19 +88,23 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 					
 				}
 			}
-			else if(curr_neighbour.occupant != noone)
+			else if(curr_neighbour.occupant != noone)//enemy?
 			{ //if there is any enemy on the map, we need to know, in order to find the closest enemy to move to
-				if (attack_target == noone)
+				if (curr_neighbour.occupant.faction != faction)
 				{
-					attack_target = curr_neighbour.occupant;
-					//move_target = curr_neighbour;
-					end_path = noone;
-				}
-				else if (curr_neighbour.G < map[attack_target.gridX,attack_target.gridY].G) //if closer
-				{
-					attack_target = curr_neighbour.occupant;
-					end_path = noone;
-					//closest_target = curr_neighbour;
+					if (move_target == noone)
+					{
+						//attack_target = curr_neighbour.occupant;
+						move_target = curr_neighbour;//.occupant;
+						end_path = noone;
+					}//if closer
+					else if (curr_neighbour.G < map[attack_target.gridX,attack_target.gridY].G) 
+					{
+						//attack_target = curr_neighbour.occupant;
+						move_target = curr_neighbour;//.occupant;
+						end_path = noone;
+						//closest_target = curr_neighbour;
+					}
 				}
 			}
 		}
@@ -133,9 +137,13 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 				x_dist = point_distance(x, y, current_node.x, y); //would have measuring to the center but it dont
 				y_dist = point_distance(x, y, x,current_node.y);
 				total_dist = x_dist + y_dist; 
+				
+				//compare if move node is closer to attack
+				move_target_total_dist = (point_distance(x, y, other.move_target.x, y) + point_distance(x, y, x,other.move_target.y)); //work it out
 				if (total_dist <= other.attack_range)// if in range
-				{
-					if (defence_stat < other.attack_target.defence_stat)//current_node.occupant.defence_stat < attack_target.defence_stat)
+				{//take accuracy into account in the future, 
+					if (attack_target) // seperate move target and attack target?
+					if (defence_stat <= other.attack_target.defence_stat)//current_node.occupant.defence_stat < attack_target.defence_stat)
 					{
 						other.attack_target = id;//irandom_range(0,ds_list_size(enemy_list) - 1));
 						other.end_path = id;

@@ -20,35 +20,35 @@ function scr_ai_find_move_node1(){ //basic a* algorithm
 	//	}
 	//}
 	
-	closest_node = noone;
+	//closest_node = noone;
 	
-	while (closest_node == noone){
-		target_unit = ds_priority_delete_min(enemy_list_move); // target enemy
+	//while (closest_node == noone){
+	//	target_unit = ds_priority_delete_min(enemy_list_move); // target enemy
 		
-		target_node = map[target_unit.gridX,target_unit.gridY]; //V IMPORTANT!
+	//	target_node = map[target_unit.gridX,target_unit.gridY]; //V IMPORTANT!
 		
-		//look for a free node, somewhere we can stand around the enemy
-		for (ii = 0; ii < ds_list_size(target_node.neighbours); ii ++)
-		{
-			current_node = ds_list_find_value(target_node.neighbours,ii);
-			if (current_node.occupant == noone and current_node.passable){
-				closest_node = current_node;
-			}
-		}
+	//	//look for a free node, somewhere we can stand around the enemy
+	//	for (ii = 0; ii < ds_list_size(target_node.neighbours); ii ++)
+	//	{
+	//		current_node = ds_list_find_value(target_node.neighbours,ii);
+	//		if (current_node.occupant == noone and current_node.passable){
+	//			closest_node = current_node;
+	//		}
+	//	}
 		
-		if (ds_priority_size(enemy_list_move) <= 0) //if all enemy units surrounded
-		{
-			target_unit = noone;
-			unit_state = "idle";
-			break;
-		}
-	}
+	//	if (ds_priority_size(enemy_list_move) <= 0) //if all enemy units surrounded
+	//	{
+	//		target_unit = noone;
+	//		unit_state = "idle";
+	//		break;
+	//	}
+	//}
 	
-	ds_priority_destroy(enemy_list_move);
+	//ds_priority_destroy(enemy_list_move);
 	
-	if (target_unit != noone) //move as close as possible to targeet
+	if (move_target != noone) //move as close as possible to targeet
 	{
-		target_node = closest_node;
+		move_target = closest_node;
 		
 		//figure out how to get there, a*
 		scr_ai_movement(map[gridX,gridY],closest_node); //similar to movement range, bastardised a*
