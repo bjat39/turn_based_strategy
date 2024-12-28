@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_movement_range_ai1(origin_node,move_range,attack_range,selected_actor){ //pathfinding, get nodes for movements
+	//called by ai actor?
 	///uses less efficient dijkstras :(
 	//selected_actor has been added later for scr_attack_range
 	//Reset all node data
@@ -18,6 +19,11 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range,selected_act
 	open = ds_priority_create(); //list with a numerical priority attatched to each item, instance ids of nodes
 	//puts in nodes with priority equal to its g score, and we grab the lowest until there's nothing left
 	closed = ds_list_create();
+	
+	//closest target used for if out of range of any enemies, pick closest
+	closest_target = noone;
+	attack_target = noone; //update move if searching and found a person lower g score, attack target at end, look at find_target (move target and attack target)
+	//move_and_attack_list = ds_list_create();
 	
 	//add starting node to open list
 	ds_priority_add(open,start_node,start_node.G); //lowest score, since it's origin
@@ -80,6 +86,14 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range,selected_act
 					
 				}
 			}
+			else if(curr_neighbour.occupant != noone)
+			{ //if there is enemy, we need to know, in order to find the closest enemy to move to
+				if (curr_neighbour.G < attack_target.G or attack_target == noone)
+				{
+					attack_target = curr_neighbour;
+					//closest_target = curr_neighbour;
+				}
+			}
 		}
 	}
 	
@@ -98,20 +112,30 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range,selected_act
 	for(ii = 0; ii < ds_list_size(closed);ii++)
 	{
 		current_node = ds_list_find_value(closed, ii);
-		current_node.move_node = true;
+		//current_node.move_node = true;
 		//current_node.attack_node = true;
 		
-		scr_colour_move_node(current_node,move_range);
+		//scr_colour_move_node(current_node,move_range);
 		
-		
-		//attack shit
-		//x_dist = distance_to_point(temp_actor.x,y) //would have measuring to the center but it dont
-		//y_dist = distance_to_point(x,temp_actor.y)
-		//total_dist = x_dist + y_dist;
-		//if (total_dist <= temp_actor.attack_range + temp_actor){}
+		with (par_actor) //have every actor check if they're in range to be slapped
+		{
+			if (faction != other.faction)
+			{
+				x_dist = point_distance(x, y, current_node.x, y); //would have measuring to the center but it dont
+				y_dist = point_distance(x, y, x,current_node.y);
+				total_dist = x_dist + y_dist; 
+				if (total_dist <= other.attack_range)// if in range
+				{
+					if (defence_stat < other.attack_target.defence_stat)//current_node.occupant.defence_stat < attack_target.defence_stat)
+					{
+						other.attack_target = id;//irandom_range(0,ds_list_size(enemy_list) - 1));
+					}
+				}
+			}
+		}
 	}
 	
-	return closed;
+	//return closed;
 	//DESTROY closed list!!!!!
 	ds_list_destroy(closed);
 	
