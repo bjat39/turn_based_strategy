@@ -81,6 +81,6 @@ function scr_ai_find_move_node1(){ //basic a* algorithm
 	else
 	{
 		moved = true;
-		unit_state = "finish";
+		unit_state = "finishing";
 	}
 }

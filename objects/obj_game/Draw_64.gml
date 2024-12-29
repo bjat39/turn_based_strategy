@@ -22,7 +22,7 @@ if (hoverNode != noone)
 	draw_set_color(c_red);
 	//draw_text(0,220,"player_state: " + player_state);
 	draw_text(0,100,game_state);
-	draw_text(0,120,obj_enemy.unit_state);
+	draw_text(0,120,"obj_enemy.state = " + obj_enemy.unit_state);
 }
 
 draw_self();

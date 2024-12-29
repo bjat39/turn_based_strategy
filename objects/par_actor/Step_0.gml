@@ -52,7 +52,7 @@ switch(unit_state)
 				else
 				{
 					moved = true;
-					unit_state = "finish";
+					unit_state = "finishing";
 				}
 				//unit_state = "find_target"; //"find_move_node"
 				

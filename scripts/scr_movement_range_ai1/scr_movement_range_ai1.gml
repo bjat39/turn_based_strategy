@@ -88,7 +88,13 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 					
 				}
 			}
-			else if(curr_neighbour.occupant != noone)//enemy?
+		}
+	}
+	
+	//put this checking each actor
+	
+				//setting move target to closest enemy
+			if(curr_neighbour.occupant != noone)//enemy?
 			{ //if there is any enemy on the map, we need to know, in order to find the closest enemy to move to
 				if (curr_neighbour.occupant.faction != faction)
 				{
@@ -107,8 +113,7 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 					}
 				}
 			}
-		}
-	}
+	
 	
 	//round down all G scores for movement calculations, used for diagonals but ig its important
 	//with(oNode)
