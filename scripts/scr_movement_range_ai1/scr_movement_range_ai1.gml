@@ -95,13 +95,13 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 					if (move_target == noone)
 					{
 						//attack_target = curr_neighbour.occupant;
-						move_target = curr_neighbour;//.occupant;
+						move_target = curr_neighbour.occupant;
 						end_path = noone;
 					}//if closer
 					else if (curr_neighbour.G < map[attack_target.gridX,attack_target.gridY].G) 
 					{
 						//attack_target = curr_neighbour.occupant;
-						move_target = curr_neighbour;//.occupant;
+						move_target = curr_neighbour.occupant;
 						end_path = noone;
 						//closest_target = curr_neighbour;
 					}
@@ -138,16 +138,29 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 				y_dist = point_distance(x, y, x,current_node.y);
 				total_dist = x_dist + y_dist; 
 				
-				//compare if move node is closer to attack
-				move_target_total_dist = (point_distance(x, y, other.move_target.x, y) + point_distance(x, y, x,other.move_target.y)); //work it out
 				if (total_dist <= other.attack_range)// if in range
 				{//take accuracy into account in the future, 
-					if (attack_target) // seperate move target and attack target?
 					if (defence_stat <= other.attack_target.defence_stat)//current_node.occupant.defence_stat < attack_target.defence_stat)
 					{
-						other.attack_target = id;//irandom_range(0,ds_list_size(enemy_list) - 1));
-						other.end_path = id;
-						other.move_target = current_node;
+						//if not the same attack target
+						//compare if move node is closer to attack
+						if (other.attack_target == id) // seperate move target and attack target?
+						{//check if closer move node, then replace. if no, then don't
+							move_target_total_dist = (point_distance(x, y, other.move_target.x, y) + point_distance(x, y, x,other.move_target.y)); //work it out
+							current_node_total_dist = (point_distance(x, y, current_node.x, y) + point_distance(x, y, x,current_node.y)); //work it out
+							if (current_node_total_dist < move_target_total_dist)
+							{
+								other.attack_target = id;//irandom_range(0,ds_list_size(enemy_list) - 1));
+								other.end_path = id;
+								other.move_target = current_node;
+							}
+						}
+						else
+						{
+							other.attack_target = id;//irandom_range(0,ds_list_size(enemy_list) - 1));
+							other.end_path = id;
+							other.move_target = current_node;
+						}
 					}
 				}
 			}

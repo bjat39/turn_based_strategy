@@ -39,7 +39,7 @@ switch(unit_state)
 			}
 			else //////////////////////////////move to start, need to figure out at beginning of turn if
 			{
-				if (attack_target != noone)
+				if (end_path != noone)
 				{
 					unit_state = "battle";
 					with instance_create_layer(x,y,"Instances",obj_battle_manager)
@@ -52,7 +52,7 @@ switch(unit_state)
 				else
 				{
 					moved = true;
-					unit_state = "idle";
+					unit_state = "finish";
 				}
 				//unit_state = "find_target"; //"find_move_node"
 				
@@ -148,7 +148,7 @@ switch(unit_state)
 		
 		break;
 	case ("find_move_node"):
-		scr_ai_find_move_node();
+		scr_ai_find_move_node1();
 		scr_wipe_nodes(); //just in case lol
 		break;
 	
