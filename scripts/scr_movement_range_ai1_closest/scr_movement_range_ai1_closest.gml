@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfinding, get nodes for movements
+function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //pathfinding, get nodes for movements
+	//checking entire grid for the closest enemy actor
 	//called by ai actor?
 	///uses less efficient dijkstras :(
 	//selected_actor has been added later for scr_attack_range

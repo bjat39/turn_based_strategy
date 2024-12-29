@@ -48,10 +48,10 @@ function scr_ai_find_move_node1(){ //basic a* algorithm
 	
 	if (move_target != noone) //move as close as possible to targeet
 	{
-		closest_node = move_target;
+		closest_node = map[move_target.gridX,move_target.gridY];
 		
 		//figure out how to get there, a*
-		scr_ai_movement(map[gridX,gridY],closest_node); //similar to movement range, bastardised a*
+		scr_ai_movement(map[gridX,gridY],move_target);//closest_node //similar to movement range, bastardised a*
 	
 		while(closest_node.G > move) //need to move as far as possible, within move range
 		{
