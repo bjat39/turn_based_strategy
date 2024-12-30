@@ -83,34 +83,33 @@ switch(unit_state)
 		moved = true;
 		attacked = true;
 		unit_state = "finish";
+		obj_game.ai_unit_counter ++; //next unit
+		obj_game.ai_state = "set_active_unit";
+		
 		switch(faction)
 		{//check if finished list == size of faction, then end turn
 			case"neft":	ds_list_add(obj_game.finished_neft_list,id);
 			if (ds_list_size(obj_game.finished_neft_list) >= instance_number(par_neft_faction))
 			{
-				obj_game.ai_state = "initialise";
-				scr_end_turn("neft")
+				scr_end_turn("neft");
 			}
 			break;
 			case"ally":	ds_list_add(obj_game.finished_ally_list,id);
 			if (ds_list_size(obj_game.finished_ally_list) >= instance_number(par_ally_faction))
 			{
-				obj_game.ai_state = "initialise";
-				scr_end_turn("ally")
+				scr_end_turn("ally");
 			}
 			break;
 			case"aleneti":	ds_list_add(obj_game.finished_aleneti_list,id);
 			if (ds_list_size(obj_game.finished_aleneti_list) >= instance_number(par_aleneti_faction))
 			{
-				obj_game.ai_state = "initialise";
 				scr_end_turn("aleneti");
 			}			
 			break;
 			case"strucia":	ds_list_add(obj_game.finished_strucia_list,id);
 			if (ds_list_size(obj_game.finished_strucia_list) >= instance_number(par_strucia_faction))
 			{
-				obj_game.ai_state = "initialise";
-				scr_end_turn("strucia")
+				scr_end_turn("strucia");
 			}			
 			break;
 		}

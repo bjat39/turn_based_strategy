@@ -7,15 +7,24 @@ function scr_state_aleneti_turn(){
 		//case ("not_turn"): break; //shouldn't happen but just for posterity
 		case ("initialise"):
 		//go thru all alenetians, see their ai type, actually just have everybody attack sraight on for now
+		ai_unit_counter = 0;
 		with (par_aleneti_faction)
 		{
-			unit_state = "find_target";//"find_move_node";
+			ds_list_add(other.aleneti_list,id);
+			//unit_state = "find_target";//"find_move_node";
 			//ai_type = "seek_and_destroy"
 		}
 		//organise priorities of units
 		//aleneti_state = "not_turn"; //not_turn, initialise (sort units? do this after every move?), move units
 		//aleneti_list
 		//finished_aleneti_list
+		ai_state = "set_active_unit";
+		break;
+		case("set_active_unit"):
+		with(ds_list_find_value(aleneti_list,ai_unit_counter))
+		{
+			unit_state = "find_target";
+		}
 		ai_state = "not_finished";
 		break;
 		case("not_finished"):

@@ -47,6 +47,7 @@ function scr_end_turn(faction){ //end the turn of all units of a respective fact
 				unit_state = "idle";
 			}
 			game_state = ds_list_find_value(round_order,round_counter);
+			ai_state = "initialise";
 			//game_state = ds_list_find_index(round_order,round_counter);
 		//}
 		}

@@ -32,6 +32,8 @@ round_order = ds_list_create();
 round_counter = 0; //keeps track of if it's player phase, enemy phase
 turn_counter = 0; //after player phase and enemy phase, this is incremented by 1
 
+ai_unit_counter = 0;
+
 neft_list = ds_list_create(); //list of neft actors,player phase, enemy phase
 ally_list = ds_list_create();
 aleneti_list = ds_list_create(); //determines the order enemies move in their phase

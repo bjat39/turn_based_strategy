@@ -11,12 +11,10 @@ case "initiator_begin_attack":
 		
 	break;
 case "initiator_attack":
-		scr_attack_enemy();
-		state = "initiator_end_attack";	
-		attack_timer = 30;
-		break;
-	//}
-	//break;
+	scr_attack_enemy();
+	state = "initiator_end_attack";	
+	attack_timer = 30;
+	break;
 case "initiator_end_attack"://let scr attack handle this
 	attack_timer -= 1;
 		
