@@ -45,6 +45,7 @@
     {"$GMFolder":"","%Name":"get inputs","folderPath":"folders/Scripts/ds_grid/get inputs.yy","name":"get inputs","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"ranges","folderPath":"folders/Scripts/ds_grid/ranges.yy","name":"ranges","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"ai schmoovin'","folderPath":"folders/Scripts/ds_grid/ranges/ai schmoovin'.yy","name":"ai schmoovin'","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"misc","folderPath":"folders/Scripts/ds_grid/ranges/ai schmoovin'/misc.yy","name":"misc","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"attack_range","folderPath":"folders/Scripts/ds_grid/ranges/attack_range.yy","name":"attack_range","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"states","folderPath":"folders/Scripts/ds_grid/states.yy","name":"states","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"mp_grid","folderPath":"folders/Scripts/mp_grid.yy","name":"mp_grid","resourceType":"GMFolder","resourceVersion":"2.0",},

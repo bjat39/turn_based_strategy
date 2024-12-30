@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_ai_find_move_node",
   "parent":{
-    "name":"ai schmoovin'",
-    "path":"folders/Scripts/ds_grid/ranges/ai schmoovin'.yy",
+    "name":"misc",
+    "path":"folders/Scripts/ds_grid/ranges/ai schmoovin'/misc.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

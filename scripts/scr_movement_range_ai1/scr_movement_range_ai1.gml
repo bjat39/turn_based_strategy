@@ -20,8 +20,6 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 	//puts in nodes with priority equal to its g score, and we grab the lowest until there's nothing left
 	closed = ds_list_create();
 	
-	var move_node_list = ds_list_create();
-	
 	//closest target used for if out of range of any enemies, pick closest
 	//closest_target = noone;
 	move_target = noone;
@@ -95,30 +93,6 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 		}
 	}
 	
-	//put this checking each actor
-	
-		//setting move target to closest enemy
-	with(par_actor)
-	{ //if there is any enemy on the map, we need to know, in order to find the closest enemy to move to
-		if (faction != other.faction)
-		{
-			if (other.move_target == noone)
-			{
-				//attack_target = curr_neighbour.occupant;
-				other.move_target = id;
-				other.end_path = noone;
-			}//if node is closer
-			//could do dijkstra's algorithm and check g scores for more accurate distance check, because out of range nodes don't get checked
-			else if (map[gridX,gridY].G < map[other.move_target.gridX,other.move_target.gridY].G) 
-			{
-				//attack_target = curr_neighbour.occupant;
-				other.move_target = id;
-				other.end_path = noone;
-				//closest_target = curr_neighbour;
-			}
-		}
-	}
-	
 	
 	//round down all G scores for movement calculations, used for diagonals but ig its important
 	//with(oNode)
@@ -186,9 +160,16 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 		}
 	}
 	
+	//no enemy in range? sad. well, check entire grid for closest enemy for their g score. could use a* star to do better
+	if (attack_target == noone)
+	{//find move node
+		scr_movement_range_ai1_closest(map[gridX,gridY],move,attack_range)
+	}
+	
+	
 	//return closed;
 	//DESTROY closed list!!!!!
 	ds_list_destroy(closed);
 	
-	ds_list_destroy(move_node_list);
+	
 }

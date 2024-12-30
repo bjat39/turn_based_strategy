@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_movement_range_ai1_closest",
   "parent":{
-    "name":"ranges",
-    "path":"folders/Scripts/ds_grid/ranges.yy",
+    "name":"ai schmoovin'",
+    "path":"folders/Scripts/ds_grid/ranges/ai schmoovin'.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

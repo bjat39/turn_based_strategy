@@ -21,8 +21,6 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	//puts in nodes with priority equal to its g score, and we grab the lowest until there's nothing left
 	closed = ds_list_create();
 	
-	var move_node_list = ds_list_create();
-	
 	//closest target used for if out of range of any enemies, pick closest
 	//closest_target = noone;
 	move_target = noone;
@@ -56,8 +54,9 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 			 //if neighbour isn't on closed list, return -1
 			 
 			 //gotten rid of range limit, maybe that'll check the whole map for units?
-			if (ds_list_find_index(closed, curr_neighbour) < 0 and curr_neighbour.passable and 
-			curr_neighbour.occupant == noone and curr_neighbour.cost + current_node.G <= range)
+			 //Check entire grid. could use a* to find a proper move node, but i'm tired
+			if (ds_list_find_index(closed, curr_neighbour) < 0)// and curr_neighbour.passable and 
+			//curr_neighbour.occupant == noone)// and curr_neighbour.cost + current_node.G <= range)
 			{//only calculate new G for neighbour if it hasn't already been calculaated
 				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
 				{
@@ -106,14 +105,14 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 			if (other.move_target == noone)
 			{
 				//attack_target = curr_neighbour.occupant;
-				other.move_target = id;
+				other.move_target = map[id.gridX,id.gridY];
 				other.end_path = noone;
 			}//if node is closer
 			//could do dijkstra's algorithm and check g scores for more accurate distance check, because out of range nodes don't get checked
 			else if (map[gridX,gridY].G < map[other.move_target.gridX,other.move_target.gridY].G) 
 			{
 				//attack_target = curr_neighbour.occupant;
-				other.move_target = id;
+				other.move_target = map[id.gridX,id.gridY];//id
 				other.end_path = noone;
 				//closest_target = curr_neighbour;
 			}
@@ -133,63 +132,9 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	//scr_attack_range1();
 	
 	//Colour move nodes, then destroy the closed list as well
-	for(ii = 0; ii < ds_list_size(closed);ii++)
-	{
-		current_node = ds_list_find_value(closed, ii);
-		//current_node.move_node = true;
-		//current_node.attack_node = true;
-		
-		//scr_colour_move_node(current_node,move_range);
-		
-		with (par_actor) //have every actor check if they're in range to be slapped
-		{
-			if (faction != other.faction)
-			{
-				x_dist = point_distance(x, y, current_node.x, y); //would have measuring to the center but it dont
-				y_dist = point_distance(x, y, x,current_node.y);
-				total_dist = x_dist + y_dist; 
-				
-				if (total_dist <= other.attack_range)// if in range
-				{//take accuracy into account in the future, 
-					if (other.attack_target == noone)
-					{
-						other.attack_target = id;//irandom_range(0,ds_list_size(enemy_list) - 1));
-						other.end_path = other.attack_target;
-						other.move_target = current_node;						
-					}
-					else
-					{
-						if (defence_stat <= other.attack_target.defence_stat)//current_node.occupant.defence_stat < attack_target.defence_stat)
-						{
-							//if not the same attack target
-							//compare if move node is closer to attack
-							if (other.attack_target == id) // seperate move target and attack target?
-							{//check if closer move node, then replace. if no, then don't
-								move_target_total_dist = (point_distance(x, y, other.move_target.x, y) + point_distance(x, y, x,other.move_target.y)); //work it out
-								current_node_total_dist = (point_distance(x, y, current_node.x, y) + point_distance(x, y, x,current_node.y)); //work it out
-								if (current_node_total_dist < move_target_total_dist)
-								{
-									other.attack_target = id;//irandom_range(0,ds_list_size(enemy_list) - 1));
-									other.end_path = other.attack_target;
-									other.move_target = current_node;
-								}
-							}
-							else
-							{
-								other.attack_target = id;//irandom_range(0,ds_list_size(enemy_list) - 1));
-								other.end_path = other.attack_target;
-								other.move_target = current_node;
-							}
-						}						
-					}
-				}
-			}
-		}
-	}
 	
 	//return closed;
 	//DESTROY closed list!!!!!
 	ds_list_destroy(closed);
 	
-	ds_list_destroy(move_node_list);
 }
