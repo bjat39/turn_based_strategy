@@ -175,6 +175,7 @@
     {"name":"scr_ai_find_move_node","order":2,"path":"scripts/scr_ai_find_move_node/scr_ai_find_move_node.yy",},
     {"name":"scr_ai_find_move_node1","order":4,"path":"scripts/scr_ai_find_move_node1/scr_ai_find_move_node1.yy",},
     {"name":"scr_ai_find_target","order":1,"path":"scripts/scr_ai_find_target/scr_ai_find_target.yy",},
+    {"name":"scr_ai_movement1","order":8,"path":"scripts/scr_ai_movement1/scr_ai_movement1.yy",},
     {"name":"scr_attack_enemy","order":10,"path":"scripts/scr_attack_enemy/scr_attack_enemy.yy",},
     {"name":"scr_attack_range1","order":1,"path":"scripts/scr_attack_range1/scr_attack_range1.yy",},
     {"name":"scr_attack_range2","order":2,"path":"scripts/scr_attack_range2/scr_attack_range2.yy",},
