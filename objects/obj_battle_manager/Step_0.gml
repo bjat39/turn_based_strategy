@@ -14,7 +14,9 @@ case "initiator_attack":
 	scr_attack_enemy();
 	state = "initiator_end_attack";	
 	attack_timer = 30;
-	if(reciever.unit_state == "initiate_dying"){
+	//TEMP!!!
+	if (reciever.current_hit_points - (initiator.strength_stat - reciever.defence_stat) <= 0){
+	//if(reciever.unit_state == "initiate_dying"){
 		scr_play_sound(_69_Enemy_death_01,2,0,obj_game.sfx_gain);
 		state = "reciever_death";}
 	
@@ -37,11 +39,12 @@ case "reciever_death":
 		if image_alpha <= 0 
 		{
 			map[gridX,gridY].occupant = noone;
+			state = "finish_battle";
 			//initiate exp gain and level up for unit, if there is an opponent
 			instance_destroy();
 		}
 	}
-	state = "finish_battle";
+	
 	break;
 //case "reciever_end_attack":
 	
