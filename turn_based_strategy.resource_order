@@ -64,6 +64,7 @@
     {"name":"obj_biff","order":3,"path":"objects/obj_biff/obj_biff.yy",},
     {"name":"obj_camera","order":2,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"obj_camera1","order":3,"path":"objects/obj_camera1/obj_camera1.yy",},
+    {"name":"obj_closest_node","order":11,"path":"objects/obj_closest_node/obj_closest_node.yy",},
     {"name":"obj_control","order":6,"path":"objects/obj_control/obj_control.yy",},
     {"name":"obj_damage_dealt","order":7,"path":"objects/obj_damage_dealt/obj_damage_dealt.yy",},
     {"name":"obj_damage_text","order":2,"path":"objects/obj_damage_text/obj_damage_text.yy",},
