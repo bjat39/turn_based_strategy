@@ -56,7 +56,7 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 			 //gotten rid of range limit, maybe that'll check the whole map for units?
 			 //Check entire grid. could use a* to find a proper move node, but i'm tired
 			 //doesn't take into account units, which could lead to bugs with many units on field?
-			if (ds_list_find_index(closed, curr_neighbour) < 0 and curr_neighbour.passable) //and (curr_neighbour.occupant == noone or curr_neighbour.occupant.faction != faction))
+			if (ds_list_find_index(closed, curr_neighbour) < 0 and curr_neighbour.passable) and (curr_neighbour.occupant == noone or curr_neighbour.occupant.faction != faction)
 			//curr_neighbour.occupant == noone)// and curr_neighbour.cost + current_node.G <= range)
 			{//only calculate new G for neighbour if it hasn't already been calculaated
 				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
@@ -98,7 +98,7 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	
 	//put this checking each actor
 	
-		//setting move target to closest enemy
+	//setting move target to closest enemy
 	with(par_actor)
 	{ //if there is any enemy on the map, we need to know, in order to find the closest enemy to move to
 		if (faction != other.faction)

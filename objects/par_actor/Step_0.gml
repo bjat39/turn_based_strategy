@@ -128,17 +128,8 @@ switch(unit_state)
 		unit_state = "initiate_dying";//speech bubbles probably will just interrupt everything before they're all been gotten through so probably won't need this
 	
 		break;
-	case ("initiate_dying"): scr_play_sound(_69_Enemy_death_01,2,0,obj_game.sfx_gain); unit_state = "dying"; break;
+	case ("initiate_dying"): unit_state = "dying"; break;
 	case ("dying"):
-		image_alpha = lerp(image_alpha, 0, 0.05);
-		if image_alpha <= 0 
-		{
-			map[gridX,gridY].occupant = noone;
-			//initiate exp gain and level up for unit, if there is an opponent
-			instance_destroy();
-		}
-		
-		break;
 	//ai states
 	case ("find_target"):
 		scr_movement_range_ai1(map[gridX,gridY],move,attack_range);
