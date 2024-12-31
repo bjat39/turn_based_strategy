@@ -39,7 +39,7 @@ case "reciever_death":
 		if image_alpha <= 0 
 		{
 			map[gridX,gridY].occupant = noone;
-			state = "finish_battle";
+			other.state = "finish_battle";
 			//initiate exp gain and level up for unit, if there is an opponent
 			instance_destroy();
 		}

@@ -131,6 +131,7 @@ switch(unit_state)
 	case ("initiate_dying"): unit_state = "dying"; break;
 	case ("dying"):
 	//ai states
+	break;
 	case ("find_target"):
 		scr_movement_range_ai1(map[gridX,gridY],move,attack_range);
 		unit_state = "find_move_node";

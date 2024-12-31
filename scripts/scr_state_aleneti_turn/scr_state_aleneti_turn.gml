@@ -7,6 +7,7 @@ function scr_state_aleneti_turn(){
 		//case ("not_turn"): break; //shouldn't happen but just for posterity
 		case ("initialise"):
 		//go thru all alenetians, see their ai type, actually just have everybody attack sraight on for now
+		ds_list_clear(aleneti_list);
 		ai_unit_counter = 0;
 		with (par_aleneti_faction)
 		{
