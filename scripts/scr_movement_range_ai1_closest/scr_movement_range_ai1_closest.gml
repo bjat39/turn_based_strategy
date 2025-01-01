@@ -26,6 +26,8 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	move_target = noone;
 	attack_target = noone; //update move if searching and found a person lower g score, attack target at end, look at find_target (move target and attack target)
 	end_path = noone;
+	
+	var found_enemy = false;
 	//move_and_attack_list = ds_list_create();
 	
 	//add starting node to open list
@@ -64,6 +66,10 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 				{//only calculate new G for neighbour if it hasn't already been calculaated
 					if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
 					{
+						if (curr_neighbour.occupant != noone and curr_neighbour.occupant.faction != faction)
+						{
+							found_enemy = true;} //check if we've pathed to an enemy successfully
+						
 						cost_mod = 1;
 					
 						//give neighbour the appropriate parent
@@ -106,11 +112,37 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	{ //if there is any enemy on the map, we need to know, in order to find the closest enemy to move to
 		if (faction != other.faction)
 		{//add total dist, found_path
-			if (other.move_target == noone and map[other.move_target.gridX,other.move_target.gridY].G != 0) //checking we can path
-			{
+			if (other.move_target == noone)// and map[other.move_target.gridX,other.move_target.gridY].G != 0) //checking we can path
+			{//if can't path to enemy, choose the closest node not by g but by pixel distance
 				//attack_target = curr_neighbour.occupant;
-				other.move_target = map[id.gridX,id.gridY];
-				other.end_path = noone;
+				if (found_enemy) //set move node to enemy
+				{
+					other.move_target = map[id.gridX,id.gridY];
+					other.end_path = noone;
+				}
+				else //find the closest move node to an actor
+				{//rellook at this code later, i'm confused and tired
+					other.min_dist = 10000000000;
+					for(ii = 0; ii < ds_list_size(closed); ii ++)
+					{
+						var c_node = ds_list_find_value(closed, ii) //current node
+						//checking the closest actor and the closest move node to them
+						{
+							if (other.faction != faction)
+							{
+								x_dist = point_distance(x, y, c_node.x, y); //would have measuring to the center but it dont
+								y_dist = point_distance(x, y, x, c_node.y);
+								total_dist = x_dist + y_dist;
+								if (total_dist < min_dist)//temp_actor.attack_range)
+								{
+									other.min_dist = total_dist;
+									other.move_target = c_node;
+								}								
+							}
+
+						}
+					}
+				}
 			}//if node is closer
 			//could do dijkstra's algorithm and check g scores for more accurate distance check, because out of range nodes don't get checked
 			else if (map[gridX,gridY].G < map[other.move_target.gridX,other.move_target.gridY].G) 
