@@ -48,6 +48,7 @@ function scr_ai_find_move_node1(){ //basic a* algorithm
 	
 	if (move_target != noone) //move as close as possible to targeet
 	{
+		
 		closest_node = map[move_target.gridX,move_target.gridY]; //problem?
 		
 		//figure out how to get there, a*
@@ -68,6 +69,10 @@ function scr_ai_find_move_node1(){ //basic a* algorithm
 		closest_node.occupant = id;
 		
 		unit_state = "begin_path";
+		
+		//debug
+		obj_closest_node.x = move_target.x;
+		obj_closest_node.y = move_target.y;
 		
 		//if (closest_node.G > move)
 		//{

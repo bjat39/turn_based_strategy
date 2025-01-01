@@ -33,7 +33,7 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	{
 		if (faction != other.faction)
 		{
-			ds_list_add(enemy_list_move,par_actor); //add all enemies to Santa's wish list of death
+			ds_list_add(enemy_list_move,id); //add all enemies to Santa's wish list of death
 		}
 	}
 	
@@ -116,9 +116,6 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	}
 	
 	
-	
-	//put this checking each actor
-	
 	//setting move target to closest enemy
 	if (found_enemy) //set move node to enemy
 	{
@@ -135,7 +132,7 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 					end_path = noone;
 				}//if node is closer
 				//could do dijkstra's algorithm and check g scores for more accurate distance check, because out of range nodes don't get checked
-				else if (found_enemy and (map[gridX,gridY].G < map[other.move_target.gridX,other.move_target.gridY].G)) 
+				else if (map[curr_enemy.gridX,curr_enemy.gridY].G < map[move_target.gridX,move_target.gridY].G) 
 				{
 					//attack_target = curr_neighbour.occupant;
 					move_target = map[curr_enemy.gridX,curr_enemy.gridY];//id
@@ -167,16 +164,6 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 				}
 			}
 		}
-	}
-
-	
-	
-	
-	
-	if(move_target != noone)
-	{
-		obj_closest_node.x = move_target.x;
-		obj_closest_node.y = move_target.y;
 	}
 	
 	
