@@ -118,5 +118,20 @@ function scr_cursor_control(){
 			obj_cursor.x = obj_neft.x + GRID_SIZE/2;
 			obj_cursor.y = obj_neft.y + GRID_SIZE/2;
 		}
+		else if (instance_exists(obj_talia))
+		{
+			obj_cursor.x = obj_talia.x + GRID_SIZE/2;
+			obj_cursor.y = obj_talia.y + GRID_SIZE/2;
+		}
+		else if (instance_exists(obj_oriel))
+		{
+			obj_cursor.x = obj_oriel.x + GRID_SIZE/2;
+			obj_cursor.y = obj_oriel.y + GRID_SIZE/2;
+		}
+		else
+		{
+			obj_cursor.x = GRID_SIZE/2;
+			obj_cursor.y = GRID_SIZE/2;
+		}
 	}
 }
