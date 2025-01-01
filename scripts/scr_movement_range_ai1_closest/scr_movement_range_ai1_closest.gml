@@ -27,6 +27,16 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	attack_target = noone; //update move if searching and found a person lower g score, attack target at end, look at find_target (move target and attack target)
 	end_path = noone;
 	
+	var enemy_list_move = ds_list_create();
+	
+	with(par_actor)
+	{
+		if (faction != other.faction)
+		{
+			ds_list_add(enemy_list_move,par_actor); //add all enemies to Santa's wish list of death
+		}
+	}
+	
 	var found_enemy = false;
 	//move_and_attack_list = ds_list_create();
 	
@@ -105,54 +115,63 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 		}
 	}
 	
+	
+	
 	//put this checking each actor
 	
 	//setting move target to closest enemy
-	with(par_actor)
-	{ //if there is any enemy on the map, we need to know, in order to find the closest enemy to move to
-		if (faction != other.faction)
-		{//add total dist, found_path
-			if (other.move_target == noone)// and map[other.move_target.gridX,other.move_target.gridY].G != 0) //checking we can path
-			{//if can't path to enemy, choose the closest node not by g but by pixel distance
-				//attack_target = curr_neighbour.occupant;
-				if (found_enemy) //set move node to enemy
+	if (found_enemy) //set move node to enemy
+	{
+		for(ii = 0; ii < ds_list_size(enemy_list_move); ii ++)
+		{
+			var curr_enemy = ds_list_find_value(enemy_list_move, ii); //current node
+			//checking the closest actor and the closest move node to them
+			{ //if there is any enemy on the map, we need to know, in order to find the closest enemy to move to
+			//add total dist, found_path
+				if (move_target == noone)// and map[other.move_target.gridX,other.move_target.gridY].G != 0) //checking we can path
+				{//if can't path to enemy, choose the closest node not by g but by pixel distance
+					//attack_target = curr_neighbour.occupant;
+					move_target = map[curr_enemy.gridX,curr_enemy.gridY];
+					end_path = noone;
+				}//if node is closer
+				//could do dijkstra's algorithm and check g scores for more accurate distance check, because out of range nodes don't get checked
+				else if (found_enemy and (map[gridX,gridY].G < map[other.move_target.gridX,other.move_target.gridY].G)) 
 				{
-					other.move_target = map[gridX,gridY];
-					other.end_path = noone;
+					//attack_target = curr_neighbour.occupant;
+					move_target = map[curr_enemy.gridX,curr_enemy.gridY];//id
+					end_path = noone;
+					//closest_target = curr_neighbour;
 				}
-				else //can't path to enemy? find the closest move node to an enemy that we can path to
-				{
-					other.min_dist = 10000000000;
-					for(ii = 0; ii < ds_list_size(closed); ii ++)
-					{
-						var c_node = ds_list_find_value(closed, ii) //current node
-						//checking the closest actor and the closest move node to them
-						{
-							if (other.faction != faction)
-							{
-								x_dist = point_distance(x, y, c_node.x, y);
-								y_dist = point_distance(x, y, x, c_node.y);
-								total_dist = x_dist + y_dist;
-								if (total_dist < min_dist)//temp_actor.attack_range)
-								{
-									other.min_dist = total_dist;
-									other.move_target = c_node;
-								}								
-							}
-						}
-					}
-				}
-			}//if node is closer
-			//could do dijkstra's algorithm and check g scores for more accurate distance check, because out of range nodes don't get checked
-			else if (found_enemy and (map[gridX,gridY].G < map[other.move_target.gridX,other.move_target.gridY].G)) 
-			{
-				//attack_target = curr_neighbour.occupant;
-				other.move_target = map[id.gridX,id.gridY];//id
-				other.end_path = noone;
-				//closest_target = curr_neighbour;
 			}
 		}
 	}
+	else //can't path to enemy? find the closest move node to an enemy that we can path to
+	{
+		min_dist = 10000000000;
+		for(ii = 0; ii < ds_list_size(closed); ii ++)
+		{
+			var c_node = ds_list_find_value(closed, ii) //current node
+			//checking the closest actor and the closest move node to them
+			{
+				for(jj = 0; jj < ds_list_size(enemy_list_move); jj ++)
+				{
+					var curr_enemy = ds_list_find_value(enemy_list_move, jj);
+					x_dist = point_distance(curr_enemy.x, curr_enemy.y, c_node.x, curr_enemy.y);
+					y_dist = point_distance(curr_enemy.x, curr_enemy.y, curr_enemy.x, c_node.y);
+					total_dist = x_dist + y_dist;
+					if (total_dist < min_dist)//temp_actor.attack_range)
+					{
+						min_dist = total_dist;
+						move_target = c_node;
+					}								
+				}
+			}
+		}
+	}
+
+	
+	
+	
 	
 	if(move_target != noone)
 	{
@@ -166,6 +185,8 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	//{
 	//	G = floor(G);
 	//}
+	
+	ds_list_destroy(enemy_list_move);
 	
 	//Destroy open list
 	ds_priority_destroy(open); //destroy so it doesn't create a new open list each time, memory leak. handle data structures properly
