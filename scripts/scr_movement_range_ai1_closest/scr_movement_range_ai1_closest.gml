@@ -58,7 +58,8 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 			 //doesn't take into account units, which could lead to bugs with many units on field?
 			if (ds_list_find_index(closed, curr_neighbour) < 0)
 			{//if passable or occupied
-				if ((curr_neighbour.passable and curr_neighbour.occupant == noone)  or (curr_neighbour.occupant != noone and curr_neighbour.occupant.faction != faction))
+				if ((curr_neighbour.passable and curr_neighbour.occupant == noone)
+					or (curr_neighbour.occupant != noone and curr_neighbour.occupant.faction != faction))
 				//curr_neighbour.occupant == noone)// and curr_neighbour.cost + current_node.G <= range)
 				{//only calculate new G for neighbour if it hasn't already been calculaated
 					if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
@@ -92,7 +93,6 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 							curr_neighbour.G = temp_G;
 							ds_priority_change_priority(open,curr_neighbour,curr_neighbour.G);
 						}
-					
 					}
 				}
 			}
@@ -105,8 +105,8 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	with(par_actor)
 	{ //if there is any enemy on the map, we need to know, in order to find the closest enemy to move to
 		if (faction != other.faction)
-		{
-			if (other.move_target == noone)
+		{//add total dist, found_path
+			if (other.move_target == noone and map[other.move_target.gridX,other.move_target.gridY].G != 0) //checking we can path
 			{
 				//attack_target = curr_neighbour.occupant;
 				other.move_target = map[id.gridX,id.gridY];
