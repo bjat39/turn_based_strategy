@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_neft",
+  "%Name":"obj_enemy_1",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_neft",
+  "name":"obj_enemy_1",
   "overriddenProperties":[],
   "parent":{
     "name":"actors",
     "path":"folders/Objects/ds_grid/actors.yy",
   },
   "parentObjectId":{
-    "name":"par_neft_faction",
-    "path":"objects/par_neft_faction/par_neft_faction.yy",
+    "name":"par_aleneti_faction",
+    "path":"objects/par_aleneti_faction/par_aleneti_faction.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"delta_neft",
-    "path":"sprites/delta_neft/delta_neft.yy",
+    "name":"spr_enemy_1",
+    "path":"sprites/spr_enemy_1/spr_enemy_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

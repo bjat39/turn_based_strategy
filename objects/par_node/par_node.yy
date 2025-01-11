@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_node",
-    "path":"sprites/spr_node/spr_node.yy",
+    "name":"spr_node_3",
+    "path":"sprites/spr_node_3/spr_node_3.yy",
   },
   "spriteMaskId":null,
   "visible":true,

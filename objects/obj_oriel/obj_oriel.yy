@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_oriel_1",
-    "path":"sprites/spr_oriel_1/spr_oriel_1.yy",
+    "name":"spr_delta_oriel",
+    "path":"sprites/spr_delta_oriel/spr_delta_oriel.yy",
   },
   "spriteMaskId":null,
   "visible":true,

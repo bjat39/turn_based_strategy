@@ -1,5 +1,5 @@
 /// @description 
-#macro GRID_SIZE 32
+#macro GRID_SIZE 16
 
 game_state = "initialising"; //initialising, player, ai1,ai2 //turn state machine
 player_state = "cursor_explore"; //cursor_explore, cursor_selected, cursor_menu (explore = cursor freely move, selected = cursor move within range, menu cursor can't move (still recieving inputs)(attack anims))

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_charlie_talia2",
-    "path":"sprites/spr_charlie_talia2/spr_charlie_talia2.yy",
+    "name":"spr_delta_talia",
+    "path":"sprites/spr_delta_talia/spr_delta_talia.yy",
   },
   "spriteMaskId":null,
   "visible":true,
