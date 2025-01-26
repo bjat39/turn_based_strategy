@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_cursor_4",
-    "path":"sprites/spr_cursor_4/spr_cursor_4.yy",
+    "name":"spr_cursor_5",
+    "path":"sprites/spr_cursor_5/spr_cursor_5.yy",
   },
   "spriteMaskId":null,
   "visible":true,

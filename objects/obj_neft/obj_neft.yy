@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_delta_neft1",
-    "path":"sprites/spr_delta_neft1/spr_delta_neft1.yy",
+    "name":"spr_echo_neft",
+    "path":"sprites/spr_echo_neft/spr_echo_neft.yy",
   },
   "spriteMaskId":null,
   "visible":true,

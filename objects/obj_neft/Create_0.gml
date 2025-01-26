@@ -10,7 +10,7 @@ description = "That's me.";//\nA distant young girl."
 //Base stats
 move = 5;
 
-attack_range = 3 * GRID_SIZE; //placeholder set later in create
+attack_range = 2 * GRID_SIZE; //placeholder set later in create
 attack_target = noone;
 attack_timer = 0;
 damage_type = "magic"; //Weapon triangle

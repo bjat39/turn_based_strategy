@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_delta_oriel",
-    "path":"sprites/spr_delta_oriel/spr_delta_oriel.yy",
+    "name":"spr_echo_oriel",
+    "path":"sprites/spr_echo_oriel/spr_echo_oriel.yy",
   },
   "spriteMaskId":null,
   "visible":true,

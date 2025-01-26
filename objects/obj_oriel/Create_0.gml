@@ -8,7 +8,7 @@ class = "Crossbowman";
 description = "An asocial Alenetian old man.\nHas a nasty disease.";
 
 //Base stats
-move = 8//6;
+move = 8//6;//7
 
 attack_range = 8 * GRID_SIZE; //placeholder set later in create
 attack_target = noone;

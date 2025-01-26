@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_delta_talia",
-    "path":"sprites/spr_delta_talia/spr_delta_talia.yy",
+    "name":"spr_echo_talia",
+    "path":"sprites/spr_echo_talia/spr_echo_talia.yy",
   },
   "spriteMaskId":null,
   "visible":true,
