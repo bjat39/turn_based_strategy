@@ -12,14 +12,14 @@ function scr_state_initialize_grid(){
 				case "wall":
 					instance_change(obj_wall1,true); //change to tree, retains information from previous
 					terrain_type = "wall";
-					sprite_index = spr_wall;
+					sprite_index = spr_wall_1;
 					passable = false;
 			
 					break;
 				case "tree":
 					instance_change(obj_tree,true); //change to tree, retains information from previous
 					terrain_type = "tree";
-					sprite_index = spr_tree;
+					sprite_index = spr_tree_1;
 					cost = 2;
 					terrain_avoid = 40; //trees work more like ranged cover than in fire emblem
 					terrain_defense = 2;

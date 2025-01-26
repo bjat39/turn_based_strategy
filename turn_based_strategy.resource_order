@@ -204,6 +204,7 @@
     {"name":"scr_move_obj_to_point","order":4,"path":"scripts/scr_move_obj_to_point/scr_move_obj_to_point.yy",},
     {"name":"scr_movement_range_ai1_closest","order":7,"path":"scripts/scr_movement_range_ai1_closest/scr_movement_range_ai1_closest.yy",},
     {"name":"scr_movement_range_ai1","order":6,"path":"scripts/scr_movement_range_ai1/scr_movement_range_ai1.yy",},
+    {"name":"scr_movement_range_backup","order":6,"path":"scripts/scr_movement_range_backup/scr_movement_range_backup.yy",},
     {"name":"scr_navigation_attack","order":4,"path":"scripts/scr_navigation_attack/scr_navigation_attack.yy",},
     {"name":"scr_navigation","order":3,"path":"scripts/scr_navigation/scr_navigation.yy",},
     {"name":"scr_place_attack_squares","order":5,"path":"scripts/scr_place_attack_squares/scr_place_attack_squares.yy",},

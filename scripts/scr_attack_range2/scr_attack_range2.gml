@@ -19,14 +19,14 @@ function scr_attack_range2(closed, selected_actor){
 	//		map[xx,yy].gridY = yy;
 	//	}
 	//}
-	with(par_node)
+	if(selected_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 	{
-		//if (id.move_node == true)
-		//{
-		//	faux_attack_node = true;
-		//}
-		if(selected_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
+		with(par_node)
 		{
+			//if (id.move_node == true)
+			//{
+			//	faux_attack_node = true;
+			//}
 			for(ii = 0; ii < ds_list_size(closed);ii++)
 			{
 				curr_node = ds_list_find_value(closed,ii);
@@ -39,7 +39,10 @@ function scr_attack_range2(closed, selected_actor){
 				}
 			}
 		}
-		else
+	}
+	else
+	{
+		with(par_node)
 		{
 			for(ii = 0; ii < ds_list_size(closed);ii++)
 			{

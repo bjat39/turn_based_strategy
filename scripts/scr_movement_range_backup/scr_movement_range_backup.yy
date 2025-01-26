@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_movement_range_backup",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_movement_range_backup",
+  "parent":{
+    "name":"ranges",
+    "path":"folders/Scripts/ds_grid/ranges.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

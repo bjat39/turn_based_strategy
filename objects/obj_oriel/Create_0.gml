@@ -8,9 +8,9 @@ class = "Crossbowman";
 description = "An asocial Alenetian old man.\nHas a nasty disease.";
 
 //Base stats
-move = 8//6;//7
+move = 7//6;//7
 
-attack_range = 8 * GRID_SIZE; //placeholder set later in create
+attack_range = 4 * GRID_SIZE; //8
 attack_target = noone;
 attack_timer = 0;
 damage_type = "bow" //Weapon triangle

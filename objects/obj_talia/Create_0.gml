@@ -8,7 +8,7 @@ class = "Healer Woman";
 description = "A spirited Alenetian woman.\nA bit of a doormat, somehow.";
 
 //Base stats
-move = 5;
+move = 6; //5
 
 attack_range = 1 * GRID_SIZE; //placeholder set later in create
 attack_target = noone;
