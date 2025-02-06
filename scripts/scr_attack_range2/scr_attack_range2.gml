@@ -19,26 +19,40 @@ function scr_attack_range2(closed, selected_actor){
 	//		map[xx,yy].gridY = yy;
 	//	}
 	//}
+	
+	
+	// Create a ds_list to store the valid nodes
+	var valid_nodes = ds_list_create();
+
+	// Add the nodes to the list
+	with (par_node) {
+	    if (ds_list_find_index(closed, id) < 0 and passable) {
+	        ds_list_add(valid_nodes, id);
+	    }
+	}
+
+	
+	
 	if(selected_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 	{
 		with(par_node)
 		{
-			//if (id.move_node == true)
-			//{
-			//	faux_attack_node = true;
-			//}
-			for(ii = 0; ii < ds_list_size(closed);ii++)
+			if (ds_list_find_index(closed, id) < 0 and passable)
 			{
-				curr_node = ds_list_find_value(closed,ii);
-				x_dist = point_distance(id.x, id.y, curr_node.x, id.y); //would have measuring to the center but it dont
-				y_dist = point_distance(id.x, id.y, id.x,curr_node.y);
-				total_dist = x_dist + y_dist; //
-				if (move_node == false and total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE){
-					scr_colour_attack_node(id);
-					break;
+				for(ii = 0; ii < ds_list_size(closed);ii++)
+				{
+					curr_node = ds_list_find_value(closed,ii);
+					x_dist = point_distance(x, y, curr_node.x, y); //would have measuring to the center but it dont
+					y_dist = point_distance(x, y, x, curr_node.y);
+					total_dist = x_dist + y_dist; //
+					if (total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE)
+					{
+						scr_colour_attack_node(id);
+						break;
+					}
 				}
 			}
-		}
+		}	
 	}
 	else
 	{
