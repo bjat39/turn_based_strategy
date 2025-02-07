@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_attack_range2_1",
+  "%Name":"scr_large_grid_attack_range",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_attack_range2_1",
+  "name":"scr_large_grid_attack_range",
   "parent":{
     "name":"attack_range",
     "path":"folders/Scripts/ds_grid/ranges/attack_range.yy",

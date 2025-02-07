@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_attack_range2_1(move_list, selected_actor){
+function scr_large_grid_attack_range(move_list, selected_actor){
 //function scr_movement_range(origin_node,move_range,attack_range,selected_actor){ //pathfinding, get nodes for movements
 	//selected_actor has been added later for scr_attack_range
 	//Reset all node data

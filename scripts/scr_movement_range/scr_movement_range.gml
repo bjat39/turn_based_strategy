@@ -112,7 +112,7 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 	
 	//search entire grid again, not very efficient but I'M FUCKING STUPID DOK
 	//should put it in previous for loop somewhere, just check each square and mark as attack square
-	scr_attack_range2_1(closed,selected_actor);
+	scr_large_grid_attack_range(closed,selected_actor);
 	
 	//DESTROY closed list!!!!!
 	ds_list_destroy(closed);
