@@ -23,6 +23,9 @@ H = 0; //estimated movement cost, used for ai moving
 F = 0;
 //for a star, h would be the estimated distance from current node to end node, and f is the total cost for the node (f = g + h)
 
+attack_G = 0; //used for calculating attack ranges
+attack_parent_node = noone;
+
 move_node = false; //check if valid node for movement
 attack_node = false;
 faux_attack_node = false; //colour in nodes in attack range

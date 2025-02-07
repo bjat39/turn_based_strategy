@@ -11,6 +11,7 @@ description = "A spirited Alenetian woman.\nA bit of a doormat, somehow.";
 move = 6; //5
 
 attack_range = 1 * GRID_SIZE; //placeholder set later in create
+attack_range_real = 1;
 attack_target = noone;
 attack_timer = 0;
 damage_type = "melee" //Weapon triangle

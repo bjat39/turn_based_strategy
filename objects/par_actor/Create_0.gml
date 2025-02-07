@@ -61,6 +61,7 @@ max_second_ability_uses = second_ability_uses;
 move = 5;
 
 attack_range = 1 * GRID_SIZE; //placeholder set later in create. in pixels
+attack_range_real = 1;
 attack_target = noone; //ai
 attack_timer = 0;
 

@@ -5,12 +5,13 @@ actor_name = "Neft";
 
 faction = "neft";
 class = "Mage";
-description = "That's me.";//\nA distant young girl."
+description = "Me.";//\nA distant young girl."
 
 //Base stats
 move = 6; //5 or 7? more move means maps over quicker
 
 attack_range = 2 * GRID_SIZE; //placeholder set later in create
+attack_range_real = 2;
 attack_target = noone;
 attack_timer = 0;
 damage_type = "magic"; //Weapon triangle

@@ -229,6 +229,7 @@
     {"id":{"name":"scr_attack_enemy","path":"scripts/scr_attack_enemy/scr_attack_enemy.yy",},},
     {"id":{"name":"scr_attack_range","path":"scripts/scr_attack_range/scr_attack_range.yy",},},
     {"id":{"name":"scr_attack_range1","path":"scripts/scr_attack_range1/scr_attack_range1.yy",},},
+    {"id":{"name":"scr_attack_range2_1","path":"scripts/scr_attack_range2_1/scr_attack_range2_1.yy",},},
     {"id":{"name":"scr_attack_range2","path":"scripts/scr_attack_range2/scr_attack_range2.yy",},},
     {"id":{"name":"scr_attack_range3","path":"scripts/scr_attack_range3/scr_attack_range3.yy",},},
     {"id":{"name":"scr_attack_range4_ai","path":"scripts/scr_attack_range4_ai/scr_attack_range4_ai.yy",},},

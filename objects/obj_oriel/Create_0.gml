@@ -11,6 +11,7 @@ description = "An asocial Alenetian old man.\nHas a nasty disease.";
 move = 7//6;//7
 
 attack_range = 4 * GRID_SIZE; //8
+attack_range_real = 4;
 attack_target = noone;
 attack_timer = 0;
 damage_type = "bow" //Weapon triangle
