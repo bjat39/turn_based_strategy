@@ -8,88 +8,90 @@ function scr_attack_range2_1(move_list, selected_actor){
 	
 	var open, closed;//, closed list for attack nodes; //node lists,
 	var start_node, current_node, curr_neighbour; //holds instance ids, start_node node, current node
+	
 	var temp_G, range;
 	
 	//Declare relevant variables from arguments
 	start_node = selected_actor.current_node;
 	range = selected_actor.attack_range_real; //current number of nodes out we're going for
 	
+	var curr_move_node = start_node;
+	
 	//Create data structures
 	open = ds_priority_create(); //list with a numerical priority attatched to each item, instance ids of nodes
 	//puts in nodes with priority equal to its g score, and we grab the lowest until there's nothing left
 	closed = ds_list_create();
 	
-	//add starting node to open list
-	ds_priority_add(open,start_node,start_node.attack_G); //lowest score, since it's origin
-	
-	//while open queue is not empty, repeat the following until all nodes have been looked at
-	while(ds_priority_size(open) > 0){
-		//remove node with lowest g score from open
-		current_node = ds_priority_delete_min(open); //remove from open, put in current
+	for (jj = 0; jj < ds_list_size(move_list);jj++)
+	{
+		curr_move_node = ds_list_find_value(move_list, jj)
 		
-		//add node to closed list so we don't look at it again
-		ds_list_add(closed,current_node);
+		//add starting node to open list
+		ds_priority_add(open,start_node,curr_move_node); //lowest score, since it's origin
 		
-		//step through all of current's neighbours
-		for(ii = 0; ii < ds_list_size(current_node.neighbours); ii ++)
-		{
-			//store current neighbour in neighbour variable
-			curr_neighbour = ds_list_find_value(current_node.neighbours, ii)
+		//while open queue is not empty, repeat the following until all nodes have been looked at
+		while(ds_priority_size(open) > 0){
+			//remove node with lowest g score from open
+			current_node = ds_priority_delete_min(open); //remove from open, put in current
 		
-			//add neighbour to open list if qualifies:
-			//neighbour's projected g score is less than movement range
-			//neighbour isn't already on the closed list (culls many nodes)
-			//neighbour isn't on list of move squares
+			//add node to closed list so we don't look at it again
+			ds_list_add(closed,current_node);
+		
+			//step through all of current's neighbours
+			for(ii = 0; ii < ds_list_size(current_node.neighbours); ii ++)
+			{
+				//store current neighbour in neighbour variable
+				curr_neighbour = ds_list_find_value(current_node.neighbours, ii)
+		
+				//add neighbour to open list if qualifies:
+				//neighbour's projected g score is less than movement range
+				//neighbour isn't already on the closed list (culls many nodes)
+				//neighbour isn't on list of move squares
 			
-			//attack cost?
-			 //if neighbour isn't on closed list, return -1
-			if (ds_list_find_index(closed, curr_neighbour) < 0 and ds_list_find_index(move_list, curr_neighbour) < 0
-			and current_node.attack_G <= range)
-			{//only calculate new G for neighbour if it hasn't already been calculaated
-				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
-				{
-					
-					//give neighbour the appropriate parent
-					curr_neighbour.attack_parent_node = current_node;
-					 
-					 //there would be diagonal movement code here changing ccost mod but i removed it
-					 
-					//calculate attack g, 1 for each space
-					curr_neighbour.attack_G = current_node.attack_G ++;
-					
-					//add neighbour to open list so it can be checked out too
-					ds_priority_add(open,curr_neighbour,curr_neighbour.attack_G);
-				}
-				else //if neighbour's score has already been calculated for the open list
-				{
-					//figure out if the neighbour's score would be LOWER if found from the current node
-					
-					temp_G = current_node.attack_G ++;
-					
-					//check if G score would be lower 
-					if (temp_G < curr_neighbour.attack_G)
+				//attack cost?
+				 //if neighbour isn't on closed list, return -1
+				if (ds_list_find_index(closed, curr_neighbour) < 0 and ds_list_find_index(move_list, curr_neighbour) < 0
+				and current_node.attack_G <= range)
+				{//only calculate new G for neighbour if it hasn't already been calculaated
+					if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
 					{
+					
+						//give neighbour the appropriate parent
 						curr_neighbour.attack_parent_node = current_node;
-						curr_neighbour.attack_G = temp_G;
-						ds_priority_change_priority(open,curr_neighbour,curr_neighbour.attack_G);
-					} 
+					 
+						 //there would be diagonal movement code here changing ccost mod but i removed it
+					 
+						//calculate attack g, 1 for each space
+						curr_neighbour.attack_G = current_node.attack_G ++;
+					
+						//add neighbour to open list so it can be checked out too
+						ds_priority_add(open,curr_neighbour,curr_neighbour.attack_G);
+					}
+					else //if neighbour's score has already been calculated for the open list
+					{
+						//figure out if the neighbour's score would be LOWER if found from the current node
+					
+						temp_G = current_node.attack_G ++;
+					
+						//check if G score would be lower 
+						if (temp_G < curr_neighbour.attack_G)
+						{
+							curr_neighbour.attack_parent_node = current_node;
+							curr_neighbour.attack_G = temp_G;
+							ds_priority_change_priority(open,curr_neighbour,curr_neighbour.attack_G);
+						} 
+					}
 				}
 			}
 		}
 	}
-	
-	//round down all G scores for movement calculations, used for diagonals but ig its important
-	//with(oNode)
-	//{
-	//	G = floor(G);
-	//}
 	
 	//Destroy open list
 	ds_priority_destroy(open); //destroy so it doesn't create a new open list each time, memory leak. handle data structures properly
 	
 	//scr_attack_range1();
 	
-	//Colour move nodes, then destroy the closed list as well
+	//Colour ATTACK nodes, then destroy the closed list as well
 	for(ii = 0; ii < ds_list_size(closed);ii++)
 	{
 		current_node = ds_list_find_value(closed, ii);
