@@ -24,9 +24,7 @@ function scr_large_grid_attack_range(move_list, selected_actor){
 	
 	for (jj = 0; jj < ds_list_size(move_list);jj++)
 	{
-		ds_priority_clear(open);
-		
-		curr_move_node = ds_list_find_value(move_list, jj)
+		curr_move_node = ds_list_find_value(move_list, jj);
 		
 		//add starting node to open list
 		ds_priority_add(open,curr_move_node,curr_move_node.attack_G); //lowest score, since it's origin
@@ -37,7 +35,8 @@ function scr_large_grid_attack_range(move_list, selected_actor){
 			current_node = ds_priority_delete_min(open); //remove from open, put in current
 		
 			//add node to closed list so we don't look at it again
-			ds_list_add(closed,current_node);
+			if (current_node != curr_move_node)
+			{ds_list_add(closed,current_node);}
 		
 			//step through all of current's neighbours
 			for(ii = 0; ii < ds_list_size(current_node.neighbours); ii ++)
@@ -52,8 +51,8 @@ function scr_large_grid_attack_range(move_list, selected_actor){
 			
 				//attack cost?
 				 //if neighbour isn't on closed list, return -1
-				if (ds_list_find_index(closed, curr_neighbour) < 0 and ds_list_find_index(move_list, curr_neighbour) < 0
-				and current_node.attack_G + 1 <= range)
+				if //(ds_list_find_index(closed, curr_neighbour) < 0 and ds_list_find_index(move_list, curr_neighbour) < 0
+				( current_node.attack_G + 1 <= range)
 				{//only calculate new G for neighbour if it hasn't already been calculaated
 					if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
 					{
@@ -71,7 +70,7 @@ function scr_large_grid_attack_range(move_list, selected_actor){
 					else //if neighbour's score has already been calculated for the open list
 					{
 						//figure out if the neighbour's score would be LOWER if found from the current node
-					
+						
 						temp_G = current_node.attack_G + 1;
 					
 						//check if G score would be lower 
