@@ -1,18 +1,14 @@
 {
   "$GMTileSet":"v1",
-  "%Name":"til_mini_dungeon1",
-  "autoTileSets":[
-    {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
-        1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-      ],},
-  ],
+  "%Name":"til_dungeon_again",
+  "autoTileSets":[],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,
     "TileSerialiseData":[],
   },
-  "name":"til_mini_dungeon1",
-  "out_columns":12,
+  "name":"til_dungeon_again",
+  "out_columns":32,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -22,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"minidungautotile_newx2",
-    "path":"sprites/minidungautotile_newx2/minidungautotile_newx2.yy",
+    "name":"spr_dungeon_again",
+    "path":"sprites/spr_dungeon_again/spr_dungeon_again.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -32,11 +28,11 @@
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,
-  "tileHeight":64,
+  "tileHeight":16,
   "tilehsep":0,
   "tilevsep":0,
-  "tileWidth":32,
+  "tileWidth":16,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":96,
+  "tile_count":1024,
 }

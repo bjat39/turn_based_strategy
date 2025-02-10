@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_large_grid_attack_range_bounding",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_large_grid_attack_range_bounding",
+  "parent":{
+    "name":"attack_range",
+    "path":"folders/Scripts/ds_grid/ranges/attack_range.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
