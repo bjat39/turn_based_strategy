@@ -7,16 +7,19 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 	
 	var open, closed;//, closed; //node lists,
 	var start_node, current_node, curr_neighbour; //holds instance ids, start_node node, current node
-	var temp_G, range, cost_mod;
+	var temp_G, range, full_attack_range, cost_mod;
 	
 	//Declare relevant variables from arguments
 	start_node = origin_node;
 	range = move_range; //current number of nodes out we're going for
+	full_attack_range = range + attack_range;
 	
 	//Create data structures
 	open = ds_priority_create(); //list with a numerical priority attatched to each item, instance ids of nodes
 	//puts in nodes with priority equal to its g score, and we grab the lowest until there's nothing left
 	closed = ds_list_create();
+	
+	//attack_closed = ds_list_create();
 	
 	//add starting node to open list
 	ds_priority_add(open,start_node,start_node.G); //lowest score, since it's origin
@@ -47,15 +50,12 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 			{//only calculate new G for neighbour if it hasn't already been calculaated
 				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
 				{
-					cost_mod = 1;
 					
 					//give neighbour the appropriate parent
 					curr_neighbour.parent_node = current_node;
 					 
-					 //there would be diagonal movement code here changing ccost mod but i removed it
-					 
 					//calculate G score of neighbour, with cost_mod in place
-					curr_neighbour.G = current_node.G + (curr_neighbour.cost * cost_mod);
+					curr_neighbour.G = current_node.G + curr_neighbour.cost;
 					
 					//add neighbour to open list so it can be checked out too
 					ds_priority_add(open,curr_neighbour,curr_neighbour.G);
@@ -63,11 +63,40 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 				else //if neighbour's score has already been calculated for the open list
 				{
 					//figure out if the neighbour's score would be LOWER if found from the current node
-					cost_mod = 1;
 					
-					//there would be diagonal movement code here changing ccost mod but i removed it
+					temp_G = current_node.G + curr_neighbour.cost;
 					
-					temp_G = current_node.G + (curr_neighbour.cost + cost_mod);
+					//check if G score would be lower 
+					if (temp_G < curr_neighbour.G)
+					{
+						curr_neighbour.parent_node = current_node;
+						curr_neighbour.G = temp_G;
+						ds_priority_change_priority(open,curr_neighbour,curr_neighbour.G);
+					}
+					
+				}
+			} //attack node range
+			else if (ds_list_find_index(closed, curr_neighbour) < 0 and 
+			1 + current_node.G <= full_attack_range)
+			{
+				//only calculate new G for neighbour if it hasn't already been calculaated
+				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
+				{
+					curr_neighbour.attack_node = true;
+					//give neighbour the appropriate parent
+					curr_neighbour.parent_node = current_node;
+					 
+					//calculate G score of neighbour, with cost_mod in place
+					curr_neighbour.G = current_node.G + curr_neighbour.cost;
+					
+					//add neighbour to open list so it can be checked out too
+					ds_priority_add(open,curr_neighbour,curr_neighbour.G);
+				}
+				else //if neighbour's score has already been calculated for the open list
+				{
+					//figure out if the neighbour's score would be LOWER if found from the current node
+					curr_neighbour.attack_node = true;
+					temp_G = current_node.G + curr_neighbour.cost;
 					
 					//check if G score would be lower 
 					if (temp_G < curr_neighbour.G)
@@ -97,11 +126,17 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 	for(ii = 0; ii < ds_list_size(closed);ii++)
 	{
 		current_node = ds_list_find_value(closed, ii);
-		current_node.move_node = true;
-		//current_node.attack_node = true;
 		
-		scr_colour_move_node(current_node,move_range);
+		if (current_node.attack_node == false)
+		{
+			current_node.move_node = true;
+			//current_node.attack_node = true;
 		
+			scr_colour_move_node(current_node,move_range);
+		}
+		else{
+			scr_colour_attack_node(current_node)
+		}
 		
 		//attack shit
 		//x_dist = distance_to_point(temp_actor.x,y) //would have measuring to the center but it dont
@@ -112,7 +147,7 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 	
 	//search entire grid again, not very efficient but I'M FUCKING STUPID DOK
 	//should put it in previous for loop somewhere, just check each square and mark as attack square
-	scr_large_grid_attack_range(closed,selected_actor);
+	//scr_large_grid_attack_range(closed,selected_actor);
 	
 	//DESTROY closed list!!!!!
 	ds_list_destroy(closed);

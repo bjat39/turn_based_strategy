@@ -74,7 +74,7 @@ function scr_cursor_control(){
 				selected_actor.unit_state =	"selected";
 				//selected_actor.actions = 2;
 				scr_movement_range(hoverNode,
-					selected_actor.move,selected_actor.attack_range,selected_actor); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
+					selected_actor.move,selected_actor.attack_range_real,selected_actor); //first arg can also be: map[selected_actor.gridX,selected_actor.gridY]
 				//scr_attack_range(selected_actor);
 			}
 		}
