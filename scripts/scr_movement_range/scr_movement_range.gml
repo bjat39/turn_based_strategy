@@ -19,7 +19,7 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 	//puts in nodes with priority equal to its g score, and we grab the lowest until there's nothing left
 	closed = ds_list_create();
 	
-	//attack_closed = ds_list_create();
+	var attack_closed = ds_list_create();
 	
 	//add starting node to open list
 	ds_priority_add(open,start_node,start_node.G); //lowest score, since it's origin
@@ -31,7 +31,7 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 		
 		//add node to closed list so we don't look at it again
 		ds_list_add(closed,current_node);
-		
+			
 		//step through all of current's neighbours
 		for(ii = 0; ii < ds_list_size(current_node.neighbours); ii ++)
 		{
@@ -76,15 +76,15 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 					
 				}
 			} //attack node range
-			else if (ds_list_find_index(closed, curr_neighbour) < 0 and 
-			1 + current_node.G <= full_attack_range)
+			else if (ds_list_find_index(closed, curr_neighbour) < 0
+			and 1 + current_node.G <= full_attack_range)
 			{
 				//only calculate new G for neighbour if it hasn't already been calculaated
 				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
 				{
 					curr_neighbour.attack_node = true;
 					//give neighbour the appropriate parent
-					curr_neighbour.parent_node = current_node;
+					//curr_neighbour.parent_node = current_node;
 					 
 					//calculate G score of neighbour, with cost_mod in place
 					curr_neighbour.G = current_node.G + curr_neighbour.cost;
@@ -96,12 +96,12 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 				{
 					//figure out if the neighbour's score would be LOWER if found from the current node
 					curr_neighbour.attack_node = true;
-					temp_G = current_node.G + curr_neighbour.cost;
+					temp_G = current_node.G + 1;
 					
 					//check if G score would be lower 
 					if (temp_G < curr_neighbour.G)
 					{
-						curr_neighbour.parent_node = current_node;
+						//curr_neighbour.parent_node = current_node;
 						curr_neighbour.G = temp_G;
 						ds_priority_change_priority(open,curr_neighbour,curr_neighbour.G);
 					}
