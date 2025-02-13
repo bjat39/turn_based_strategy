@@ -5,7 +5,7 @@ actor_name = "Oriel";
 
 faction = "neft";//"player"; //what side they are affliliated with, affects turn order
 class = "Crossbowman";
-description = "An asocial Alenetian old man.\nHas a nasty disease.";
+description = "Ollllddddddddddddddd";
 
 //Base stats
 move = 7//6;//7

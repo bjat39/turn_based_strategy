@@ -5,7 +5,7 @@ actor_name = "Talia";
 
 faction = "neft"
 class = "Healer Woman";
-description = "A spirited Alenetian woman.\nA bit of a doormat, somehow.";
+description = "Boring";
 
 //Base stats
 move = 6; //5

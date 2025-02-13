@@ -49,6 +49,7 @@ function scr_cursor_move_selected(){
 		//	{cursor_move_delay_default = cursor_move_slow_actor_default;}
 		if (!map[gridX-1,gridY-1].move_node == false) //outside range?
 		{
+			scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 			cursor_move_slow_initial ++;
 			cursor_move_delay = cursor_move_delay_default;
 			obj_cursor.x -= GRID_SIZE;
@@ -58,9 +59,9 @@ function scr_cursor_move_selected(){
 	else if(vert_input == -1 and hori_input == 1 and right_boundary
 		and top_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
 		if (!map[gridX+1,gridY-1].move_node == false) //implement if not one tile away before moving into attack square, then block moving. else, move through attack square, so you can look at enemies stats
 		{
+			scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 			cursor_move_slow_initial ++;
 			cursor_move_delay = cursor_move_delay_default;
 			obj_cursor.x += GRID_SIZE;
@@ -71,9 +72,9 @@ function scr_cursor_move_selected(){
 	else if(vert_input == 1 and hori_input == 1 and bottom_boundary
 		and right_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
 		if (!map[gridX+1,gridY+1].move_node == false) //implement if not one tile away before moving into attack square, then block moving. else, move through attack square, so you can look at enemies stats
 		{
+			scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 			cursor_move_slow_initial ++;
 			cursor_move_delay = cursor_move_delay_default;
 			obj_cursor.x += GRID_SIZE;
@@ -83,9 +84,9 @@ function scr_cursor_move_selected(){
 	else if(vert_input == 1 and hori_input == -1 and bottom_boundary
 		and left_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
 		if (!map[gridX-1,gridY+1].move_node == false) //implement if not one tile away before moving into attack square, then block moving. else, move through attack square, so you can look at enemies stats
 		{
+			scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 			cursor_move_slow_initial ++;
 			cursor_move_delay = cursor_move_delay_default;
 			obj_cursor.x -= GRID_SIZE;
@@ -97,9 +98,9 @@ function scr_cursor_move_selected(){
 	//left
 	else if(hori_input == -1 and left_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
 		if (!map[gridX-1,gridY].move_node == false) //implement if not one tile away before moving into attack square, then block moving. else, move through attack square, so you can look at enemies stats
 		{
+			scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 			cursor_move_slow_initial ++;
 			cursor_move_delay = cursor_move_delay_default;
 			obj_cursor.x -= GRID_SIZE;
@@ -108,9 +109,9 @@ function scr_cursor_move_selected(){
 	}//right
 	else if(hori_input == 1 and right_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
 		if (!map[gridX+1,gridY].move_node == false) //implement if not one tile away before moving into attack square, then block moving. else, move through attack square, so you can look at enemies stats
 		{
+			scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 			cursor_move_slow_initial ++;
 			cursor_move_delay = cursor_move_delay_default;
 			obj_cursor.x += GRID_SIZE;
@@ -118,9 +119,10 @@ function scr_cursor_move_selected(){
 	}//down
 	else if(vert_input == 1 and bottom_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
+
 		if (!map[gridX,gridY+1].move_node == false) //implement if not one tile away before moving into attack square, then block moving. else, move through attack square, so you can look at enemies stats
 		{
+			scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 			cursor_move_slow_initial ++;
 			cursor_move_delay = cursor_move_delay_default;
 			obj_cursor.y += GRID_SIZE;
@@ -128,7 +130,7 @@ function scr_cursor_move_selected(){
 	}//upp
 	else if(vert_input == -1 and top_boundary and cursor_move_delay < 0)
 	{
-		//audio_play_sound(sfx_click1,4,0);
+		scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 		if (!map[gridX,gridY-1].move_node == false) //implement if not one tile away before moving into attack square, then block moving. else, move through attack square, so you can look at enemies stats
 		{
 			cursor_move_slow_initial ++;

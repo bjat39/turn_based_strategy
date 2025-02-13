@@ -78,6 +78,13 @@ function scr_cursor_control(){
 				//scr_attack_range(selected_actor);
 			}
 		}
+		else if (selected_actor != noone and selected_actor.ai_type != "player"){
+			scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
+			selected_actor.unit_state =	"idle";
+			selected_actor = noone;
+
+			scr_wipe_nodes();
+		}
 		else
 		{
 			//selected_actor = noone;
@@ -99,14 +106,24 @@ function scr_cursor_control(){
 	{
 		if (selected_actor != noone)
 		{
-			scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
-			selected_actor.unit_state =	"idle";
-			obj_cursor.x = selected_actor.x + GRID_SIZE/2;
-			obj_cursor.y = selected_actor.y + GRID_SIZE/2;
-			selected_actor = noone;
+			if (selected_actor.ai_type == "player")
+			{
+				scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
+				selected_actor.unit_state =	"idle";
+				obj_cursor.x = selected_actor.x + GRID_SIZE/2;
+				obj_cursor.y = selected_actor.y + GRID_SIZE/2;
+				selected_actor = noone;
 			
-			player_state = "cursor_explore"; //unit state moved?
-			scr_wipe_nodes();
+				player_state = "cursor_explore"; //unit state moved?
+				scr_wipe_nodes();
+			}
+			else{ //click enemy
+				scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
+				selected_actor.unit_state =	"idle";
+				selected_actor = noone;
+
+				scr_wipe_nodes();
+			}
 		}
 	}
 	
