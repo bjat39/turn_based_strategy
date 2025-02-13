@@ -5,7 +5,7 @@
 
 #macro CAM_SMOOTH 0.1
 
-size = 1; //size slows down animation, massive quaking steps sfx
+size = 1;
 faux_size = size;
 
 //Enable views
@@ -45,5 +45,4 @@ else
 	camera_set_view_pos(camera,0,0);
 }
 
-//HELLO INTERNET WELCOME TO GAME THEO
 //window_set_fullscreen(true);

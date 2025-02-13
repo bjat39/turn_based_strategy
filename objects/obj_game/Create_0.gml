@@ -34,6 +34,8 @@ turn_counter = 0; //after player phase and enemy phase, this is incremented by 1
 
 ai_unit_counter = 0;
 
+neft_input_counter = 0; //keeps track of which unit is hovered over when neft input
+
 neft_list = ds_list_create(); //list of neft actors,player phase, enemy phase
 ally_list = ds_list_create();
 aleneti_list = ds_list_create(); //determines the order enemies move in their phase
@@ -46,7 +48,7 @@ finished_strucian_list = ds_list_create();
 
 //ds_list_add(round_order,"checking");
 
-
+//switch around when finished, neft goes first for debug purposes
 if (instance_exists(par_neft_faction)) //doesn't fucking work yet because obj_neft doesn't exist or some shit so we repeat this code later
 {//commented code is in scr_initialise_grid now
 	ds_list_add(round_order,"neft_faction_turn"); //usually 0 on turn_counter
@@ -55,15 +57,19 @@ if (instance_exists(par_neft_faction)) //doesn't fucking work yet because obj_ne
 	//	ds_list_add(other.neft_list,id)
 	//}
 }
+if (instance_exists(par_strucia_faction))
+{
+	ds_list_add(round_order,"strucia_faction_turn");
+}
 if (instance_exists(par_aleneti_faction))
 {
 	ds_list_add(round_order,"aleneti_faction_turn");
-	
-	//with(par_aleneti_faction)
-	//{
-	//	ds_list_add(other.aleneti_list,id)
-	//}
 }
+if (instance_exists(par_ally_faction))
+{
+	ds_list_add(round_order,"ally_faction_turn");
+}
+
 
 //turn_max = 0; ds_list_size()
 

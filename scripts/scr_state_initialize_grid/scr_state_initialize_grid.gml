@@ -55,6 +55,20 @@ function scr_state_initialize_grid(){
 			ds_list_add(other.aleneti_list,id)
 		}
 	}
+	if (instance_exists(par_strucia_faction))
+	{
+		with(par_strucia_faction)
+		{
+			ds_list_add(other.strucia_list,id)
+		}
+	}
+	if (instance_exists(par_ally_faction))
+	{
+		with(par_ally_faction)
+		{
+			ds_list_add(other.ally_list,id)
+		}
+	}
 	
 	game_state = ds_list_find_value(round_order,0); //"player";
 	

@@ -129,26 +129,33 @@ function scr_cursor_control(){
 	
 	if (obj_game.neft_input) //return to neft, mc
 	{
-		scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
-		if (instance_exists(obj_neft))
+		var neft_unit;
+		if (hoverNode.occupant != noone)
 		{
-			obj_cursor.x = obj_neft.x + GRID_SIZE/2;
-			obj_cursor.y = obj_neft.y + GRID_SIZE/2;
-		}
-		else if (instance_exists(obj_talia))
-		{
-			obj_cursor.x = obj_talia.x + GRID_SIZE/2;
-			obj_cursor.y = obj_talia.y + GRID_SIZE/2;
-		}
-		else if (instance_exists(obj_oriel))
-		{
-			obj_cursor.x = obj_oriel.x + GRID_SIZE/2;
-			obj_cursor.y = obj_oriel.y + GRID_SIZE/2;
+			if (hoverNode.occupant.faction == "neft")
+			{
+				if (neft_input_counter + 1 > ds_list_size(neft_list)-1){
+					neft_input_counter ++;
+				}
+				else{
+					neft_input_counter = 0;
+				}
+				neft_unit = ds_list_find_value(neft_list,neft_input_counter);
+				obj_cursor.x = neft_unit.x + GRID_SIZE/2;
+				obj_cursor.y = neft_unit.y + GRID_SIZE/2;
+			}
 		}
 		else
 		{
-			obj_cursor.x = GRID_SIZE/2;
-			obj_cursor.y = GRID_SIZE/2;
+			scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
+			if (instance_exists(par_neft_faction))
+			{
+				neft_input_counter = 0;
+				neft_unit = ds_list_find_value(obj_game.neft_list,neft_input_counter);
+				obj_cursor.x = neft_unit.x + GRID_SIZE/2;
+				obj_cursor.y = neft_unit.y + GRID_SIZE/2;
+			}
+			
 		}
 	}
 }

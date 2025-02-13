@@ -60,11 +60,16 @@ if (obj_game.return_input)
 		////update selected actor's future node
 		//hoverNode.occupant = selected_actor;
 	
-		obj_cursor.x = curr_actor.x + GRID_SIZE/2;
-		obj_cursor.y = curr_actor.y + GRID_SIZE/2;
-	
-		obj_game.selected_actor = noone;
-		obj_game.player_state = "cursor_explore"; //unit state moved?
+		//obj_cursor.x = curr_actor.x + GRID_SIZE/2;
+		//obj_cursor.y = curr_actor.y + GRID_SIZE/2;
+		scr_play_sound(_066_Equip_06,3,0,obj_game.sfx_gain);
+		scr_wipe_nodes();
+		curr_actor.unit_state =	"selected";
+				//selected_actor.actions = 2;
+		scr_movement_range(curr_actor.current_node,
+			curr_actor.move,curr_actor.attack_range_real,curr_actor);
+		//obj_game.selected_actor = noone;
+		obj_game.player_state = "cursor_selected"; //unit state moved?
 		instance_destroy();
 	}
 }
