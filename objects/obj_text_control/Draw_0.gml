@@ -53,17 +53,17 @@ if (global.hud_on == true)
 					finish_right_slide = true;
 				}
 			}
-			draw_sprite_ext(spr_portrait_neft_beta, right_char_index, margin_char + right_slide_in, room_height -75,size[me],size[me],0,colour[me],1);
+			draw_sprite_ext(neft_pixel, right_char_index, margin_char + right_slide_in, room_height -75,size[me],size[me],0,colour[me],1);
 		}
 		else if (right_char_index != old_right_char_index and finish_right_slide == true)
 		{
 			right_slide_in = 20;
 			finish_right_slide = false;
-			draw_sprite_ext(spr_portrait_neft_beta, right_char_index, margin_char + right_slide_in, room_height -75,size[me],size[me],0,colour[me],1);
+			draw_sprite_ext(neft_pixel, right_char_index, margin_char + right_slide_in, room_height -75,size[me],size[me],0,colour[me],1);
 		}
 		else
 		{
-			draw_sprite_ext(spr_portrait_neft_beta, right_char_index, margin_char + right_slide_in, room_height -75,size[me],size[me],0,colour[me],1);
+			draw_sprite_ext(neft_pixel, right_char_index, margin_char + right_slide_in, room_height -75,size[me],size[me],0,colour[me],1);
 		}
 		
 		//Left

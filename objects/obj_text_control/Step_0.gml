@@ -10,7 +10,7 @@ if (global.hud_on == false)
 	}
 }
 else
-if ChatterboxIsWaiting(chatterbox) and (keyboard_check_pressed(vk_space) or keyboard_check(vk_control)) //waiting for human input
+if ChatterboxIsWaiting(chatterbox) and (keyboard_check_pressed(obj_game.accept_input) or keyboard_check(obj_game.return_input)) //waiting for human input
 {
 	var str_len = string_length(ChatterboxGetContent(chatterbox,0));
 	if (char_current < str_len)

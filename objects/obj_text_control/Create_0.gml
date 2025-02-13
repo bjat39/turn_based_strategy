@@ -24,7 +24,7 @@ chatterbox = ChatterboxCreate(); //Create a chatterbox
 
 	option_index = 0; //Initialise option index
 	scr_chatterbox_update() //Get current node and current node text
-	size = [1,0.9]; //Character sprite scale (small and large)
+	size = [1,1]; //Character sprite scale (small and large)
 	colour = [c_white,c_ltgray]; //Character sprite blend (dark out character)
 
 	char_current = 1;
@@ -46,11 +46,13 @@ chatterbox = ChatterboxCreate(); //Create a chatterbox
 //}
 
 
-
-right_char_index = 0;//0;
-left_char_index = 0;//2;//1;
-old_right_char_index = 0;
-old_left_char_index = 0;
+first_char_index = 0;
+second_char_index = 0;
+third_char_index = 0;
+//right_char_index = 0;//0;
+//left_char_index = 0;//2;//1;
+//old_right_char_index = 0;
+//old_left_char_index = 0;
 
 right_slide_in = 20;
 left_slide_in = 20;
