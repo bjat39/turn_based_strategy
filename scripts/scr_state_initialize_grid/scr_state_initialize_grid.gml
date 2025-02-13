@@ -43,9 +43,16 @@ function scr_state_initialize_grid(){
 	
 	if (instance_exists(par_neft_faction)) //doesn't fucking work yet because obj_neft doesn't exist or some shit so we repeat this code later
 	{
+		if (instance_exists(obj_neft))
+		{
+			ds_list_add(other.neft_list,obj_neft);
+		}
 		with(par_neft_faction)
 		{
-			ds_list_add(other.neft_list,id)
+			if (object_index != obj_neft)
+			{
+				ds_list_add(other.neft_list,id);
+			}
 		}
 	}
 	if (instance_exists(par_aleneti_faction))

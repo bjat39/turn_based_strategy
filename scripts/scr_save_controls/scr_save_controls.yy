@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_",
+  "%Name":"scr_save_controls",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_",
+  "name":"scr_save_controls",
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Scripts/ds_grid.yy",
+    "name":"settings",
+    "path":"folders/Scripts/ds_grid/settings.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

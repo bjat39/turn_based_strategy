@@ -16,8 +16,6 @@ if (global.hud_on == true)
 		//var me = (ChatterboxGetContentSpeaker(chatterbox,0) == "Me");
 		var me = (ChatterboxGetContentSpeaker(chatterbox,0) == "Me" or ChatterboxGetContentSpeaker(chatterbox,0) == noone);
 		char_id = ChatterboxGetContentSpeaker(chatterbox,0);
-		old_right_char_index = right_char_index;
-		old_left_char_index = left_char_index;
 		
 		if (char_id == "Triangleface" or char_id == "Some guy" or char_id == "Bingo")
 		{

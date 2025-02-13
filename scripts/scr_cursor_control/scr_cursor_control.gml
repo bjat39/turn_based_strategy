@@ -127,14 +127,25 @@ function scr_cursor_control(){
 		}
 	}
 	
+	if (obj_game.stat_input)
+	{
+		if (hoverNode.occupant != noone)
+		{
+			player_state = "cursor_explore";
+			scr_play_sound(_066_Equip_06,3,0,obj_game.sfx_gain);
+			instance_create_layer(60,60,"Menu",obj_stat_menu);
+		}
+	}
+	
 	if (obj_game.neft_input) //return to neft, mc
 	{
 		var neft_unit;
+		scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
 		if (hoverNode.occupant != noone)
 		{
 			if (hoverNode.occupant.faction == "neft")
 			{
-				if (neft_input_counter + 1 > ds_list_size(neft_list)-1){
+				if (neft_input_counter + 1 < ds_list_size(neft_list)){
 					neft_input_counter ++;
 				}
 				else{
@@ -144,10 +155,48 @@ function scr_cursor_control(){
 				obj_cursor.x = neft_unit.x + GRID_SIZE/2;
 				obj_cursor.y = neft_unit.y + GRID_SIZE/2;
 			}
+			else if (hoverNode.occupant.faction == "aleneti")
+			{
+				neft_input_counter = ds_list_find_index(aleneti_list, hoverNode.occupant);
+				if (neft_input_counter + 1 < ds_list_size(aleneti_list)){
+					neft_input_counter ++;
+				}
+				else{
+					neft_input_counter = 0;
+				}
+				neft_unit = ds_list_find_value(aleneti_list,neft_input_counter);
+				obj_cursor.x = neft_unit.x + GRID_SIZE/2;
+				obj_cursor.y = neft_unit.y + GRID_SIZE/2;
+			}
+			else if (hoverNode.occupant.faction == "strucia")
+			{
+				neft_input_counter = ds_list_find_index(strucia_list, hoverNode.occupant);
+				if (neft_input_counter + 1 < ds_list_size(strucia_list)){
+					neft_input_counter ++;
+				}
+				else{
+					neft_input_counter = 0;
+				}
+				neft_unit = ds_list_find_value(strucia_list,neft_input_counter);
+				obj_cursor.x = neft_unit.x + GRID_SIZE/2;
+				obj_cursor.y = neft_unit.y + GRID_SIZE/2;
+			}
+			else if (hoverNode.occupant.faction == "ally")
+			{
+				neft_input_counter = ds_list_find_index(ally_list, hoverNode.occupant);
+				if (neft_input_counter + 1 < ds_list_size(ally_list)){
+					neft_input_counter ++;
+				}
+				else{
+					neft_input_counter = 0;
+				}
+				neft_unit = ds_list_find_value(ally_list,neft_input_counter);
+				obj_cursor.x = neft_unit.x + GRID_SIZE/2;
+				obj_cursor.y = neft_unit.y + GRID_SIZE/2;
+			}
 		}
 		else
 		{
-			scr_play_sound(sfx_return_book1,3,0,obj_game.sfx_gain);
 			if (instance_exists(par_neft_faction))
 			{
 				neft_input_counter = 0;
@@ -155,7 +204,6 @@ function scr_cursor_control(){
 				obj_cursor.x = neft_unit.x + GRID_SIZE/2;
 				obj_cursor.y = neft_unit.y + GRID_SIZE/2;
 			}
-			
 		}
 	}
 }

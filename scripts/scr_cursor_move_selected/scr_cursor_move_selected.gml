@@ -139,5 +139,4 @@ function scr_cursor_move_selected(){
 		}
 	}
 	
-
 }
