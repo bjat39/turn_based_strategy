@@ -1,7 +1,7 @@
 /// @description 
 event_inherited();
-width = 124;
-height = 104;
+width = obj_camera1.camW;
+height = obj_camera1.camH;
 
 spr_index = spr_nine_slice;
 

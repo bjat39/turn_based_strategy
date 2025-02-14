@@ -90,7 +90,7 @@
     {"name":"obj_resolution_control","order":11,"path":"objects/obj_resolution_control/obj_resolution_control.yy",},
     {"name":"obj_settings","order":5,"path":"objects/obj_settings/obj_settings.yy",},
     {"name":"obj_spearman","order":12,"path":"objects/obj_spearman/obj_spearman.yy",},
-    {"name":"obj_stat_menu1","order":5,"path":"objects/obj_stat_menu1/obj_stat_menu1.yy",},
+    {"name":"obj_stat_menu","order":5,"path":"objects/obj_stat_menu/obj_stat_menu.yy",},
     {"name":"obj_talia","order":1,"path":"objects/obj_talia/obj_talia.yy",},
     {"name":"obj_text_control","order":4,"path":"objects/obj_text_control/obj_text_control.yy",},
     {"name":"obj_title_menu","order":2,"path":"objects/obj_title_menu/obj_title_menu.yy",},
