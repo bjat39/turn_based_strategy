@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_draw_txt_border",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_draw_txt_border",
+  "parent":{
+    "name":"ds_grid",
+    "path":"folders/Scripts/ds_grid.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -16,6 +16,15 @@ attack_target = noone;
 attack_timer = 0;
 damage_type = "melee" //Weapon triangle
 
+idle_anim = spr_echo_talia;
+hover_anim = spr_echo_talia;
+run_anim = spr_echo_talia;
+attack_anim = spr_echo_talia;
+defend_anim = spr_echo_talia;
+crit_anim = spr_echo_talia;
+
+portrait = neft_pixel;
+
 level = 1;
 
 max_hit_points = 20;

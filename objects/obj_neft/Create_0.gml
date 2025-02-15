@@ -18,6 +18,15 @@ damage_type = "magic"; //Weapon triangle
 
 ds_list_add(ability_list,"Overcharge");//+1 range,+6damage,+20%hitrate
 
+idle_anim = spr_echo_neft;
+hover_anim = spr_echo_neft;
+run_anim = spr_echo_oriel;
+attack_anim = spr_echo_neft;
+defend_anim = spr_echo_neft;
+crit_anim = spr_echo_neft;
+
+portrait = neft_pixel;
+
 level = 1;
 
 max_hit_points = 16;

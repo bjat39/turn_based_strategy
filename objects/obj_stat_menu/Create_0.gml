@@ -3,6 +3,9 @@ event_inherited();
 width = obj_camera1.camW;
 height = obj_camera1.camH;
 
+curr_actor = obj_game.hoverNode.occupant;
+por = curr_actor.portrait;
+
 spr_index = spr_nine_slice;
 
 op_border = 16; //border between text and edge

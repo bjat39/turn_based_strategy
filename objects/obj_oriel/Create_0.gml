@@ -16,6 +16,15 @@ attack_target = noone;
 attack_timer = 0;
 damage_type = "bow" //Weapon triangle
 
+idle_anim = spr_echo_oriel;
+hover_anim = spr_echo_oriel;
+run_anim = spr_echo_oriel;
+attack_anim = spr_echo_oriel;
+defend_anim = spr_echo_oriel;
+crit_anim = spr_echo_oriel;
+
+portrait = neft_pixel;
+
 level = 1;
 
 max_hit_points = 30;

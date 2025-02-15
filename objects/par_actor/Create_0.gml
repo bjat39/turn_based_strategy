@@ -57,6 +57,15 @@ max_first_ability_uses = first_ability_uses;
 second_ability_uses = 3; //how many times per map
 max_second_ability_uses = second_ability_uses;
 
+idle_anim = spr_echo_talia;
+hover_anim = spr_echo_talia;
+run_anim = spr_echo_talia;
+attack_anim = spr_echo_talia;
+defend_anim = spr_echo_talia;
+crit_anim = spr_echo_talia;
+
+portrait = noone;
+
 //Base stats
 move = 5;
 
@@ -71,7 +80,7 @@ move_target = noone; //ai what node to move to when attack
 
 damage_type = "melee"; //Weapon triangle
 
-level = 1;
+level_bar = 1;
 experience_points = 0;
 
 max_hit_points = 1;
