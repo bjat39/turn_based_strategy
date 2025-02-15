@@ -50,12 +50,15 @@ targeting_type = "error";
 action_range = 0; //no goddamn idea what this does
 
 
-//Abilities, player characters have abilities
+//Techniques, player characters have abilities ()
 ability_list = ds_list_create();
 first_ability_uses = 3; //how many times per map
 max_first_ability_uses = first_ability_uses;
 second_ability_uses = 3; //how many times per map
 max_second_ability_uses = second_ability_uses;
+
+//Trait (skills in fire emblem)
+trait_list = ds_list_create();
 
 idle_anim = spr_echo_talia;
 hover_anim = spr_echo_talia;
@@ -88,20 +91,20 @@ current_hit_points = max_hit_points;
 
 strength_stat = 0;
 magic_stat = 0; //only for mages, instead of strength
-marksman_stat = 0; //affects hit rate, affects sight range in fog of war, useless for melee (used to be skill) (range? how much range until it falls off.) 
+skill_stat = 0; //affects hit rate, affects sight range in fog of war, useless for melee (used to be skill) (range? how much range until it falls off.) 
 //(+3 points = 1 tile can be hit for sure? but i kind of want accuracy to fall off slowly tho) (total range stat to make it easy to see? make it hard to get one tile of guarantee) (so +4 to get one tile?)
 speed_stat = 0; //affects evasion, if unit has +5 more speed than enemy, double attack
 defence_stat = 0;
 resistance_stat = 0; //magic defense
 luck_stat = 0; //affect hit and evasion (+1 to percentages)
 
-attack_range = 2 * GRID_SIZE;//marksman_stat / 4;
+attack_range = 2 * GRID_SIZE;//skill_stat / 4;
 
 //Growth rate percentage chance (%) per level up
 max_hit_points_growth = 100;
 strength_growth = 100;
 magic_growth = 0;
-marksman_growth = 0;
+skill_growth = 0;
 speed_growth = 50;
 defence_growth = 85;
 resistance_growth = 0; //magic defense

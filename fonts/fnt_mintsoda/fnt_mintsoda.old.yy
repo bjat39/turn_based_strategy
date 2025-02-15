@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fnt_courier",
+  "%Name":"fnt_mintsoda",
   "AntiAlias":0,
   "applyKerning":0,
   "ascender":9,
@@ -117,7 +117,7 @@
   "last":0,
   "lineHeight":11,
   "maintainGms1Font":false,
-  "name":"fnt_courier",
+  "name":"fnt_mintsoda",
   "parent":{
     "name":"Fonts",
     "path":"folders/Fonts.yy",

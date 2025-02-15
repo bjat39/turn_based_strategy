@@ -32,19 +32,19 @@ current_hit_points = max_hit_points;
 
 strength_stat = 28; //20
 magic_stat = noone; //only for mages, instead of strength
-marksman_stat = 18; //affects hit rate, useless for melee
+skill_stat = 18; //affects hit rate, useless for melee
 speed_stat = 13; //affects evasion, if unit has +5 more speed than enemy, double attack
 defence_stat = 18;
 resistance_stat = 9; //magic defense
 luck_stat = 14; //affect hit and evasion (+1 to percentages)
 
-//attack_range = 8 * GRID_SIZE;//marksman_stat / 4;
+//attack_range = 8 * GRID_SIZE;//skill_stat / 4;
 
 //Growth rate percentage chance (%) per level up
 max_hit_points_growth = 85;
 strength_growth = 55;
 magic_growth = noone;
-marksman_growth = 40;
+skill_growth = 40;
 speed_growth = 45;
 defence_growth = 40;
 resistance_growth = 25; //magic defense
