@@ -57,6 +57,7 @@
     {"name":"fnt_courier_1","order":2,"path":"fonts/fnt_courier_1/fnt_courier_1.yy",},
     {"name":"fnt_courier_2","order":3,"path":"fonts/fnt_courier_2/fnt_courier_2.yy",},
     {"name":"fnt_courier_3","order":4,"path":"fonts/fnt_courier_3/fnt_courier_3.yy",},
+    {"name":"fnt_courier_4","order":6,"path":"fonts/fnt_courier_4/fnt_courier_4.yy",},
     {"name":"fnt_courier","order":1,"path":"fonts/fnt_courier/fnt_courier.yy",},
     {"name":"fnt_newfont","order":5,"path":"fonts/fnt_newfont/fnt_newfont.yy",},
     {"name":"obj_arrow","order":2,"path":"objects/obj_arrow/obj_arrow.yy",},

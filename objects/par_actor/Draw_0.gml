@@ -36,5 +36,5 @@ else
 //draw health
 if (unit_state != "dying")//current_hit_points > 0)
 {
-	draw_healthbar(x,y+GRID_SIZE-1,x+GRID_SIZE,y+GRID_SIZE,current_hit_points/max_hit_points * 100,c_black,c_red,c_yellow,0,true,true);
+	draw_healthbar(x,y+GRID_SIZE-1,x+GRID_SIZE,y+GRID_SIZE,current_hit_points/max_hit_points * 100,c_black,c_red,c_yellow,1,true,true);
 }

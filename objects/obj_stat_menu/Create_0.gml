@@ -8,6 +8,12 @@ por = curr_actor.portrait;
 
 spr_index = spr_nine_slice;
 
+background_x_1 = -640;
+background_x_2 = 0;
+
+c_light_purple = make_color_rgb(237,201,239);
+c_light_yellow = make_color_rgb(239,239,151);
+
 op_border = 16; //border between text and edge
 op_space = 16; //y distance between options
 

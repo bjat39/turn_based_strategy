@@ -1,5 +1,10 @@
 /// @description 
 event_inherited();
+background_x_1 += 0.2;
+background_x_2 += 0.2;
+
+if (background_x_1 >= 640){background_x_1 = -640;}
+if (background_x_2 >= 640){background_x_2 = -640;}
 //var up_key = keyboard_check_pressed(vk_up);
 //var down_key = keyboard_check_pressed(vk_down);
 
