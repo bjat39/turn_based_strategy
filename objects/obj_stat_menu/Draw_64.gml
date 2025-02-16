@@ -13,12 +13,12 @@
 draw_sprite_ext(stat_screen_back,0,background_x_1,0,1,1,0,c_white,1);
 draw_sprite_ext(stat_screen_back,0,background_x_2,0,1,1,0,c_white,1);
 
-//stats box
-draw_sprite_ext(spr_index,0,40,130,4.25,1,0,c_white,1);
-//inventory box
+//stat box
 draw_sprite_ext(spr_index,0,40,45,4.25,0.75,0,c_white,1);
-//inventory box
+//ability and trait box
 draw_sprite_ext(spr_index,0,40,80,4.25,0.75,0,c_white,1);
+//inventory box
+draw_sprite_ext(spr_index,0,40,120,4.25,1,0,c_white,1); 
 //portrait box
 draw_sprite_ext(spr_index,0,225,60,1.75,2.5,0,c_white,1);
 
@@ -59,10 +59,10 @@ scr_draw_txt_border(50,61,"Res: ",c_black,c_light_yellow);
 scr_draw_txt_border(75,61,string(curr_actor.resistance_stat),c_black,c_white);
 
 for (ii = 0; ii < ds_list_size(curr_actor.ability_list);ii++){
-scr_draw_txt_border(130,110,ds_list_find_value(curr_actor.ability_list,ii),c_black,c_light_yellow);}
+scr_draw_txt_border(50,85 + ii * 4,ds_list_find_value(curr_actor.ability_list,ii),c_black,c_purple);}
 
 for (ii = 0; ii < ds_list_size(curr_actor.trait_list);ii++){
-draw_sprite_ext(empty_icon,130,50 + ii * 4,100,1,1,0,c_white,1);}
+draw_sprite_ext(empty_icon,0,140 + ii * 4,100,1,1,0,c_white,1);}
 //draw_text_colour(55,50,"Str: " + string(curr_actor.strength_stat), c_white, c_white, c_white, c_white, 1);
 //draw_text_colour(55,60,"Mag: " + string(curr_actor.magic_stat), c_white, c_white, c_white, c_white, 1);
 
