@@ -14,13 +14,15 @@ draw_sprite_ext(stat_screen_back,0,background_x_1,0,1,1,0,c_white,1);
 draw_sprite_ext(stat_screen_back,0,background_x_2,0,1,1,0,c_white,1);
 
 //stats box
-draw_sprite_ext(spr_index,0,40,130,4.25,0.75,0,c_white,1);
+draw_sprite_ext(spr_index,0,40,130,4.25,1,0,c_white,1);
 //inventory box
-draw_sprite_ext(spr_index,0,40,45,4.25,2,0,c_white,1);
+draw_sprite_ext(spr_index,0,40,45,4.25,0.75,0,c_white,1);
+//inventory box
+draw_sprite_ext(spr_index,0,40,80,4.25,0.75,0,c_white,1);
 //portrait box
 draw_sprite_ext(spr_index,0,225,60,1.75,2.5,0,c_white,1);
 
-draw_sprite_ext(por,0,280,80,-1,1,0,c_white,1);
+draw_sprite_ext(por,0,260,159,1,1,0,c_white,1);
 
 draw_sprite_ext(curr_actor.hover_anim,0,250,43,-1,1,0,c_white,1);
 
@@ -28,7 +30,7 @@ draw_healthbar(220,20,290,30,curr_actor.current_hit_points/curr_actor.max_hit_po
 
 scr_draw_txt_border(230,20,"HP: " + string(curr_actor.current_hit_points) + " / " + string(curr_actor.max_hit_points),c_black,c_white);
 scr_draw_txt_border(260,31,"Lvl: " + string(curr_actor.level_bar),c_black,c_white);
-scr_draw_txt_border(260,42,"Exp: " + string(curr_actor.experience_points),c_black,c_white);
+scr_draw_txt_border(258,42,"Exp: " + string(curr_actor.experience_points),c_black,c_white);
 
 draw_set_font(fnt_newfont);
 scr_draw_txt_border(35,15,"Personal Information",c_black,c_yellow);
