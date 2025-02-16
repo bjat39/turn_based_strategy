@@ -73,6 +73,7 @@
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"beginning.yarn","CopyToMask":-1,"filePath":"datafiles","name":"beginning.yarn","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"road_scene1.yarn","CopyToMask":-1,"filePath":"datafiles","name":"road_scene1.yarn","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"weapons_old.ini","CopyToMask":-1,"filePath":"datafiles","name":"weapons_old.ini","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"weapons.ini","CopyToMask":-1,"filePath":"datafiles","name":"weapons.ini","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
