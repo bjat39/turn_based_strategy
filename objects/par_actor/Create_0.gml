@@ -70,7 +70,7 @@ attack_anim = spr_echo_talia;
 defend_anim = spr_echo_talia;
 crit_anim = spr_echo_talia;
 
-portrait = noone;
+portrait = spr_biff;
 
 //Base stats
 move = 5;
