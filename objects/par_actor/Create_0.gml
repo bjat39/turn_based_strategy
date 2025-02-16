@@ -60,6 +60,9 @@ max_second_ability_uses = second_ability_uses;
 //Trait (skills in fire emblem)
 trait_list = ds_list_create();
 
+//Inventory
+inventory_list = ds_list_create();
+
 idle_anim = spr_echo_talia;
 hover_anim = spr_echo_talia;
 run_anim = spr_echo_talia;

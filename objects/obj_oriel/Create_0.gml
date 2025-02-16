@@ -16,6 +16,10 @@ attack_target = noone;
 attack_timer = 0;
 damage_type = "bow" //Weapon triangle
 
+ds_list_add(ability_list,"Poison Bolt");//"Overcharge");//+1 range,+6damage,+20%hitrate
+
+ds_list_add(trait_list,"Disintegration");
+
 idle_anim = spr_echo_oriel;
 hover_anim = spr_echo_oriel;
 run_anim = spr_echo_oriel;
