@@ -25,6 +25,13 @@ function scr_state_initialize_grid(){
 					terrain_defense = 2;
 			
 					break;
+				case "chest":
+					instance_change(obj_chest,true); //change to tree, retains information from previous
+					terrain_type = "chest";
+					sprite_index = chest1;
+					passable = false;
+			
+					break;
 			}
 	
 			with(tempTerrain)

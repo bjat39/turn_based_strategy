@@ -32,6 +32,9 @@ scr_draw_txt_border(230,20,"HP: " + string(curr_actor.current_hit_points) + " / 
 scr_draw_txt_border(260,31,"Lvl: " + string(curr_actor.level_bar),c_black,c_white);
 scr_draw_txt_border(258,42,"Exp: " + string(curr_actor.experience_points),c_black,c_white);
 
+scr_draw_txt_border(245,65,string(curr_actor.actor_name),c_black,c_light_yellow);
+
+
 draw_set_font(fnt_newfont);
 scr_draw_txt_border(35,15,"Personal Information",c_black,c_yellow);
 //draw_text_colour(50,15,"Personal Information", c_white, c_white, c_white, c_white, 1);
@@ -62,7 +65,7 @@ for (ii = 0; ii < ds_list_size(curr_actor.ability_list);ii++){
 scr_draw_txt_border(50,85 + ii * 4,ds_list_find_value(curr_actor.ability_list,ii),c_black,c_purple);}
 
 for (ii = 0; ii < ds_list_size(curr_actor.trait_list);ii++){
-draw_sprite_ext(empty_icon,0,140 + ii * 4,100,1,1,0,c_white,1);}
+draw_sprite_ext(empty_icon,0,220 + ii * 4,45,1,1,0,c_white,1);}
 //draw_text_colour(55,50,"Str: " + string(curr_actor.strength_stat), c_white, c_white, c_white, c_white, 1);
 //draw_text_colour(55,60,"Mag: " + string(curr_actor.magic_stat), c_white, c_white, c_white, c_white, 1);
 

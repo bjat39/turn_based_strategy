@@ -1,17 +1,35 @@
 /// @description Set up global items, traits, abilities, rooms?
-function LoadWeaponData() {
-    // Load weapon data from the INI file
-    global.weapons = [];
-    for (var i = 1; i <= 12; i++) {
-        var weapon = {
-            name: ini_read_string("Weapon" + string(i), "Name", ""),
-            type: ini_read_string("Weapon" + string(i), "Type", ""),
-            might: ini_read_real("Weapon" + string(i), "Might", 0),
-            hit: ini_read_real("Weapon" + string(i), "Hit", 0),
-            crit: ini_read_real("Weapon" + string(i), "Crit", 0),
-            weight: ini_read_real("Weapon" + string(i), "Weight", 0),
-            durability: ini_read_real("Weapon" + string(i), "Durability", 0)
-        };
-        array_push(global.weapons, weapon);
+// Load weapon data from the INI file
+// Open the INI file
+ini_open("items.ini");
+
+// Load item data from the INI file
+global.items = [];
+for (var i = 1; i <= 29; i++) {
+    var item = {
+        name: ini_read_string("Item" + string(i), "Name", ""),
+        type: ini_read_string("Item" + string(i), "Type", "")
+    };
+
+    // Load weapon-specific data
+    if (itemType == "Weapon") {
+		item.weapontype = ini_read_string("Item" + string(i), "WeaponType", "");
+        item.might = ini_read_real("Item" + string(i), "Might", 0);
+        item.hit = ini_read_real("Item" + string(i), "Hit", 0);
+        item.crit = ini_read_real("Item" + string(i), "Crit", 0);
+        item.durability = ini_read_real("Item" + string(i), "Durability", 0);
     }
+    // Load consumable-specific data
+    else if (itemType == "Consumable") {
+        item.effect = ini_read_string("Item" + string(i), "Effect", "");
+    }
+    // Load key-specific data
+    else if (itemType == "Key") {
+        item.effect = ini_read_string("Item" + string(i), "Effect", "");
+    }
+
+    array_push(global.items, item);
 }
+
+// Close the INI file
+ini_close();
