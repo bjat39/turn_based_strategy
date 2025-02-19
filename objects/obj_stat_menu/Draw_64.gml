@@ -29,8 +29,10 @@ draw_sprite_ext(curr_actor.hover_anim,0,250,43,-1,1,0,c_white,1);
 draw_healthbar(220,20,290,30,curr_actor.current_hit_points/curr_actor.max_hit_points * 100,c_black,c_red,c_yellow,1,true,true);
 
 scr_draw_txt_border(230,20,"HP: " + string(curr_actor.current_hit_points) + " / " + string(curr_actor.max_hit_points),c_black,c_white);
-scr_draw_txt_border(260,31,"Lvl: " + string(curr_actor.level_bar),c_black,c_white);
-scr_draw_txt_border(258,42,"Exp: " + string(curr_actor.experience_points),c_black,c_white);
+scr_draw_txt_border(260,31,"Lvl: " ,c_black,c_light_yellow);
+scr_draw_txt_border(285,31,+ string(curr_actor.level_bar), c_black, c_white)
+scr_draw_txt_border(220,31,"Mov: ",c_black,c_light_yellow);
+scr_draw_txt_border(250,31,string(curr_actor.move),c_black,c_white);
 
 scr_draw_txt_border(245,65,string(curr_actor.actor_name),c_black,c_light_yellow);
 
@@ -63,6 +65,9 @@ scr_draw_txt_border(75,61,string(curr_actor.resistance_stat),c_black,c_white);
 
 for (ii = 0; ii < ds_list_size(curr_actor.ability_list);ii++){
 scr_draw_txt_border(50,85 + ii * 4,ds_list_find_value(curr_actor.ability_list,ii),c_black,c_purple);}
+
+for (ii = 0; ii < ds_list_size(curr_actor.inventory_list);ii++){
+scr_draw_txt_border(50,125 + ii * 4,ds_list_find_value(curr_actor.inventory_list,ii).name,c_black,c_white);}
 
 for (ii = 0; ii < ds_list_size(curr_actor.trait_list);ii++){
 draw_sprite_ext(empty_icon,0,220 + ii * 4,45,1,1,0,c_white,1);}

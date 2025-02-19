@@ -20,9 +20,9 @@ ds_list_add(ability_list,"Psyflame");//"Overcharge");//+1 range,+6damage,+20%hit
 
 ds_list_add(trait_list,"Mind Reader"); //mind reader see exact enemy stats and hp
 
-ds_list_add(inventory_list,"Fire Tome");
+ds_list_add(inventory_list,global.items[14]);
 
-equipped_weapon = "Fire Tome"; //placeholder
+equipped_weapon = ds_list_find_value(inventory_list,0); //placeholder
 
 idle_anim = spr_echo_neft;
 hover_anim = spr_echo_neft;
