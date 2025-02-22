@@ -92,6 +92,10 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 					
 						//add neighbour to open list so it can be checked out too
 						ds_priority_add(open,curr_neighbour,curr_neighbour.G);
+						//if (found_enemy == true)
+						//{
+						//	break;//break early to be more efficient?
+						//}
 					}
 					else //if neighbour's score has already been calculated for the open list
 					{

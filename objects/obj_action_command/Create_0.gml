@@ -40,7 +40,7 @@ if(curr_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 					ds_list_add(other.command_list, "Attack");
 					other.attack_command = true;
 				}
-					ds_list_add(other.attack_list,map[gridX,gridY]);
+					ds_list_add(other.attack_list,map[gridX,gridY].occupant);
 				//}
 				//selected_actor.attack_node = true;
 				scr_colour_attack_node(id);
@@ -67,7 +67,7 @@ else
 					ds_list_add(other.command_list, "Attack");
 					other.attack_command = true;
 				}
-					ds_list_add(other.attack_list,map[gridX,gridY]);
+					ds_list_add(other.attack_list,map[gridX,gridY].occupant);
 				//}
 				//selected_actor.attack_node = true;
 				scr_colour_attack_node(id);

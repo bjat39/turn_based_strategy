@@ -32,6 +32,6 @@ else if (menu_level == 1)
 	{
 		var col = c_white;
 		if (pos == i){col = c_yellow;}
-		draw_text_colour(x+op_border,y+op_border + op_space * i,option[1,i], col, col, col, col, 1);
+		draw_text_colour(x+op_border,y+op_border + op_space * i,option[1,i].actor_name, col, col, col, col, 1);
 	}
 }

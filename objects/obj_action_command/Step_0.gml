@@ -6,6 +6,11 @@ if (menu_level == 1)
 	obj_cursor.x = ds_list_find_value(attack_list,pos).x + GRID_SIZE / 2;
 	obj_cursor.y = ds_list_find_value(attack_list,pos).y + GRID_SIZE / 2;
 }
+else
+{
+	obj_cursor.x = curr_actor.x + GRID_SIZE / 2;
+	obj_cursor.y = curr_actor.y + GRID_SIZE / 2;
+}
 //else if (menu_level == 0 and hover_command == "Attack")
 //{
 //	scr_attack_range3(curr_actor,curr_actor.current_node);
@@ -89,8 +94,6 @@ if (obj_game.accept_input)
 		switch(hover_command)
 		{
 			case("Attack"): prev_pos = pos; menu_level = 1;break;//varprev_pos = pos; menu_level = 1;break;//scr_attack_range3(curr_actor,curr_actor.current_node);  break;
-		
-			case(1): break;
 		
 			case("Wait"): curr_actor.unit_state = "finishing"; delete_box = true; break;
 		
