@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_calc_damage",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_calc_damage",
+  "parent":{
+    "name":"getters",
+    "path":"folders/Scripts/ds_grid/getters.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
