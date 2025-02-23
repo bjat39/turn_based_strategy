@@ -102,6 +102,7 @@ resistance_stat = 0; //magic defense
 luck_stat = 0; //affect hit and evasion (+1 to percentages)
 
 attack_range = 2 * GRID_SIZE;//skill_stat / 4;
+hit_rate = //base accuracy, need to remember to update this
 
 //Growth rate percentage chance (%) per level up
 max_hit_points_growth = 100;

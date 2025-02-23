@@ -11,3 +11,5 @@ attack_timer = 30;
 state = "initiator_begin_attack"
 
 turn = 0; //initiator
+
+attack_rounds = [0,1,2,3];

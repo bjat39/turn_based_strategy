@@ -1,7 +1,6 @@
 /// @description Set up global items, traits, abilities, rooms?
 destination_room = rm_big_test_room;
 
-
 // Load weapon data from the INI file
 // Open the INI file
 ini_open("items.ini");
@@ -34,6 +33,7 @@ for (var i = 1; i <= 29; i++) {
 
     array_push(global.items, item);
 }
+
 
 // Close the INI file
 ini_close();

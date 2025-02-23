@@ -93,20 +93,38 @@ if (obj_game.accept_input)
 		case(0):
 		switch(hover_command)
 		{
-			case("Attack"): prev_pos = pos; menu_level = 1;break;//varprev_pos = pos; menu_level = 1;break;//scr_attack_range3(curr_actor,curr_actor.current_node);  break;
+			case("Attack"): 
+			if ds_list_size(attack_list) == 1{ //skip choosing enemy if only one enemy
+				prev_pos_2 = pos; menu_level = 2;
+			}else{prev_pos_2 = pos; menu_level = 1}
+			break;//varprev_pos = pos; menu_level = 1;break;//scr_attack_range3(curr_actor,curr_actor.current_node);  break;
 		
 			case("Wait"): curr_actor.unit_state = "finishing"; delete_box = true; break;
 		
 		
 		}
 		break;
-		case(1): //attack list
+		case(1): //attack list, skip if only one enemy in range
 			curr_actor.unit_state = "battle";
 			with instance_create_layer(x,y,"Instances",obj_battle_manager)
 			{
 				initiator = other.curr_actor;
 				var node = other.option[1,other.pos];
 				reciever = node.occupant;
+				
+				attack
+			}  
+			instance_destroy();
+		break;
+		case(2): //battle forecast
+			curr_actor.unit_state = "battle";
+			with instance_create_layer(x,y,"Instances",obj_battle_manager)
+			{
+				initiator = other.curr_actor;
+				var node = other.option[1,other.pos];
+				reciever = node.occupant;
+				
+				attack
 			}  
 			instance_destroy();
 		break;

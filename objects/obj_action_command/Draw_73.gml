@@ -1,10 +1,21 @@
 /// @description 
 //Dynamically get width and height of menu, resize
 var new_w = 0; //new width
-for (var i = 0; i < op_length;i++)
+if (menu_level == 1)
 {
-	var op_w = string_width(option[menu_level,i]);
-	new_w = max(new_w,op_w);
+	for (var i = 0; i < op_length;i++)
+	{
+		var op_w = string_width(option[menu_level,i].actor_name);
+		new_w = max(new_w,op_w);
+	}
+}
+else
+{
+	for (var i = 0; i < op_length;i++)
+	{
+		var op_w = string_width(option[menu_level,i]);
+		new_w = max(new_w,op_w);
+	}	
 }
 
 width = new_w + op_border * 2;

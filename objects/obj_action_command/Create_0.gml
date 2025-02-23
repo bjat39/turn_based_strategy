@@ -6,7 +6,8 @@ op_border = 16; //border between text and edge
 op_space = 16; //y distance between options
 
 pos = 0; //select option
-prev_pos = pos;
+prev_pos_1 = pos;
+prev_pos_2 = prev_pos_1;
 command_list = ds_list_create(); //after move, unit commands
 
 curr_actor = obj_game.selected_actor;
