@@ -17,6 +17,7 @@ for (var i = 1; i <= 29; i++) {
         // Load weapon-specific data
         if (itemType == "Weapon") {
 		item.weapontype = ini_read_string("Item" + string(i), "WeaponType", "");
+		item.upperrange = ini_read_string("Item" + string(i), "UpperRange", "");
         item.might = ini_read_real("Item" + string(i), "Might", 0);
         item.hit = ini_read_real("Item" + string(i), "Hit", 0);
         item.crit = ini_read_real("Item" + string(i), "Crit", 0);

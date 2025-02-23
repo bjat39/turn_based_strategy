@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_get_hit_rate",
+  "%Name":"scr_get_base_hit_rate",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_get_hit_rate",
+  "name":"scr_get_base_hit_rate",
   "parent":{
-    "name":"ds_grid",
-    "path":"folders/Scripts/ds_grid.yy",
+    "name":"getters",
+    "path":"folders/Scripts/ds_grid/getters.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

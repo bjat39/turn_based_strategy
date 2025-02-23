@@ -10,8 +10,6 @@ description = "Me.";
 //Base stats
 move = 6; //5 or 7? more move means maps over quicker
 
-attack_range = 2 * GRID_SIZE; //placeholder set later in create
-attack_range_real = 2;
 attack_target = noone;
 attack_timer = 0;
 damage_type = "magic"; //Weapon triangle
@@ -23,6 +21,9 @@ ds_list_add(trait_list,"Mind Reader"); //mind reader see exact enemy stats and h
 ds_list_add(inventory_list,global.items[14]);
 
 equipped_weapon = ds_list_find_value(inventory_list,0); //placeholder
+
+attack_range = equipped_weapon.upperrange * GRID_SIZE; //placeholder set later in create
+attack_range_real = equipped_weapon.upperrange;
 
 idle_anim = spr_echo_neft;
 hover_anim = spr_echo_neft;

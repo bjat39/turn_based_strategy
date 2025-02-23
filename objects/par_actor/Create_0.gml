@@ -63,6 +63,8 @@ trait_list = ds_list_create();
 //Inventory
 inventory_list = ds_list_create();
 
+equipped_weapon = noone;
+
 idle_anim = spr_echo_talia;
 hover_anim = spr_echo_talia;
 run_anim = spr_echo_talia;
