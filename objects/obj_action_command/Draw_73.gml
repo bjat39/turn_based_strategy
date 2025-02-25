@@ -43,7 +43,7 @@ else if (menu_level == 1)
 	{
 		var col = c_white;
 		if (pos == i){col = c_yellow;}
-		draw_text_colour(x+op_border,y+op_border + op_space * i,option[1,i].actor_name, col, col, col, col, 1);
+		draw_text_colour(x+op_border,y+op_border + op_space * i,option[1,i].defender1.actor_name, col, col, col, col, 1);
 	}
 }
 else if (menu_level == 2)
@@ -51,7 +51,8 @@ else if (menu_level == 2)
 	for (var i = 0; i < op_length;i++)
 	{
 		var col = c_white;
+		draw_text_colour(x+op_border,y+op_border + op_space * i,selected_attack.attacker_damage, col, col, col, col, 1);
 		if (pos == i){col = c_yellow;}
-		draw_text_colour(x+op_border,y+op_border + op_space * i,scr_calc_damage(curr_actor,), col, col, col, col, 1);
+		draw_text_colour(x+op_border,y+op_border + op_space * i,selected_attack.attacker_damage, col, col, col, col, 1);
 	}
 }

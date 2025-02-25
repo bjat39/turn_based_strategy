@@ -5,7 +5,7 @@ function scr_calc_damage(attacker, defender){
 	var advantage_mult = scr_get_weapon_advantage(attacker,defender);
 	var damage;
 	
-	if (unit.damage_type == "magic")
+	if (attacker.damage_type == "magic")
 	{
 		damage = (base_damage + advantage_mult) - defender.resistance_stat;
 	}

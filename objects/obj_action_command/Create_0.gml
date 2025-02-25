@@ -23,7 +23,7 @@ attack_list = ds_list_create(); //list of viable attack nodes to attack
 attack_pos = 0;
 attack_command = false;
 
-selected_enemy = noone;
+selected_attack = noone;
 
 if(curr_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 {
@@ -44,8 +44,8 @@ if(curr_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 					ds_list_add(other.command_list, "Attack");
 					other.attack_command = true;
 				}
-				ds_list_add(other.attack_list,map[gridX,gridY].occupant);
-				
+				var attack = scr_get_full_attack_info(other.curr_actor, map[gridX,gridY].occupant)
+				ds_list_add(other.attack_list,attack);
 				//}
 				//selected_actor.attack_node = true;
 				scr_colour_attack_node(id);
@@ -72,7 +72,8 @@ else
 					ds_list_add(other.command_list, "Attack");
 					other.attack_command = true;
 				}
-				ds_list_add(other.attack_list,map[gridX,gridY].occupant);
+				var attack = scr_get_full_attack_info(other.curr_actor,map[gridX,gridY].occupant)
+				ds_list_add(other.attack_list,attack);
 				//}
 				//selected_actor.attack_node = true;
 				scr_colour_attack_node(id);
@@ -107,10 +108,10 @@ for(ii = 0; ii < ds_list_size(command_list);ii++)
 	}
 }
 
-
-//option[0, 0] = "Start Game";
-//option[0, 1] = "Settings";
-//option[0, 2] = "Quit Game";
+for(ii = 0; ii < ds_list_size(command_list);ii++)
+{
+	option[2, 0] = curr_actor.equipped_weapon;
+}
 
 ////settings menu, sub menu
 //option[1, 0] = "Window Size";

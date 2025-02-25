@@ -2,6 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_get_full_attack_info(attacker, defender){
 	var attack = {
+		attacker1: attacker,
+		defender1: defender,
 		attacker_name: attacker.actor_name,
 		defender_name: defender.actor_name,
 		attacker_weapon: attacker.equipped_weapon,

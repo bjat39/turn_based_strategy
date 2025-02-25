@@ -10,6 +10,11 @@ move = 2;
 
 level = 1;
 
+ds_list_add(inventory_list,global.items[14]);
+
+equipped_weapon = ds_list_find_value(inventory_list,0);
+
+
 attack_range = 5 * GRID_SIZE;//1 * GRID_SIZE;//skill_stat / 4;
 attack_range_real = 5;
 attack_target = noone;

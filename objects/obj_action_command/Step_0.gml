@@ -3,8 +3,8 @@ event_inherited();
 
 if (menu_level == 1)
 {
-	obj_cursor.x = ds_list_find_value(attack_list,pos).x + GRID_SIZE / 2;
-	obj_cursor.y = ds_list_find_value(attack_list,pos).y + GRID_SIZE / 2;
+	obj_cursor.x = ds_list_find_value(attack_list,pos).defender1.x + GRID_SIZE / 2;
+	obj_cursor.y = ds_list_find_value(attack_list,pos).defender1.y + GRID_SIZE / 2;
 }
 else
 {
@@ -95,7 +95,7 @@ if (obj_game.accept_input)
 		{
 			case("Attack"): 
 			if ds_list_size(attack_list) == 1{ //skip choosing enemy if only one enemy
-				prev_pos_2 = pos; menu_level = 2;
+				prev_pos_2 = pos; menu_level = 2; selected_attack = ds_list_find_value(attack_list,0);
 			}else{prev_pos_1 = pos; menu_level = 1}
 			break;//varprev_pos = pos; menu_level = 1;break;//scr_attack_range3(curr_actor,curr_actor.current_node);  break;
 		
@@ -105,7 +105,7 @@ if (obj_game.accept_input)
 		}
 		break;
 		case(1): //attack list, skip if only one enemy in range
-			selected_enemy = option[1,pos].occupant;
+			selected_attack = option[1,pos];
 			prev_pos_2 = pos;
 			menu_level = 2;
 		break;
@@ -114,7 +114,7 @@ if (obj_game.accept_input)
 			with instance_create_layer(x,y,"Instances",obj_battle_manager)
 			{
 				initiator = other.curr_actor;
-				reciever = other.selected_enemy;
+				reciever = other.selected_attack.defender1;
 			}  
 			instance_destroy();
 		break;

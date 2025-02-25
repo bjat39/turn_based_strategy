@@ -9,12 +9,10 @@ function scr_two_unit_attack_range(attacker,defender){
 		if (total_dist <= attacker.attack_range and total_dist > 2 * GRID_SIZE)
 		{
 			return true;
-			break;
 		}
 		else
 		{
 			return false;
-			break;
 		}
 	}
 	else
@@ -25,12 +23,10 @@ function scr_two_unit_attack_range(attacker,defender){
 		if (total_dist <= attacker.attack_range and total_dist > 2 * GRID_SIZE)
 		{
 			return true;
-			break;
 		}
 		else
 		{
 			return false;
-			break;
 		}
 	}
 }
