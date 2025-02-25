@@ -19,8 +19,11 @@ hover_command = ds_list_find_value(command_list,pos);
 
 attack_list = ds_list_create(); //list of viable attack nodes to attack
 
+
 attack_pos = 0;
 attack_command = false;
+
+selected_enemy = noone;
 
 if(curr_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 {
@@ -41,7 +44,8 @@ if(curr_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 					ds_list_add(other.command_list, "Attack");
 					other.attack_command = true;
 				}
-					ds_list_add(other.attack_list,map[gridX,gridY].occupant);
+				ds_list_add(other.attack_list,map[gridX,gridY].occupant);
+				
 				//}
 				//selected_actor.attack_node = true;
 				scr_colour_attack_node(id);
@@ -68,7 +72,7 @@ else
 					ds_list_add(other.command_list, "Attack");
 					other.attack_command = true;
 				}
-					ds_list_add(other.attack_list,map[gridX,gridY].occupant);
+				ds_list_add(other.attack_list,map[gridX,gridY].occupant);
 				//}
 				//selected_actor.attack_node = true;
 				scr_colour_attack_node(id);

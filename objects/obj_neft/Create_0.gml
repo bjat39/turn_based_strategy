@@ -39,8 +39,8 @@ level = 1;
 max_hit_points = 16;
 current_hit_points = max_hit_points;
 
-strength_stat = 3;
-magic_stat = noone; //only for mages, instead of strength
+strength_stat = noone;//3;
+magic_stat = 3; //only for mages, instead of strength
 skill_stat = 2; //affects hit rate, useless for melee
 speed_stat = 2; //affects evasion, if unit has +5 more speed than enemy, double attack
 defence_stat = 0;
@@ -51,8 +51,8 @@ luck_stat = 8; //affect hit and evasion (+1 to percentages)
 
 //Growth rate percentage chance (%) per level up
 max_hit_points_growth = 85;
-strength_growth = 60;
-magic_growth = noone;
+strength_growth = noone;//60;
+magic_growth = 60;
 skill_growth = 55;
 speed_growth = 60;
 defence_growth = 45;
