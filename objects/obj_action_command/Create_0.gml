@@ -19,11 +19,17 @@ hover_command = ds_list_find_value(command_list,pos);
 
 attack_list = ds_list_create(); //list of viable attack nodes to attack
 
+skip_enemy_select = false;
+
+forecast_box_displacement = 75;
 
 attack_pos = 0;
 attack_command = false;
 
 selected_attack = noone;
+
+c_light_purple = make_color_rgb(237,201,239);
+c_light_yellow = make_color_rgb(239,239,151);
 
 if(curr_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 {

@@ -11,7 +11,8 @@ for (var i = 1; i <= 29; i++) {
         var itemType = ini_read_string("Item" + string(i), "Type", "");
         var item = {
             name: ini_read_string("Item" + string(i), "Name", ""),
-            type: itemType
+            type: itemType,
+			description: ini_read_string("Item" + string(i), "Description", "")
         };
 
         // Load weapon-specific data
@@ -25,11 +26,11 @@ for (var i = 1; i <= 29; i++) {
     }
     // Load consumable-specific data
     else if (itemType == "Consumable") {
-        item.effect = ini_read_string("Item" + string(i), "Effect", "");
+        
     }
     // Load key-specific data
     else if (itemType == "Key") {
-        item.effect = ini_read_string("Item" + string(i), "Effect", "");
+        //item.effect = ini_read_string("Item" + string(i), "Effect", "");
     }
 
     array_push(global.items, item);
@@ -37,6 +38,38 @@ for (var i = 1; i <= 29; i++) {
 
 
 // Close the INI file
+ini_close();
+
+ini_open("trait.ini");
+
+// Load item data from the INI file
+global.traits = [];
+for (var i = 1; i <= 4; i++) {
+        var trait = {
+            name: ini_read_string("Trait" + string(i), "Name", ""),
+			description: ini_read_string("Trait" + string(i), "Description", "")
+        };
+    array_push(global.traits, trait);
+}
+
+// Close the INI file
+ini_close();
+
+global.abilities = [];
+ini_open("abilities.ini");
+
+for (var i = 1; i <= 29; i++) {
+    var ability = {
+        name: ini_read_string("Ability" + string(i), "Name", ""),
+        type: ini_read_string("Ability" + string(i), "Type", ""),
+		upperrange: ini_read_string("Ability" + string(i), "UpperRange", ""),
+		maxuses: ini_read_string("Ability" + string(i), "MaxUses", ""),
+		currentuses: ini_read_string("Ability" + string(i), "CurrentUses", ""),
+		description: ini_read_string("Ability" + string(i), "Description", "")
+    };
+	array_push(global.abilities, ability);
+}
+
 ini_close();
 
 room_goto(destination_room);

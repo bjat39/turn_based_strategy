@@ -72,9 +72,11 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"abilities.ini","CopyToMask":-1,"filePath":"datafiles","name":"abilities.ini","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"beginning.yarn","CopyToMask":-1,"filePath":"datafiles","name":"beginning.yarn","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"items.ini","CopyToMask":-1,"filePath":"datafiles","name":"items.ini","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"road_scene1.yarn","CopyToMask":-1,"filePath":"datafiles","name":"road_scene1.yarn","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"traits.ini","CopyToMask":-1,"filePath":"datafiles","name":"traits.ini","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
