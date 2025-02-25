@@ -46,19 +46,24 @@ else if (menu_level == 1)
 		draw_text_colour(x+op_border,y+op_border + op_space * i,option[1,i].defender1.actor_name, col, col, col, col, 1);
 	}
 }
-else if (menu_level == 2)
-{
-	for (var i = 0; i < op_length;i++)
-	{
-		var col = c_white;
-		draw_text_colour(x+op_border,y+op_border + op_space * i,selected_attack.attacker_damage, col, col, col, col, 1);
-		if (pos == i){col = c_yellow;}
-		//draw_text_colour(x+op_border,y+op_border + op_space * i,selected_attack.attacker_damage, col, col, col, col, 1);
-	}
-	//scr_draw_txt_border(x+op_border,y+op_border + op_space * 1 - forecast_box_displacement, selected_attack.attacker1.actor_name,c_light_purple,c_black);
-	scr_draw_txt_border(x+op_border,y+op_border + op_space * 1 - forecast_box_displacement, selected_attack.attacker1.actor_name,c_black,c_light_purple);
-	scr_draw_txt_border(x+op_border,y+op_border + op_space * 2 - forecast_box_displacement, selected_attack.attacker_hp,c_black,c_light_purple);
-	scr_draw_txt_border(x+op_border,y+op_border + op_space * 3 - forecast_box_displacement, selected_attack.attacker_damage,c_black,c_light_purple);
-	scr_draw_txt_border(x+op_border,y+op_border + op_space * 4 - forecast_box_displacement, selected_attack.attacker_hit,c_black,c_light_purple);
-	scr_draw_txt_border(x+op_border,y+op_border + op_space * 5 - forecast_box_displacement, selected_attack.attacker_crit,c_black,c_light_purple);
-}
+//else if (menu_level == 2)
+//{
+//	for (var i = 0; i < op_length;i++)
+//	{
+//		var col = c_white;
+//		draw_text_colour(x+op_border,y+op_border + op_space * i,selected_attack.attacker_damage, col, col, col, col, 1);
+//		if (pos == i){col = c_yellow;}
+//		//draw_text_colour(x+op_border,y+op_border + op_space * i,selected_attack.attacker_damage, col, col, col, col, 1);
+//	}
+//	//scr_draw_txt_border(x+op_border,y+op_border + op_space * 1 - forecast_box_displacement, selected_attack.attacker1.actor_name,c_light_purple,c_black);
+//	//scr_draw_txt_border(x+op_border,y+op_border + op_space * 1 - forecast_box_displacement, selected_attack.attacker1.actor_name,c_black,c_light_purple);
+//	//scr_draw_txt_border(x+op_border,y+op_border + op_space * 2 - forecast_box_displacement, selected_attack.attacker_hp,c_black,c_light_purple);
+//	//scr_draw_txt_border(x+op_border,y+op_border + op_space * 3 - forecast_box_displacement, selected_attack.attacker_damage,c_black,c_light_purple);
+//	//scr_draw_txt_border(x+op_border,y+op_border + op_space * 4 - forecast_box_displacement, selected_attack.attacker_hit,c_black,c_light_purple);
+//	//scr_draw_txt_border(x+op_border,y+op_border + op_space * 5 - forecast_box_displacement, selected_attack.attacker_crit,c_black,c_light_purple);
+//	scr_draw_txt_border(30,30 + op_space * 1, selected_attack.attacker1.actor_name,c_black,c_light_purple);
+//	scr_draw_txt_border(x+op_border,y+op_border + op_space * 2 - forecast_box_displacement, selected_attack.attacker_hp,c_black,c_light_purple);
+//	scr_draw_txt_border(x+op_border,y+op_border + op_space * 3 - forecast_box_displacement, selected_attack.attacker_damage,c_black,c_light_purple);
+//	scr_draw_txt_border(x+op_border,y+op_border + op_space * 4 - forecast_box_displacement, selected_attack.attacker_hit,c_black,c_light_purple);
+//	scr_draw_txt_border(x+op_border,y+op_border + op_space * 5 - forecast_box_displacement, selected_attack.attacker_crit,c_black,c_light_purple);
+//}

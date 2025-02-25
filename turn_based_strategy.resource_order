@@ -60,6 +60,7 @@
     {"name":"fnt_courier_2","order":3,"path":"fonts/fnt_courier_2/fnt_courier_2.yy",},
     {"name":"fnt_courier_3","order":4,"path":"fonts/fnt_courier_3/fnt_courier_3.yy",},
     {"name":"fnt_courier_4","order":6,"path":"fonts/fnt_courier_4/fnt_courier_4.yy",},
+    {"name":"fnt_courier_5","order":8,"path":"fonts/fnt_courier_5/fnt_courier_5.yy",},
     {"name":"fnt_courier","order":1,"path":"fonts/fnt_courier/fnt_courier.yy",},
     {"name":"fnt_mintsoda","order":7,"path":"fonts/fnt_mintsoda/fnt_mintsoda.yy",},
     {"name":"fnt_newfont","order":5,"path":"fonts/fnt_newfont/fnt_newfont.yy",},

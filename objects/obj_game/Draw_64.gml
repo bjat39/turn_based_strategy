@@ -1,4 +1,5 @@
 /// @description 
+draw_set_font(fnt_courier);
 if (hoverNode != noone)
 {	
 	tempCoords = string(gridX) + " / " + string(gridY) //+ " = ";
