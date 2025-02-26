@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_create_attack_sequence(attack_data, attack_rounds){//just hardcode this bullshit
+function scr_create_attack_sequence(attack_data){//just hardcode this bullshit
+	
 	attack_rounds[0] = scr_check_single_attack(
 	attack_data.attacker_hit,attack_data.attacker_crit,
 	attack_data.attacker_damage,attack_data.defender_hp);

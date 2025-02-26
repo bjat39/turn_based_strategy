@@ -1,4 +1,8 @@
 /// @description 
+//switch(current_round)
+//{
+	
+//}
 switch(state)
 {
 case "attacker_begin_attack":
@@ -33,7 +37,7 @@ case "attacker_end_attack"://let scr attack handle this
 
 	break;
 case "defender_death":
-	with(defender)
+	with(attack_data.defender1)
 	{
 		image_alpha = lerp(image_alpha, 0, 0.07);
 		if image_alpha <= 0 

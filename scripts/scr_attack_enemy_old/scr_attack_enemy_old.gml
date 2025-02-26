@@ -1,22 +1,20 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_attack_enemy(attacker,defender){
+function scr_attack_enemy_old(attacker,defender){
 	//switch(damage_type)
 	//{
 	//	case "bow":
 	//if () //accuracy irandom_range(0,)
 	//need to add distance score if attack node
-	var attack = attack_rounds[current_round];
-	
 	attack_status = "hit";
 	//else
 	//attack_status = "miss"
 				
 	temp_damage = 0;
 				
-	if (attack.attack_has_hit)
+	if (attack_status != "miss")
 	{
-			temp_damage = attack_data.;
+			temp_damage = attacker.strength_stat - defender.defence_stat;
 			if (temp_damage < 0){temp_damage = 0}
 	}
 				
@@ -27,7 +25,7 @@ function scr_attack_enemy(attacker,defender){
 				
 	with(instance_create_layer(begin_x,begin_y,"Menu",obj_arrow1))//begin_x,begin_y,"Instances",obj_arrow))
 	{
-		target = defender;
+		target = other.reciever;
 		status = other.attack_status;
 		damage = other.temp_damage;
 		damage_type = attacker.damage_type;

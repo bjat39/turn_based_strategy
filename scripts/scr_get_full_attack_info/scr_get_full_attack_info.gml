@@ -23,5 +23,7 @@ function scr_get_full_attack_info(attacker, defender){
 		defender_crit: scr_calc_crit(defender),
 	};
 	
+	attack.attack_rounds = scr_create_attack_sequence(attack)
+	
 	return attack;
 }
