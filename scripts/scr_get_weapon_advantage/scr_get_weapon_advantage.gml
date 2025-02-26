@@ -16,6 +16,9 @@ function scr_get_weapon_advantage(attacker, defender){
 			case ("melee"):
 			advantage_multiplier = 1;
 			break;
+			default:
+			advantage_multiplier = 0;
+			break;
 			//case ("neutral"): //no weapon
 			
 			//break;
@@ -33,6 +36,9 @@ function scr_get_weapon_advantage(attacker, defender){
 			case ("melee"):
 			advantage_multiplier = -1;
 			break;
+			default:
+			advantage_multiplier = 0;
+			break;
 			}
 		break;
 		case ("melee"):
@@ -45,6 +51,9 @@ function scr_get_weapon_advantage(attacker, defender){
 			advantage_multiplier = 1;
 			break;
 			case ("melee"):
+			advantage_multiplier = 0;
+			break;
+			default:
 			advantage_multiplier = 0;
 			break;
 			}

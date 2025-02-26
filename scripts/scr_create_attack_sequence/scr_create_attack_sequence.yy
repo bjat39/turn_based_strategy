@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_create_attack_sequence",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_create_attack_sequence",
+  "parent":{
+    "name":"getters",
+    "path":"folders/Scripts/ds_grid/getters.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

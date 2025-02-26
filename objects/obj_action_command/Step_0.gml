@@ -126,9 +126,9 @@ if (obj_game.accept_input)
 			curr_actor.unit_state = "battle";
 			with instance_create_layer(x,y,"Instances",obj_battle_manager)
 			{
-				initiator = other.curr_actor;
-				reciever = other.selected_attack.defender1;
-			}  
+				attack_data = other.selected_attack;
+				attack_rounds = scr_create_attack_sequence(attack_data,attack_rounds)
+			}
 			instance_destroy();
 		break;
 	}

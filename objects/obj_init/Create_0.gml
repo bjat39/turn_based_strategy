@@ -1,4 +1,5 @@
 /// @description Set up global items, traits, abilities, rooms?
+randomize();
 destination_room = rm_big_test_room;
 
 // Load weapon data from the INI file
