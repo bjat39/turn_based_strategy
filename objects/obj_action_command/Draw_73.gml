@@ -34,7 +34,7 @@ if (menu_level == 0)
 	{
 		var col = c_white;
 		if (pos == i){col = c_yellow;}
-		draw_text_colour(x+op_border,y+op_border + op_space * i,option[menu_level,i], col, col, col, col, 1);
+		scr_draw_txt_border(x+op_border,y+op_border + op_space * i,option[menu_level,i],c_black,col)
 	}
 }
 else if (menu_level == 1)
@@ -43,7 +43,8 @@ else if (menu_level == 1)
 	{
 		var col = c_white;
 		if (pos == i){col = c_yellow;}
-		draw_text_colour(x+op_border,y+op_border + op_space * i,option[1,i].defender1.actor_name, col, col, col, col, 1);
+		scr_draw_txt_border(x+op_border,y+op_border + op_space * i,option[1,i].defender1.actor_name,c_black,col);
+		//draw_text_colour(x+op_border,y+op_border + op_space * i,option[1,i].defender1.actor_name, col, col, col, col, 1);
 	}
 }
 //else if (menu_level == 2)
