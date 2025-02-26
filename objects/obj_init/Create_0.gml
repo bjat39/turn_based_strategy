@@ -10,7 +10,7 @@ global.items = [];
 for (var i = 1; i <= 29; i++) {
         var itemType = ini_read_string("Item" + string(i), "Type", "");
         var item = {
-            name: ini_read_string("Item" + string(i), "Name", ""),
+            name1: ini_read_string("Item" + string(i), "Name", ""),
             type: itemType,
 			description: ini_read_string("Item" + string(i), "Description", "")
         };

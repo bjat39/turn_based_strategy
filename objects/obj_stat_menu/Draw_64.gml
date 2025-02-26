@@ -67,7 +67,7 @@ for (ii = 0; ii < ds_list_size(curr_actor.ability_list);ii++){
 scr_draw_txt_border(50,85 + ii * 4,ds_list_find_value(curr_actor.ability_list,ii),c_black,c_purple);}
 
 for (ii = 0; ii < ds_list_size(curr_actor.inventory_list);ii++){
-scr_draw_txt_border(50,125 + ii * 4,ds_list_find_value(curr_actor.inventory_list,ii).name,c_black,c_white);}
+scr_draw_txt_border(50,125 + ii * 4,ds_list_find_value(curr_actor.inventory_list,ii).name1,c_black,c_white);}
 
 for (ii = 0; ii < ds_list_size(curr_actor.trait_list);ii++){
 draw_sprite_ext(empty_icon,0,220 + ii * 4,45,1,1,0,c_white,1);}
