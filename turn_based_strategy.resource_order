@@ -46,6 +46,7 @@
     {"name":"convo_backgrounds","order":37,"path":"folders/Sprites/convo_backgrounds.yy",},
     {"name":"crap","order":28,"path":"folders/Sprites/crap.yy",},
     {"name":"spearman","order":1,"path":"folders/Sprites/crap/spearman.yy",},
+    {"name":"hud","order":47,"path":"folders/Sprites/hud.yy",},
     {"name":"icons","order":46,"path":"folders/Sprites/icons.yy",},
     {"name":"nodes","order":43,"path":"folders/Sprites/nodes.yy",},
     {"name":"delta","order":14,"path":"folders/Sprites/nodes/units/delta.yy",},

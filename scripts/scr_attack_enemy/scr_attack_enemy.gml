@@ -7,6 +7,7 @@ function scr_attack_enemy(attack_rounds,current_round){
 	//if () //accuracy irandom_range(0,)
 	//need to add distance score if attack node
 	var attack = attack_rounds[current_round];
+	var defender = attack.defender1;
 	
 	attack_status = "hit";
 	//else
@@ -14,10 +15,14 @@ function scr_attack_enemy(attack_rounds,current_round){
 				
 	temp_damage = 0;
 				
-	if (attack.attack_has_hit)
+	if (attack.attack_check.attack_has_hit)
 	{
 			temp_damage = attack.attacker_damage;
 			if (temp_damage < 0){temp_damage = 0;}
+	}
+	else
+	{
+		attack_status = "miss";
 	}
 				
 	attack_dir = point_direction(x + 16, y + 16, defender.x + 16, defender.y + 16);
@@ -30,7 +35,7 @@ function scr_attack_enemy(attack_rounds,current_round){
 		target = defender;
 		status = other.attack_status;
 		damage = other.temp_damage;
-		damage_type = attacker.damage_type;
+		damage_type = defender.damage_type;
 					
 		speed = 24;
 					

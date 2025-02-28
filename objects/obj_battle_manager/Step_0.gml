@@ -1,40 +1,40 @@
 /// @description 
-//switch(current_round)
-//{
-	
-//}
 switch(state)
 {
-case "attacker_begin_attack":
+case "begin_attack":
 	//before attack animation
 	attack_timer -= 1;
 	if (attack_timer <= 0)
 	{
-		state = "attacker_attack";
+		state = "attack";
 	}
 		
 	break;
-case "attacker_attack":
+case "attack":
 	scr_attack_enemy(attack_rounds,current_round);
-	state = "attacker_end_attack";	
+	state = "end_attack";	
 	attack_timer = 30;
 	//TEMP!!!
-	if (defender.current_hit_points - (attacker.strength_stat - defender.defence_stat) <= 0){
+	if (attack_rounds[current_round].attack_check.attack_has_killed == true){
 	//if(defender.unit_state == "initiate_dying"){
 		scr_play_sound(_69_Enemy_death_01,2,0,obj_game.sfx_gain);
 		state = "defender_death";}
 	
 	break;
-case "attacker_end_attack"://let scr attack handle this
+case "end_attack"://let scr attack handle this
 	attack_timer -= 1;
 		
 	if(attack_timer <= 0)
 	{
-		state = "finish_battle";
-		
+		current_round ++;
+		if (array_length(attack_rounds) - 1 >= current_round)
+		{
+			state = "begin_attack";
+		}
+		else{
+			state = "finish_battle";
+		}
 	}
-	
-
 	break;
 case "defender_death":
 	with(attack_data.defender1)
@@ -53,11 +53,11 @@ case "defender_death":
 //case "defender_end_attack":
 	
 case "finish_battle":
-	obj_cursor.x = attacker.x + GRID_SIZE/2;
-	obj_cursor.y = attacker.y + GRID_SIZE/2;
+	obj_cursor.x = attack_data.attacker1.x + GRID_SIZE/2;
+	obj_cursor.y = attack_data.attacker1.y + GRID_SIZE/2;
 	obj_game.player_state = "cursor_explore";
 	obj_game.selected_actor = noone;
-	attacker.unit_state = "finishing";
+	attack_data.attacker1.unit_state = "finishing";
 	instance_destroy();
 	break;
 }

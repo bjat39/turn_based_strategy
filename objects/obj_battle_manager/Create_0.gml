@@ -7,6 +7,10 @@ attack_data = noone;
 
 attack_timer = 30;
 
-state = "begin_attack"
+attack = noone;
+
+state = "begin_attack";
+
+attack_rounds = [];
 
 current_round = 0;
