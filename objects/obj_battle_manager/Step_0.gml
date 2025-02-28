@@ -15,7 +15,7 @@ case "attacker_begin_attack":
 		
 	break;
 case "attacker_attack":
-	scr_attack_enemy();
+	scr_attack_enemy(attack_rounds,current_round);
 	state = "attacker_end_attack";	
 	attack_timer = 30;
 	//TEMP!!!

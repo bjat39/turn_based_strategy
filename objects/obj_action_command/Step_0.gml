@@ -127,6 +127,7 @@ if (obj_game.accept_input)
 			with instance_create_layer(x,y,"Instances",obj_battle_manager)
 			{
 				attack_data = other.selected_attack;
+				attack_rounds = scr_create_attack_sequence(attack_data.attacker1,attack_data.defender1);
 			}
 			instance_destroy();
 		break;

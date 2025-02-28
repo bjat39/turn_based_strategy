@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_attack_enemy(attacker,defender){
+function scr_attack_enemy(attack_rounds,current_round){
 	//switch(damage_type)
 	//{
 	//	case "bow":
@@ -16,8 +16,8 @@ function scr_attack_enemy(attacker,defender){
 				
 	if (attack.attack_has_hit)
 	{
-			temp_damage = attack_data.;
-			if (temp_damage < 0){temp_damage = 0}
+			temp_damage = attack.attacker_damage;
+			if (temp_damage < 0){temp_damage = 0;}
 	}
 				
 	attack_dir = point_direction(x + 16, y + 16, defender.x + 16, defender.y + 16);
