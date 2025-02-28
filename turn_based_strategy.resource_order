@@ -216,6 +216,7 @@
     {"name":"scr_draw_txt_border","order":14,"path":"scripts/scr_draw_txt_border/scr_draw_txt_border.yy",},
     {"name":"scr_end_turn","order":1,"path":"scripts/scr_end_turn/scr_end_turn.yy",},
     {"name":"scr_fade_in_or_out","order":3,"path":"scripts/scr_fade_in_or_out/scr_fade_in_or_out.yy",},
+    {"name":"scr_get_attack_info","order":12,"path":"scripts/scr_get_attack_info/scr_get_attack_info.yy",},
     {"name":"scr_get_base_avoid","order":1,"path":"scripts/scr_get_base_avoid/scr_get_base_avoid.yy",},
     {"name":"scr_get_base_crit","order":2,"path":"scripts/scr_get_base_crit/scr_get_base_crit.yy",},
     {"name":"scr_get_base_damage","order":4,"path":"scripts/scr_get_base_damage/scr_get_base_damage.yy",},
