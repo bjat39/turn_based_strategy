@@ -10,10 +10,6 @@ function scr_create_attack_sequence(attacker,defender){//just hardcode this bull
 	{//return rounds if kill success
 		if (attack_rounds[1].attack_check.attack_has_killed == true){return attack_rounds;}
 	}
-	else//get rid of if out of range
-	{
-		array_delete(attack_rounds,1,1);
-	}
 	
 	if (attack_data.attacker_double == true)
 	{
@@ -26,10 +22,6 @@ function scr_create_attack_sequence(attacker,defender){//just hardcode this bull
 		if (attack_rounds[2].defender_in_range == true) //check if ignore attack
 		{
 			if (attack_rounds[2].attack_check.attack_has_killed == true){return attack_rounds;}
-		}
-		else
-		{
-			array_delete(attack_rounds,2,1);
 		}
 	}
 	return attack_rounds;

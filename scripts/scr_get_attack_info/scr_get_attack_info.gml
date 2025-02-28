@@ -10,17 +10,34 @@ function scr_get_attack_info(attacker, defender){
 		defender_weapon: defender.equipped_weapon,
 		attacker_hp: attacker.current_hit_points,
 		defender_hp: defender.current_hit_points,
-		attacker_double: scr_get_double(attacker,defender),
-		attacker_advantage_mult: scr_get_weapon_advantage(attacker,defender),
 		defender_in_range: scr_two_unit_attack_range(attacker,defender),
-		attacker_damage: scr_calc_damage(attacker,defender),
-		attacker_hit: scr_calc_hit_rate(attacker,defender),
-		attacker_crit: scr_calc_crit(attacker),
 	};
-	//f8vk it
-	attack.attack_check = scr_check_single_attack(
-	attack.attacker_hit,attack.attacker_crit,
-	attack.attacker_damage,attack.defender_hp);
+	if (attack.defender_in_range == true)
+	{
+		attack.attacker_double = scr_get_double(attacker,defender);
+		attack.attacker_advantage_mult = scr_get_weapon_advantage(attacker,defender);
+		attack.attacker_damage = scr_calc_damage(attacker,defender);
+		attack.attacker_hit = scr_calc_hit_rate(attacker,defender);
+		attack.attacker_crit = scr_calc_crit(attacker);
+		
+		attack.attack_check = scr_check_single_attack(
+		attack.attacker_hit,attack.attacker_crit,
+		attack.attacker_damage,attack.defender_hp);
+	}
+	else
+	{
+		attack.attacker_double = noone;
+		attack.attacker_advantage_mult = noone;
+		attack.attacker_damage = noone;
+		attack.attacker_hit = noone;
+		attack.attacker_crit = noone;
+		
+		attack.attack_check.attack_has_hit = noone;
+		attack.attack_check.attack_has_crit = noone;
+		attack.attack_check.attack_has_killed = noone;
+	}
+
+	//i am mentally stable
 	
 	return attack;
 }
