@@ -5,13 +5,14 @@ if (menu_level == 2)
 	draw_roundrect(50,50,97,134,0);
 	draw_set_color(c_black);
 	//draw_set_alpha(0.8)
-	draw_roundrect(85,14+forecast_space*1,105,14+forecast_space*3,false);
+	draw_roundrect(75,9+forecast_space*1,125,9+forecast_space*3,false); //top rect
+	draw_roundrect(32,9+forecast_space*7.7,82,9+forecast_space*9.7,false); //bottom rect
 	draw_set_color(c_white);
 	draw_sprite(attack_forecast1,0,44,44);
 	
 	draw_set_font(fnt_courier_6);
 	draw_set_halign(fa_center);
-	scr_draw_txt_border(95,14 + forecast_space * 1, selected_attack.defender1.actor_name,c_black,c_white);
+	scr_draw_txt_border(101,14 + forecast_space * 1, selected_attack.defender1.actor_name,c_black,c_white);
 	scr_draw_txt_border(80,16 + forecast_space * 2, scr_create_limited_string(selected_attack.defender_weapon.name1,11),c_black,c_white);
 	
 	//defender enemy, right side
@@ -40,8 +41,8 @@ if (menu_level == 2)
 	scr_draw_txt_border(65,14 + forecast_space * 6 , selected_attack.attacker_crit,c_black,c_light_purple);
 	draw_set_halign(fa_center);
 	draw_set_font(fnt_courier_6);
-	scr_draw_txt_border(80,18 + forecast_space * 7, selected_attack.attacker_weapon.name1,c_black,c_white);
-	scr_draw_txt_border(55,18 + forecast_space * 8, scr_create_limited_string(selected_attack.attacker1.actor_name,11),c_black,c_white);
+	scr_draw_txt_border(80,18 + forecast_space * 7, scr_create_limited_string(selected_attack.attacker_weapon.name1,11),c_black,c_white);
+	scr_draw_txt_border(58,18 + forecast_space * 8, selected_attack.attacker1.actor_name,c_black,c_white);
 	
 	// Set the initial vertical speed
 	var vertical_speed = 0;
