@@ -4,8 +4,12 @@ height = 104;
 
 spr_index = spr_nine_slice;
 
-op_border = 16; //border between text and edge
-op_space = 16; //y distance between options
+image_speed = 0.1;
+
+op_border = 12;//16; //border between text and edge
+op_space = 14; //16;y distance between options
+
+forecast_space = 16;
 
 pos = 0; //select option
 prev_pos_1 = pos;

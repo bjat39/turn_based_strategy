@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_create_limited_string",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_create_limited_string",
+  "parent":{
+    "name":"ds_grid",
+    "path":"folders/Scripts/ds_grid.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
