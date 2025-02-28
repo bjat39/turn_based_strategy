@@ -23,7 +23,7 @@ height = op_border * 2 + string_height(option[0,0]) + (op_length - 1) * op_space
 
 //Draw menu background
 if (menu_level != 2){
-draw_sprite_ext(spr_nine_slice,0,x,y,width/sprite_width,height/sprite_height,0,c_white,1);
+draw_sprite_ext(spr_index,0,x,y,width/sprite_get_width(spr_index),height/sprite_get_height(spr_index),0,c_white,1);
 }
 
 //Draw the options

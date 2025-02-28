@@ -10,7 +10,7 @@ move = 2;
 
 level = 1;
 
-ds_list_add(inventory_list,global.items[14]);
+ds_list_add(inventory_list,global.items[0]);
 
 equipped_weapon = ds_list_find_value(inventory_list,0);
 

@@ -2,6 +2,8 @@
 width = 124;
 height = 104;
 
+spr_index = spr_nine_slice;
+
 op_border = 16; //border between text and edge
 op_space = 16; //y distance between options
 
@@ -30,6 +32,7 @@ selected_attack = noone;
 
 c_light_purple = make_color_rgb(237,201,239);
 c_light_yellow = make_color_rgb(239,239,151);
+c_very_light_yellow = make_color_rgb(175,175,153);
 
 if(curr_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 {
