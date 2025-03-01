@@ -18,7 +18,7 @@ case "attack":
 	if (attack_rounds[current_round].attack_check.attack_has_killed == true){
 	//if(defender.unit_state == "initiate_dying"){
 		scr_play_sound(_69_Enemy_death_01,2,0,obj_game.sfx_gain);
-		state = "defender_death";}
+		state = "death";}
 	
 	break;
 case "end_attack"://let scr attack handle this
@@ -37,7 +37,7 @@ case "end_attack"://let scr attack handle this
 	}
 	break;
 case "defender_death":
-	with(attack_data.defender1)
+	with(attack_rounds[current_round].defender1)
 	{
 		image_alpha = lerp(image_alpha, 0, 0.07);
 		if image_alpha <= 0 
