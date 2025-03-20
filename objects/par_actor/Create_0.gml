@@ -83,6 +83,8 @@ attack_target = noone; //ai
 attack_timer = 0;
 
 move_target = noone; //ai what node to move to when attack
+attack_target = noone; //ai who to attack
+selected_attack = noone; //who to attack
 
 //enemy_list = ds_priority_create(); //list of enemies on map, ai
 

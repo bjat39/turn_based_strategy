@@ -40,12 +40,13 @@ switch(unit_state)
 			else //////////////////////////////move to start, need to figure out at beginning of turn if
 			{
 				if (end_path != noone)
-				{
+				{//change to prioritise kills and shit
 					unit_state = "battle";
+					selected_attack = scr_get_full_attack_info(id, attack_target);
 					with instance_create_layer(x,y,"Instances",obj_battle_manager)
 					{
-						initiator = other;
-						reciever = other.attack_target;
+						attack_data = other.selected_attack;
+						attack_rounds = scr_create_attack_sequence(attack_data.attacker1,attack_data.defender1);
 					} 
 					//obj_game.current_actor = noone;//remove?
 				}
@@ -54,6 +55,7 @@ switch(unit_state)
 					moved = true;
 					unit_state = "finishing";
 				}
+				
 				//unit_state = "find_target"; //"find_move_node"
 				
 				//if (attack_target != noone)
