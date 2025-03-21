@@ -14,3 +14,5 @@ state = "begin_attack";
 attack_rounds = [];
 
 current_round = 0;
+
+kill_confirm = false;

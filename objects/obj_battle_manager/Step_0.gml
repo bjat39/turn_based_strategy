@@ -16,9 +16,10 @@ case "attack":
 	attack_timer = 30;
 	//TEMP!!!
 	if (attack_rounds[current_round].attack_check.attack_has_killed == true){
-	//if(defender.unit_state == "initiate_dying"){
 		scr_play_sound(_69_Enemy_death_01,2,0,obj_game.sfx_gain);
-		state = "death";}
+		attack_rounds[current_round].defender1.unit_state =
+		"initiate_dying";
+		kill_confirm = true;}
 	
 	break;
 case "end_attack"://let scr attack handle this
@@ -27,7 +28,7 @@ case "end_attack"://let scr attack handle this
 	if(attack_timer <= 0)
 	{
 		current_round ++;
-		if (array_length(attack_rounds) - 1 >= current_round)
+		if (array_length(attack_rounds) - 1 >= current_round and kill_confirm == false)
 		{
 			state = "begin_attack";
 		}
@@ -36,28 +37,15 @@ case "end_attack"://let scr attack handle this
 		}
 	}
 	break;
-case "defender_death":
-	with(attack_rounds[current_round].defender1)
-	{
-		image_alpha = lerp(image_alpha, 0, 0.07);
-		if image_alpha <= 0 
-		{
-			map[gridX,gridY].occupant = noone;
-			other.state = "finish_battle";
-			//initiate exp gain and level up for unit, if there is an opponent
-			instance_destroy();
-		}
-	}
-	
-	break;
-//case "defender_end_attack":
-	
 case "finish_battle":
-	obj_cursor.x = attack_data.attacker1.x + GRID_SIZE/2;
-	obj_cursor.y = attack_data.attacker1.y + GRID_SIZE/2;
+	if (instance_exists(attack_data.attacker1))
+	{
+		obj_cursor.x = attack_data.attacker1.x + GRID_SIZE/2;
+		obj_cursor.y = attack_data.attacker1.y + GRID_SIZE/2;
+		attack_data.attacker1.unit_state = "finishing";
+	}
 	obj_game.player_state = "cursor_explore";
 	obj_game.selected_actor = noone;
-	attack_data.attacker1.unit_state = "finishing";
 	instance_destroy();
 	break;
 }

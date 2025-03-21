@@ -13,10 +13,10 @@ function scr_get_attack_info(attacker, defender){
 		defender_in_range: scr_two_unit_attack_range(attacker,defender),
 	};
 	
-	attack.attack_check = 0;
-	attack.attack_check.attack_has_hit = noone;
-	attack.attack_check.attack_has_crit = noone;
-	attack.attack_check.attack_has_killed = noone;
+	//attack.attack_check = 0;
+	//attack.attack_check.attack_has_hit = noone;
+	//attack.attack_check.attack_has_crit = noone;
+	//attack.attack_check.attack_has_killed = noone;
 	
 	if (attack.defender_in_range == true)
 	{

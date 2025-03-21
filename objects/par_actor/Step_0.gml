@@ -132,7 +132,16 @@ switch(unit_state)
 		break;
 	case ("initiate_dying"): unit_state = "dying"; break;
 	case ("dying"):
+		image_alpha = lerp(image_alpha, 0, 0.07);
+		if image_alpha <= 0 
+		{
+			map[gridX,gridY].occupant = noone;
+			//other.state = "finish_battle";
+			//initiate exp gain and level up for unit, if there is an opponent
+			instance_destroy();
+		}
 	//ai states
+	
 	break;
 	case ("find_target"):
 		scr_movement_range_ai1(map[gridX,gridY],move,attack_range);
