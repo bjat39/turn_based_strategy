@@ -24,7 +24,7 @@ damage_type = "melee" //Weapon triangle
 max_hit_points = 20;
 current_hit_points = max_hit_points;
 
-strength_stat = 87//7;
+strength_stat = 0//7;
 magic_stat = noone; //only for mages, instead of strength
 skill_stat = noone; //affects hit rate, useless for melee
 speed_stat = 8; //affects evasion, if unit has +5 more speed than enemy, double attack

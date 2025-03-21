@@ -15,4 +15,4 @@ attack_rounds = [];
 
 current_round = 0;
 
-kill_confirm = false;
+kill_confirm = noone;
