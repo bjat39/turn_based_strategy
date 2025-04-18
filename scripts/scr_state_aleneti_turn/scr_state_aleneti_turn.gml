@@ -22,11 +22,17 @@ function scr_state_aleneti_turn(){
 		ai_state = "set_active_unit";
 		break;
 		case("set_active_unit"):
-		with(ds_list_find_value(aleneti_list,ai_unit_counter))
+		if (ai_unit_counter > ds_list_size(aleneti_list))
 		{
-			unit_state = "find_target";
+			ai_state = "finish_turn";
 		}
-		ai_state = "not_finished";
+		else{
+			with(ds_list_find_value(aleneti_list,ai_unit_counter))
+			{
+				unit_state = "find_target";
+			}
+			ai_state = "not_finished";
+		}
 		break;
 		case("not_finished"):
 		break;
@@ -34,7 +40,7 @@ function scr_state_aleneti_turn(){
 		scr_end_turn("aleneti");
 		break;
 		//case("find_target"):
-		case ("check_priorities"): //AAAAAAAAAAAAAAAAAAAAAAAAAA ok im fine
+		case ("check_priorities"):
 		break;
 		case ("move_unit"): //move unit(s?)
 		
