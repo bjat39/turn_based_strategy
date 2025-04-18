@@ -38,12 +38,16 @@ function scr_get_attack_info(attacker, defender){
 		attack.attacker_hit = noone;
 		attack.attacker_crit = noone;
 		
-		attack.attack_check.attack_has_hit = noone;
-		attack.attack_check.attack_has_crit = noone;
-		attack.attack_check.attack_has_killed = noone;
+		attack.attack_check = {
+		attack_has_hit: noone,
+		attack_has_crit: noone,
+		attack_has_killed: noone,
+		
+		}
+		//attack.attack_check.attack_has_hit = noone;
+		//attack.attack_check.attack_has_crit = noone;
+		//attack.attack_check.attack_has_killed = noone;
 	}
-
-	//i am mentally stable
 	
 	return attack;
 }

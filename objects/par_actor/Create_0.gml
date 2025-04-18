@@ -27,13 +27,15 @@ move_speed = 6;//8; //how fast unit moves between squares
 current_node = map[gridX,gridY]; //used to draw line when moving
 orig_node = current_node; //node saved if the player cancels after moving
 
-//character statistics
+death_flag = false;
 
+//AI
 player_controlled = false;
 ai_type = "none"; //player, path (go to point while attacking on the way), seek_and_destroy, reaction
 closest_node = noone;
 min_dist = 10000000;
 
+//character statistics
 faction = "neft";//"player"; //what side they are affliliated with, affects turn order
 class = "Healer Woman";
 description = "Fuggedaboutit";

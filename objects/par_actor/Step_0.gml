@@ -84,9 +84,16 @@ switch(unit_state)
 		//RESET EVERYTHINGGGG
 		moved = true;
 		attacked = true;
-		unit_state = "finish";
 		obj_game.ai_unit_counter ++; //next unit
 		obj_game.ai_state = "set_active_unit";
+		
+		if(death_flag == true)
+		{
+			unit_state = "initiate_dying";
+		}
+		else{
+			unit_state = "finish";
+		}
 		
 		switch(faction)
 		{//check if finished list == size of faction, then end turn

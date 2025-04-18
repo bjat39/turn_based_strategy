@@ -17,8 +17,8 @@ case "attack":
 	//TEMP!!!
 	if (attack_rounds[current_round].attack_check.attack_has_killed == true){
 		scr_play_sound(_69_Enemy_death_01,2,0,obj_game.sfx_gain);
-		attack_rounds[current_round].defender1.unit_state =
-		"initiate_dying";
+		//attack_rounds[current_round].defender1.unit_state =
+		//"initiate_dying";
 		if (attack_rounds[current_round].defender1 == attack_data.attacker1)
 		{
 			kill_confirm = "attacker";
@@ -27,7 +27,7 @@ case "attack":
 		{
 			kill_confirm = "defender";
 		}
-		}
+	}
 	
 	break;
 case "end_attack"://let scr attack handle this
@@ -46,11 +46,17 @@ case "end_attack"://let scr attack handle this
 	}
 	break;
 case "finish_battle":
-	if (instance_exists(attack_data.attacker1) and kill_confirm != "attacker")
+	if (instance_exists(attack_data.attacker1) and kill_confirm == "defender")
 	{
 		obj_cursor.x = attack_data.attacker1.x + GRID_SIZE/2;
 		obj_cursor.y = attack_data.attacker1.y + GRID_SIZE/2;
+		attack_data.defender1.death_flag = true;
 		attack_data.attacker1.unit_state = "finishing";
+	}
+	else if (instance_exists(attack_data.defender1) and kill_confirm == "attacker")
+	{
+		attack_data.attacker1.death_flag = true;
+		attack_data.defender1.unit_state = "finishing";
 	}
 	obj_game.player_state = "cursor_explore";
 	obj_game.selected_actor = noone;
