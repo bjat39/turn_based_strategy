@@ -7,6 +7,7 @@ switch(game_state)
 	case "ally_faction_turn": break;
 	case "aleneti_faction_turn": scr_state_aleneti_turn() break;//scr_state_ai_turn(); break;
 	case "strucian_faction_turn": break;
+	case "game_over": break;
 }
 
 if (keyboard_check_pressed(ord("R")))

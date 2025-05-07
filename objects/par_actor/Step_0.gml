@@ -43,7 +43,7 @@ switch(unit_state)
 				{//change to prioritise kills and shit
 					unit_state = "battle";
 					selected_attack = scr_get_full_attack_info(id, attack_target);
-					with instance_create_layer(x,y,"Instances",obj_battle_manager)
+					with instance_create_layer(x + 16,y,"Instances",obj_battle_manager)
 					{
 						attack_data = other.selected_attack;
 						attack_rounds = scr_create_attack_sequence(attack_data.attacker1,attack_data.defender1);
@@ -142,10 +142,11 @@ switch(unit_state)
 		image_alpha = lerp(image_alpha, 0, 0.07);
 		if image_alpha <= 0 
 		{
-			map[gridX,gridY].occupant = noone;
+			scr_kill_unit(id);
+			//map[gridX,gridY].occupant = noone;
 			//other.state = "finish_battle";
 			//initiate exp gain and level up for unit, if there is an opponent
-			instance_destroy();
+			//instance_destroy();
 		}
 	//ai states
 	
