@@ -139,7 +139,7 @@ switch(unit_state)
 		break;
 	case ("initiate_dying"): unit_state = "dying"; break;
 	case ("dying"):
-		image_alpha = lerp(image_alpha, 0, 0.07);
+		image_alpha = image_alpha - 0.05;//lerp(image_alpha, 0, 0.07);
 		if image_alpha <= 0 
 		{
 			scr_kill_unit(id);

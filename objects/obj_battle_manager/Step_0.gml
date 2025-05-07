@@ -46,16 +46,16 @@ case "end_attack"://let scr attack handle this
 	}
 	break;
 case "finish_battle":
-	if (instance_exists(attack_data.attacker1) and kill_confirm == "defender")
+	if (instance_exists(attack_data.attacker1))// and kill_confirm == "defender")
 	{
 		obj_cursor.x = attack_data.attacker1.x + GRID_SIZE/2;
 		obj_cursor.y = attack_data.attacker1.y + GRID_SIZE/2;
-		attack_data.defender1.death_flag = true;
+		//attack_data.defender1.death_flag = true;
 		attack_data.attacker1.unit_state = "finishing";
 	}
-	else if (instance_exists(attack_data.defender1) and kill_confirm == "attacker")
+	if (instance_exists(attack_data.defender1))// and kill_confirm == "attacker")
 	{
-		attack_data.attacker1.death_flag = true;
+		//attack_data.attacker1.death_flag = true;
 		attack_data.defender1.unit_state = "finishing";
 	}
 	obj_game.player_state = "cursor_explore";

@@ -22,7 +22,7 @@ function scr_state_aleneti_turn(){
 		ai_state = "set_active_unit";
 		break;
 		case("set_active_unit"):
-		if (ai_unit_counter > ds_list_size(aleneti_list))
+		if (ai_unit_counter >= ds_list_size(aleneti_list))
 		{
 			ai_state = "finish_turn";
 		}
