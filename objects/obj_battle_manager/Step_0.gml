@@ -35,7 +35,7 @@ case "end_attack"://let scr attack handle this
 		
 	if(attack_timer <= 0)
 	{
-		current_round ++;
+		current_round ++;//make a longer pause if kill
 		if (array_length(attack_rounds) - 1 >= current_round and kill_confirm == noone)
 		{
 			state = "begin_attack";

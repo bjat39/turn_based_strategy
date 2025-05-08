@@ -81,6 +81,7 @@
     {"name":"obj_chest","order":4,"path":"objects/obj_chest/obj_chest.yy",},
     {"name":"obj_closest_node","order":11,"path":"objects/obj_closest_node/obj_closest_node.yy",},
     {"name":"obj_control","order":6,"path":"objects/obj_control/obj_control.yy",},
+    {"name":"obj_corpse","order":12,"path":"objects/obj_corpse/obj_corpse.yy",},
     {"name":"obj_damage_dealt","order":7,"path":"objects/obj_damage_dealt/obj_damage_dealt.yy",},
     {"name":"obj_damage_text","order":2,"path":"objects/obj_damage_text/obj_damage_text.yy",},
     {"name":"obj_ds_attack_square","order":1,"path":"objects/obj_ds_attack_square/obj_ds_attack_square.yy",},

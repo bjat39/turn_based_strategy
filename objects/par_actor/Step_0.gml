@@ -139,15 +139,20 @@ switch(unit_state)
 		break;
 	case ("initiate_dying"): unit_state = "dying"; break;
 	case ("dying"):
-		image_alpha = image_alpha - 0.05;//lerp(image_alpha, 0, 0.07);
-		if image_alpha <= 0 
+		with (instance_create_layer(x,y,"Instances",obj_corpse))
 		{
-			scr_kill_unit(id);
+			sprite_index = other.sprite_index;
+			
+			//get from obj_battle_manager
+			death_weapon_type = "default" //fade out
+			death_overkill_damage = 0; //quicker, more violent deaths with more overkill
+		}
+		scr_kill_unit(id);
 			//map[gridX,gridY].occupant = noone;
 			//other.state = "finish_battle";
 			//initiate exp gain and level up for unit, if there is an opponent
 			//instance_destroy();
-		}
+		//}
 	//ai states
 	
 	break;

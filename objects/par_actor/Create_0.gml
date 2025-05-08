@@ -29,6 +29,10 @@ orig_node = current_node; //node saved if the player cancels after moving
 
 death_flag = false;
 
+//death animations
+death_weapon_type = "default" //fade out
+death_overkill_damage = 0; //quicker, more violent deaths with more overkill
+
 //AI
 player_controlled = false;
 ai_type = "none"; //player, path (go to point while attacking on the way), seek_and_destroy, reaction

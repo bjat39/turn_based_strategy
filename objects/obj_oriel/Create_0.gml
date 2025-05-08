@@ -5,13 +5,13 @@ actor_name = "Oriel";
 
 faction = "neft";//"player"; //what side they are affliliated with, affects turn order
 class = "Crossbowman";
-description = "Ollllddddddddddddddd";
+description = "Olllldddddd";
 
 //Base stats
 move = 7//6;//7
 
-attack_range = 4 * GRID_SIZE; //8
-attack_range_real = 4;
+attack_range = 2 * GRID_SIZE; //8
+attack_range_real = 2;
 attack_target = noone;
 attack_timer = 0;
 damage_type = "bow" //Weapon triangle
