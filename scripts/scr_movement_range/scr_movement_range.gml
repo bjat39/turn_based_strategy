@@ -77,7 +77,7 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 				}
 			} //attack node range
 			else if (ds_list_find_index(closed, curr_neighbour) < 0
-			and 1 + current_node.G <= full_attack_range)
+			and 1 + current_node.G <= full_attack_range and current_node.G >= range)
 			{
 				//only calculate new G for neighbour if it hasn't already been calculaated
 				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
@@ -87,7 +87,7 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor){
 					//curr_neighbour.parent_node = current_node;
 					 
 					//calculate G score of neighbour, with cost_mod in place
-					curr_neighbour.G = current_node.G + curr_neighbour.cost;
+					curr_neighbour.G = current_node.G + 1;//curr_neighbour.cost;
 					
 					//add neighbour to open list so it can be checked out too
 					ds_priority_add(open,curr_neighbour,curr_neighbour.G);

@@ -78,19 +78,19 @@ function scr_movement_range_archer(origin_node,move_range,attack_range,selected_
 			} //attack node range 
 			//Archer check
 			else if (ds_list_find_index(closed, curr_neighbour) < 0
-			and 1 + current_node.G <= full_attack_range)
+			and 1 + current_node.G <= full_attack_range and current_node.G >= range)
 			{
 				//only calculate new G for neighbour if it hasn't already been calculaated
 				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
 				{
-					if (current_node.G != range){
-					curr_neighbour.attack_node = true;}
+					//if (current_node.G != range){
+					curr_neighbour.attack_node = true;//}
 					
 					//give neighbour the appropriate parent
 					//curr_neighbour.parent_node = current_node;
 					 
 					//calculate G score of neighbour, with cost_mod in place
-					curr_neighbour.G = current_node.G + curr_neighbour.cost;
+					curr_neighbour.G = current_node.G + 1;
 					
 					//add neighbour to open list so it can be checked out too
 					ds_priority_add(open,curr_neighbour,curr_neighbour.G);
@@ -98,8 +98,8 @@ function scr_movement_range_archer(origin_node,move_range,attack_range,selected_
 				else //if neighbour's score has already been calculated for the open list
 				{
 					//figure out if the neighbour's score would be LOWER if found from the current node
-					if (current_node.G != range){
-					curr_neighbour.attack_node = true;}
+					//if (current_node.G != range){
+					curr_neighbour.attack_node = true;//}
 					
 					temp_G = current_node.G + 1;
 					
