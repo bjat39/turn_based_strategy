@@ -114,7 +114,7 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 		
 		//scr_colour_move_node(current_node,move_range);
 		
-		with (par_actor) //have every actor check if they're in range to be slapped
+		with (par_actor) //have every actor check if they're in range
 		{
 			if (faction != other.faction)
 			{

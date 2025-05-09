@@ -33,7 +33,7 @@ function scr_movement_range_ai1_closest(origin_node,move_range,attack_range){ //
 	{
 		if (faction != other.faction)
 		{
-			ds_list_add(enemy_list_move,id); //add all enemies to Santa's wish list of death
+			ds_list_add(enemy_list_move,id); //add all enemies to list of death
 		}
 	}
 	
