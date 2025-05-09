@@ -8,10 +8,16 @@ class = "Crossbowman";
 description = "Olllldddddd";
 
 //Base stats
-move = 7//6;//7
+move = 6;
 
-attack_range = 2 * GRID_SIZE; //8
-attack_range_real = 2;
+//PLACEHOLDER NO ABILITIES YET
+ds_list_add(inventory_list,global.items[9]);
+
+equipped_weapon = ds_list_find_value(inventory_list,0); //placeholder
+
+attack_range = equipped_weapon.upperrange * GRID_SIZE; //placeholder set later in create
+attack_range_real = equipped_weapon.upperrange;
+
 attack_target = noone;
 attack_timer = 0;
 damage_type = "bow" //Weapon triangle

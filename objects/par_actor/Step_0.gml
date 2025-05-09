@@ -42,6 +42,7 @@ switch(unit_state)
 				if (end_path != noone)
 				{//change to prioritise kills and shit
 					unit_state = "battle";
+					selected_attack = noone; //reset attack, no leftover data?
 					selected_attack = scr_get_full_attack_info(id, attack_target);
 					with instance_create_layer(x + 16,y,"Instances",obj_battle_manager)
 					{

@@ -8,7 +8,7 @@ class = "Mage";
 description = "Me.";
 
 //Base stats
-move = 6; //5 or 7? more move means maps over quicker
+move = 5; //5 or 7? more move means maps over quicker
 
 attack_target = noone;
 attack_timer = 0;
@@ -40,7 +40,7 @@ max_hit_points = 16;
 current_hit_points = max_hit_points;
 
 strength_stat = noone;//3;
-magic_stat = 800000;//3; //only for mages, instead of strength
+magic_stat = -10;//3; //only for mages, instead of strength
 skill_stat = 2; //affects hit rate, useless for melee
 speed_stat = 2; //affects evasion, if unit has +5 more speed than enemy, double attack
 defence_stat = 0;

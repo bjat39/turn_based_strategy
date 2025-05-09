@@ -8,10 +8,16 @@ class = "Healer Woman";
 description = "Boring";
 
 //Base stats
-move = 6; //5
+move = 5; //5
 
-attack_range = 1 * GRID_SIZE; //placeholder set later in create
-attack_range_real = 1;
+//PLACEHOLDER NO ABILITIES YET
+ds_list_add(inventory_list,global.items[0]);
+
+equipped_weapon = ds_list_find_value(inventory_list,0); //placeholder
+
+attack_range = equipped_weapon.upperrange * GRID_SIZE; //placeholder set later in create
+attack_range_real = equipped_weapon.upperrange;
+
 attack_target = noone;
 attack_timer = 0;
 damage_type = "melee" //Weapon triangle
