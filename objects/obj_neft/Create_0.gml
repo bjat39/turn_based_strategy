@@ -22,8 +22,8 @@ ds_list_add(inventory_list,global.items[14]);
 
 equipped_weapon = ds_list_find_value(inventory_list,0); //placeholder
 
-attack_range = equipped_weapon.upperrange * GRID_SIZE; //placeholder set later in create
-attack_range_real = equipped_weapon.upperrange;
+attack_range = 8 * GRID_SIZE//equipped_weapon.upperrange * GRID_SIZE; //placeholder set later in create
+attack_range_real = 8//equipped_weapon.upperrange;
 
 idle_anim = spr_echo_neft;
 hover_anim = spr_echo_neft;

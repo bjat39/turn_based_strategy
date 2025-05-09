@@ -160,7 +160,7 @@ function scr_movement_range_ai1(origin_node,move_range,attack_range){ //pathfind
 		}
 	}
 	
-	//no enemy in range? sad. well, check entire grid for closest enemy for their g score. could use a* star to do better
+	//no enemy in range? sad. check entire grid for closest enemy for their g score. could use a* star to do better
 	if (attack_target == noone)
 	{//find move node
 		scr_movement_range_ai1_closest(map[gridX,gridY],move,attack_range)

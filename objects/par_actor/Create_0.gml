@@ -42,7 +42,7 @@ min_dist = 10000000;
 //character statistics
 faction = "neft";//"player"; //what side they are affliliated with, affects turn order
 class = "Healer Woman";
-description = "Fuggedaboutit";
+description = "";
 
 //command_list = ds_list_create(); //after move, unit commands
 //hover_command = noone;
