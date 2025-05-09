@@ -85,8 +85,11 @@ switch(unit_state)
 		//RESET EVERYTHINGGGG
 		moved = true;
 		attacked = true;
-		obj_game.ai_unit_counter ++; //next unit
-		obj_game.ai_state = "set_active_unit";
+		if(player_controlled == false)
+		{
+			obj_game.ai_unit_counter ++; //next unit
+			obj_game.ai_state = "set_active_unit";
+		}
 		
 		if(death_flag == true)
 		{

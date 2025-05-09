@@ -56,7 +56,7 @@ case "finish_battle":
 	if (instance_exists(attack_data.defender1))// and kill_confirm == "attacker")
 	{
 		//attack_data.attacker1.death_flag = true;
-		attack_data.defender1.unit_state = "finishing";
+		//attack_data.defender1.unit_state = "finishing";
 	}
 	obj_game.player_state = "cursor_explore";
 	obj_game.selected_actor = noone;
