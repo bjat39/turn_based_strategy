@@ -1,8 +1,6 @@
 /// @description 
 event_inherited();
 
-op_length = array_length(option[menu_level]);
-
 if (menu_level == 1 or menu_level == 2)
 {
 	obj_cursor.x = ds_list_find_value(attack_list,pos).defender1.x + GRID_SIZE / 2;
@@ -134,6 +132,7 @@ if (obj_game.accept_input)
 			instance_destroy();
 		break;
 	}
+}
 	
 	//switch(menu_level)
 	//{
@@ -170,22 +169,20 @@ if (obj_game.accept_input)
 	//	break;
 	//}
 	
-	//set position back
-	//if (start_menu_level != menu_level){pos = 0;} //menu level has changed
+//set position back
+//if (start_menu_level != menu_level){pos = 0;} //menu level has changed
 	
-	//correct option length
-	op_length = array_length(option[menu_level]);
+//correct option length
+op_length = array_length(option[menu_level]);
 	
 	
-	if (delete_box == true)
+if (delete_box == true)
+{
+	curr_actor.orig_node = curr_actor.current_node;
+	obj_game.selected_actor = noone;
+	obj_game.player_state = "cursor_explore";
+	with (obj_action_command)
 	{
-		curr_actor.orig_node = curr_actor.current_node;
-		obj_game.selected_actor = noone;
-		obj_game.player_state = "cursor_explore";
-		with (obj_action_command)
-		{
-			instance_destroy();
-		}
+		instance_destroy();
 	}
-
 }

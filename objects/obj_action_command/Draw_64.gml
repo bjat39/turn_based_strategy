@@ -1,4 +1,5 @@
 /// @description 
+draw_text(0,160,"menu_level" + string(menu_level));
 if (menu_level == 2)
 {
 	draw_set_color(c_very_light_yellow);
