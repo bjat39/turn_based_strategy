@@ -5,7 +5,7 @@ if (menu_level == 1)
 {
 	for (var i = 0; i < op_length;i++)
 	{
-		var op_w = string_width(option[menu_level,i].actor_name);
+		var op_w = string_width(option[menu_level,i].defender_name);
 		new_w = max(new_w,op_w);
 	}
 }

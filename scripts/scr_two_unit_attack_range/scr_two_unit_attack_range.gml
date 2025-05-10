@@ -6,7 +6,7 @@ function scr_two_unit_attack_range(attacker,defender){
 		x_dist = point_distance(attacker.x, attacker.y, defender.x, attacker.y); //would have measuring to the center but it dont
 		y_dist = point_distance(attacker.x, attacker.y, attacker.x, defender.y);
 		total_dist = x_dist + y_dist; //
-		if (total_dist <= attacker.attack_range and total_dist > 2 * GRID_SIZE)
+		if (total_dist <= attacker.attack_range and total_dist > 1 * GRID_SIZE)
 		{
 			return true;
 		}

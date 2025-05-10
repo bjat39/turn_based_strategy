@@ -1,6 +1,8 @@
 /// @description 
 event_inherited();
 
+op_length = array_length(option[menu_level]);
+
 if (menu_level == 1 or menu_level == 2)
 {
 	obj_cursor.x = ds_list_find_value(attack_list,pos).defender1.x + GRID_SIZE / 2;
