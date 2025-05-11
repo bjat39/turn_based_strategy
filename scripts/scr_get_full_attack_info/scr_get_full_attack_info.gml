@@ -21,7 +21,22 @@ function scr_get_full_attack_info(attacker, defender){//for forecast
 		defender_hit: scr_calc_hit_rate(defender,attacker),
 		attacker_crit: scr_calc_crit(attacker),
 		defender_crit: scr_calc_crit(defender),
+		//for counterattack
+		attacker_in_range: scr_two_unit_attack_range(defender,attacker)
 	};
+	
+	//attack.attack_check = 0;
+	//attack.attack_check.attack_has_hit = noone;
+	//attack.attack_check.attack_has_crit = noone;
+	//attack.attack_check.attack_has_killed = noone;
+	
+	if (attack.attacker_in_range == false)
+	{
+		attack.defender_double = false;
+		attack.defender_damage = "-";
+		attack.defender_hit = "-";
+		attack.defender_crit = "-";
+	}
 	
 	//attack.attack_rounds = scr_create_attack_sequence(attack)
 	

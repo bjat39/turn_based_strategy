@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_get_single_attack_info(attacker, defender){
+function scr_get_single_attack_info_with_check(attacker, defender){
 	var attack = {
 		attacker1: attacker,//split up?
 		defender1: defender,

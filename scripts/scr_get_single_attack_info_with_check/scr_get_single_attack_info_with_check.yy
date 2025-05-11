@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_get_attack_info",
+  "%Name":"scr_get_single_attack_info_with_check",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_get_attack_info",
+  "name":"scr_get_single_attack_info_with_check",
   "parent":{
     "name":"getters",
     "path":"folders/Scripts/ds_grid/getters.yy",
