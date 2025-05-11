@@ -1,5 +1,7 @@
 /// @description 
-draw_text(0,160,"menu_level" + string(menu_level));
+draw_text(0,160,"pos: " + string(pos));
+draw_text(0,180,"level_zero_pos: " + string(level_zero_pos));
+draw_text(0,200,"level_one_pos: " + string(level_one_pos));
 if (menu_level == 2)
 {
 	draw_set_color(c_very_light_yellow);

@@ -12,8 +12,8 @@ op_space = 14; //16;y distance between options
 forecast_space = 16;
 
 pos = 0; //select option
-prev_pos_1 = pos;
-prev_pos_2 = prev_pos_1;
+level_zero_pos = 0;
+level_one_pos = 0;
 command_list = ds_list_create(); //after move, unit commands
 
 curr_actor = obj_game.selected_actor;

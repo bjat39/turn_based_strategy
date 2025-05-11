@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_get_attack_info(attacker, defender){
+function scr_get_single_attack_info(attacker, defender){
 	var attack = {
 		attacker1: attacker,//split up?
 		defender1: defender,
@@ -32,11 +32,11 @@ function scr_get_attack_info(attacker, defender){
 	}
 	else
 	{
-		attack.attacker_double = noone;
-		attack.attacker_advantage_mult = noone;
-		attack.attacker_damage = noone;
-		attack.attacker_hit = noone;
-		attack.attacker_crit = noone;
+		attack.attacker_double = false;
+		attack.attacker_advantage_mult = scr_get_weapon_advantage(attacker,defender);
+		attack.attacker_damage = "-";
+		attack.attacker_hit = "-";
+		attack.attacker_crit = "-";
 		
 		attack.attack_check = {
 		attack_has_hit: noone,

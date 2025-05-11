@@ -1,10 +1,15 @@
 /// @description 
 event_inherited();
 
-if (menu_level == 1 or menu_level == 2)
+if (menu_level == 1)
 {
 	obj_cursor.x = ds_list_find_value(attack_list,pos).defender1.x + GRID_SIZE / 2;
 	obj_cursor.y = ds_list_find_value(attack_list,pos).defender1.y + GRID_SIZE / 2;
+}
+else if(menu_level == 2)
+{
+	obj_cursor.x = ds_list_find_value(attack_list,level_one_pos).defender1.x + GRID_SIZE / 2;
+	obj_cursor.y = ds_list_find_value(attack_list,level_one_pos).defender1.y + GRID_SIZE / 2;
 }
 else
 {
@@ -33,20 +38,20 @@ if (obj_game.return_input)
 	{
 		//scr_wipe_nodes();
 		menu_level = 0;
-		pos = prev_pos_1;
+		pos = level_zero_pos;
 	}
 	else if (menu_level == 2 and skip_enemy_select = true)
 	{
 		//scr_wipe_nodes();
 		skip_enemy_select = false;
 		menu_level = 0;
-		pos = prev_pos_2;
+		pos = level_one_pos;
 	}
 	else if (menu_level == 2 and skip_enemy_select = false)
 	{
 		//scr_wipe_nodes();
 		menu_level = 1;
-		pos = prev_pos_2;
+		pos = level_one_pos;
 	}
 	else if (menu_level == 0) //return to original position
 	{	
@@ -108,8 +113,9 @@ if (obj_game.accept_input)
 		{
 			case("Attack"): 
 			if ds_list_size(attack_list) == 1{ //skip choosing enemy if only one enemy
-				prev_pos_2 = pos; menu_level = 2; skip_enemy_select = true; selected_attack = ds_list_find_value(attack_list,0);
-			}else{prev_pos_1 = pos; menu_level = 1}
+				level_one_pos = pos; menu_level = 2; skip_enemy_select = true;
+				selected_attack = ds_list_find_value(attack_list,0);
+			}else{level_zero_pos = pos; menu_level = 1}
 			break;//varprev_pos = pos; menu_level = 1;break;//scr_attack_range3(curr_actor,curr_actor.current_node);  break;
 		
 			case("Wait"): curr_actor.unit_state = "finishing"; delete_box = true; break;
@@ -119,7 +125,7 @@ if (obj_game.accept_input)
 		break;
 		case(1): //attack list, skip if only one enemy in range
 			selected_attack = option[1,pos];
-			prev_pos_2 = pos;
+			level_one_pos = pos;
 			menu_level = 2;
 		break;
 		case(2): //battle forecast
