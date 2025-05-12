@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_movement_range_archer(origin_node,move_range,attack_range,selected_actor){ //pathfinding, get nodes for movements
+function scr_movement_range_archer_wrong(origin_node,move_range,attack_range,selected_actor){ //pathfinding, get nodes for movements
 	//selected_actor has been added later for scr_attack_range
 	//Reset all node data
 	//scr_wipe_nodes();
@@ -75,23 +75,22 @@ function scr_movement_range_archer(origin_node,move_range,attack_range,selected_
 					}
 					
 				}
-			} //attack node range
+			} //attack node range 
+			//Archer check
 			else if (ds_list_find_index(closed, curr_neighbour) < 0
 			and 1 + current_node.G <= full_attack_range and current_node.G >= range)
-			//and (current_node.gridX - curr_neighbour.gridX) + (current_node.gridY - curr_neighbour.gridY) == 1))
 			{
 				//only calculate new G for neighbour if it hasn't already been calculaated
 				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
 				{
-					if (abs(current_node.gridX - curr_neighbour.gridX) + abs(current_node.gridY - curr_neighbour.gridY) > 1)
-					{
-						curr_neighbour.attack_node = true;
-					}
+					//if (current_node.G != range){
+					curr_neighbour.attack_node = true;//}
+					
 					//give neighbour the appropriate parent
 					//curr_neighbour.parent_node = current_node;
 					 
 					//calculate G score of neighbour, with cost_mod in place
-					curr_neighbour.G = current_node.G + 1;//curr_neighbour.cost;
+					curr_neighbour.G = current_node.G + 1;
 					
 					//add neighbour to open list so it can be checked out too
 					ds_priority_add(open,curr_neighbour,curr_neighbour.G);
@@ -99,10 +98,8 @@ function scr_movement_range_archer(origin_node,move_range,attack_range,selected_
 				else //if neighbour's score has already been calculated for the open list
 				{
 					//figure out if the neighbour's score would be LOWER if found from the current node
-					if (abs(current_node.gridX - curr_neighbour.gridX) + abs(current_node.gridY - curr_neighbour.gridY) > 1)
-					{
-						curr_neighbour.attack_node = true;
-					}
+					//if (current_node.G != range){
+					curr_neighbour.attack_node = true;//}
 					
 					temp_G = current_node.G + 1;
 					
@@ -110,6 +107,7 @@ function scr_movement_range_archer(origin_node,move_range,attack_range,selected_
 					if (temp_G < curr_neighbour.G)
 					{
 						//curr_neighbour.parent_node = current_node;
+						
 						curr_neighbour.G = temp_G;
 						ds_priority_change_priority(open,curr_neighbour,curr_neighbour.G);
 					}
@@ -157,11 +155,10 @@ function scr_movement_range_archer(origin_node,move_range,attack_range,selected_
 	//we got the attack nodes, ok get the move nodes
 	scr_movement_range_1(origin_node,move_range,attack_range,selected_actor);
 	
-	//search entire grid again, not very efficient but I'M FUCKING STUPID DOK
 	//should put it in previous for loop somewhere, just check each square and mark as attack square
 	//scr_large_grid_attack_range(closed,selected_actor);
 	
-	//DESTROY closed list!!!!!
+	//DESTROY closed list
 	ds_list_destroy(closed);
 	
 }

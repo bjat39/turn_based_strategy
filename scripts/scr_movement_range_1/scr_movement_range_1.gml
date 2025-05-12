@@ -113,7 +113,6 @@ function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor
 		//if (total_dist <= temp_actor.attack_range + temp_actor){}
 	}
 	
-	//search entire grid again, not very efficient but I'M FUCKING STUPID DOK
 	//should put it in previous for loop somewhere, just check each square and mark as attack square
 	//scr_large_grid_attack_range(closed,selected_actor);
 	

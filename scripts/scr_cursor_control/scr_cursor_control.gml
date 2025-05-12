@@ -75,7 +75,7 @@ function scr_cursor_control(){
 				//selected_actor.actions = 2;
 				if(selected_actor.damage_type == "bow")
 				{
-					scr_movement_range_archer(hoverNode,
+					scr_movement_range(hoverNode,
 					selected_actor.move,selected_actor.attack_range_real,selected_actor);
 				}
 				else{
