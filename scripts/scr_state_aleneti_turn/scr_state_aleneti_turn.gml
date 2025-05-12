@@ -15,6 +15,9 @@ function scr_state_aleneti_turn(){
 			//unit_state = "find_target";//"find_move_node";
 			//ai_type = "seek_and_destroy"
 		}
+		var curr_unit = ds_list_find_value(aleneti_list,ai_unit_counter);
+		obj_cursor.x = curr_unit.x + GRID_SIZE / 2;
+		obj_cursor.y = curr_unit.y + GRID_SIZE / 2;
 		//organise priorities of units
 		//aleneti_state = "not_turn"; //not_turn, initialise (sort units? do this after every move?), move units
 		//aleneti_list
@@ -27,7 +30,8 @@ function scr_state_aleneti_turn(){
 			ai_state = "finish_turn";
 		}
 		else{
-			with(ds_list_find_value(aleneti_list,ai_unit_counter))
+			var curr_unit1 = ds_list_find_value(aleneti_list,ai_unit_counter);
+			with(curr_unit1)
 			{
 				unit_state = "find_target";
 			}
