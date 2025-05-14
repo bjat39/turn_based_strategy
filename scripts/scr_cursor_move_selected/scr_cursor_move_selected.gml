@@ -133,6 +133,7 @@ function scr_cursor_move_selected(){
 		//scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 		if (!map[gridX,gridY-1].move_node == false) //implement if not one tile away before moving into attack square, then block moving. else, move through attack square, so you can look at enemies stats
 		{
+			scr_play_sound(_05_hover,3,0,obj_game.sfx_gain);
 			cursor_move_slow_initial ++;
 			cursor_move_delay = cursor_move_delay_default;
 			obj_cursor.y -= GRID_SIZE;

@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor){ //pathfinding, get nodes for movements
+	//MOVE one
 	//selected_actor has been added later for scr_attack_range
 	//Reset all node data
 	//scr_wipe_nodes();
@@ -23,6 +24,7 @@ function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor
 	
 	//add starting node to open list
 	ds_priority_add(open,start_node,start_node.G); //lowest score, since it's origin
+	start_node.move_node = true;
 	
 	//while open queue is not empty, repeat the following until all nodes have been looked at
 	while(ds_priority_size(open) > 0){
@@ -46,11 +48,12 @@ function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor
 			
 			 //if neighbour isn't on closed list, return -1
 			if (ds_list_find_index(closed, curr_neighbour) < 0 and curr_neighbour.passable and 
-			curr_neighbour.occupant == noone and curr_neighbour.cost + current_node.G <= range)
+			curr_neighbour.occupant == noone  
+			and curr_neighbour.cost + current_node.G <= range)
 			{//only calculate new G for neighbour if it hasn't already been calculaated
 				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
 				{
-					
+					curr_neighbour.move_node = true;
 					//give neighbour the appropriate parent
 					curr_neighbour.parent_node = current_node;
 					 
@@ -63,12 +66,12 @@ function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor
 				else //if neighbour's score has already been calculated for the open list
 				{
 					//figure out if the neighbour's score would be LOWER if found from the current node
-					
+					curr_neighbour.move_node = true;
 					temp_G = current_node.G + curr_neighbour.cost;
-					
 					//check if G score would be lower 
 					if (temp_G < curr_neighbour.G)
 					{
+						
 						curr_neighbour.parent_node = current_node;
 						curr_neighbour.G = temp_G;
 						ds_priority_change_priority(open,curr_neighbour,curr_neighbour.G);
@@ -90,21 +93,19 @@ function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor
 	
 	//scr_attack_range1();
 	
+	
 	//Colour move nodes, then destroy the closed list as well
 	for(ii = 0; ii < ds_list_size(closed);ii++)
 	{
 		current_node = ds_list_find_value(closed, ii);
 		
-		if (current_node.attack_node == false)
-		{
-			current_node.move_node = true;
-			//current_node.attack_node = true;
+		//current_node.attack_node = true;
 		
-			scr_colour_move_node(current_node,move_range);
-		}
-		else{
-			scr_colour_attack_node(current_node)
-		}
+		scr_colour_move_node(current_node,move_range);
+		//}
+		//else{
+		//	scr_colour_attack_node(current_node)
+		//}
 		
 		//attack shit
 		//x_dist = distance_to_point(temp_actor.x,y) //would have measuring to the center but it dont
@@ -112,7 +113,7 @@ function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor
 		//total_dist = x_dist + y_dist;
 		//if (total_dist <= temp_actor.attack_range + temp_actor){}
 	}
-	
+	scr_movement_range(origin_node,move_range,attack_range,selected_actor,closed);
 	//should put it in previous for loop somewhere, just check each square and mark as attack square
 	//scr_large_grid_attack_range(closed,selected_actor);
 	
