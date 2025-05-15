@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"minidungautotile_newx2",
   "bboxMode":0,
-  "bbox_bottom":383,
+  "bbox_bottom":191,
   "bbox_left":0,
-  "bbox_right":511,
+  "bbox_right":255,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b8c9d432-d4ef-4460-9a69-b501cd3f46d6","name":"b8c9d432-d4ef-4460-9a69-b501cd3f46d6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"0b605f07-1ea8-4416-9580-f04087d45d8f","name":"0b605f07-1ea8-4416-9580-f04087d45d8f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":384,
+  "height":192,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"464bc953-167b-460f-9e5b-fd94940d5f05","blendMode":0,"displayName":"default","isLocked":false,"name":"464bc953-167b-460f-9e5b-fd94940d5f05","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"3e14403e-dd94-45fc-9261-a974b917f53f","blendMode":0,"displayName":"default","isLocked":false,"name":"3e14403e-dd94-45fc-9261-a974b917f53f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"minidungautotile_newx2",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b8c9d432-d4ef-4460-9a69-b501cd3f46d6","path":"sprites/minidungautotile_newx2/minidungautotile_newx2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7bb7b395-9ffc-4593-97a4-5810e26ec1cd","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0b605f07-1ea8-4416-9580-f04087d45d8f","path":"sprites/minidungautotile_newx2/minidungautotile_newx2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"555c2724-817d-422b-905a-40b1e0957daf","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":512,
+  "width":256,
 }

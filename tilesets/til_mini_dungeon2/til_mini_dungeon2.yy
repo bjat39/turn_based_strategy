@@ -3,7 +3,8 @@
   "%Name":"til_mini_dungeon2",
   "autoTileSets":[
     {"$GMAutoTileSet":"","%Name":"autotile_1","closed_edge":false,"name":"autotile_1","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[17,83,80,50,75,32,79,54,73,76,59,56,74,49,51,29,],},
-    {"$GMAutoTileSet":"","%Name":"autotile_2","closed_edge":false,"name":"autotile_2","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[18,83,80,74,75,32,79,0,73,76,59,56,81,0,0,0,],},
+    {"$GMAutoTileSet":"","%Name":"autotile_2","closed_edge":false,"name":"autotile_2","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[20,83,80,74,75,32,79,54,73,76,59,56,10,30,29,0,],},
+    {"$GMAutoTileSet":"","%Name":"autotile_3","closed_edge":false,"name":"autotile_3","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,],},
   ],
   "macroPageTiles":{
     "SerialiseHeight":0,
@@ -11,7 +12,7 @@
     "TileSerialiseData":[],
   },
   "name":"til_mini_dungeon2",
-  "out_columns":11,
+  "out_columns":10,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -31,11 +32,11 @@
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,
-  "tileHeight":42,
+  "tileHeight":16,
   "tilehsep":0,
-  "tilevsep":22,
-  "tileWidth":32,
+  "tilevsep":16,
+  "tileWidth":16,
   "tilexoff":0,
-  "tileyoff":22,
+  "tileyoff":11,
   "tile_count":96,
 }

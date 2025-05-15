@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_movement_range",
+  "%Name":"scr_attack_range_cull",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_movement_range",
+  "name":"scr_attack_range_cull",
   "parent":{
     "name":"ranges",
     "path":"folders/Scripts/ds_grid/ranges.yy",

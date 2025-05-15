@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_movement_range(origin_node,move_range,attack_range,selected_actor,move_list){ //pathfinding, get nodes for movements
+function scr_attack_range_cull(origin_node,move_range,attack_range,selected_actor,move_list){ //pathfinding, get nodes for movements
 	//ATTACK one
 	//selected_actor has been added later for scr_attack_range
 	//Reset all node data
@@ -29,7 +29,6 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor,m
 	while(ds_priority_size(open) > 0){
 		//remove node with lowest g score from open
 		current_node = ds_priority_delete_min(open); //remove from open, put in current
-		
 		//add node to closed list so we don't look at it again
 		ds_list_add(closed,current_node);
 			
@@ -50,7 +49,7 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor,m
 			{//only calculate new G for neighbour if it hasn't already been calculaated
 				if (ds_priority_find_priority(open,curr_neighbour) == 0 or ds_priority_find_priority(open,curr_neighbour) == undefined) 
 				{
-					
+					curr_neighbour.attack_node = true;
 					//give neighbour the appropriate parent
 					curr_neighbour.attack_parent_node = current_node;
 					 
@@ -71,6 +70,7 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor,m
 					//check if G score would be lower 
 					if (temp_G < curr_neighbour.attack_G)
 					{
+						curr_neighbour.attack_node = true;
 						curr_neighbour.attack_parent_node = current_node;
 						curr_neighbour.attack_G = temp_G;
 						//curr_neighbour.attack_node = true;
@@ -95,14 +95,21 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor,m
 	
 	////Colour move nodes, then destroy the closed list as well
 	//pare through attack nodes
-	for(ii = 0; ii < ds_list_size(closed);ii++)
+	var attack_list_size = ds_list_size(closed);
+	
+	for(ii = 0; ii < attack_list_size;ii++)
 	{
 		current_node = ds_list_find_value(closed, ii);
-			if (current_node.gridX = 6 and current_node.gridY = 18){
-		pusdy=3}
-		if (current_node.move_node == true or current_node.occupant == selected_actor)
+		//	if (current_node.gridX == 6 and current_node.gridY == 18){
+		//pusdy=3}
+		if (current_node == undefined){
+			pussy = 5;
+		}
+
+		if (current_node.move_node == true)
 		{
-			ds_list_delete(closed,ds_list_find_index(closed,current_node))
+			current_node.attack_node = false;
+			//ds_list_delete(closed,ds_list_find_index(closed,current_node))
 		}
 		else
 		{
@@ -125,7 +132,8 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor,m
 				}
 				if(jj >= ds_list_size(move_list) - 1) //reached the end, remove it
 				{
-					ds_list_delete(closed,ds_list_find_index(closed,current_node))
+					current_node.attack_node = false;
+					//ds_list_delete(closed,ds_list_find_index(closed,current_node))
 				}
 			}
 		}
@@ -139,7 +147,8 @@ function scr_movement_range(origin_node,move_range,attack_range,selected_actor,m
 	for(ii = 0; ii < ds_list_size(closed);ii++)
 	{
 		current_node = ds_list_find_value(closed, ii);
-		scr_colour_attack_node(current_node)
+		if (current_node.attack_node == true){
+		scr_colour_attack_node(current_node);}
 	}
 	//we got the attack nodes, ok get the move nodes
 	

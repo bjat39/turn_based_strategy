@@ -89,7 +89,7 @@ if (obj_game.return_input)
 		scr_wipe_nodes();
 		curr_actor.unit_state =	"selected";
 				//selected_actor.actions = 2;
-		scr_movement_range(curr_actor.current_node,
+		scr_movement_range_1(curr_actor.current_node,
 			curr_actor.move,curr_actor.attack_range_real,curr_actor);
 		//obj_game.selected_actor = noone;
 		obj_game.player_state = "cursor_selected"; //unit state moved?

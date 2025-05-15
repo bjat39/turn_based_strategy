@@ -9,6 +9,8 @@ function scr_wipe_nodes(){
 		parent_node = noone;
 		colour = c_white;
 		attack_node = false;
+		attack_parent_node = noone;
+		attack_G = 0;
 	}
 	instance_destroy(obj_ds_move_square);
 	instance_destroy(obj_ds_attack_square);

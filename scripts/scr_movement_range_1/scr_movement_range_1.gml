@@ -40,6 +40,8 @@ function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor
 			//store current neighbour in neighbour variable
 			curr_neighbour = ds_list_find_value(current_node.neighbours, ii)
 			
+				if (curr_neighbour.gridX == 6 and curr_neighbour.gridY == 18){
+			pusdy=3}
 			//add neighbour to open list if qualifies:
 			//neighbour is passable
 			//neighbour has no occupant
@@ -98,7 +100,6 @@ function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor
 	for(ii = 0; ii < ds_list_size(closed);ii++)
 	{
 		current_node = ds_list_find_value(closed, ii);
-		
 		//current_node.attack_node = true;
 		
 		scr_colour_move_node(current_node,move_range);
@@ -113,7 +114,7 @@ function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor
 		//total_dist = x_dist + y_dist;
 		//if (total_dist <= temp_actor.attack_range + temp_actor){}
 	}
-	scr_movement_range(origin_node,move_range,attack_range,selected_actor,closed);
+	scr_attack_range_cull(origin_node,move_range,attack_range,selected_actor,closed);
 	//should put it in previous for loop somewhere, just check each square and mark as attack square
 	//scr_large_grid_attack_range(closed,selected_actor);
 	
