@@ -114,7 +114,12 @@ function scr_movement_range_1(origin_node,move_range,attack_range,selected_actor
 		//total_dist = x_dist + y_dist;
 		//if (total_dist <= temp_actor.attack_range + temp_actor){}
 	}
-	scr_attack_range_cull(origin_node,move_range,attack_range,selected_actor,closed);
+	if(selected_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
+	{
+		scr_attack_range_cull_archer(origin_node,move_range,attack_range,selected_actor,closed)
+	}else{
+		scr_attack_range_cull(origin_node,move_range,attack_range,selected_actor,closed);
+	}
 	//should put it in previous for loop somewhere, just check each square and mark as attack square
 	//scr_large_grid_attack_range(closed,selected_actor);
 	

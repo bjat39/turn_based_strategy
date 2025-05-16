@@ -48,11 +48,14 @@ function scr_state_initialize_grid(){
 		}
 	}
 	
-	if (instance_exists(par_neft_faction)) //doesn't fucking work yet because obj_neft doesn't exist or some shit so we repeat this code later
+	if (instance_exists(par_neft_faction)) //doesn't  work yet because obj_neft doesn't existso we repeat this code later
 	{
-		if (instance_exists(obj_neft))
+		with(par_neft_faction) //make sure neft is first in list
 		{
-			ds_list_add(other.neft_list,obj_neft);
+			if (object_index == obj_neft)
+			{
+				ds_list_add(other.neft_list,id);
+			}
 		}
 		with(par_neft_faction)
 		{

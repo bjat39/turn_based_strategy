@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_attack_range_cull(origin_node,move_range,attack_range,selected_actor,move_list){ //pathfinding, get nodes for movements
+function scr_attack_range_cull_archer(origin_node,move_range,attack_range,selected_actor,move_list){ //pathfinding, get nodes for movements
 	//ATTACK one
 	//selected_actor has been added later for scr_attack_range
 	//Reset all node data
@@ -100,7 +100,7 @@ function scr_attack_range_cull(origin_node,move_range,attack_range,selected_acto
 	for(ii = 0; ii < attack_list_size;ii++)
 	{
 		current_node = ds_list_find_value(closed, ii);
-
+		
 		if (current_node.move_node == true)
 		{
 			current_node.attack_node = false;
@@ -120,7 +120,7 @@ function scr_attack_range_cull(origin_node,move_range,attack_range,selected_acto
 				y_dist = point_distance(
 				current_node.x, current_node.y, current_node.x,current_move_node.y);
 				total_dist = x_dist + y_dist; //
-				if (total_dist <= selected_actor.attack_range)
+				if (total_dist <= selected_actor.attack_range and total_dist > 1 * GRID_SIZE)
 				{
 					current_node.attack_node = true;
 					break;

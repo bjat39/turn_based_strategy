@@ -1,7 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_state_aleneti_turn(){
-	
 	switch(ai_state)
 	{
 		//case ("not_turn"): break; //shouldn't happen but just for posterity
@@ -29,6 +28,10 @@ function scr_state_aleneti_turn(){
 		{
 			ai_state = "finish_turn";
 		}
+		else if (!instance_exists(par_aleneti_faction))
+		{
+			ai_state = "finish_turn";
+		}
 		else{
 			var curr_unit1 = ds_list_find_value(aleneti_list,ai_unit_counter);
 			with(curr_unit1)
@@ -51,34 +54,34 @@ function scr_state_aleneti_turn(){
 		break;
 		
 	}
-	//scr_ai_find_target();
+		//scr_ai_find_target();
 	
 	
-	//with(par_aleneti_faction)
-	//{
-	//	unit_state = "finish";
+		//with(par_aleneti_faction)
+		//{
+		//	unit_state = "finish";
 		
-	//	ds_list_add(obj_game.finished_aleneti_list,id)
+		//	ds_list_add(obj_game.finished_aleneti_list,id)
 		
-	//	with(obj_game)
-	//	{
-	//		if (ds_list_size(finished_aleneti_list) >= ds_list_size(aleneti_list))
-	//		{
-	//			ds_list_clear(finished_aleneti_list)
-	//			round_counter ++;
+		//	with(obj_game)
+		//	{
+		//		if (ds_list_size(finished_aleneti_list) >= ds_list_size(aleneti_list))
+		//		{
+		//			ds_list_clear(finished_aleneti_list)
+		//			round_counter ++;
 			
-	//			if (round_counter >= ds_list_size(round_order))
-	//			{
-	//				round_counter = 0;
-	//			}
+		//			if (round_counter >= ds_list_size(round_order))
+		//			{
+		//				round_counter = 0;
+		//			}
 				
-	//			with (par_aleneti_faction)
-	//			{
-	//				unit_state = "idle";
-	//			}
-	//			game_state = ds_list_find_value(round_order,round_counter);
-	//			//game_state = ds_list_find_index(round_order,round_counter);
-	//		}
-	//	}
-	//}
+		//			with (par_aleneti_faction)
+		//			{
+		//				unit_state = "idle";
+		//			}
+		//			game_state = ds_list_find_value(round_order,round_counter);
+		//			//game_state = ds_list_find_index(round_order,round_counter);
+		//		}
+		//	}
+		//}
 }

@@ -208,8 +208,29 @@ function scr_cursor_control(){
 			{
 				neft_input_counter = 0;
 				neft_unit = ds_list_find_value(obj_game.neft_list,neft_input_counter);
-				obj_cursor.x = neft_unit.x + GRID_SIZE/2;
-				obj_cursor.y = neft_unit.y + GRID_SIZE/2;
+				if (neft_unit != undefined){//dogshit error handling but hoo cares
+					obj_cursor.x = neft_unit.x + GRID_SIZE/2;
+					obj_cursor.y = neft_unit.y + GRID_SIZE/2;
+				}
+				else{
+					neft_input_counter = 1;
+					neft_unit = ds_list_find_value(obj_game.neft_list,neft_input_counter);
+					
+					if (neft_unit != undefined)
+					{
+						obj_cursor.x = neft_unit.x + GRID_SIZE/2;
+						obj_cursor.y = neft_unit.y + GRID_SIZE/2;
+					}
+					else{
+						neft_input_counter = 2;
+						neft_unit = ds_list_find_value(obj_game.neft_list,neft_input_counter);
+						if (neft_unit != undefined)
+						{
+							obj_cursor.x = neft_unit.x + GRID_SIZE/2;
+							obj_cursor.y = neft_unit.y + GRID_SIZE/2;
+						}
+					}
+				}
 			}
 		}
 	}

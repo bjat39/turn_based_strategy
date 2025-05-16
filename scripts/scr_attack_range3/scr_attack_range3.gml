@@ -31,7 +31,7 @@ function scr_attack_range3(selected_actor,curr_node){
 			x_dist = point_distance(x, y, selected_actor.x, y); //would have measuring to the center but it dont
 			y_dist = point_distance(x, y, x, selected_actor.y);
 			total_dist = x_dist + y_dist; //
-			if (occupant != noone and total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE)//temp_actor.attack_range)
+			if (occupant != noone and total_dist <= selected_actor.attack_range and total_dist > 1 * GRID_SIZE)//temp_actor.attack_range)
 			{
 				if (occupant.faction != selected_actor.faction)
 				{
@@ -40,7 +40,7 @@ function scr_attack_range3(selected_actor,curr_node){
 					scr_colour_attack_node(id);
 				}
 			}
-			else if (total_dist <= selected_actor.attack_range and total_dist > 2 * GRID_SIZE){
+			else if (total_dist <= selected_actor.attack_range and total_dist > 1 * GRID_SIZE){
 				scr_colour_attack_node(id);
 			}
 		}

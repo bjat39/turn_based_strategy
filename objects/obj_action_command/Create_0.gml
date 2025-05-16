@@ -45,7 +45,7 @@ if(curr_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 		x_dist = point_distance(x, y, other.curr_actor.x, y); //would have measuring to the center but it dont
 		y_dist = point_distance(x, y, x, other.curr_actor.y);
 		total_dist = x_dist + y_dist; //
-		if (total_dist <= other.curr_actor.attack_range and total_dist > 1 * GRID_SIZE)//temp_actor.attack_range)
+		if (total_dist <= other.curr_actor.attack_range)// and total_dist > 1 * GRID_SIZE)//temp_actor.attack_range)
 		{
 			if (other.curr_actor.faction != faction)
 			{
@@ -57,7 +57,7 @@ if(curr_actor.damage_type == "bow") //BOWMAN CAN'T SHOOT TWO SPACES BEFORE HIM
 					ds_list_add(other.command_list, "Attack");
 					other.attack_command = true;
 				}
-				var attack = scr_get_full_attack_info(other.curr_actor, map[gridX,gridY].occupant)
+				var attack = scr_get_full_attack_info(other.curr_actor,map[gridX,gridY].occupant)
 				ds_list_add(other.attack_list,attack);
 				//}
 				//selected_actor.attack_node = true;

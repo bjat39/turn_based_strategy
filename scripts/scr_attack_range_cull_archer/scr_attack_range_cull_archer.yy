@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_attack_range_cull_archer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_attack_range_cull_archer",
+  "parent":{
+    "name":"ranges",
+    "path":"folders/Scripts/ds_grid/ranges.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
