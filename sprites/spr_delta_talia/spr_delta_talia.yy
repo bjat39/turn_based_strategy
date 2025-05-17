@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"delta",
-    "path":"folders/Sprites/nodes/units/delta.yy",
+    "path":"folders/Sprites/nodes/units/neft/delta.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

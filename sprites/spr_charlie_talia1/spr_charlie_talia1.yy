@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"units",
-    "path":"folders/Sprites/nodes/units.yy",
+    "name":"neft",
+    "path":"folders/Sprites/nodes/units/neft.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

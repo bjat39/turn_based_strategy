@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"units",
-    "path":"folders/Sprites/nodes/units.yy",
+    "name":"bandit",
+    "path":"folders/Sprites/nodes/units/bandit.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

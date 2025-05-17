@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"echo",
-    "path":"folders/Sprites/nodes/units/echo.yy",
+    "path":"folders/Sprites/nodes/units/neft/echo.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

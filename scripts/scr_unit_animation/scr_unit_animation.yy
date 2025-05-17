@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_unit_animation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_unit_animation",
+  "parent":{
+    "name":"animation",
+    "path":"folders/Scripts/ds_grid/animation.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
