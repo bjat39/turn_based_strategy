@@ -1,6 +1,6 @@
 /// @description Set up global items, traits, abilities, rooms?
 randomize();
-destination_room = rm_dungeon1;//rm_big_test_room;
+destination_room = rm_big_test_room;//rm_dungeon1;//
 
 // Load weapon data from the INI file
 // Open the INI file

@@ -232,8 +232,14 @@
         ],"TileDataFormat":1,},"tilesetId":{"name":"til_mini_dungeon2","path":"tilesets/til_mini_dungeon2/til_mini_dungeon2.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"Tiles_1","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":50,"SerialiseWidth":63,"TileCompressedData":[
           -4,-2147483648,-23,0,-40,-2147483648,-23,0,-40,-2147483648,-23,0,-40,-2147483648,-23,0,-40,-2147483648,
-          -23,0,-40,-2147483648,-23,0,-40,-2147483648,-23,0,-40,-2147483648,-23,0,-40,-2147483648,-23,0,-40,-2147483648,
-          -23,0,-41,-2147483648,-17,0,-2498,-2147483648,
+          -23,0,-40,-2147483648,-23,0,-40,-2147483648,-23,0,-40,-2147483648,-23,0,-40,-2147483648,-12,0,1,54,-3,
+          74,1,56,-6,0,-40,-2147483648,-12,0,1,32,-3,20,1,59,-6,0,-41,-2147483648,-11,0,1,32,-3,20,1,80,-6,74,
+          1,56,-51,-2147483648,1,32,-10,20,1,59,-46,-2147483648,1,54,-4,74,1,83,-10,20,1,59,-46,-2147483648,1,
+          32,-15,20,1,59,-46,-2147483648,1,32,-15,20,1,59,-46,-2147483648,1,32,-15,20,1,59,-46,-2147483648,1,32,
+          -15,20,1,59,-46,-2147483648,1,32,-15,20,1,59,-46,-2147483648,1,32,-15,20,1,59,-46,-2147483648,1,32,-6,
+          20,1,73,-4,10,1,75,-3,20,1,59,-46,-2147483648,1,32,-6,20,1,59,-4,-2147483648,1,32,-3,20,1,59,-46,-2147483648,
+          1,32,-6,20,1,59,-4,-2147483648,1,32,-3,20,1,59,-46,-2147483648,1,30,-6,10,1,29,-4,-2147483648,1,32,-3,
+          20,1,59,-58,-2147483648,1,30,-3,10,1,29,-1673,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"til_mini_dungeon2","path":"tilesets/til_mini_dungeon2/til_mini_dungeon2.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Nodes","depth":600,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_28B87E4B_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_28B87E4B_1","objectId":{"name":"obj_wall1","path":"objects/obj_wall1/obj_wall1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":128.0,},

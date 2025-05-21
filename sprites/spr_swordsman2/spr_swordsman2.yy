@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"50235d17-6f18-4cde-815f-e6f4031b4fd5","name":"50235d17-6f18-4cde-815f-e6f4031b4fd5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1e472ff1-d9b4-4768-b296-249fb2ba7b63","name":"1e472ff1-d9b4-4768-b296-249fb2ba7b63","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f8a078b9-7223-4235-b34b-4c4c0d4c079b","name":"f8a078b9-7223-4235-b34b-4c4c0d4c079b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"f81ce82c-0068-445d-9c8a-5a846074e658","name":"f81ce82c-0068-445d-9c8a-5a846074e658","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"a602b80d-f435-4227-bedd-ef565e01f35b","name":"a602b80d-f435-4227-bedd-ef565e01f35b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"3a4bda11-d880-4f08-8573-d291e553a855","name":"3a4bda11-d880-4f08-8573-d291e553a855","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":18,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"3ef76cd7-69a1-42f2-b008-1f1792bf483b","blendMode":0,"displayName":"default","isLocked":false,"name":"3ef76cd7-69a1-42f2-b008-1f1792bf483b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"39812fc4-3f75-4164-9e37-f76eaeee69cf","blendMode":0,"displayName":"default","isLocked":false,"name":"39812fc4-3f75-4164-9e37-f76eaeee69cf","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_swordsman2",
   "nineSlice":null,
@@ -71,14 +71,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"50235d17-6f18-4cde-815f-e6f4031b4fd5","path":"sprites/spr_swordsman2/spr_swordsman2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b196ad17-212d-43f5-9333-efc8f4891968","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f81ce82c-0068-445d-9c8a-5a846074e658","path":"sprites/spr_swordsman2/spr_swordsman2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"1eef42b5-b866-4dca-992b-7a7981e02780","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1e472ff1-d9b4-4768-b296-249fb2ba7b63","path":"sprites/spr_swordsman2/spr_swordsman2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ff4857e4-59ca-4169-a835-0fe21672a8bb","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a602b80d-f435-4227-bedd-ef565e01f35b","path":"sprites/spr_swordsman2/spr_swordsman2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"4432f56e-0603-475d-a0a9-3211a5e18348","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f8a078b9-7223-4235-b34b-4c4c0d4c079b","path":"sprites/spr_swordsman2/spr_swordsman2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"27b15ee9-9381-4c7b-a27d-3f68f41ce62b","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3a4bda11-d880-4f08-8573-d291e553a855","path":"sprites/spr_swordsman2/spr_swordsman2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"4a996b72-e3e3-4167-8c0c-93cba0c7f9c3","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

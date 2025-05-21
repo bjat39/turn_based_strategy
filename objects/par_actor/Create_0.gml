@@ -30,6 +30,12 @@ orig_node = current_node; //node saved if the player cancels after moving
 
 death_flag = false;
 
+//Animation vars
+frame_index = 0;                 // Current frame
+frame_direction = 1;             // Direction of animation, 1 for forward, -1 for backward
+pause_timer = 0;                 // Timer for pauses, countdown for pause duration (in steps, 60 steps = 1 second)
+default_pause_timer = 60;
+
 //death animations
 death_weapon_type = "default" //fade out
 death_overkill_damage = 0; //quicker, more violent deaths with more overkill

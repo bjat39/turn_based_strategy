@@ -1,12 +1,12 @@
 /// @description 
 draw_set_font(fnt_courier);
-draw_set_color(c_red);
-draw_text(0,40,"round_counter: " + string(round_counter)); //keeps track of if it's player phase, enemy phase
-draw_text(0,60,"turn_counter: " + string(turn_counter)); //after player phase and enemy phase, this is incremented by 1
-draw_text(0,80,"ai_unit_counter:" + string(ai_unit_counter));
-draw_text(0,100,"ai_state: " + string(ai_state));
-draw_text(0,120,"aleneti_list.ai_unit_countert: " + string(ds_list_find_value(aleneti_list,ai_unit_counter)));
-draw_text(0,140,"aleneti_list.size: " + string(ds_list_size(aleneti_list)));
+//draw_set_color(c_red);
+//draw_text(0,40,"round_counter: " + string(round_counter)); //keeps track of if it's player phase, enemy phase
+//draw_text(0,60,"turn_counter: " + string(turn_counter)); //after player phase and enemy phase, this is incremented by 1
+//draw_text(0,80,"ai_unit_counter:" + string(ai_unit_counter));
+//draw_text(0,100,"ai_state: " + string(ai_state));
+//draw_text(0,120,"aleneti_list.ai_unit_countert: " + string(ds_list_find_value(aleneti_list,ai_unit_counter)));
+//draw_text(0,140,"aleneti_list.size: " + string(ds_list_size(aleneti_list)));
 
 if (game_state = "game_over")
 {
