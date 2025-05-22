@@ -21,10 +21,10 @@ if (menu_level == 2)
 	//defender enemy, right side
 	draw_set_halign(fa_left);
 	draw_set_font(fnt_courier_5);
-	scr_draw_txt_border(95,14 + forecast_space * 3, selected_attack.defender_hp,c_black,c_light_purple);
-	scr_draw_txt_border(95,14 + forecast_space * 4, selected_attack.defender_damage,c_black,c_light_purple);
-	scr_draw_txt_border(95,14 + forecast_space * 5, selected_attack.defender_hit,c_black,c_light_purple);
-	scr_draw_txt_border(95,14 + forecast_space * 6 , selected_attack.defender_crit,c_black,c_light_purple);
+	scr_draw_txt_border(99,14 + forecast_space * 3, selected_attack.defender_hp,c_black,c_light_purple);
+	scr_draw_txt_border(99,14 + forecast_space * 4, selected_attack.defender_damage,c_black,c_light_purple);
+	scr_draw_txt_border(99,14 + forecast_space * 5, selected_attack.defender_hit,c_black,c_light_purple);
+	scr_draw_txt_border(99,14 + forecast_space * 6 , selected_attack.defender_crit,c_black,c_light_purple);
 	
 	draw_set_font(fnt_courier_6);
 	//hit, crit etc
@@ -44,7 +44,7 @@ if (menu_level == 2)
 	scr_draw_txt_border(65,14 + forecast_space * 6 , selected_attack.attacker_crit,c_black,c_light_purple);
 	draw_set_halign(fa_center);
 	draw_set_font(fnt_courier_6);
-	scr_draw_txt_border(80,18 + forecast_space * 7, scr_create_limited_string(selected_attack.attacker_weapon.name1,11),c_black,c_white);
+	scr_draw_txt_border(82,18 + forecast_space * 7, scr_create_limited_string(selected_attack.attacker_weapon.name1,12),c_black,c_white);
 	scr_draw_txt_border(58,18 + forecast_space * 8, selected_attack.attacker1.actor_name,c_black,c_white);
 	
 	// Set the initial vertical speed

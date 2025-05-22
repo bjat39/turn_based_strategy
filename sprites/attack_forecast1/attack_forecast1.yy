@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":103,
   "bbox_left":0,
-  "bbox_right":72,
+  "bbox_right":74,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d610868d-1ae0-4ca3-bb40-f8eabee2f058","name":"d610868d-1ae0-4ca3-bb40-f8eabee2f058","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"431c06c4-8f74-46fd-8acc-2e95de5f5e29","name":"431c06c4-8f74-46fd-8acc-2e95de5f5e29","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":104,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"eb897c02-4b6e-4832-9b57-f10482fa2c20","blendMode":0,"displayName":"default","isLocked":false,"name":"eb897c02-4b6e-4832-9b57-f10482fa2c20","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"893978b4-5b2a-4af1-9b7d-35b86972ff6e","blendMode":0,"displayName":"default","isLocked":false,"name":"893978b4-5b2a-4af1-9b7d-35b86972ff6e","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"attack_forecast1",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d610868d-1ae0-4ca3-bb40-f8eabee2f058","path":"sprites/attack_forecast1/attack_forecast1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"d31c4d21-d60e-44af-b1d5-c035394a4aa6","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"431c06c4-8f74-46fd-8acc-2e95de5f5e29","path":"sprites/attack_forecast1/attack_forecast1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"c97bd39b-3ff8-4868-93f0-de9c533e31f5","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":73,
+  "width":75,
 }

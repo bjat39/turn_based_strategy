@@ -34,7 +34,7 @@ attack_command = false;
 
 selected_attack = noone;
 
-c_light_purple = make_color_rgb(237,201,239);
+c_light_purple = make_color_rgb(211,211,237);//c_light_purple = make_color_rgb(237,201,239);make_color_rgb(109,107,158);
 c_light_yellow = make_color_rgb(239,239,151);
 c_very_light_yellow = make_color_rgb(175,175,153);
 
