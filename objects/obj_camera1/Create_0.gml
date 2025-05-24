@@ -5,8 +5,7 @@
 
 #macro CAM_SMOOTH 0.1
 
-size = 1;
-faux_size = size;
+size1 = 1;
 
 //Enable views
 view_enabled = true;

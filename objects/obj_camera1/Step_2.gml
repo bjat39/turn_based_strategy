@@ -32,8 +32,8 @@ camY = lerp(camY,targetY, CAM_SMOOTH *3);
 //if (wheel != 0) {
 //	wheel *= 0.1;//0.01;
 	
-	camW = lerp(camW, RES_W * size, CAM_SMOOTH / 6);//6);
-	camH = lerp(camH,RES_H * size, CAM_SMOOTH / 6);//6);
+	camW = lerp(camW, RES_W * size1, CAM_SMOOTH / 6);//6);
+	camH = lerp(camH,RES_H * size1, CAM_SMOOTH / 6);//6);
 	
 	//Add to size
 	//if (addH >=)

@@ -9,7 +9,7 @@ attack_timer = 30;
 
 attack = noone;
 
-state = "begin_attack";
+state = "initialise";//"begin_attack";
 
 attack_rounds = [];
 

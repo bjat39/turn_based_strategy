@@ -2,7 +2,7 @@
 draw_text(0,160,"pos: " + string(pos));
 draw_text(0,180,"level_zero_pos: " + string(level_zero_pos));
 draw_text(0,200,"level_one_pos: " + string(level_one_pos));
-if (menu_level == 2)
+if (menu_level == 2)//move slightly to the left so we can see half of squares, would be better looking
 {
 	draw_set_color(c_very_light_yellow);
 	draw_roundrect(50,50,97,134,0);

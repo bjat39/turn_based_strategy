@@ -1,6 +1,10 @@
 /// @description 
 switch(state)
 {
+case "initialise":
+obj_camera1.size1 = 0.5;
+state = "begin_attack";
+break;
 case "begin_attack":
 	//before attack animation
 	attack_timer -= 1;
@@ -46,6 +50,7 @@ case "end_attack"://let scr attack handle this
 	}
 	break;
 case "finish_battle":
+	obj_camera1.size1 = 1;
 	if (instance_exists(attack_data.attacker1))// and kill_confirm == "defender")
 	{
 		obj_cursor.x = attack_data.attacker1.x + GRID_SIZE/2;
