@@ -1,6 +1,6 @@
 /// @description
 // Draw the sprite with the current frame
-draw_sprite(sprite_index, frame_index, x, y);
+//draw_sprite(sprite_index, frame_index, x, y);
 
 if (obj_game.selected_actor == id and obj_game.selected_actor.ai_type == "player") //only the actor who's turn it is will draw a line
 { //

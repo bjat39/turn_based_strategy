@@ -32,5 +32,5 @@
     "path":"sprites/spr_nine_slice/spr_nine_slice.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

@@ -1,5 +1,5 @@
 /// @description
-depth = -y;
+depth = -y; //remember room layers work against this, need to set depth on layers manually
 image_speed = 0.1;
 unit_state = "idle";
 
@@ -83,7 +83,7 @@ equipped_weapon = noone;
 idle_anim = spr_echo_talia;
 hover_anim = spr_echo_talia;
 run_anim = spr_echo_talia;
-attack_anim = spr_echo_talia;
+attack_anim = spr_talia_attack;
 defend_anim = spr_echo_talia;
 crit_anim = spr_echo_talia;
 

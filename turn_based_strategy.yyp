@@ -173,6 +173,7 @@
     {"id":{"name":"rm_big_test_room","path":"rooms/rm_big_test_room/rm_big_test_room.yy",},},
     {"id":{"name":"rm_dialogue","path":"rooms/rm_dialogue/rm_dialogue.yy",},},
     {"id":{"name":"rm_dungeon1","path":"rooms/rm_dungeon1/rm_dungeon1.yy",},},
+    {"id":{"name":"rm_effects_test","path":"rooms/rm_effects_test/rm_effects_test.yy",},},
     {"id":{"name":"rm_init","path":"rooms/rm_init/rm_init.yy",},},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
     {"id":{"name":"rm_test2","path":"rooms/rm_test2/rm_test2.yy",},},
@@ -457,6 +458,7 @@
     {"roomId":{"name":"rm_battle","path":"rooms/rm_battle/rm_battle.yy",},},
     {"roomId":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
     {"roomId":{"name":"rm_dungeon1","path":"rooms/rm_dungeon1/rm_dungeon1.yy",},},
+    {"roomId":{"name":"rm_effects_test","path":"rooms/rm_effects_test/rm_effects_test.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

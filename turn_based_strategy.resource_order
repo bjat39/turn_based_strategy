@@ -133,6 +133,7 @@
     {"name":"rm_big_test_room","order":3,"path":"rooms/rm_big_test_room/rm_big_test_room.yy",},
     {"name":"rm_dialogue","order":4,"path":"rooms/rm_dialogue/rm_dialogue.yy",},
     {"name":"rm_dungeon1","order":6,"path":"rooms/rm_dungeon1/rm_dungeon1.yy",},
+    {"name":"rm_effects_test","order":7,"path":"rooms/rm_effects_test/rm_effects_test.yy",},
     {"name":"rm_init","order":5,"path":"rooms/rm_init/rm_init.yy",},
     {"name":"rm_test","order":1,"path":"rooms/rm_test/rm_test.yy",},
     {"name":"rm_test2","order":2,"path":"rooms/rm_test2/rm_test2.yy",},
