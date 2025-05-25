@@ -118,6 +118,7 @@
     {"id":{"name":"obj_closest_node","path":"objects/obj_closest_node/obj_closest_node.yy",},},
     {"id":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},},
     {"id":{"name":"obj_corpse","path":"objects/obj_corpse/obj_corpse.yy",},},
+    {"id":{"name":"obj_cursor_back","path":"objects/obj_cursor_back/obj_cursor_back.yy",},},
     {"id":{"name":"obj_cursor","path":"objects/obj_cursor/obj_cursor.yy",},},
     {"id":{"name":"obj_damage_dealt","path":"objects/obj_damage_dealt/obj_damage_dealt.yy",},},
     {"id":{"name":"obj_damage_text","path":"objects/obj_damage_text/obj_damage_text.yy",},},

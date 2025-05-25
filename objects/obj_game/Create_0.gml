@@ -131,19 +131,19 @@ draw_set_font(fnt_courier);
 
 if (instance_exists(obj_neft))
 {
-	instance_create_layer(obj_neft.x + (GRID_SIZE / 2),obj_neft.y + (GRID_SIZE / 2),"Menu", obj_cursor);
+	instance_create_layer(obj_neft.x + (GRID_SIZE / 2),obj_neft.y + (GRID_SIZE / 2),"Cursor_front", obj_cursor);
 }
 else if (instance_exists(obj_talia))
 {
-	instance_create_layer(obj_talia.x + (GRID_SIZE / 2),obj_talia.y + (GRID_SIZE / 2),"Menu", obj_cursor);
+	instance_create_layer(obj_talia.x + (GRID_SIZE / 2),obj_talia.y + (GRID_SIZE / 2),"Cursor_front", obj_cursor);
 }
 else if (instance_exists(obj_oriel))
 {
-	instance_create_layer(obj_oriel.x + (GRID_SIZE / 2),obj_oriel.y + (GRID_SIZE / 2),"Menu", obj_cursor);
+	instance_create_layer(obj_oriel.x + (GRID_SIZE / 2),obj_oriel.y + (GRID_SIZE / 2),"Cursor_front", obj_cursor);
 }
 else
 {
-	instance_create_layer(GRID_SIZE / 2, GRID_SIZE / 2,"Menu", obj_cursor);
+	instance_create_layer(GRID_SIZE / 2, GRID_SIZE / 2,"Cursor_front", obj_cursor);
 }
 
 cursor_move_delay = 0;
