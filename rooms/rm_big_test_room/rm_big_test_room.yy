@@ -203,7 +203,7 @@
   ],
   "isDnd":false,
   "layers":[
-    {"$GMREffectLayer":"","%Name":"Effect_3","depth":-1200,"effectEnabled":true,"effectType":"_filter_zoom_blur","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Effect_3","properties":[
+    {"$GMREffectLayer":"","%Name":"Zoom_blur","depth":-1200,"effectEnabled":true,"effectType":"_filter_zoom_blur","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Zoom_blur","properties":[
         {"name":"g_ZoomBlurCenter","type":0,"value":"0.5",},
         {"name":"g_ZoomBlurCenter","type":0,"value":"0.5",},
         {"name":"g_ZoomBlurIntensity","type":0,"value":"0.25",},

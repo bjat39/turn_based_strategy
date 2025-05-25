@@ -16,7 +16,7 @@ attacked = false; //only attack once a turn
 
 //variables related to pathing
 //create path data structure
-movement_path = path_add(); //FUCK YES I REALISE I CAN REUSE SOME mp_grid CODEEEEEE
+movement_path = path_add();
 path_set_kind(movement_path,2); //type 2 is straight line path, type 1 is curved lines
 path_set_closed(movement_path,false); //determines whether a path is open/closed, closed would go to each point and return to beginning, good for patrols but we don't want that
 
@@ -49,7 +49,7 @@ min_dist = 10000000;
 //character statistics
 faction = "neft";//"player"; //what side they are affliliated with, affects turn order
 class = "Healer Woman";
-description = "";
+description = "An enemy.";
 
 flying_unit = false;
 

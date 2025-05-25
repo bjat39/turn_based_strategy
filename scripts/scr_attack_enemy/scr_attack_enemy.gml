@@ -24,32 +24,58 @@ function scr_attack_enemy(attack_rounds,current_round){
 	{
 		attack_status = "miss";
 	}
-				
-	attack_dir = point_direction(x + 16, y + 16, defender.x + 16, defender.y + 16);
-				
-	begin_x = x + 16 + lengthdir_x(30, attack_dir); //starts 30 px in front
-	begin_y = y + 16 + lengthdir_y(30, attack_dir);
-				
-	with(instance_create_layer(begin_x,begin_y,"Menu",obj_arrow1))//begin_x,begin_y,"Instances",obj_arrow))
+	
+	target = defender;
+	status = attack_status;
+	damage = temp_damage;
+	damage_type = defender.damage_type;
+	
+	if (status != "miss")
 	{
-		target = defender;
-		status = other.attack_status;
-		damage = other.temp_damage;
-		damage_type = defender.damage_type;
-					
-		speed = 24;
-					
-		path_add_point(movement_path,other.begin_x,other.begin_y,100);
-					
-		if (status != "miss")
+		scr_play_sound(sfx_impact_flesh,3,0,obj_game.sfx_gain);
+		target.current_hit_points -= damage;
+		
+		for(ii = 0; ii < 6; ii ++)
 		{
-			path_add_point(movement_path,target.x + 16,target.y + 16,100);
+			with(instance_create_layer(target.x + 16,target.y + 16,"Instances",obj_biff))
+			{
+				direction = irandom(360);
+				speed = irandom_range(2,4);
+				scale = choose(2,3);
+				
+				image_speed = .5;
+				
+				//if(other.status == "crit")
+				//{
+				//	colour = c_yellow;
+				//}
+			}
 		}
-		else
+	
+		with(instance_create_layer(target.x + GRID_SIZE + 6,target.y + 2,"Instances",obj_damage_text))
 		{
-			path_add_point(movement_path,target.x + (irandom_range(30,50) * choose(1,-1)), target.y + (irandom_range(30,50) * choose(1,-1)), 100);
+			text = string(other.damage);
+			ground = defender.y;
 		}
-					
-		path_start(movement_path,speed,path_action_stop,true);
+	
+		//Screenshake
+		//target.shake = 8;
+		//target.shake_mag = 8;
+		
+		if (target.current_hit_points <= 0 and damage != 0) //kill
+		{
+			 //replace with specific instances, no pre_dying_Talk as well
+			target.unit_state = "initiate_dying";
+			//return "interrupt attack" or whatever, exit/return
+		}
+	}
+	else
+	{
+		with(instance_create_layer(target.x + 28,target.y +2,"Instances",obj_damage_text))
+		{
+			text = "miss";
+			
+			ground = y;
+		}
 	}
 }

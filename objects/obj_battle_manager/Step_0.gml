@@ -3,7 +3,13 @@ switch(state)
 {
 case "initialise":
 obj_camera1.size1 = 0.5;
-state = "begin_attack";
+layer_set_visible("Zoom_blur",true);
+
+if(obj_camera1.camW <= RES_W * 0.6)
+{
+	layer_set_visible("Zoom_blur",false);
+	state = "begin_attack";
+}
 break;
 case "begin_attack":
 	//before attack animation

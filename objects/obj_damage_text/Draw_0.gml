@@ -1,4 +1,5 @@
 /// @description 
 draw_set_font(fnt_courier);
-
-draw_text_colour(x,y,text,c_red,c_red,c_red,c_red,alpha);
+draw_set_alpha(alpha);
+scr_draw_txt_border(x,y,text,c_black,c_red);
+draw_set_alpha(1);

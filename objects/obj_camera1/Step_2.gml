@@ -32,35 +32,35 @@ camY = lerp(camY,targetY, CAM_SMOOTH *3);
 //if (wheel != 0) {
 //	wheel *= 0.1;//0.01;
 	
-	camW = lerp(camW, RES_W * size1, CAM_SMOOTH / 6);//6);
-	camH = lerp(camH,RES_H * size1, CAM_SMOOTH / 6);//6);
+camW = lerp(camW, RES_W * size1, CAM_SMOOTH / 4);//6);
+camH = lerp(camH,RES_H * size1, CAM_SMOOTH / 4);//6);
 	
-	//Add to size
-	//if (addH >=)
-	//var addW = camW * wheel;
-	//var addH = camH * wheel;
+//Add to size
+//if (addH >=)
+//var addW = camW * wheel;
+//var addH = camH * wheel;
 	
-	//camW += addW;
-	//camH += addH;
+//camW += addW;
+//camH += addH;
 	
-	//Positioin, add to camX in order to center
+//Positioin, add to camX in order to center
+//camX -= addW / 2;
+//camY -= addH / 2;
+	
+//Clamping zoom
+var prevWidth = camW;
+var prevHeight = camH;
+	
+camW = clamp(camW, RES_W / 2, room_width);
+camH = clamp(camH, RES_H / 2, room_width);
+	
+if(camW / camH == 1.77777777778 and (prevWidth == camW or prevHeight == camH)){
 	//camX -= addW / 2;
-	//camY -= addH / 2;
-	
-	//Clamping zoom
-	var prevWidth = camW;
-	var prevHeight = camH;
-	
-	camW = clamp(camW, RES_W / 2, room_width);
-	camH = clamp(camH, RES_H / 2, room_width);
-	
-	if(camW / camH == 1.77777777778 and (prevWidth == camW or prevHeight == camH)){
-		//camX -= addW / 2;
-		//camY -= addH / 2
-		//Clamp the movement
-		camX = clamp(camX,0,room_width - camW);
-		camY = clamp(camY,0,room_height -camH);
-	//}
+	//camY -= addH / 2
+	//Clamp the movement
+	camX = clamp(camX,0,room_width - camW);
+	camY = clamp(camY,0,room_height -camH);
+//}
 }
 
 
