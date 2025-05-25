@@ -16,3 +16,11 @@ attack_rounds = [];
 current_round = 0;
 
 kill_confirm = noone;
+
+//zoom_blur = fx_create("filter_zoom_blur");
+
+//obj_cursor.visible = false;
+//obj_cursor_back.visible = false;
+
+//obj_cursor.x = (attack_data.attacker1.x + attack_data.defender1.x)/2;
+//obj_cursor.y = (attack_data.attacker1.y + attack_data.defender1.y)/2;

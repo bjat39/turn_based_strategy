@@ -5,7 +5,7 @@ case "initialise":
 obj_camera1.size1 = 0.5;
 layer_set_visible("Zoom_blur",true);
 
-if(obj_camera1.camW <= RES_W * 0.6)
+if(obj_camera1.camW <= RES_W * 0.55)
 {
 	layer_set_visible("Zoom_blur",false);
 	state = "begin_attack";
@@ -69,6 +69,9 @@ case "finish_battle":
 		//attack_data.attacker1.death_flag = true;
 		//attack_data.defender1.unit_state = "finishing";
 	}
+	obj_cursor.visible = true;
+	obj_cursor_back.visible = true;
+	
 	obj_game.player_state = "cursor_explore";
 	obj_game.selected_actor = noone;
 	instance_destroy();

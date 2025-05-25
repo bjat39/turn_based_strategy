@@ -134,6 +134,12 @@ if (obj_game.accept_input)
 			{
 				attack_data = other.selected_attack;
 				attack_rounds = scr_create_attack_sequence(attack_data.attacker1,attack_data.defender1);
+				
+				obj_cursor.visible = false;
+				obj_cursor_back.visible = false;
+
+				obj_cursor.x = ((attack_data.attacker1.x + attack_data.defender1.x)/2)+8;
+				obj_cursor.y = ((attack_data.attacker1.y + attack_data.defender1.y)/2)+8;
 			}
 			instance_destroy();
 		break;
