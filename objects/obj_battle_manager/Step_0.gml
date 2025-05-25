@@ -4,6 +4,8 @@ switch(state)
 case "initialise":
 obj_camera1.size1 = 0.5;
 layer_set_visible("Zoom_blur",true);
+zoom_mult = obj_camera1.camW /320;
+fx_set_parameter(zoom_blur,"g_ZoomBlurIntensity",zoom_mult - 0.55);
 
 if(obj_camera1.camW <= RES_W * 0.55)
 {

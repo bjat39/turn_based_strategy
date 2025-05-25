@@ -17,6 +17,9 @@ current_round = 0;
 
 kill_confirm = noone;
 
+zoom_blur = layer_get_fx("Zoom_blur");
+
+zoom_mult = 0;
 //zoom_blur = fx_create("filter_zoom_blur");
 
 //obj_cursor.visible = false;
